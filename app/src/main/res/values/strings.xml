@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">IndigoApp</string>
+    <string name="loginpageheader">ALREADY REGISTERED ?</string>
+    <string name="socialaccountsigninheader">Sign in with social accounts</string>
 </resources>
