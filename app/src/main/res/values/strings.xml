@@ -58,6 +58,11 @@
     <string name="cash_on_delivery">Cash on delivery</string>
     <string name="wishlist">wishlist</string>
     <string name="delete">delete</string>
+    <string name="shadiniemail">shadinikala@gmail.com</string>
+    <string name="password">*********</string>
+    <string name="DOB">26/05/1998</string>
+    <string name="edit">EDIT</string>
+    <string name="DELETE">DELETE</string>
 
     >>>>>>> origin/master
 
