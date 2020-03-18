@@ -10,27 +10,11 @@
     <string name="voucher_button">Vouchers</string>
     <string name="category_heading">Categories</string>
     <string name="hint_text">This is a hint</string>
-    <string name="top1_name">Long Sleeve White and Blue Linen Top</string>
-    <string name="top2_name">Short Sleeve Yellow Cotton Top</string>
-    <string name="newmember">NEW MEMBER?</string>
-    <string name="signupwith">Sign up with social accounts is easy</string>
-    <string name="or">OR</string>
-    <string name="emailsignup">sign up with your email</string>
-    <string name="name">YOUR NAME*</string>
-    <string name="emailcump">EMAIL ADDRESS*</string>
-    <string name="pwcump">PASSWORD*</string>
-    <string name="dob">DATE OF BIRTH</string>
-    <string name="gender">GENDER</string>
-    <string name="radiobuttonGirl">Girl</string>
-    <string name="radioButtonguy">Guy</string>
-    <string name="termsandcondition"><![CDATA[I accept Terms & Conditions]]></string>
-    <string name="newsletters">Subscribe to Newsletters</string>
-    <string name="emailsignin">sign in with your email</string>
-    <string name="emailhint">EMAIL ADDRESS</string>
-    <string name="pwhint">PASSWORD</string>
-    <string name="forgotpw">Forgot Password?</string>
-    <string name="signin">SIGN IN</string>
-    <string name="newmem">New member?</string>
-    <string name="signup">SIGN UP TODAY</string>
+    <string name="top1_name">Long Sleeve White and Blue Linen Top </string>
+    <string name="top2_name">Short Sleeve Yellow Cotton Top </string>
+    <string name="top_category">TOPS</string>
+    <string name="top1_price">1200/-</string>
+    <string name="top2_price">2000/-</string>
+    <string name="logo_name">LOGO</string>
 
 </resources>
