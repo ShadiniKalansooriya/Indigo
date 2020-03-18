@@ -37,7 +37,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageButton"
         app:layout_constraintVertical_bias="0.155"
-        android:background="@d"/>
+        />
 
     <ImageView
         android:id="@+id/imageView5"
@@ -129,7 +129,8 @@
         android:layout_height="wrap_content"
         android:text="@string/top1_price"
         tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="504dp" />
+        tools:layout_editor_absoluteY="504dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView12"
@@ -137,6 +138,7 @@
         android:layout_height="wrap_content"
         android:text="@string/top2_price"
         tools:layout_editor_absoluteX="220dp"
-        tools:layout_editor_absoluteY="507dp" />
+        tools:layout_editor_absoluteY="507dp"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
