@@ -65,7 +65,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageButton"
         app:layout_constraintVertical_bias="0.398"
-        app:srcCompat="@drawable/top2" />
+        app:srcCompat="@drawable/top2"
+        android:contentDescription="@string/top2_name" />
 
     <TextView
         android:id="@+id/textView8"
@@ -109,7 +110,7 @@
         app:layout_constraintVertical_bias="0.663"
 
         android:layout_centerHorizontal = "true"
-        />
+        android:contentDescription="@string/top1_like" />
 
     <ImageButton
         android:id="@+id/imageButton8"
@@ -121,7 +122,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.668"
-         />
+        android:contentDescription="@string/top2_like" />
 
     <TextView
         android:id="@+id/textView11"
@@ -129,7 +130,8 @@
         android:layout_height="wrap_content"
         android:text="@string/top1_price"
         tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="504dp" />
+        tools:layout_editor_absoluteY="504dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView12"
@@ -137,6 +139,7 @@
         android:layout_height="wrap_content"
         android:text="@string/top2_price"
         tools:layout_editor_absoluteX="220dp"
-        tools:layout_editor_absoluteY="507dp" />
+        tools:layout_editor_absoluteY="507dp"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
