@@ -12,10 +12,11 @@
         android:layout_marginTop="4dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
+        android:background="@color/colorindigo1"
         android:fontFamily="@font/concert_one"
         android:text="@string/loginpageheader"
         android:textAlignment="center"
-        android:textColor="@color/BlackHeader"
+        android:textColor="@color/white"
         android:textSize="24sp" />
 
     <TextView
@@ -42,6 +43,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_weight="1"
+            android:contentDescription="@string/fbicon"
             app:srcCompat="@drawable/fb" />
 
         <ImageView
@@ -51,6 +53,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_weight="1"
+            android:contentDescription="@string/google"
             app:srcCompat="@drawable/google2" />
 
     </LinearLayout>
@@ -152,5 +155,10 @@
         android:textColor="@color/BlackHeader"
         android:textSize="24sp"
         android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"></LinearLayout>
 
 </LinearLayout>

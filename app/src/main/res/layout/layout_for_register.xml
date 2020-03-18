@@ -12,10 +12,11 @@ android:layout_height="match_parent">
         android:layout_marginTop="4dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
+        android:background="@color/colorindigo1"
         android:fontFamily="@font/concert_one"
         android:text="@string/newmember"
         android:textAlignment="center"
-        android:textColor="@color/BlackHeader"
+        android:textColor="@color/white"
         android:textSize="24sp" />
 
     <TextView
@@ -42,6 +43,7 @@ android:layout_height="match_parent">
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_weight="1"
+        android:contentDescription="@string/fbicon"
         app:srcCompat="@drawable/fb" />
 
     <ImageView
@@ -51,23 +53,15 @@ android:layout_height="match_parent">
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_weight="1"
+        android:contentDescription="@string/google"
         app:srcCompat="@drawable/google2" />
 
 </LinearLayout>
-
-<EditText
-    android:id="@+id/editText"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:ems="10"
-    android:gravity="start|top"
-    android:inputType="textMultiLine" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:text="@string/or"
         android:textAlignment="center"
         android:textColor="@color/lightBlack"
@@ -190,5 +184,16 @@ android:layout_height="match_parent">
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:text="@string/newsletters" />
+
+    <Button
+        android:id="@+id/buttonsignup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@color/BlackHeader"
+        android:text="@string/signupp"
+        android:textColor="@color/white" />
 
 </LinearLayout>

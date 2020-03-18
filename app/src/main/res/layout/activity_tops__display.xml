@@ -129,8 +129,7 @@
         android:layout_height="wrap_content"
         android:text="@string/top1_price"
         tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="504dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="504dp" />
 
     <TextView
         android:id="@+id/textView12"
@@ -138,7 +137,6 @@
         android:layout_height="wrap_content"
         android:text="@string/top2_price"
         tools:layout_editor_absoluteX="220dp"
-        tools:layout_editor_absoluteY="507dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="507dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
