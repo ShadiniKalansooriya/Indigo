@@ -45,5 +45,10 @@
     <string name="propicdescription">Profile Picture Appears here</string>
     <string name="google">googleicon</string>
     <string name="fbicon">facebook icon</string>
+    <string name="top_category">TOPS</string>
+    <string name="top1_price">1200/-</string>
+    <string name="top2_price">2000/-</string>
+    <string name="logo_name">LOGO</string>
+>>>>>>> origin/master
 
 </resources>
