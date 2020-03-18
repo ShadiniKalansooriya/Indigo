@@ -64,6 +64,9 @@ public abstract class Payment extends  AppCompatActivity implements View.OnClick
         int radiobuttonid = rg.getCheckedRadioButtonId();
         rb = (RadioButton) findViewById(radiobuttonid);
 
+        if (rb.getText().equals("Add to card")) {
+            startActivity(new Intent(getApplicationContext(), Payment.class));
+        }
 
 
     }
