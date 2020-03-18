@@ -8,10 +8,20 @@
     android:layout_height="match_parent"
     tools:context= ".MainActivity" >
 
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+
+
+
 <LinearLayout
 android:id="@+id/linearLayout"
 android:layout_width="fill_parent"
-android:layout_height="fill_parent"
+android:layout_height="wrap_content"
 android:orientation="vertical"
 app:layout_constraintBottom_toBottomOf="parent"
 app:layout_constraintEnd_toEndOf="parent"
@@ -21,102 +31,122 @@ app:layout_constraintTop_toTopOf="parent"
 app:layout_constraintVertical_bias="0.903">
 
 
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="match_parent"
+        android:layout_height="109dp"
+        android:contentDescription="@string/category_heading"
+        app:srcCompat="@drawable/logo" />
 
+    <EditText
+        android:id="@+id/editText4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/category_heading"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textAppearance=" @font/concert_one"
+        android:textColor="@android:color/holo_purple"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:hint = "@string/category_heading"
+        android:autofillHints=""
 
+        />
 
-<ImageButton
-    android:id="@+id/imageButton1"
-    android:layout_width="match_parent"
-    android:layout_height="109dp"
-    android:background="@android:color/white"
-    android:contentDescription="@string/top_button"
-    android:drawableRight="@drawable/tops"
-    android:scaleType="fitEnd"
-    android:src="@drawable/tops"
-    android:text="@string/top_button"
-    android:textAllCaps="true"
-    android:textColor="@android:color/holo_purple"
-    android:layout_centerHorizontal="true"
-    android:layout_marginTop="20dp"
-    android:padding="20dp"/>
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="109dp"
+        android:layout_marginTop="20dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/top1_name"
+        android:drawableRight= " @drawable/tops"
+        android:padding="20dp"
+        android:scaleType="fitEnd"
+        android:text="@string/top_button"
+        android:background="@android:color/holo_purple"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@android:color/white"
+        app:srcCompat="@drawable/denim" />
 
-<ImageButton
-    android:id="@+id/imageButton2"
-    android:layout_width="match_parent"
-    android:layout_height="109dp"
-    android:background="@android:color/white"
-    android:contentDescription="@string/denim_button"
-    android:scaleType="fitEnd"
-    android:text="@string/denim_button"
-    android:textAllCaps="true"
-    android:textColor="@android:color/holo_purple"
-    app:srcCompat="@drawable/denim"
-    android:layout_centerHorizontal="true"
-    android:layout_marginTop="20dp"
-    android:padding="20dp"/>
+    <Button
+        android:id="@+id/imageButton2"
+        android:layout_width="match_parent"
+        android:layout_height="109dp"
+        android:layout_marginTop="20dp"
+        android:drawableEnd= " @drawable/denim"
+        android:
+        android:background="@android:color/holo_purple"
+        android:contentDescription="@string/denim_button"
+        android:padding="20dp"
+        android:scaleType="fitEnd"
+        android:text="@string/denim_button"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        app:srcCompat="@drawable/denim" />
 
-<ImageButton
-    android:id="@+id/imageButton3"
-    android:layout_width="match_parent"
-    android:layout_height="109dp"
-    android:background="@android:color/white"
-    android:contentDescription="@string/pant_button"
-    android:scaleType="fitEnd"
-    android:text="@string/pant_button"
-    android:textAllCaps="true"
-    android:textColor="@android:color/holo_purple"
-    app:srcCompat="@drawable/pants"
-    android:layout_centerHorizontal="true"
-    android:layout_marginTop="20dp"
-    android:padding="20dp"/>
+    <Button
+        android:id="@+id/imageButton3"
+        android:layout_width="match_parent"
+        android:layout_height="109dp"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/holo_purple"
+        android:contentDescription="@string/pant_button"
+        android:padding="20dp"
+        android:scaleType="fitEnd"
+        android:text="@string/pant_button"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        app:srcCompat="@drawable/pants" />
 
-<ImageButton
-    android:id="@+id/imageButton4"
-    android:layout_width="match_parent"
-    android:layout_height="109dp"
-    android:background="@android:color/white"
-    android:contentDescription="@string/dress_button"
-    android:scaleType="fitEnd"
-    android:text="@string/dress_button"
-    android:textAllCaps="true"
-    android:textColor="@android:color/holo_purple"
-    app:srcCompat="@drawable/dress"
-    android:layout_centerHorizontal="true"
-    android:layout_marginTop="20dp"
-    android:padding="20dp"/>
+    <Button
+        android:id="@+id/imageButton4"
+        android:layout_width="match_parent"
+        android:layout_height="109dp"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/holo_purple"
+        android:contentDescription="@string/dress_button"
+        android:padding="20dp"
+        android:scaleType="fitEnd"
+        android:text="@string/dress_button"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        app:srcCompat="@drawable/dress" />
 
-<ImageButton
-    android:id="@+id/imageButton5"
-    android:layout_width="match_parent"
-    android:layout_height="109dp"
-    android:background="@android:color/white"
-    android:contentDescription= "@string/saving_button"
-    android:scaleType="fitEnd"
-    android:text="@string/saving_button"
-    android:textAllCaps="true"
-    android:textColor="@android:color/holo_purple"
-    app:srcCompat="@drawable/savings"
-    android:layout_centerHorizontal="true"
-    android:layout_marginTop="20dp"
-    android:padding="20dp"/>
+    <Button
+        android:id="@+id/imageButton5"
+        android:layout_width="match_parent"
+        android:layout_height="109dp"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/holo_purple"
+        android:contentDescription="@string/saving_button"
+        android:padding="20dp"
+        android:scaleType="fitEnd"
+        android:text="@string/saving_button"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        app:srcCompat="@drawable/savings" />
 
-<ImageButton
-    android:id="@+id/imageButton6"
-    android:layout_width="match_parent"
-    android:layout_height="88dp"
-    android:background="@android:color/white"
-    android:contentDescription= "@string/top_button"
-    android:scaleType="fitEnd"
-    android:text= "@string/top_button"
-    android:textAllCaps="true"
-    android:textColor="#ff3a8aec"
-    app:srcCompat="@drawable/voucher2"
-    android:layout_centerHorizontal="true"
-    android:layout_marginTop="20dp"
-    android:padding="20dp"/>
+    <Button
+        android:id="@+id/imageButton6"
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/holo_purple"
+        android:contentDescription="@string/top_button"
+        android:padding="20dp"
+        android:scaleType="fitEnd"
+        android:text="@string/top_button"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        app:srcCompat="@drawable/voucher2" />
 
 
 
 </LinearLayout>
-
+    </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
