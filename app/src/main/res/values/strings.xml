@@ -2,4 +2,11 @@
     <string name="app_name">IndigoApp</string>
     <string name="loginpageheader">ALREADY REGISTERED ?</string>
     <string name="socialaccountsigninheader">Sign in with social accounts</string>
+    <string name="top_button">Tops</string>
+    <string name="denim_button">Denims</string>
+    <string name="pant_button">Pants</string>
+    <string name="dress_button">Dress</string>
+    <string name="saving_button">Savings</string>
+    <string name="voucher_button">Vouchers</string>
+
 </resources>
