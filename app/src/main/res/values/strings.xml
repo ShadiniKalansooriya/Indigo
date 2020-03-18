@@ -2,7 +2,7 @@
     <string name="app_name">IndigoApp</string>
     <string name="loginpageheader">ALREADY REGISTERED ?</string>
     <string name="socialaccountsigninheader">Sign in with social accounts</string>
-    <string name="or">or</string>
+    <string name="or">OR</string>
     <string name="emailsignin">sign in with your email</string>
     <string name="emailhint">EMAIL ADDRESS</string>
     <string name="pwhint">PASSWORD</string>
@@ -10,4 +10,16 @@
     <string name="signin">SIGN IN</string>
     <string name="newmem">New member?</string>
     <string name="signup">SIGN UP TODAY</string>
+    <string name="newmember">NEW MEMBER?</string>
+    <string name="signupwith">Sign up with social accounts is easy</string>
+    <string name="emailsignup">sign up with your email</string>
+    <string name="name">YOUR NAME*</string>
+    <string name="emailcump">EMAIL ADDRESS*</string>
+    <string name="passwordcump">PASSWORD*</string>
+    <string name="dateofbirth">DATE OF BIRTH</string>
+    <string name="gender">GENDER</string>
+    <string name="radiobuttongirl">Girl</string>
+    <string name="RadioButtonguy">Guy</string>
+    <string name="termsandconditions"><![CDATA[I accept Terms & Conditions]]></string>
+    <string name="newsletters">Subscribe to Newsletters</string>
 </resources>
