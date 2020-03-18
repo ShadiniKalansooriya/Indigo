@@ -32,5 +32,18 @@
     <string name="signin">SIGN IN</string>
     <string name="newmem">New member?</string>
     <string name="signup">SIGN UP TODAY</string>
+    <string name="signupp">SIGN UP</string>
+    <string name="Myaccount">MY ACCOUNT</string>
+    <string name="myname">Shadini Kalansooriya</string>
+    <string name="btnAccountOverview">ACCOUNT OVERVIEW</string>
+    <string name="btnAddressBoook">ADDRESSS BOOK</string>
+    <string name="btnOrderHistory">ORDER HISTORY</string>
+    <string name="btnWISHLIST" >WISHLIST</string>
+    <string name="btnStorecredit">STORE CREDIT</string>
+    <string name="btnNewsLetter">NEWSLETTER</string>
+    <string name="btnLogout">LOGOUT</string>
+    <string name="propicdescription">Profile Picture Appears here</string>
+    <string name="google">googleicon</string>
+    <string name="fbicon">facebook icon</string>
 
 </resources>
