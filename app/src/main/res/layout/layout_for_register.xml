@@ -63,15 +63,15 @@ android:layout_height="match_parent">
     android:gravity="start|top"
     android:inputType="textMultiLine" />
 
-<TextView
-    android:id="@+id/textView3"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="8dp"
-    android:text="@string/or"
-    android:textAlignment="center"
-    android:textColor="@color/lightBlack"
-    android:textSize="24sp" />
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/or"
+        android:textAlignment="center"
+        android:textColor="@color/lightBlack"
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/textView4"
@@ -116,7 +116,7 @@ android:layout_height="match_parent">
         android:layout_marginTop="8dp"
         android:layout_marginRight="8dp"
         android:ems="10"
-        android:hint="@string/passwordcump"
+        android:hint="@string/pwcump"
         android:inputType="textPassword"
         android:textSize="24sp" />
 
@@ -127,7 +127,7 @@ android:layout_height="match_parent">
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginRight="8dp"
-        android:text="@string/dateofbirth"
+        android:text="@string/dob"
         android:textColor="@color/lightBlack"
         android:textSize="18sp" />
 
@@ -161,7 +161,7 @@ android:layout_height="match_parent">
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/radiobuttongirl"
+            android:text="@string/radiobuttonGirl"
             android:textColor="@color/lightBlack"
             android:textSize="18sp" />
 
@@ -170,7 +170,7 @@ android:layout_height="match_parent">
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/RadioButtonguy"
+            android:text="@string/radioButtonguy"
             android:textColor="@color/lightBlack"
             android:textSize="18sp" />
 
@@ -182,7 +182,7 @@ android:layout_height="match_parent">
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:text="@string/termsandconditions" />
+        android:text="@string/termsandcondition" />
 
     <CheckBox
         android:id="@+id/checkBoxNewsletters"
