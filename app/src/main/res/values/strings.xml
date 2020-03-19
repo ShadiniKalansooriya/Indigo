@@ -38,7 +38,7 @@
     <string name="btnAccountOverview">ACCOUNT OVERVIEW</string>
     <string name="btnAddressBoook">ADDRESSS BOOK</string>
     <string name="btnOrderHistory">ORDER HISTORY</string>
-    <string name="btnWISHLIST" >WISHLIST</string>
+    <string name="btnWISHLIST">WISHLIST</string>
     <string name="btnStorecredit">STORE CREDIT</string>
     <string name="btnNewsLetter">NEWSLETTER</string>
     <string name="btnLogout">LOGOUT</string>
@@ -62,6 +62,10 @@
     <string name="msg">How you like it!</string>
     <string name="top1_like">Like button</string>
     <string name="top2_like">Like button</string>
+    <string name="add_to_button">Add To Cart</string>
+    <string name="remove_from_cart">Remove From Cart</string>
+    <string name="current_selected_number">2</string>
+    <string name="current_selected_number_2">3</string>
 
     >>>>>>> origin/master
 

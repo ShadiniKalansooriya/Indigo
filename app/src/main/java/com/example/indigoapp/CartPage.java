@@ -2,16 +2,13 @@ package com.example.indigoapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 
-@SuppressLint("Registered")
-public class Tops_Display extends AppCompatActivity {
+public class CartPage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tops__display);
-
+        setContentView(R.layout.activity_cart_page);
     }
 }
