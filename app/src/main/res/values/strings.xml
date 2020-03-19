@@ -66,7 +66,11 @@
     <string name="remove_from_cart">Remove From Cart</string>
     <string name="current_selected_number">2</string>
     <string name="current_selected_number_2">3</string>
-
+    <string name="shadiniemail">shadinikala@gmail.com</string>
+    <string name="password">*********</string>
+    <string name="DOB">26/05/1998</string>
+    <string name="edit">EDIT</string>
+    <string name="DELETE">DELETE</string>
     >>>>>>> origin/master
 
 </resources>

@@ -8,8 +8,6 @@ import android.widget.TextView;
 
 import com.example.indigoapp.R;
 
-import org.w3c.dom.Text;
-
 import java.util.Calendar;
 
 import androidx.annotation.Nullable;
@@ -26,7 +24,7 @@ public class RegisterDetailsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.layout_for_register);
+        setContentView(R.layout.activity_for_register);
 
         TextViewdate = (TextView)findViewById(R.id.textViewdate);
         TextViewdateSelect = (TextView)findViewById(R.id.textViewDOB);
