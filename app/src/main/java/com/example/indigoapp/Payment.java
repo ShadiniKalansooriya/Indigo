@@ -13,7 +13,11 @@ import androidx.appcompat.app.AppCompatActivity;
 public abstract class Payment extends  AppCompatActivity implements View.OnClickListener{
 
 
-    EditText Uname, email, lctn, subto;
+    EditText Uname;
+    EditText email;
+    EditText lctn;
+    EditText subto;
+    TextView address;
     RadioButton paymentM;
     Button btnS,btnS1,btnU;
     EditText et1, et2, et3,et7,et8,et9;
@@ -43,6 +47,7 @@ public abstract class Payment extends  AppCompatActivity implements View.OnClick
         Uname = (EditText) findViewById(R.id.et1);
         email = (EditText) findViewById(R.id.et2);
         subto = (EditText) findViewById(R.id.et3);
+        address= (TextView) findViewById(R.id.address);
         paymentM = (RadioButton) findViewById(R.id.radioButton1);
         paymentM = (RadioButton) findViewById(R.id.radioButton2);
 
