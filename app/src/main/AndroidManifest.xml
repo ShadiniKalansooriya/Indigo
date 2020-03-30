@@ -12,23 +12,22 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="ExtraText">
-        <activity android:name=".CartPage"></activity>
-        <activity android:name=".Wishlist" />
-        <activity android:name=".Feedback">
+        <activity android:name=".views.Wishlist" />
+        <activity android:name=".views.Feedback">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ProductsDisplay">
+        <activity android:name=".views.ProductsDisplay">
             <intent-filter>
                 <action android:name="android.intent.action.ALL_APPS" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".views.MainActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

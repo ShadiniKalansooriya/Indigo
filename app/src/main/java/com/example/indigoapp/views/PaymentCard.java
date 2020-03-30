@@ -1,10 +1,12 @@
-package com.example.indigoapp;
+package com.example.indigoapp.views;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.indigoapp.R;
 
 import androidx.appcompat.app.AppCompatActivity;
 

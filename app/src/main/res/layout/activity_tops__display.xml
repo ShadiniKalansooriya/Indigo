@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Tops_Display">
+    tools:context=".views.Tops_Display">
 
 
     <ImageButton
@@ -242,8 +242,11 @@
         android:layout_height="21dp"
         android:text="@string/current_selected_number"
         android:textAlignment="center"
-        tools:layout_editor_absoluteX="136dp"
-        tools:layout_editor_absoluteY="552dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.383"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="547dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView14"
@@ -251,7 +254,10 @@
         android:layout_height="21dp"
         android:text="@string/current_selected_number_2"
         android:textAlignment="center"
-        tools:layout_editor_absoluteX="330dp"
-        tools:layout_editor_absoluteY="552dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.898"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="551dp"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

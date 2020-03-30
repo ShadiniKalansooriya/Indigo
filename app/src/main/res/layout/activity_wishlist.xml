@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Wishlist">
+    tools:context=".views.Wishlist">
 
     <TextView
         android:id="@+id/textView9"
@@ -118,7 +118,8 @@
         android:inputType="textPersonName"
         android:text="shortsleeve"
         tools:layout_editor_absoluteX="197dp"
-        tools:layout_editor_absoluteY="405dp" />
+        tools:layout_editor_absoluteY="405dp"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/button3"

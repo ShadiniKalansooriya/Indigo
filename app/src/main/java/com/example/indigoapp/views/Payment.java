@@ -1,4 +1,4 @@
-package com.example.indigoapp;
+package com.example.indigoapp.views;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,9 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+
+import com.example.indigoapp.R;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public abstract class Payment extends  AppCompatActivity implements View.OnClickListener{
