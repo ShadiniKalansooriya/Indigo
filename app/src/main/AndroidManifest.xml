@@ -7,9 +7,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-
-
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission
         android:name="android.permission.SET_TIME"
         tools:ignore="ProtectedPermissions" />
@@ -33,6 +31,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="ExtraText">
+        <activity android:name=".views.GalleryView"></activity>
+        <activity android:name=".views.Gallery" />
         <activity android:name=".views.Wishlist" />
         <activity android:name=".views.Feedback">
             <intent-filter>
@@ -50,10 +50,9 @@
         </activity>
         <activity android:name=".views.MainActivity" />
 
-
-        <meta-data android:name="com.google.android.backup.api_key" android:value="AEdPqrEAAAAIIDptAmYk4Ik2pLOl3bTD3yAmBs1n18T_UfRtsw" />
-
-
+        <meta-data
+            android:name="com.google.android.backup.api_key"
+            android:value="AEdPqrEAAAAIIDptAmYk4Ik2pLOl3bTD3yAmBs1n18T_UfRtsw" />
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
