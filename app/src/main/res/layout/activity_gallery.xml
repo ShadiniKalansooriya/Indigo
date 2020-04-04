@@ -25,11 +25,11 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="40dp"
         android:layout_marginRight="20dp"
-        android:background="@color/lightBlack"
-        android:fontFamily="@font/amita_bold"
+        android:background="@color/white"
+        android:fontFamily="@font/cabin_sketch"
         android:text="@string/Upload"
         android:textAlignment="center"
-        android:textColor="@color/white"
+        android:textColor="@color/indigodark1"
         android:textSize="24sp" />
 
     <ImageView
