@@ -1,14 +1,16 @@
-package com.example.indigoapp;
+package com.example.indigoapp.views;
 
 import androidx.appcompat.app.AppCompatActivity;
+import com.example.indigoapp.R;
+
 
 import android.os.Bundle;
 
-public class Feedback extends AppCompatActivity {
+public class GalleryView extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_feedback);
+        setContentView(R.layout.activity_gallery_view);
     }
 }

@@ -4,29 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Payment"
+    tools:context=".views.Payment"
     android:background="@drawable/m2"
 
     >
 
     <TextView
         android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="396dp"
+        android:layout_height="49dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:background="@android:color/holo_purple"
+        android:fontFamily="@font/concert_one"
         android:text="Card Information"
-        android:textColor="@android:color/black"
+        android:textAlignment="center"
+        android:textColor="@color/white"
         android:textSize="30dp"
-        android:textStyle="bold"
+        android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.445"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.05" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/nameCard"
@@ -89,7 +92,7 @@
         android:id="@+id/btnS1"
         android:layout_width="121dp"
         android:layout_height="51dp"
-        android:background="#708090"
+        android:background="@android:color/holo_purple"
         android:text="Purchase"
         android:textColor="@android:color/black"
         android:textColorHint="@android:color/black"
@@ -159,15 +162,15 @@
         android:id="@+id/btnU"
         android:layout_width="114dp"
         android:layout_height="50dp"
+        android:background="@android:color/holo_purple"
         android:text="Update"
         android:textSize="18dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.174"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:textStyle="bold"
-        android:background="#708090"
         app:layout_constraintVertical_bias="0.6" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
