@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public abstract class Payment extends  AppCompatActivity implements View.OnClickListener{
@@ -71,6 +72,33 @@ public abstract class Payment extends  AppCompatActivity implements View.OnClick
 
         if (rb.getText().equals("Add to card")) {
             startActivity(new Intent(getApplicationContext(), Payment.class));
+        }
+
+
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.btnS:
+                if (et1.length() != 0 && et2.length() != 0 && et3.length() != 0) {
+                    et1.setText("");
+                    et2.setText("");
+                    et3.setText("");
+
+                    Toast.makeText(Payment.this, "confirm purchurch", Toast.LENGTH_LONG).show();
+                } else if (et1.getText().toString().trim().matches(emailPattern)) {
+                    Toast.makeText(Payment.this, "valid email", Toast.LENGTH_LONG).show();
+                } else if (et1.getText().toString().isEmpty()) {
+                    Toast.makeText(Payment.this, " Name is empty", Toast.LENGTH_LONG).show();
+                } else if (et2.getText().toString().isEmpty()) {
+                    Toast.makeText(Payment.this, "Email is empty", Toast.LENGTH_LONG).show();
+                } else if (et3.getText().toString().isEmpty()) {
+                    Toast.makeText(Payment.this, "Total is empty", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(Payment.this, "invalid", Toast.LENGTH_LONG).show();
+                }
+
         }
 
 
