@@ -1,4 +1,4 @@
-package com.example.indigoapp.Views;
+package com.example.indigoapp.views;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -16,6 +16,12 @@ import android.widget.Button;
 import android.widget.Toolbar;
 
 import com.example.indigoapp.R;
+import com.example.indigoapp.views.Feedback;
+import com.example.indigoapp.views.GalleryView;
+import com.example.indigoapp.views.Login;
+import com.example.indigoapp.views.MyAccount;
+import com.example.indigoapp.views.Register;
+import com.example.indigoapp.views.Wishlist;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -64,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(MainActivity.this,Login.class);
+                Intent intent = new Intent(MainActivity.this, Login.class);
 
                 startActivity(intent);
             }
@@ -74,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(MainActivity.this,Register.class);
+                Intent intent = new Intent(MainActivity.this, Register.class);
 
                 startActivity(intent);
             }
@@ -112,7 +118,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(intent1);
                 break;
             case R.id.nav_MyAccount:
-                Intent intent6 =new Intent(MainActivity.this,MyAccount.class);
+                Intent intent6 =new Intent(MainActivity.this, MyAccount.class);
                 startActivity(intent6);
                 break;
 
@@ -121,7 +127,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(intent7);
                 break;
             case R.id.nav_Gallery:
-                Intent intent2 =new Intent(MainActivity.this,GalleryView.class);
+                Intent intent2 =new Intent(MainActivity.this, GalleryView.class);
                 startActivity(intent2);
                 break;
 
