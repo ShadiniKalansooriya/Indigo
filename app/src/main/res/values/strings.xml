@@ -76,6 +76,8 @@
     <string name="hashTag">#AddYourHashTagHere</string>
     <string name="ClickGalleryView">Click to check the Gallery</string>
     <string name="Gallery">Gallery</string>
-    >>>>>>> origin/master
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
 
 </resources>

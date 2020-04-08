@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_shoppingBag"
+            android:icon="@drawable/ic_shopping_basket_black_24dp"
+            android:title="Shopping Bag" />
+        <item
+            android:id="@+id/nav_WishList"
+            android:icon="@drawable/wishlist"
+            android:title="Wish List" />
+
+        <item
+            android:id="@+id/nav_Promotions"
+            android:icon="@drawable/promotions"
+            android:title="Promotions" />
+        <item
+            android:id="@+id/nav_Gallery"
+            android:icon="@drawable/gallery2"
+            android:title="Gallery" />
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/about"
+            android:title="About" />
+        <item
+            android:id="@+id/nav_contactUs"
+            android:icon="@drawable/contactus"
+            android:title="Contact Us" />
+
+        <item
+            android:id="@+id/nav_Feedback"
+            android:icon="@drawable/feedback"
+            android:title="Feedback" />
+
+    </group>
+
+
+        <item android:title="Profile">
+            <menu>
+                <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_Login"
+            android:icon="@drawable/login"
+            android:title="Login" />
+        <item
+            android:id="@+id/nav_MyAccount"
+            android:icon="@drawable/myaccount2"
+            android:title="My Account" />
+
+
+        <item
+            android:id="@+id/nav_Logout"
+            android:icon="@drawable/logout"
+            android:title="Logout" />
+
+                </group>
+            </menu>
+        </item>
+
+
+</menu>
