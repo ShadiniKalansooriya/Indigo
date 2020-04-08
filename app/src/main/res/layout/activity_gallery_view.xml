@@ -7,6 +7,8 @@
     android:orientation="vertical"
     tools:context=".views.GalleryView">
 
+
+
     <TextView
         android:id="@+id/textView13"
         android:layout_width="match_parent"
@@ -17,6 +19,24 @@
         android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/windowBackground"
+            android:foregroundGravity="bottom"
+            app:menu="@menu/bottom_nav" />
+
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"

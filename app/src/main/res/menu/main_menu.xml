@@ -5,37 +5,37 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_home"
-            android:title="Home" />
+            android:title="@string/home" />
         <item
             android:id="@+id/nav_shoppingBag"
             android:icon="@drawable/ic_shopping_basket_black_24dp"
-            android:title="Shopping Bag" />
+            android:title="@string/shopping_bag" />
         <item
             android:id="@+id/nav_WishList"
             android:icon="@drawable/wishlist"
-            android:title="Wish List" />
+            android:title="@string/wish_list" />
 
         <item
             android:id="@+id/nav_Promotions"
             android:icon="@drawable/promotions"
-            android:title="Promotions" />
+            android:title="@string/promotions" />
         <item
             android:id="@+id/nav_Gallery"
             android:icon="@drawable/gallery2"
-            android:title="Gallery" />
+            android:title="@string/gallery" />
         <item
             android:id="@+id/nav_about"
             android:icon="@drawable/about"
-            android:title="About" />
+            android:title="@string/aboutnav" />
         <item
             android:id="@+id/nav_contactUs"
             android:icon="@drawable/contactus"
-            android:title="Contact Us" />
+            android:title="@string/contact_us" />
 
         <item
             android:id="@+id/nav_Feedback"
             android:icon="@drawable/feedback"
-            android:title="Feedback" />
+            android:title="@string/feedback" />
 
     </group>
 

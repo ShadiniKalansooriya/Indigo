@@ -54,8 +54,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         //Hide or show items
         Menu menu = navigationView.getMenu();
-        menu.findItem(R.id.nav_Logout).setVisible(false);
-        menu.findItem(R.id.nav_MyAccount).setVisible(false);
+//        menu.findItem(R.id.nav_Logout).setVisible(false);
+//        menu.findItem(R.id.nav_MyAccount).setVisible(false);
 
         navigationView.bringToFront();
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
