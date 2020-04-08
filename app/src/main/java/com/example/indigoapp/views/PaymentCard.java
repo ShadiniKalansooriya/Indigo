@@ -1,4 +1,4 @@
-package com.example.indigoapp.views;
+package com.example.indigoapp.Views;
 
 import android.os.Bundle;
 import android.view.View;

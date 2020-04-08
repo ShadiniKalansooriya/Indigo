@@ -1,4 +1,4 @@
-package com.example.indigoapp.views;
+package com.example.indigoapp.Views;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;

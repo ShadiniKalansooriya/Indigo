@@ -1,4 +1,4 @@
-package com.example.indigoapp.views;
+package com.example.indigoapp.Views;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,8 +8,11 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
+
 
 import com.example.indigoapp.R;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -78,6 +81,33 @@ public abstract class Payment extends  AppCompatActivity implements View.OnClick
 
 
     }
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.btnS:
+                if (et1.length() != 0 && et2.length() != 0 && et3.length() != 0) {
+                    et1.setText("");
+                    et2.setText("");
+                    et3.setText("");
+
+                    Toast.makeText(Payment.this, "confirm your payment", Toast.LENGTH_LONG).show();
+                } else if (et1.getText().toString().trim().matches(emailPattern)) {
+                    Toast.makeText(Payment.this, "Please put valid email", Toast.LENGTH_LONG).show();
+                } else if (et1.getText().toString().isEmpty()) {
+                    Toast.makeText(Payment.this, " Name is empty", Toast.LENGTH_LONG).show();
+                } else if (et2.getText().toString().isEmpty()) {
+                    Toast.makeText(Payment.this, "Email is empty", Toast.LENGTH_LONG).show();
+                } else if (et3.getText().toString().isEmpty()) {
+                    Toast.makeText(Payment.this, "Total is empty", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(Payment.this, "invalid", Toast.LENGTH_LONG).show();
+                }
+
+        }
+
+
+    }
+
 
 
 }
