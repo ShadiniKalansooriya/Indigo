@@ -1,11 +1,15 @@
 package com.example.indigoapp.views;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Button;
 
 import com.example.indigoapp.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -16,7 +20,12 @@ public class MyAccount extends AppCompatActivity implements NavigationView.OnNav
 
     //Variables
 
-    BottomNavigationView navigationView;
+    BottomNavigationView bottomNavigationView;
+    //variables
+    DrawerLayout drawerLayout;
+    NavigationView navigationView;
+    androidx.appcompat.widget.Toolbar toolbar;
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
 
@@ -60,43 +69,94 @@ public class MyAccount extends AppCompatActivity implements NavigationView.OnNav
         setContentView(R.layout.activity_for_myaccount);
 
         /*=============Hooks================== */
-        navigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
+        /*===================Hooks======================*/
+        drawerLayout = findViewById(R.id.drawer_Layout);
+        navigationView = findViewById(R.id.nav_view);
+        toolbar = findViewById(R.id.toolbar);
+
+        toolbar.setTitle("My Account");
+        /*===========ToolBar ========= */
+
+        setSupportActionBar(toolbar);
+
+        navigationView.bringToFront();
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+
+        navigationView.setNavigationItemSelectedListener(this);
+
+        navigationView.setCheckedItem(R.id.nav_MyAccount);
 
         //bottom navigationview listener
-        navigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        BottomNavigationViewHelper.disableShiftMode(navigationView);
+        BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
 
+
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        if(drawerLayout.isDrawerOpen(GravityCompat.START)){
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
+        else {
+            super.onBackPressed();
+        }
 
     }
 
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        switch (menuItem.getItemId()) {
-            case R.id.nav_b_home:
+
+        switch (menuItem.getItemId()){
+            case R.id.nav_home:
                 break;
 
-            case R.id.nav_b_shoppingbag:
-                Intent intent = new Intent(MyAccount.this, MainActivity.class);
+            case R.id.nav_shoppingBag:
+                Intent intent =new Intent(MyAccount.this,MainActivity.class);
                 startActivity(intent);
                 break;
 
-            case R.id.nav_b_wishlist:
+            case R.id.nav_WishList:
                 Intent intent1 = new Intent(MyAccount.this, Wishlist.class);
                 startActivity(intent1);
                 break;
+            case R.id.nav_MyAccount:
+                Intent intent6 =new Intent(MyAccount.this, MyAccount.class);
+                startActivity(intent6);
+                break;
 
-            case R.id.nav_b_gallery:
-                Intent intent2 = new Intent(MyAccount.this, GalleryView.class);
+            case R.id.nav_Promotions:
+                Intent intent7 = new Intent(MyAccount.this, MainActivity.class);
+                startActivity(intent7);
+                break;
+            case R.id.nav_Gallery:
+                Intent intent2 =new Intent(MyAccount.this, GalleryView.class);
                 startActivity(intent2);
                 break;
 
-            case R.id.nav_b_category:
-                Intent intent3 = new Intent(MyAccount.this, ProductsDisplay.class);
+            case R.id.nav_about:
+                Intent intent3 = new Intent(MyAccount.this, MainActivity.class);
                 startActivity(intent3);
+                break;
+            case R.id.nav_contactUs:
+                Intent intent4 =new Intent(MyAccount.this,MainActivity.class);
+                startActivity(intent4);
+                break;
 
+            case R.id.nav_Feedback:
+                Intent intent5 = new Intent(MyAccount.this, Feedback.class);
+                startActivity(intent5);
+                break;
         }
+
+        drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
+
 }
