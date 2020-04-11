@@ -7,21 +7,13 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
-import android.media.tv.TvContract;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toolbar;
 
 import com.example.indigoapp.R;
-import com.example.indigoapp.views.Feedback;
-import com.example.indigoapp.views.GalleryView;
-import com.example.indigoapp.views.Login;
-import com.example.indigoapp.views.MyAccount;
-import com.example.indigoapp.views.Register;
-import com.example.indigoapp.views.Wishlist;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -80,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(MainActivity.this, Register.class);
+                Intent intent = new Intent(MainActivity.this, RegisterDetailsActivity.class);
 
                 startActivity(intent);
             }

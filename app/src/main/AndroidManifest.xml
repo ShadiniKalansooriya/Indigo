@@ -36,8 +36,9 @@
         <activity android:name=".views.Wishlist" />
         <activity android:name=".views.Feedback"/>
         <activity android:name=".views.Login"/>
-        <activity android:name=".views.Register"/>
         <activity android:name=".views.MyAccount"/>
+        <activity android:name=".views.RegisterDetailsActivity"/>
+
         <activity android:name=".views.AccountOverview"/>
 
         <activity android:name=".views.ProductsDisplay">
