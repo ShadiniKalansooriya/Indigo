@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.provider.BaseColumns;
 
 public class DbHelper extends SQLiteOpenHelper {
 
@@ -14,18 +15,28 @@ public class DbHelper extends SQLiteOpenHelper {
 
     //All the Table Names
 
+    @Override
+    public void onConfigure(SQLiteDatabase db) {
+        db.setForeignKeyConstraintsEnabled(true);
+    }
+
+
     public static final String TABLE_USER = "User";
+
 
     //Columns of TABLE_USER
     public static final String COL_USER_USER_ID = "UserID";
     //public static final String COL_USER_USERNAME = "UserName";
     public static final String COL_USER_NAME = "Name";
-    public static final String COL_USER_EMAIL="Email";
-    public static final String COL_USER_GENDER="Gender";
+    public static final String COL_USER_EMAIL = "Email";
+    public static final String COL_USER_GENDER = "Gender";
     public static final String COL_USER_ADDRESS = "Address";
     public static final String COL_USER_PASSWORD = "UserPassword";
     public static final String COL_LAST_LOGIN_DATE = "LastLoginDate";
     public static final String COL_USER_TYPE = "UserType";
+
+
+
 
 
     public DbHelper(Context context) {
@@ -49,7 +60,11 @@ public class DbHelper extends SQLiteOpenHelper {
         db.execSQL(sql_user);
 
 
-    }
+
+
+
+}
+
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
