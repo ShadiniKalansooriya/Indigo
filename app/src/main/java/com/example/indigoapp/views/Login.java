@@ -2,7 +2,12 @@ package com.example.indigoapp.views;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.indigoapp.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -14,7 +19,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-public class Login  extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class Login extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+    EditText editTextEmail, editTextPassword;
+    Button buttonSignIn;
+    TextView textViewSignUp;
 
     //Variables
 
@@ -78,7 +87,7 @@ public class Login  extends AppCompatActivity implements NavigationView.OnNaviga
         setSupportActionBar(toolbar);
 
         navigationView.bringToFront();
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
@@ -92,15 +101,26 @@ public class Login  extends AppCompatActivity implements NavigationView.OnNaviga
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
 
 
+        editTextEmail = findViewById(R.id.editTextEmail);
+        editTextPassword = findViewById(R.id.editTextPassword);
+        buttonSignIn = findViewById(R.id.buttonSignIn);
+        textViewSignUp = findViewById(R.id.textViewSignUp);
+
+        textViewSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent registerIntent = new Intent(Login.this,RegisterDetailsActivity.class);
+                startActivity(registerIntent);
+            }
+        });
     }
 
     @Override
     public void onBackPressed() {
 
-        if(drawerLayout.isDrawerOpen(GravityCompat.START)){
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START);
-        }
-        else {
+        } else {
             super.onBackPressed();
         }
 
@@ -110,12 +130,12 @@ public class Login  extends AppCompatActivity implements NavigationView.OnNaviga
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
-        switch (menuItem.getItemId()){
+        switch (menuItem.getItemId()) {
             case R.id.nav_home:
                 break;
 
             case R.id.nav_shoppingBag:
-                Intent intent =new Intent(Login.this,MainActivity.class);
+                Intent intent = new Intent(Login.this, MainActivity.class);
                 startActivity(intent);
                 break;
 
@@ -124,7 +144,7 @@ public class Login  extends AppCompatActivity implements NavigationView.OnNaviga
                 startActivity(intent1);
                 break;
             case R.id.nav_MyAccount:
-                Intent intent6 =new Intent(Login.this, MyAccount.class);
+                Intent intent6 = new Intent(Login.this, MyAccount.class);
                 startActivity(intent6);
                 break;
 
@@ -133,7 +153,7 @@ public class Login  extends AppCompatActivity implements NavigationView.OnNaviga
                 startActivity(intent7);
                 break;
             case R.id.nav_Gallery:
-                Intent intent2 =new Intent(Login.this, GalleryView.class);
+                Intent intent2 = new Intent(Login.this, GalleryView.class);
                 startActivity(intent2);
                 break;
 
@@ -142,7 +162,7 @@ public class Login  extends AppCompatActivity implements NavigationView.OnNaviga
                 startActivity(intent3);
                 break;
             case R.id.nav_contactUs:
-                Intent intent4 =new Intent(Login.this,MainActivity.class);
+                Intent intent4 = new Intent(Login.this, MainActivity.class);
                 startActivity(intent4);
                 break;
 
