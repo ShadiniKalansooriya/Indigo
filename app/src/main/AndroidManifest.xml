@@ -3,9 +3,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.indigoapp">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.SET_TIME"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission
+        android:name="android.permission.WRITE_SECURE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
 
-    <application xmlns:tools="http://schemas.android.com/tools"
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <application
         android:allowBackup="true"
         android:exported="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,35 +30,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:ignore="ExtraText"
-        tools:replace="android:theme">
-        <activity android:name=".RecyclerMainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        tools:ignore="ExtraText">
+        <activity android:name=".views.GalleryView"></activity>
+        <activity android:name=".views.Gallery" />
+        <activity android:name=".views.Wishlist" />
+        <activity android:name=".views.Feedback"/>
+        <activity android:name=".views.Login"/>
+        <activity android:name=".views.MyAccount"/>
+        <activity android:name=".views.RegisterDetailsActivity"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".ProductsDetails" />
-        <activity android:name=".Vouchers_display" />
-        <activity android:name=".Savings_display" />
-        <activity android:name=".Dresses_display" />
-        <activity android:name=".Pants_display" />
-        <activity android:name=".Denims_display" />
-        <activity android:name=".CartPage" />
-        <activity android:name=".Wishlist" />
-        <activity android:name=".Feedback">
-        </activity>
-        <activity android:name=".ProductsDisplay">
-        </activity>
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".views.AccountOverview"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <activity android:name=".views.ProductsDisplay">
+        </activity>
+        <activity android:name=".views.MainActivity" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
         </activity>
 
+        <meta-data
+            android:name="com.google.android.backup.api_key"
+            android:value="AEdPqrEAAAAIIDptAmYk4Ik2pLOl3bTD3yAmBs1n18T_UfRtsw" />
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

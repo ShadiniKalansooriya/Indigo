@@ -54,7 +54,7 @@
     <string name="payment">Payment</string>
     <string name="sub_total">Sub total</string>
     <string name="payment_method">Payment method</string>
-    <string name="add_to_card">Add to cart</string>
+    <string name="add_to_card">Add to card</string>
     <string name="cash_on_delivery">Cash on delivery</string>
     <string name="wishlist">wishlist</string>
     <string name="delete">delete</string>
@@ -71,9 +71,27 @@
     <string name="DOB">26/05/1998</string>
     <string name="edit">EDIT</string>
     <string name="DELETE">DELETE</string>
-    <string name="add_to_cart_btn">Add to Cart</string>
-    <string name="sampl_btn">Sample</string>
+    <string name="loveIndigo">Love Indigo</string>
+    <string name="Upload">Upload a picture in Indigo clothing to get featured</string>
+    <string name="hashTag">#AddYourHashTagHere</string>
+    <string name="ClickGalleryView">Click to check the Gallery</string>
+    <string name="Gallery">Gallery</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="home">Home</string>
+    <string name="shopping_bag">Shopping Bag</string>
+    <string name="wish_list">Wish List</string>
+    <string name="promotions">Promotions</string>
+    <string name="gallery">Gallery</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="feedback">Feedback</string>
+    <string name="aboutnav">About</string>
+    <string name="category">Category</string>
+    <string name="AlreadyRegistered">Already Registered ?</string>
+    <string name="uploadApic">Upload A picture</string>
+    <string name="comPW">CONFIRM PASSWORD</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="confPW">Confirm Password</string>
 
-    >>>>>>> origin/master
 
 </resources>

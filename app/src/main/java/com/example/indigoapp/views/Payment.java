@@ -1,4 +1,4 @@
-package com.example.indigoapp;
+package com.example.indigoapp.Views;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,12 +8,22 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
+
+
+import com.example.indigoapp.R;
+
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public abstract class Payment extends  AppCompatActivity implements View.OnClickListener{
 
 
-    EditText Uname, email, lctn, subto;
+    EditText Uname;
+    EditText email;
+    EditText lctn;
+    EditText subto;
+    TextView address;
     RadioButton paymentM;
     Button btnS,btnS1,btnU;
     EditText et1, et2, et3,et7,et8,et9;
@@ -43,6 +53,7 @@ public abstract class Payment extends  AppCompatActivity implements View.OnClick
         Uname = (EditText) findViewById(R.id.et1);
         email = (EditText) findViewById(R.id.et2);
         subto = (EditText) findViewById(R.id.et3);
+        address= (TextView) findViewById(R.id.address);
         paymentM = (RadioButton) findViewById(R.id.radioButton1);
         paymentM = (RadioButton) findViewById(R.id.radioButton2);
 
@@ -70,6 +81,33 @@ public abstract class Payment extends  AppCompatActivity implements View.OnClick
 
 
     }
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.btnS:
+                if (et1.length() != 0 && et2.length() != 0 && et3.length() != 0) {
+                    et1.setText("");
+                    et2.setText("");
+                    et3.setText("");
+
+                    Toast.makeText(Payment.this, "confirm your payment", Toast.LENGTH_LONG).show();
+                } else if (et1.getText().toString().trim().matches(emailPattern)) {
+                    Toast.makeText(Payment.this, "Please put valid email", Toast.LENGTH_LONG).show();
+                } else if (et1.getText().toString().isEmpty()) {
+                    Toast.makeText(Payment.this, " Name is empty", Toast.LENGTH_LONG).show();
+                } else if (et2.getText().toString().isEmpty()) {
+                    Toast.makeText(Payment.this, "Email is empty", Toast.LENGTH_LONG).show();
+                } else if (et3.getText().toString().isEmpty()) {
+                    Toast.makeText(Payment.this, "Total is empty", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(Payment.this, "invalid", Toast.LENGTH_LONG).show();
+                }
+
+        }
+
+
+    }
+
 
 
 }
