@@ -1,9 +1,10 @@
 package com.example.indigoapp;
+import android.os.Bundle;
+import android.util.Log;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import android.os.Bundle;
-import android.util.Log;
 
 import java.util.ArrayList;
 
@@ -26,47 +27,32 @@ class RecyclerMainActivity extends AppCompatActivity {
     }
     private void initImageBitmaps(){
         Log.d(TAG, "initImageBitmaps: started");
-        mImageUrls.add("https://lp-cms-production.imgix.net/2019- 06/b4fbc706dab2a70a96588309ed268a1a-sri-lanka.jpeg");
-        mNames.add("Seegiriya");
+        mImageUrls.add("https://5.imimg.com/data5/CW/YG/MY-46057090/ladies-ripped-jeans-500x500.jpg");
+        mNames.add("Denim1");
         mImageDesc.add("desc1");
         mImagePrice.add("1000");
-        mImageUrls.add("https://img.traveltriangle.com/blog/wp-content/tr:w-700,h400/uploads/2015/06/Demodara-Nine-Arch-Bridge.jpg");
-        mNames.add("Ella");
+        mImageUrls.add("https://s3.ap-south-1.amazonaws.com/www.kellyfelder.com/gallery/6582a7fe61fe2dcdf4a2fccd67171de6956c0e43.jpg");
+        mNames.add("Denim1");
         mImageDesc.add("desc1");
         mImagePrice.add("1000");
-        mImageUrls.add("https://img.traveltriangle.com/blog/wp-content/tr:w-700,h400/uploads/2015/06/Train-ride-from-Kandy-to-Nuwara-Eliya.jpg");
-        mNames.add("Nuwara Eliya");
+        mImageUrls.add("https://cdni.onedayonly.co.za/catalog/product/i/m/img_1311_3_4_1_2_1.jpg");
+        mNames.add(" Denim1");
         mImageDesc.add("desc1");
         mImagePrice.add("1000");
-        mImageUrls.add("https://img.traveltriangle.com/blog/wp-content/tr:w-700,h400/uploads/2015/06/Pinnawala-Elephant-Orphanage.jpg");
-        mNames.add("Pinnawala Elephant Orphanage");
+        mImageUrls.add("https://img.bidorbuy.co.za/image/upload/v1521352999/user_images/992/366992/180318080301_9.jpg");
+        mNames.add("Denim1");
         mImageDesc.add("desc1");
         mImagePrice.add("1000");
-        mImageUrls.add("https://img.traveltriangle.com/blog/wp-content/tr:w-700,h400/uploads/2015/06/Ruins-of-Polonnaruwa.jpg");
-        mNames.add("Polonnaruwa");
+        mImageUrls.add("https://www.fashionbug.lk/wp-content/uploads/2020/03/080301802443-C2-1_Ladies-Denim_Fashion-Bug_Sri-Lanka-300x382.jpg");
+        mNames.add("Denim1");
         mImageDesc.add("desc1");
         mImagePrice.add("1000");
-        mImageUrls.add("https://img.traveltriangle.com/blog/wp-content/tr:w-700,h400/uploads/2015/06/Adams-Peak.jpg");
-        mNames.add("Adams Peak");
+        mImageUrls.add("https://pantaloons.imgix.net/img/app/product/4/479180-3472152.jpg");
+        mNames.add("Denim1");
         mImageDesc.add("desc1");
         mImagePrice.add("1000");
-        mImageUrls.add("https://img.traveltriangle.com/blog/wp-content/tr:w-700,h400/uploads/2015/06/Mirissa-Fisheries-Harbor.jpg");
-        mNames.add("Mirissa");
-        mImageDesc.add("desc1");
-        mImagePrice.add("1000");
-        mImageUrls.add("https://img.traveltriangle.com/blog/wp-content/tr:w-700,h400/uploads/2015/06/Leopards.jpg");
-        mNames.add("Yala National Park");
-        mImageDesc.add("desc1");
-        mImagePrice.add("1000");
-        mImageUrls.add("https://img.traveltriangle.com/blog/wp-content/tr:w-700,h400/uploads/2015/06/Colombo.jpg");
-        mNames.add("Colombo");
-        mImageDesc.add("desc1");
-        mImagePrice.add("1000");
-        mImageUrls.add("https://img.traveltriangle.com/blog/wp-content/tr:w-700,h400/uploads/2015/06/Jaffna.jpg");
-        mNames.add("Jaffna");
-        mImageDesc.add("desc1");
-        mImagePrice.add("1000");
-        initRecyclerView();
+
+
     }
     private void initRecyclerView(){
         Log.d(TAG, "initRecyclerView: started");

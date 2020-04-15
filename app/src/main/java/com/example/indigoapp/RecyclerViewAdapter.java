@@ -10,9 +10,12 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-import androidx.recyclerview.widget.RecyclerView;
+
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
@@ -22,6 +25,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private ArrayList<String> mImagePrice = new ArrayList<>();
     private ArrayList<String> mImage = new ArrayList<>();
     private Context mContext;
+
+
     public RecyclerViewAdapter(ArrayList<String> mImageNames, ArrayList<String> mImage, ArrayList<String> mImageDesc, ArrayList<String> mImagePrice, Context mContext)
     {
         this.mImageNames = mImageNames;
@@ -42,7 +47,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         Log.d(TAG, "onBindViewHolder: called");
-        Glide.with(mContext).asBitmap().load(mImage.get(position)).into(holder.image);
+        Glide.with(mContext)
+                .asBitmap().load(mImage.get(position))
+                .into(holder.image);
         holder.productName.setText(mImageNames.get(position));
         holder.productDescription.setText(mImageDesc.get(position));
         holder.productPrice.setText(mImagePrice.get(position));

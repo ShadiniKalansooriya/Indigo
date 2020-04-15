@@ -1,10 +1,8 @@
-package com.example.indigoapp.views;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.indigoapp;
 
 import android.os.Bundle;
 
-import com.example.indigoapp.R;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class ProductsDisplay extends AppCompatActivity {
 
