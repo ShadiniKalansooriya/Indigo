@@ -3,7 +3,9 @@ package com.example.indigoapp.views;
 import android.app.DatePickerDialog;
 import android.content.ContentValues;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +15,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
 
 import com.example.indigoapp.R;
 import com.example.indigoapp.databases.DbHelper;
@@ -236,7 +239,14 @@ public class RegisterDetailsActivity extends AppCompatActivity implements Naviga
         }
         else if  (!emailInput.matches(emailPattern)) {
 
-            Toast.makeText(getApplicationContext(), "invalid email address", Toast.LENGTH_SHORT).show();
+           Toast toast =  Toast.makeText(getApplicationContext(), "invalid email address", Toast.LENGTH_SHORT);
+            View view =toast.getView();
+            view.setBackgroundColor(Color.rgb(69, 61,85 ));
+            TextView text = view.findViewById(android.R.id.message);
+            text.setTextColor(Color.WHITE);
+
+            toast.setGravity(Gravity.LEFT| Gravity.TOP, 250, 170);
+            toast.show();
             return false;
         }
 
