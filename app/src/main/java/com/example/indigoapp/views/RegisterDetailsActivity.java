@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,18 +31,22 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 public class RegisterDetailsActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    DbHelper db;
+    DbHelper dbHelper;
     //Variables
     BottomNavigationView bottomNavigationView;
     //variables
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     androidx.appcompat.widget.Toolbar toolbar;
+    RadioGroup radioGroupgender;
+    RadioButton radioButtonGirl;
+    RadioButton radioButtonGuy;
+    RadioButton radioButton;
 
     TextView TextViewdate;
     TextView TextViewdateSelect;
 
-    EditText editTextName,editTextEmail,editTextPassword,editTextConfPassword;
+    EditText editTextName,editTextEmail,editTextPassword,editTextConfPassword,editTextmobile,editTextAddress;
     Button buttonSignUp;
     TextView textViewSignIn;
 
@@ -90,7 +96,7 @@ public class RegisterDetailsActivity extends AppCompatActivity implements Naviga
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_for_register);
 
-        db = new DbHelper(this);
+        dbHelper = new DbHelper(this);
         /*=============Hooks================== */
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         /*===================Hooks======================*/
@@ -122,7 +128,12 @@ public class RegisterDetailsActivity extends AppCompatActivity implements Naviga
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextPassword = findViewById(R.id.editTextPassword);
         editTextConfPassword = findViewById(R.id.editTextConfPassword);
+        editTextmobile = findViewById(R.id.editTextMobile);
+        editTextAddress = findViewById(R.id.editTextAddress);
         buttonSignUp = findViewById(R.id.buttonsignup);
+        radioGroupgender = findViewById(R.id.gender);
+//        radioButtonGirl = findViewById(R.id.radioButtonGirl);
+//        radioButtonGuy = findViewById(R.id.radioButtonGuy);
         //extViewdate = (TextView)findViewById(R.id.textViewdate);
         //TextViewdateSelect = (TextView)findViewById(R.id.textViewDOB);
 
@@ -147,6 +158,8 @@ public class RegisterDetailsActivity extends AppCompatActivity implements Naviga
 //            }
 //        });
 
+
+
         textViewSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -156,7 +169,165 @@ public class RegisterDetailsActivity extends AppCompatActivity implements Naviga
         });
 
 
+     buttonSignUp.setOnClickListener(new View.OnClickListener() {
+         @Override
+         public void onClick(View v) {
+
+             //get selected radio button from radioGroup
+             int selectedID = radioGroupgender.getCheckedRadioButtonId();
+
+             //find the radio button by returned id
+             radioButton = (RadioButton) findViewById(selectedID );
+
+//             Toast.makeText(RegisterDetailsActivity.this,
+//                     radioButton.getText(), Toast.LENGTH_SHORT).show();
+
+
+
+
+             if (validateUsername() == true &&validateEmail()== true && validatePassword() == true && validateMobile() == true && validateConfirmPassword()== true ){
+                 addUser();
+                 Intent RegisterIntent = new Intent(RegisterDetailsActivity.this,Login.class);
+                 startActivity(RegisterIntent);
+                 Toast.makeText(getApplicationContext(),"Successfully Registered!",Toast.LENGTH_LONG).show();
+             }
+         }
+     });
     }
+
+    private void addUser(){
+
+        String uname = editTextName.getText().toString().trim();
+        String email = editTextEmail.getText().toString().trim();
+       String gender = radioButton.getText().toString().trim();
+        String pwd = editTextPassword.getText().toString().trim();
+        String mob = editTextmobile.getText().toString().trim();
+        String address = editTextAddress.getText().toString().trim();
+       // String type = mySpinner.getSelectedItem().toString().trim();
+
+
+        dbHelper.addUser(uname,email,pwd,mob,address,gender);
+    }
+
+    private Boolean validateUsername() {
+        String usernameInput = editTextName.getText().toString().trim();
+        String input;
+        if (usernameInput.isEmpty()) {
+            input =  "Username cannot be empty";
+            Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        else {
+            return true;
+        }
+
+    }
+
+    private Boolean validateEmail() {
+        String emailInput = editTextEmail.getText().toString().trim();
+        String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+        String input;
+
+        if(emailInput.isEmpty())
+        {
+            input =  "Email cannot be empty";
+            Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        else if  (!emailInput.matches(emailPattern)) {
+
+            Toast.makeText(getApplicationContext(), "invalid email address", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        else {
+
+            return true;
+        }
+
+//        if (emailInput.isEmpty()) {
+//            input =  "Email cannot be empty";
+//            Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
+//            return false;
+//        }
+//        else {
+//            return true;
+//        }
+
+        }
+
+
+
+
+
+
+    private boolean validatePassword() {
+        String passwordInput = editTextPassword.getText().toString().trim();
+        String input;
+        int len = passwordInput.length();
+        if (passwordInput.isEmpty()) {
+            input =  "Password cannot be empty";
+            Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        else if (passwordInput.length() <=8){
+            input =  "Password must be atleast 8 characters";
+            Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
+
+            return false;
+
+        }
+        else {
+            return true;
+        }
+
+
+    }
+
+    private boolean validateConfirmPassword() {
+        String i = editTextConfPassword.getText().toString().trim();
+        String passwordInput = editTextPassword.getText().toString().trim();
+        String input;
+
+        if (i.isEmpty()) {
+            input =  "You did not confirm your password";
+            Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        else if (i.equals(passwordInput) ){
+            return true;
+        }
+        else {
+            input =  "Password does not match";
+            Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+
+    }
+
+    private boolean validateMobile() {
+        String mobileInput = editTextmobile.getEditableText().toString().trim();
+        String input;
+        int len = mobileInput.length();
+        if (mobileInput.isEmpty()) {
+            input =  "Mobile cannot be empty";
+            Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        else if (mobileInput.length() != 10 ){
+            input =  "Enter a valid mobile number ";
+            Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        else {
+            return true;
+        }
+
+    }
+
+
+
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {

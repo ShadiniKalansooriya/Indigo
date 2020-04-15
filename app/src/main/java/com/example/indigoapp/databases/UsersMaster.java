@@ -4,6 +4,9 @@ import android.provider.BaseColumns;
 
 public class UsersMaster {
 
+    public UsersMaster() {
+    }
+
     public static class Users implements BaseColumns {
         public static final String TABLE_USER = "users";
         //Columns of TABLE_USER
