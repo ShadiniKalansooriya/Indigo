@@ -8,8 +8,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.indigoapp.R;
+import com.example.indigoapp.databases.DbHelper;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
@@ -24,7 +26,7 @@ public class Login extends AppCompatActivity implements NavigationView.OnNavigat
     EditText editTextEmail, editTextPassword;
     Button buttonSignIn;
     TextView textViewSignUp;
-
+    DbHelper db;
     //Variables
 
     BottomNavigationView bottomNavigationView;
@@ -101,6 +103,8 @@ public class Login extends AppCompatActivity implements NavigationView.OnNavigat
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
 
 
+
+        db = new DbHelper(this);
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextPassword = findViewById(R.id.editTextPassword);
         buttonSignIn = findViewById(R.id.buttonSignIn);
@@ -113,6 +117,8 @@ public class Login extends AppCompatActivity implements NavigationView.OnNavigat
                 startActivity(registerIntent);
             }
         });
+
+
     }
 
     @Override

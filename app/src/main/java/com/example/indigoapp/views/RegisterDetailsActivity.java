@@ -1,14 +1,20 @@
 package com.example.indigoapp.views;
 
 import android.app.DatePickerDialog;
+import android.content.ContentValues;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.indigoapp.R;
+import com.example.indigoapp.databases.DbHelper;
+import com.example.indigoapp.model.User;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
@@ -23,8 +29,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 public class RegisterDetailsActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+    DbHelper db;
     //Variables
-
     BottomNavigationView bottomNavigationView;
     //variables
     DrawerLayout drawerLayout;
@@ -34,8 +40,13 @@ public class RegisterDetailsActivity extends AppCompatActivity implements Naviga
     TextView TextViewdate;
     TextView TextViewdateSelect;
 
+    EditText editTextName,editTextEmail,editTextPassword,editTextConfPassword;
+    Button buttonSignUp;
+    TextView textViewSignIn;
+
+
     Calendar c;
-    DatePickerDialog dpd;
+    //DatePickerDialog dpd;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -79,6 +90,7 @@ public class RegisterDetailsActivity extends AppCompatActivity implements Naviga
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_for_register);
 
+        db = new DbHelper(this);
         /*=============Hooks================== */
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         /*===================Hooks======================*/
@@ -105,28 +117,41 @@ public class RegisterDetailsActivity extends AppCompatActivity implements Naviga
 
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
 
+        textViewSignIn = findViewById(R.id.textViewSignIn);
+        editTextName = findViewById(R.id.editTextName);
+        editTextEmail = findViewById(R.id.editTextEmail);
+        editTextPassword = findViewById(R.id.editTextPassword);
+        editTextConfPassword = findViewById(R.id.editTextConfPassword);
+        buttonSignUp = findViewById(R.id.buttonsignup);
+        //extViewdate = (TextView)findViewById(R.id.textViewdate);
+        //TextViewdateSelect = (TextView)findViewById(R.id.textViewDOB);
 
-        TextViewdate = (TextView)findViewById(R.id.textViewdate);
-        TextViewdateSelect = (TextView)findViewById(R.id.textViewDOB);
+//        TextViewdate.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                c = Calendar.getInstance();
+//                int day = c.get(Calendar.DAY_OF_MONTH);
+//                int month = c.get(Calendar.MONTH);
+//                int year = c.get(Calendar.YEAR);
+//
+//
+//                dpd = new DatePickerDialog(RegisterDetailsActivity.this, new DatePickerDialog.OnDateSetListener() {
+//                    @Override
+//                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+//                        TextViewdateSelect.setText(dayOfMonth + "/"+(month+1)+"/"+year);
+//
+//                    }
+//                },day,month,year);
+//                dpd.show();
+//            }
+//        });
 
-        TextViewdate.setOnClickListener(new View.OnClickListener() {
+        textViewSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                c = Calendar.getInstance();
-                int day = c.get(Calendar.DAY_OF_MONTH);
-                int month = c.get(Calendar.MONTH);
-                int year = c.get(Calendar.YEAR);
-
-
-                dpd = new DatePickerDialog(RegisterDetailsActivity.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                        TextViewdateSelect.setText(dayOfMonth + "/"+(month+1)+"/"+year);
-
-                    }
-                },day,month,year);
-                dpd.show();
+                Intent loginIntent = new Intent(RegisterDetailsActivity.this, Login.class);
+                startActivity(loginIntent);
             }
         });
 
