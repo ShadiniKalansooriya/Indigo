@@ -242,7 +242,8 @@
         android:layout_height="21dp"
         android:text="@string/current_selected_number"
         android:textAlignment="center"
-        tools:layout_editor_absoluteX="136dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="552dp" />
 
     <TextView

@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.indigoapp">
 
-    <application
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application xmlns:tools="http://schemas.android.com/tools"
         android:allowBackup="true"
         android:exported="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,24 +13,34 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:ignore="ExtraText">
-        <activity android:name=".CartPage"></activity>
-        <activity android:name=".Wishlist" />
-        <activity android:name=".Feedback">
+        tools:ignore="ExtraText"
+        tools:replace="android:theme">
+        <activity android:name=".RecyclerMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ProductsDetails" />
+        <activity android:name=".Vouchers_display" />
+        <activity android:name=".Savings_display" />
+        <activity android:name=".Dresses_display" />
+        <activity android:name=".Pants_display" />
+        <activity android:name=".Denims_display" />
+        <activity android:name=".CartPage" />
+        <activity android:name=".Wishlist" />
+        <activity android:name=".Feedback">
+        </activity>
         <activity android:name=".ProductsDisplay">
+        </activity>
+        <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.ALL_APPS" />
+                <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
