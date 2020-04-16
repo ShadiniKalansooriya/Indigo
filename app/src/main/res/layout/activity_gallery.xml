@@ -22,6 +22,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/indigodark1"
         android:orientation="vertical">
 
         <include
@@ -47,11 +48,11 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="40dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/white"
+                    android:background="@color/indigodark1"
                     android:fontFamily="@font/cabin_sketch"
                     android:text="@string/Upload"
                     android:textAlignment="center"
-                    android:textColor="@color/indigodark1"
+                    android:textColor="@color/colorText"
                     android:textSize="24sp" />
 
                 <ImageView
@@ -73,6 +74,7 @@
                     android:ems="10"
                     android:hint="@string/hashTag"
                     android:inputType="textPersonName"
+                    android:textColor="@color/lightGray"
                     android:textSize="18sp" />
 
                 <TextView
@@ -86,7 +88,7 @@
                     android:fontFamily="sans-serif-condensed-light"
                     android:text="@string/ClickGalleryView"
                     android:textAlignment="viewEnd"
-                    android:textColor="@color/BlackHeader"
+                    android:textColor="@color/colorText"
                     android:textStyle="bold" />
 
             </LinearLayout>

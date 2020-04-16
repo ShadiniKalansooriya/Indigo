@@ -1,21 +1,23 @@
 package com.example.indigoapp.views;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.indigoapp.R;
+import com.example.indigoapp.databases.DbHelper;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.bottomnavigation.BottomNavigationView.OnNavigationItemSelectedListener;
 import com.google.android.material.navigation.NavigationView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 public class MyAccount extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -26,8 +28,12 @@ public class MyAccount extends AppCompatActivity implements NavigationView.OnNav
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     androidx.appcompat.widget.Toolbar toolbar;
+    DbHelper dbHelper;
 
-    Button btnAccountOverView;
+    Button btnAccountOverView,buttonAddressBook,buttonOrderHistory,buttonWishlist,buttonStoreCredit,buttonNewsletter,buttonLogout;
+    ImageView imageViewPropic;
+    TextView textViewName;
+    String x;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -71,6 +77,8 @@ public class MyAccount extends AppCompatActivity implements NavigationView.OnNav
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_for_myaccount);
 
+        dbHelper = new DbHelper(this);
+
         /*=============Hooks================== */
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         /*===================Hooks======================*/
@@ -99,6 +107,10 @@ public class MyAccount extends AppCompatActivity implements NavigationView.OnNav
 
 
         btnAccountOverView = findViewById(R.id.buttonAccountOverview);
+        textViewName = findViewById(R.id.textViewName);
+
+        x = dbHelper.getUsername();
+        textViewName.setText(x);
 
         btnAccountOverView.setOnClickListener(new View.OnClickListener() {
             @Override
