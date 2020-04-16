@@ -6,8 +6,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import java.util.jar.Attributes;
-
 import static com.example.indigoapp.databases.UsersMaster.Users.TABLE_USER;
 
 public class DbHelper extends SQLiteOpenHelper {
@@ -28,7 +26,7 @@ public class DbHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
         String SQL_CREATE_ENTRIES =
-                "CREATE TABLE " + TABLE_USER + " (" +
+                "CREATE TABLE " + UsersMaster.Users. TABLE_USER + " (" +
                         UsersMaster.Users._ID+" INTEGER PRIMARY KEY,"+
                         UsersMaster.Users.COL_USER_NAME + " TEXT,"+
                         UsersMaster.Users.COL_USER_EMAIL + " TEXT,"+
@@ -36,7 +34,7 @@ public class DbHelper extends SQLiteOpenHelper {
                         UsersMaster.Users.COL_USER_MOBILE + " TEXT,"+
                         UsersMaster.Users.COL_USER_ADDRESS + " TEXT,"+
                         UsersMaster.Users.COL_USER_GENDER + " TEXT,"+
-//                        UsersMaster.Users.COL_USER_TYPE + " TEXT,"+
+                       UsersMaster.Users.COL_USER_TYPE + " TEXT,"+
                         UsersMaster.Users.COL_USER_CURRENT + " TEXT)";
 
         sqLiteDatabase.execSQL(SQL_CREATE_ENTRIES);
@@ -50,7 +48,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
     }
 
-    public  void addUser(String userName,String email,String password,String mobile,String address,String gender){
+    public  void addUser(String userName,String email,String password,String mobile,String address,String gender,String type){
 
         SQLiteDatabase db = getWritableDatabase();
 
@@ -63,7 +61,7 @@ public class DbHelper extends SQLiteOpenHelper {
         values.put(UsersMaster.Users.COL_USER_MOBILE,mobile);
         values.put(UsersMaster.Users.COL_USER_ADDRESS,address);
         values.put(UsersMaster.Users.COL_USER_GENDER,gender);
-//        values.put(UsersMaster.Users.COL_USER_TYPE ,type);
+         values.put(UsersMaster.Users.COL_USER_TYPE ,type);
         values.put(UsersMaster.Users.COL_USER_CURRENT,"FALSE");
 
         long newRowId = db.insert(UsersMaster.Users.TABLE_USER,null,values);
@@ -77,7 +75,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
 
 
-        Cursor cursor = db.rawQuery("SELECT * from users where email = ? and password = ?",new String[]{email,password});
+        Cursor cursor = db.rawQuery("SELECT * from users where Email = ? and UserPassword = ?",new String[]{email,password});
 
         if (cursor.moveToFirst()) {
             SQLiteDatabase db1 = getWritableDatabase();
@@ -87,8 +85,8 @@ public class DbHelper extends SQLiteOpenHelper {
             String selection = UsersMaster.Users.COL_USER_EMAIL+ " LIKE ?";
             String[] selectionArgs = {email};
             db1.update(UsersMaster.Users.TABLE_USER,values,selection,selectionArgs);
-//            String type = cursor.getString(cursor.getColumnIndexOrThrow(UsersMaster.Users.COL_USER_TYPE));
-//            return type;
+           String type = cursor.getString(cursor.getColumnIndexOrThrow(UsersMaster.Users.COL_USER_TYPE));
+          return type;
         }
         cursor.close();
         return "";

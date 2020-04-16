@@ -1,8 +1,8 @@
 package com.example.indigoapp.views;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -23,11 +23,13 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 public class Login extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+    //Variables
     EditText editTextEmail, editTextPassword;
     Button buttonSignIn;
     TextView textViewSignUp;
-    DbHelper db;
-    //Variables
+    DbHelper dbHelper;
+    SharedPreferences pref;
+
 
     BottomNavigationView bottomNavigationView;
     //variables
@@ -103,8 +105,8 @@ public class Login extends AppCompatActivity implements NavigationView.OnNavigat
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
 
 
-
-        db = new DbHelper(this);
+        dbHelper = new DbHelper(this);
+        pref = getSharedPreferences("user_details",MODE_PRIVATE);
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextPassword = findViewById(R.id.editTextPassword);
         buttonSignIn = findViewById(R.id.buttonSignIn);
@@ -113,15 +115,82 @@ public class Login extends AppCompatActivity implements NavigationView.OnNavigat
         textViewSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent registerIntent = new Intent(Login.this,RegisterDetailsActivity.class);
+                Intent registerIntent = new Intent(Login.this, RegisterDetailsActivity.class);
                 startActivity(registerIntent);
+            }
+        });
+
+        buttonSignIn.setOnClickListener(new View.OnClickListener() {
+            String input;
+
+
+            @Override
+            public void onClick(View v) {
+                if (validateEmailUsername() == true && validatePassword() == true) {
+                    String type = checkUser();
+
+                    if (type.equals("RegisteredUser")) {
+                        Intent loginIntent = new Intent(Login.this, MyAccount.class);
+                        Toast.makeText(Login.this, "Successfully Logged in", Toast.LENGTH_SHORT).show();
+
+                        startActivity(loginIntent);
+                    }
+                    else
+                        Toast.makeText(Login.this, "Invalid Username or Password", Toast.LENGTH_SHORT).show();
+
+                }
+
+
+
             }
         });
 
 
     }
 
-    @Override
+
+    private boolean validateEmailUsername() {
+        String emailusernameInput = editTextEmail.getText().toString().trim();
+        String input;
+        if (emailusernameInput.isEmpty()) {
+            input =  "Email(Username) cannot be empty";
+            Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
+            return  false;
+        }
+        else {
+            return true;
+        }
+
+    }
+
+    private boolean validatePassword() {
+        String passwordInput = editTextPassword.getEditableText().toString().trim();
+        String input;
+
+        if (passwordInput.isEmpty()) {
+            input =  "Password cannot be empty";
+            Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
+            return  false;
+        }
+        else {
+            return true;
+        }
+
+    }
+
+    private String checkUser() {
+        String email = editTextEmail.getText().toString().trim();
+        String pwd = editTextPassword.getText().toString().trim();
+
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putString("email", email);
+        editor.putString("password", pwd);
+        editor.commit();
+        String type = dbHelper.checkUser(email, pwd);
+        return type;
+    }
+
+        @Override
     public void onBackPressed() {
 
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {

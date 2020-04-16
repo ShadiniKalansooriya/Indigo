@@ -1,7 +1,5 @@
 package com.example.indigoapp.views;
 
-import android.app.DatePickerDialog;
-import android.content.ContentValues;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -9,17 +7,14 @@ import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
 import com.example.indigoapp.R;
 import com.example.indigoapp.databases.DbHelper;
-import com.example.indigoapp.model.User;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
@@ -206,10 +201,10 @@ public class RegisterDetailsActivity extends AppCompatActivity implements Naviga
         String pwd = editTextPassword.getText().toString().trim();
         String mob = editTextmobile.getText().toString().trim();
         String address = editTextAddress.getText().toString().trim();
-       // String type = mySpinner.getSelectedItem().toString().trim();
+       String type = "RegisteredUser";
 
 
-        dbHelper.addUser(uname,email,pwd,mob,address,gender);
+        dbHelper.addUser(uname,email,pwd,mob,address,gender,type);
     }
 
     private Boolean validateUsername() {
