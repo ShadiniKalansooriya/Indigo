@@ -50,7 +50,7 @@
         <activity android:name=".views.RegisterDetailsActivity" />
         <activity android:name=".views.AccountOverview" />
         <activity android:name=".views.ProductsDisplay" />
-        <activity android:name=".views.RecyclerMainActivity" />
+        <activity android:name=".Views.RecyclerMainActivity" />
         <activity android:name=".views.ProductsDetails" />
         <activity android:name=".views.Savings_display" />
         <activity android:name=".views.Vouchers_display" />
@@ -59,11 +59,10 @@
         <activity android:name=".views.Pants_display" />
         <activity android:name=".adapter.RecyclerViewAdapter" />
         <activity android:name=".views.MainActivity">
-            <!--            <intent-filter>-->
-            <!--                <action android:name="android.intent.action.MAIN" />-->
-
-            <!--                <category android:name="android.intent.category.LAUNCHER" />-->
-            <!--            </intent-filter>-->
+                      <intent-filter>
+                            <action android:name="android.intent.action.MAIN" />
+                            <category android:name="android.intent.category.LAUNCHER" />
+                      </intent-filter>
         </activity>
 
         <meta-data
