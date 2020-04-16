@@ -3,12 +3,8 @@ package com.example.indigoapp.views;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.example.indigoapp.R;
-import com.example.indigoapp.databases.DbHelper;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
@@ -18,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-public class AccountOverview extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class EditDetails extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     //Variables
 
@@ -27,10 +23,6 @@ public class AccountOverview extends AppCompatActivity implements NavigationView
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     androidx.appcompat.widget.Toolbar toolbar;
-    ImageView imageViewPropic;
-    TextView textViewUserName,textViewEmail,textViewPassword,textViewMobile,textViewAddress,textViewGender;
-    android.widget.Button buttonEdit, buttonDelete;
-    DbHelper dbHelper;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -42,22 +34,22 @@ public class AccountOverview extends AppCompatActivity implements NavigationView
                     break;
 
                 case R.id.nav_b_shoppingbag:
-                    Intent intent = new Intent(AccountOverview.this, MainActivity.class);
+                    Intent intent = new Intent(EditDetails.this, MainActivity.class);
                     startActivity(intent);
                     break;
 
                 case R.id.nav_b_wishlist:
-                    Intent intent1 = new Intent(AccountOverview.this, Wishlist.class);
+                    Intent intent1 = new Intent(EditDetails.this, Wishlist.class);
                     startActivity(intent1);
                     break;
 
                 case R.id.nav_b_gallery:
-                    Intent intent2 = new Intent(AccountOverview.this, GalleryView.class);
+                    Intent intent2 = new Intent(EditDetails.this, GalleryView.class);
                     startActivity(intent2);
                     break;
 
                 case R.id.nav_b_category:
-                    Intent intent3 = new Intent(AccountOverview.this, ProductsDisplay.class);
+                    Intent intent3 = new Intent(EditDetails.this, ProductsDisplay.class);
                     startActivity(intent3);
 
             }
@@ -71,10 +63,7 @@ public class AccountOverview extends AppCompatActivity implements NavigationView
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_for_account_overview);
-
-        dbHelper = new DbHelper(this);
-
+        setContentView(R.layout.activity_edit_details);
         /*=============Hooks================== */
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         /*===================Hooks======================*/
@@ -82,7 +71,7 @@ public class AccountOverview extends AppCompatActivity implements NavigationView
         navigationView = findViewById(R.id.nav_view);
         toolbar = findViewById(R.id.toolbar);
 
-        toolbar.setTitle("My Account");
+        toolbar.setTitle("Love Indigo");
         /*===========ToolBar ========= */
 
         setSupportActionBar(toolbar);
@@ -94,36 +83,13 @@ public class AccountOverview extends AppCompatActivity implements NavigationView
 
         navigationView.setNavigationItemSelectedListener(this);
 
+        //navigationView.setCheckedItem(R.id.nav_MyAccount);
+
         //bottom navigationview listener
         bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
 
-
-        imageViewPropic = findViewById(R.id.imageViewpropic);
-        textViewUserName = findViewById(R.id.textViewuserName);
-        textViewEmail = findViewById(R.id.textViewEmail);
-        textViewPassword = findViewById(R.id.textViewPassword);
-        textViewMobile = findViewById(R.id.textViewMobile);
-        textViewAddress = findViewById(R.id.textViewAddress);
-        textViewGender = findViewById(R.id.textViewgender);
-        buttonEdit = findViewById(R.id.buttonedit);
-        buttonDelete = findViewById(R.id.buttonDelete);
-
-        textViewUserName.setText(dbHelper.getUsername());
-        textViewEmail.setText(dbHelper.getEmail());
-        textViewPassword.setText(dbHelper.getpwd());
-        textViewMobile.setText(dbHelper.getMobile());
-        textViewAddress.setText(dbHelper.getAddress());
-        textViewGender.setText(dbHelper.getGender());
-
-        buttonEdit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent editIntent = new Intent(AccountOverview.this, EditDetails.class);
-                startActivity(editIntent);
-            }
-        });
 
     }
 
@@ -148,39 +114,39 @@ public class AccountOverview extends AppCompatActivity implements NavigationView
                 break;
 
             case R.id.nav_shoppingBag:
-                Intent intent =new Intent(AccountOverview.this,MainActivity.class);
+                Intent intent =new Intent(EditDetails.this,MainActivity.class);
                 startActivity(intent);
                 break;
 
             case R.id.nav_WishList:
-                Intent intent1 = new Intent(AccountOverview.this, Wishlist.class);
+                Intent intent1 = new Intent(EditDetails.this, Wishlist.class);
                 startActivity(intent1);
                 break;
             case R.id.nav_MyAccount:
-                Intent intent6 =new Intent(AccountOverview.this, MyAccount.class);
+                Intent intent6 =new Intent(EditDetails.this, MyAccount.class);
                 startActivity(intent6);
                 break;
 
             case R.id.nav_Promotions:
-                Intent intent7 = new Intent(AccountOverview.this, MainActivity.class);
+                Intent intent7 = new Intent(EditDetails.this, MainActivity.class);
                 startActivity(intent7);
                 break;
             case R.id.nav_Gallery:
-                Intent intent2 =new Intent(AccountOverview.this, GalleryView.class);
+                Intent intent2 =new Intent(EditDetails.this, GalleryView.class);
                 startActivity(intent2);
                 break;
 
             case R.id.nav_about:
-                Intent intent3 = new Intent(AccountOverview.this, MainActivity.class);
+                Intent intent3 = new Intent(EditDetails.this, MainActivity.class);
                 startActivity(intent3);
                 break;
             case R.id.nav_contactUs:
-                Intent intent4 =new Intent(AccountOverview.this,MainActivity.class);
+                Intent intent4 =new Intent(EditDetails.this,MainActivity.class);
                 startActivity(intent4);
                 break;
 
             case R.id.nav_Feedback:
-                Intent intent5 = new Intent(AccountOverview.this, Feedback.class);
+                Intent intent5 = new Intent(EditDetails.this, Feedback.class);
                 startActivity(intent5);
                 break;
         }
@@ -190,3 +156,4 @@ public class AccountOverview extends AppCompatActivity implements NavigationView
     }
 
 }
+
