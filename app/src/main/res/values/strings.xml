@@ -96,6 +96,10 @@
     <string name="address">Address</string>
     <string name="mobile_numbercaps">MOBILE NUMBER</string>
     <string name="addresscaps">ADDRESS</string>
+    <string name="ChangePassword">Change Password</string>
+    <string name="CurrPW">Current Password</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_password">Confirm Password</string>
 
 
 </resources>

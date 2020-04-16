@@ -30,7 +30,7 @@ public class MyAccount extends AppCompatActivity implements NavigationView.OnNav
     androidx.appcompat.widget.Toolbar toolbar;
     DbHelper dbHelper;
 
-    Button btnAccountOverView,buttonAddressBook,buttonOrderHistory,buttonWishlist,buttonStoreCredit,buttonNewsletter,buttonLogout;
+    Button btnAccountOverView,buttonChangePW,buttonOrderHistory,buttonWishlist,buttonStoreCredit,buttonNewsletter,buttonLogout;
     ImageView imageViewPropic;
     TextView textViewName;
     String x;
@@ -107,6 +107,7 @@ public class MyAccount extends AppCompatActivity implements NavigationView.OnNav
 
 
         btnAccountOverView = findViewById(R.id.buttonAccountOverview);
+        buttonChangePW = findViewById(R.id.buttonChangePw);
         textViewName = findViewById(R.id.textViewName);
 
         x = dbHelper.getUsername();
@@ -121,6 +122,13 @@ public class MyAccount extends AppCompatActivity implements NavigationView.OnNav
         });
 
 
+        buttonChangePW.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent changePwIntent = new Intent(MyAccount.this, changePassword.class);
+                startActivity(changePwIntent);
+            }
+        });
     }
 
     @Override
