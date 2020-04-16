@@ -87,6 +87,18 @@ public class DbHelper extends SQLiteOpenHelper {
 
 
     }
+    public boolean Customer_insert_payment_details(payments pay){
+        SQLiteDatabase db=getWritableDatabase();
+        ContentValues values=new ContentValues();
+        values.put(UsersMaster.Payment.COL_USER_NAME,pay.getName());
+        values.put(UsersMaster.Payment.COL_USER_EMAIL,pay.getEmail_id());
+        values.put(UsersMaster.Payment.COLUMN_NAME_AMOUNT,pay.getTotal());
+        values.put(UsersMaster.Payment.COL_USER_ADDRESS,pay.get_id());
+        long rowId=db.insert(UsersMaster.Payment.TABLE_NAME,null,values);
+
+
+        return rowId != -1;
+    }
 
 
     public String checkUser (String email, String password){
