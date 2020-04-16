@@ -19,7 +19,7 @@
         android:layout_marginBottom="8dp"
         android:background="@android:color/holo_purple"
         android:fontFamily="@font/concert_one"
-        android:text="Card Information"
+        android:text="Cart Information"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="30dp"
