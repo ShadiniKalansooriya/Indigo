@@ -3,8 +3,11 @@ package com.example.indigoapp.views;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.indigoapp.R;
+import com.example.indigoapp.databases.DbHelper;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
@@ -23,6 +26,9 @@ public class AccountOverview extends AppCompatActivity implements NavigationView
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     androidx.appcompat.widget.Toolbar toolbar;
+    ImageView imageViewPropic;
+    TextView textViewUserName,textViewEmail,textViewPassword,textViewMobile,textViewAddress,textViewGender;
+    DbHelper dbHelper;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -65,6 +71,8 @@ public class AccountOverview extends AppCompatActivity implements NavigationView
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_for_account_overview);
 
+        dbHelper = new DbHelper(this);
+
         /*=============Hooks================== */
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         /*===================Hooks======================*/
@@ -89,6 +97,21 @@ public class AccountOverview extends AppCompatActivity implements NavigationView
 
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
 
+
+        imageViewPropic = findViewById(R.id.imageViewpropic);
+        textViewUserName = findViewById(R.id.textViewuserName);
+        textViewEmail = findViewById(R.id.textViewEmail);
+        textViewPassword = findViewById(R.id.textViewPassword);
+        textViewMobile = findViewById(R.id.textViewMobile);
+        textViewAddress = findViewById(R.id.textViewAddress);
+        textViewGender = findViewById(R.id.textViewgender);
+
+        textViewUserName.setText(dbHelper.getUsername());
+        textViewEmail.setText(dbHelper.getEmail());
+        textViewPassword.setText(dbHelper.getpwd());
+        textViewMobile.setText(dbHelper.getMobile());
+        textViewAddress.setText(dbHelper.getAddress());
+        textViewGender.setText(dbHelper.getGender());
 
     }
 

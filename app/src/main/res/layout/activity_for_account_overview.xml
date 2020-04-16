@@ -59,7 +59,7 @@
                     android:fontFamily="sans-serif-condensed"
                     android:text="@string/myname"
                     android:textAlignment="center"
-                    android:textColor="@color/lightBlack"
+                    android:textColor="@color/indigodark1"
                     android:textSize="24sp" />
 
                 <TextView
@@ -71,18 +71,22 @@
                     android:layout_marginRight="8dp"
                     android:text="@string/emailcump"
                     android:textColor="@color/lightBlack"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-                <EditText
-                    android:id="@+id/editTextemail"
+                <TextView
+                    android:id="@+id/textViewEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
                     android:layout_marginRight="8dp"
-                    android:ems="10"
+                    android:background="@color/indigodark1"
                     android:inputType="textEmailAddress"
-                    android:text="@string/shadiniemail"
-                    android:textColor="@color/lightBlack" />
+                    android:padding="2dp"
+                    android:text="@string/emailhint"
+                    android:textColor="@color/lightGray"
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/textView16"
@@ -93,37 +97,70 @@
                     android:layout_marginRight="8dp"
                     android:text="@string/pwcump"
                     android:textColor="@color/lightBlack"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-                <EditText
-                    android:id="@+id/editTextPassword"
+                <TextView
+                    android:id="@+id/textViewPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
+                    android:background="@color/indigodark1"
                     android:ems="10"
                     android:inputType="textPassword"
-                    android:text="@string/password" />
+                    android:padding="2dp"
+                    android:text="@string/password"
+                    android:textColor="@color/lightGray" />
 
                 <TextView
-                    android:id="@+id/textView17DOB"
+                    android:id="@+id/textViewm"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginRight="8dp"
-                    android:text="@string/dob"
+                    android:text="@string/mobile_numbercaps"
                     android:textColor="@color/lightBlack"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-                <EditText
-                    android:id="@+id/textViewdateofBirth"
+                <TextView
+                    android:id="@+id/textViewMobile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
-                    android:text="@string/DOB"
+                    android:background="@color/indigodark1"
+                    android:inputType="number"
+                    android:padding="2dp"
+                    android:text="@string/mobile_number"
+                    android:textColor="@color/lightGray"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textView20"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="@string/addresscaps"
                     android:textColor="@color/lightBlack"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:background="@color/indigodark1"
+                    android:inputType="text"
+                    android:padding="2dp"
+                    android:text="@string/address"
+                    android:textColor="@color/lightGray"
                     android:textSize="18sp" />
 
                 <TextView
@@ -135,17 +172,21 @@
                     android:layout_marginRight="8dp"
                     android:text="@string/gender"
                     android:textColor="@color/lightBlack"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-                <EditText
-                    android:id="@+id/editTextgender"
+                <TextView
+                    android:id="@+id/textViewgender"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
-                    android:ems="10"
+                    android:background="@color/indigodark1"
                     android:inputType="textPersonName"
-                    android:text="@string/radiobuttonGirl" />
+                    android:padding="2dp"
+                    android:text="@string/radiobuttonGirl"
+                    android:textColor="@color/lightGray"
+                    android:textSize="18sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
