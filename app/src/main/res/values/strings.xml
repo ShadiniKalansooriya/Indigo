@@ -100,6 +100,7 @@
     <string name="CurrPW">Current Password</string>
     <string name="new_password">New Password</string>
     <string name="confirm_password">Confirm Password</string>
+    <string name="Change">Change</string>
 
 
 </resources>

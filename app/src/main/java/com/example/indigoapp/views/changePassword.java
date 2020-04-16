@@ -3,8 +3,13 @@ package com.example.indigoapp.views;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.indigoapp.R;
+import com.example.indigoapp.databases.DbHelper;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
@@ -17,6 +22,9 @@ import androidx.drawerlayout.widget.DrawerLayout;
 public class changePassword extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
         //Variables
+        EditText editTextCurrPw, editTextNewPw,editTextconfPw;
+        Button buttonChange;
+        DbHelper dbHelper;
 
         BottomNavigationView bottomNavigationView;
         //variables
@@ -92,6 +100,31 @@ public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
     bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
     BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
+
+
+
+    dbHelper = new DbHelper(this);
+    editTextCurrPw = findViewById(R.id.editTextcurrentPW);
+    editTextNewPw = findViewById(R.id.editTextNewPW);
+    editTextconfPw = findViewById(R.id.editTextConfPW);
+
+    buttonChange = findViewById(R.id.buttonChangePw);
+    buttonChange.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+
+            validateNewPassword();
+            validateConfirmPassword();
+
+            if (validatepassword() == true){
+                if (validateNewPassword() == true && validateConfirmPassword() == true){
+                    dbHelper.changepwd(editTextNewPw.getText().toString().trim());
+                    Toast.makeText(getApplicationContext(),"Password Updated",Toast.LENGTH_LONG).show();
+                }
+            }
+
+        }
+    });
     }
 
     @Override
@@ -105,6 +138,79 @@ public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         }
 
     }
+
+    private boolean validatepassword(){
+
+        String passwordInput = editTextCurrPw.getText().toString().trim();
+        String input;
+
+        if (passwordInput.isEmpty()) {
+            input =  "Current Password cannot be empty";
+            Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        else if (passwordInput.equals(dbHelper.getpwd())){
+            return true;
+        }
+        else {
+            Toast.makeText(this, "Your Current Password is Incorrect", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+
+
+
+    }
+
+
+
+    private boolean validateNewPassword() {
+        String passwordInput = editTextNewPw.getText().toString().trim();
+        String input;
+        int len = passwordInput.length();
+        if (passwordInput.isEmpty()) {
+            input =  "New Password cannot be empty";
+            Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        else if (passwordInput.length() <=8){
+            input =  "New Password must be atleast 8 characters";
+            Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        else {
+            return true;
+        }
+
+
+
+
+    }
+
+
+    private boolean validateConfirmPassword() {
+        String i = editTextconfPw.getText().toString().trim();
+        String passwordInput = editTextNewPw.getText().toString().trim();
+        String input;
+
+        if (i.isEmpty()) {
+            input =  "You did not confirm your password";
+            Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        else if (i.equals(passwordInput) ){
+            return true;
+        }
+        else {
+            input =  "Confirm Password does not match";
+            Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+
+    }
+
+
 
 
     @Override
