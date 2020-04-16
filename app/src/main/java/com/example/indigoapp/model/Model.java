@@ -1,4 +1,4 @@
-package com.example.indigoapp;
+package com.example.indigoapp.model;
 
 public class Model {
     private String title,description,price;

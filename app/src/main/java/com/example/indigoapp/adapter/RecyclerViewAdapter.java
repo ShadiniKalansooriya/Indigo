@@ -1,4 +1,4 @@
-package com.example.indigoapp;
+package com.example.indigoapp.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -11,12 +11,13 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
-
 import com.bumptech.glide.Glide;
+import com.example.indigoapp.R;
 
 import java.util.ArrayList;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
     private static final String TAG = "test.sliit.recyclerview.RecyclerViewAdapter";

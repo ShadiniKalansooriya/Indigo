@@ -1,14 +1,16 @@
-package com.example.indigoapp;
+package com.example.indigoapp.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Pants_display extends AppCompatActivity {
+import com.example.indigoapp.R;
+
+public class Dresses_display extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pants_display);
+        setContentView(R.layout.activity_dresses_display);
     }
 }

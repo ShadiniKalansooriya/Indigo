@@ -1,7 +1,9 @@
-package com.example.indigoapp;
+package com.example.indigoapp.views;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+
+import com.example.indigoapp.R;
 
 import androidx.appcompat.app.AppCompatActivity;
 

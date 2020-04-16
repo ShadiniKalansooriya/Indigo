@@ -1,13 +1,10 @@
-package com.example.indigoapp;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.indigoapp.views;
 
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
 
-import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
+import com.example.indigoapp.R;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class Denims_display extends AppCompatActivity {
 

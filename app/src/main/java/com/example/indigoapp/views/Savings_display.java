@@ -1,14 +1,16 @@
-package com.example.indigoapp;
+package com.example.indigoapp.views;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 
-public class ProductsDetails extends AppCompatActivity {
+import com.example.indigoapp.R;
+
+public class Savings_display extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_products_details);
-
+        setContentView(R.layout.activity_savings_display);
     }
 }

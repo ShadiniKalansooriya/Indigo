@@ -1,12 +1,15 @@
-package com.example.indigoapp;
+package com.example.indigoapp.views;
 import android.os.Bundle;
 import android.util.Log;
+
+import com.example.indigoapp.R;
+import com.example.indigoapp.adapter.RecyclerViewAdapter;
+
+import java.util.ArrayList;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import java.util.ArrayList;
 
 class RecyclerMainActivity extends AppCompatActivity {
 
