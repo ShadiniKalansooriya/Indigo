@@ -26,7 +26,7 @@ public class DbHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
         String SQL_CREATE_ENTRIES =
-                "CREATE TABLE " + UsersMaster.Users. TABLE_USER + " (" +
+                "CREATE TABLE " + TABLE_USER + " (" +
                         UsersMaster.Users._ID+" INTEGER PRIMARY KEY,"+
                         UsersMaster.Users.COL_USER_NAME + " TEXT,"+
                         UsersMaster.Users.COL_USER_EMAIL + " TEXT,"+
@@ -37,13 +37,31 @@ public class DbHelper extends SQLiteOpenHelper {
                        UsersMaster.Users.COL_USER_TYPE + " TEXT,"+
                         UsersMaster.Users.COL_USER_CURRENT + " TEXT)";
 
+        String PAYMENT_DETAILS_ENTRIES = "CREATE TABLE " + UsersMaster.Payment.TABLE_NAME + "(" +
+
+
+                UsersMaster.Payment.COL_USER_NAME + " TEXT," +
+                UsersMaster.Payment.COL_USER_EMAIL + " TEXT," +
+                UsersMaster.Payment.COLUMN_NAME_AMOUNT + " TEXT," +
+                UsersMaster.Payment.COL_USER_ADDRESS + " TEXT," +
+
+
+                " FOREIGN KEY (" + UsersMaster.Payment.COL_USER_NAME + ") REFERENCES " + UsersMaster.Payment.COL_USER_ADDRESS +
+                " ON DELETE CASCADE ON UPDATE CASCADE, )";
+
+
+
+
         sqLiteDatabase.execSQL(SQL_CREATE_ENTRIES);
+        sqLiteDatabase.execSQL(PAYMENT_DETAILS_ENTRIES);
+
 
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_USER);
+        db.execSQL("DROP TABLE IF EXISTS "+UsersMaster.Payment.TABLE_NAME);
         onCreate(db);
 
     }
@@ -69,6 +87,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
 
     }
+
 
     public String checkUser (String email, String password){
         SQLiteDatabase db = getReadableDatabase();
@@ -397,4 +416,6 @@ public class DbHelper extends SQLiteOpenHelper {
 
     }
 
+    private class payments {
+    }
 }
