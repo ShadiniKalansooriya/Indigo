@@ -350,38 +350,38 @@ public class DbHelper extends SQLiteOpenHelper {
 
 
 
-//    public String gettype() {
-//
-//
-//        String [] projection = {
-//                UsersMaster.Users.COL_USER_TYPE
-//        };
-//        SQLiteDatabase db = getWritableDatabase();
-//
-//
-//        String selection = UsersMaster.Users.COL_USER_CURRENT + " LIKE ?";
-//        String[] selectionArgs = {"TRUE"};
-//
-//
-//
-//        Cursor cursor = db.query(UsersMaster.Users.TABLE_USER,
-//                projection,
-//                selection,
-//                selectionArgs,
-//                null, null, null);
-//        String currentUsername ;
-//
-//        if (cursor.moveToFirst()) {
-//            do {
-//                currentUsername = cursor.getString(cursor.getColumnIndex(UsersMaster.Users.COL_USER_TYPE));
-//            } while (cursor.moveToNext());
-//        }
-//        else {
-//            currentUsername = "";
-//        }
-//        cursor.close();
-//        return currentUsername;
-//    }
+    public String gettype() {
+
+
+        String [] projection = {
+                UsersMaster.Users.COL_USER_TYPE
+        };
+        SQLiteDatabase db = getWritableDatabase();
+
+
+        String selection = UsersMaster.Users.COL_USER_CURRENT + " LIKE ?";
+        String[] selectionArgs = {"TRUE"};
+
+
+
+        Cursor cursor = db.query(UsersMaster.Users.TABLE_USER,
+                projection,
+                selection,
+                selectionArgs,
+                null, null, null);
+        String currentUsername ;
+
+        if (cursor.moveToFirst()) {
+            do {
+                currentUsername = cursor.getString(cursor.getColumnIndex(UsersMaster.Users.COL_USER_TYPE));
+            } while (cursor.moveToNext());
+        }
+        else {
+            currentUsername = "";
+        }
+        cursor.close();
+        return currentUsername;
+    }
 
 
     public void deleteAccount (){
