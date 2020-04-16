@@ -1,10 +1,18 @@
 package com.example.indigoapp.views;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.indigoapp.R;
+import com.example.indigoapp.databases.DbHelper;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
@@ -23,6 +31,10 @@ public class EditDetails extends AppCompatActivity implements NavigationView.OnN
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     androidx.appcompat.widget.Toolbar toolbar;
+
+    EditText editTextName, editTextEmail, editTextMobile, editTextAddress;
+    Button buttonUpdate;
+    DbHelper dbHelper;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -71,7 +83,7 @@ public class EditDetails extends AppCompatActivity implements NavigationView.OnN
         navigationView = findViewById(R.id.nav_view);
         toolbar = findViewById(R.id.toolbar);
 
-        toolbar.setTitle("Love Indigo");
+        toolbar.setTitle("Edit Details");
         /*===========ToolBar ========= */
 
         setSupportActionBar(toolbar);
@@ -89,6 +101,135 @@ public class EditDetails extends AppCompatActivity implements NavigationView.OnN
         bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
+
+        dbHelper = new DbHelper(this);
+        editTextName = findViewById(R.id.editTextName);
+        editTextName.setText(dbHelper.getUsername());
+        editTextEmail = findViewById(R.id.editTextEmail);
+        editTextEmail.setText(dbHelper.getEmail());
+        editTextMobile = findViewById(R.id.editTextPhone);
+        editTextMobile.setText(dbHelper.getMobile());
+        editTextAddress = findViewById(R.id.editTextAddress);
+        editTextAddress.setText(dbHelper.getAddress());
+        buttonUpdate = findViewById(R.id.buttonUpdate);
+
+        buttonUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                validateUsername();
+                validateMobile();
+                validateaddress();
+                validateEmail();
+
+                if (validateUsername() == true &&  validateMobile() == true &&  validateaddress()== true && validateEmail()==true){
+                    editinfo();
+                    Toast.makeText(getApplicationContext(),"Successfully updated",Toast.LENGTH_LONG).show();
+
+                }
+            }
+        });
+
+    }
+
+    private void editinfo(){
+
+        String uname = editTextName.getText().toString().trim();
+        String email = editTextEmail.getText().toString().trim();
+        String mob = editTextMobile.getText().toString().trim();
+        String address = editTextAddress.getText().toString().trim();
+
+
+
+        dbHelper.changeinfo(uname,email,mob,address);
+    }
+
+    private boolean validateUsername() {
+        String usernameInput = editTextName.getText().toString().trim();
+        String input;
+        if (usernameInput.isEmpty()) {
+            input =  "Username cannot be empty";
+            Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        else {
+            return true;
+        }
+
+    }
+
+    private Boolean validateEmail() {
+        String emailInput = editTextEmail.getText().toString().trim();
+        String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+        String input;
+
+        if(emailInput.isEmpty())
+        {
+            input =  "Email cannot be empty";
+            Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        else if  (!emailInput.matches(emailPattern)) {
+
+            Toast toast =  Toast.makeText(getApplicationContext(), "invalid email address", Toast.LENGTH_SHORT);
+            View view =toast.getView();
+            view.setBackgroundColor(Color.rgb(69, 61,85 ));
+            TextView text = view.findViewById(android.R.id.message);
+            text.setTextColor(Color.WHITE);
+
+            toast.setGravity(Gravity.LEFT| Gravity.TOP, 250, 170);
+            toast.show();
+            return false;
+        }
+
+        else {
+
+            return true;
+        }
+
+//        if (emailInput.isEmpty()) {
+//            input =  "Email cannot be empty";
+//            Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
+//            return false;
+//        }
+//        else {
+//            return true;
+//        }
+
+    }
+
+
+
+    private boolean validateMobile() {
+        String passwordInput = editTextMobile.getEditableText().toString().trim();
+        String input;
+        int len = passwordInput.length();
+        if (passwordInput.isEmpty()) {
+            input =  "Password cannot be empty";
+            Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        else if (passwordInput.length() > 10){
+            input =  "Enter a valid mobile number";
+            Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        else {
+            return true;
+        }
+
+    }
+
+    private boolean validateaddress() {
+        String addressInput = editTextAddress.getText().toString().trim();
+        String input;
+        if (addressInput.isEmpty()) {
+            input =  "Address cannot be empty";
+            Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        else {
+            return true;
+        }
 
 
     }
