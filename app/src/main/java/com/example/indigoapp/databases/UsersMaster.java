@@ -32,4 +32,11 @@ public class UsersMaster {
         public static final String COLUMN_NAME_AMOUNT = "Sub total";
     }
 
+    public static class UserCart implements BaseColumns{
+        public static final String TABLE_NAME="cart name";
+        public static final String COLUMN_NUMBER="cart number";
+        public static final String COLUMN_DATE="cart expiry date";
+
+    }
+
 }
