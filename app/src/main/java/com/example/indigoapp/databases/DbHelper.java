@@ -5,6 +5,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.graphics.Bitmap;
+
+import java.io.ByteArrayOutputStream;
 
 import static com.example.indigoapp.databases.UsersMaster.Users.TABLE_USER;
 
@@ -100,18 +103,34 @@ public class DbHelper extends SQLiteOpenHelper {
 
 
     }
-    public boolean Customer_insert_payment_details(payments pay){
+    public void Customer_insert_payment_details(payments pay){
         SQLiteDatabase db=getWritableDatabase();
         ContentValues values=new ContentValues();
         values.put(UsersMaster.Payment.COL_USER_NAME,pay.getName());
         values.put(UsersMaster.Payment.COL_USER_EMAIL,pay.getEmail_id());
         values.put(UsersMaster.Payment.COLUMN_NAME_AMOUNT,pay.getTotal());
         values.put(UsersMaster.Payment.COL_USER_ADDRESS,pay.get_id());
-        long rowId=db.insert(UsersMaster.Payment.TABLE_NAME,null,values);
+        long newRowId =db.insert(UsersMaster.Payment.TABLE_NAME,null,values);
 
 
-        return rowId != -1;
+
     }
+
+
+    public void User_insert_cart_details(Cart cart){
+        SQLiteDatabase db=getWritableDatabase();
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+
+
+        ContentValues values=new ContentValues();
+        values.put( UsersMaster.UserCart.TABLE_NAME,cart.getName());
+        values.put(UsersMaster.UserCart.COLUMN_NUMBER,cart.getNumb());
+        values.put(UsersMaster.UserCart.COLUMN_DATE,cart.getDate());
+        long newRowId =db.insert(UsersMaster.UserCart.TABLE_NAME,null,values);
+
+    }
+
+
 
 
     public String checkUser (String email, String password){
@@ -442,5 +461,8 @@ public class DbHelper extends SQLiteOpenHelper {
     }
 
     private class payments {
+    }
+
+    private class Cart {
     }
 }
