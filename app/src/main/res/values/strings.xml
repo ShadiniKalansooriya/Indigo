@@ -101,6 +101,8 @@
     <string name="new_password">New Password</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="Change">Change</string>
+    <string name="denim_title">Denims</string>
+    <string name="remove_cart">REMOVE FROM CART</string>
     <string name="Name">Name</string>
     <string name="Namecaps">NAME</string>
     <string name="update">UPDATE</string>

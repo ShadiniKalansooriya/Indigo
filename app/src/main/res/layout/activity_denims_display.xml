@@ -3,8 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".views.Savings_display"
+    android:layout_height="500dp"
+    tools:openDrawer = "start"
+    android:padding="10dp"
     app:cardElevation="15dp">
 
 
@@ -12,16 +13,16 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+
                 <TextView
                     android:id="@+id/product_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Product Name"
                     android:textAlignment="center"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    android:textColor="@color/colorPrimary"
-                    />
+                    android:textColor="@color/BlackHeader"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
 
                 <ImageView
                     android:id="@+id/product_image"
@@ -30,36 +31,26 @@
                     android:layout_below="@+id/product_name"
                     android:scaleType="centerCrop"
                     android:layout_marginTop="2dp"
+                    android:paddingTop="15dp"
                     />
 
                 <TextView
                     android:id="@+id/product_price"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/product_description"
+                    android:layout_below="@+id/product_image"
                     android:text="Product Price"
                     android:textAlignment="center"
-                    android:textSize="18dp"
-                    android:textColor="@color/colorPrimaryDark"
-                    />
+                    android:textColor="@color/BlackHeader"
+                    android:textSize="25dp" />
 
-                <TextView
-                    android:id="@+id/product_description"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/product_image"
-                    android:text="Product Description"
-                    android:layout_marginTop="2dp"
-                    android:textAlignment="center"
-                    android:textSize="16dp"
-                    android:textColor="@color/colorPrimaryDark"
-                    />
                 <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
                     android:id="@+id/number_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:elevation="6dp"
                     app:textSize="10dp"
+                    android:background="@color/lightGray"
                     app:initialNumber="1"
                     app:finalNumber="20"
                     android:layout_centerHorizontal="true"
@@ -71,14 +62,36 @@
 
                 <Button
                     android:id="@+id/add_to_cart_btn"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/number_btn"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/lightGray"
+                    android:elevation="6dp"
+                    android:layout_marginLeft="103dp"
+                    android:text="@string/add_to_card"
+                    android:textSize="15dp" />
+
+                <Button
+                    android:id="@+id/remove_cart_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/add_to_card"
+                    android:layout_below="@+id/add_to_cart_btn"
+                    android:layout_marginLeft="97dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/lightGray"
                     android:elevation="6dp"
-                    android:background="@color/white"
-                    android:layout_centerHorizontal="true"
-                    android:layout_below="@+id/number_btn"
-                    />
+                    android:text="@string/remove_from_cart"
+                    android:textSize="15dp" />
+
+                <ImageButton
+                    android:id="@+id/imageButton2"
+                    android:layout_width="53dp"
+                    android:layout_height="53dp"
+                    android:layout_below="@+id/add_to_cart_btn"
+                    android:layout_marginLeft="252dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/heartt" />
 
 
         </RelativeLayout>
