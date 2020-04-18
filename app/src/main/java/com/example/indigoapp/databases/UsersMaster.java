@@ -23,5 +23,11 @@ public class UsersMaster {
 
     }
 
-
+    public static class Payment implements BaseColumns {
+        public static String TABLE_NAME;
+        public static final String COL_USER_NAME = "Name";
+        public static final String COL_USER_EMAIL = "Email";
+        public static final String COL_USER_ADDRESS = "Address";
+        public static final String COLUMN_NAME_AMOUNT = "Sub total";
+    }
 }
