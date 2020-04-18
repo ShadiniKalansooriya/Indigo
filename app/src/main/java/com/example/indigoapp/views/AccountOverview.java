@@ -6,6 +6,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.indigoapp.R;
 import com.example.indigoapp.databases.DbHelper;
@@ -122,6 +123,16 @@ public class AccountOverview extends AppCompatActivity implements NavigationView
             public void onClick(View v) {
                 Intent editIntent = new Intent(AccountOverview.this, EditDetails.class);
                 startActivity(editIntent);
+            }
+        });
+
+        buttonDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dbHelper.deleteAccount();
+                Intent signupIntent = new Intent(AccountOverview.this, RegisterDetailsActivity.class);
+                startActivity(signupIntent);
+                Toast.makeText(getApplicationContext(),"Account deleted Succesfully",Toast.LENGTH_LONG).show();
             }
         });
 
