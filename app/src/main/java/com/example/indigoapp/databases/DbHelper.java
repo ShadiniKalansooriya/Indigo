@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.io.ByteArrayOutputStream;
+
 import static com.example.indigoapp.databases.UsersMaster.Users.TABLE_USER;
 
 public class DbHelper extends SQLiteOpenHelper {
@@ -48,12 +50,12 @@ public class DbHelper extends SQLiteOpenHelper {
                 " ON DELETE CASCADE ON UPDATE CASCADE, )";
 
 
-        String CUSTOMER_CART_CREATES_ENTRIES = "CREATE TABLE " + UsersMaster.UserCart.TABLE_NAME + "(" +
-                UsersMaster.UserCart.TABLE_NAME +" TEXT,"+
+        String CUSTOMER_CART_CREATES_ENTRIES = "CREATE TABLE " + UsersMaster.UserCart.CART_NAME_USER + "(" +
+                UsersMaster.UserCart.CART_NAME +" TEXT,"+
                 UsersMaster.UserCart.COLUMN_NUMBER +" TEXT,"+
                 UsersMaster.UserCart.COLUMN_DATE +" TEXT,"+
 
-                " FOREIGN KEY (" + UsersMaster.UserCart.COLUMN_NUMBER + ") REFERENCES " + UsersMaster.UserCart.TABLE_NAME +
+                " FOREIGN KEY (" + UsersMaster.UserCart.COLUMN_NUMBER + ") REFERENCES " + UsersMaster.UserCart.CART_NAME_USER +
                 " ON DELETE CASCADE ON UPDATE CASCADE, )";
 
 
@@ -103,6 +105,18 @@ public class DbHelper extends SQLiteOpenHelper {
         values.put(UsersMaster.Payment.COLUMN_USER_AMOUNT, pay.getTotal());
 
         long newRowId = db.insert(UsersMaster.Payment.TABLE_NAME, null, values);
+
+    }
+
+    public void User_insert_cart_details(Cart cart){
+        SQLiteDatabase db=getWritableDatabase();
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+
+        ContentValues values=new ContentValues();
+        values.put( UsersMaster.UserCart.CART_NAME,cart.Name());
+//        values.put(UsersMaster.UserCart.COLUMN_NUMBER,cart.Numb);
+//        values.put(UsersMaster.UserCart.COLUMN_DATE,cart.Date);
+        long newRowId =db.insert(UsersMaster.UserCart.CART_NAME_USER,null,values);
 
     }
 
@@ -496,6 +510,40 @@ public class DbHelper extends SQLiteOpenHelper {
             cursor.close();
             return currentUsername;
         }
+    }
+
+    private class Cart {
+
+        public String Name() {
+            String[] projection = {
+                    UsersMaster.UserCart.CART_NAME
+            };
+            SQLiteDatabase db = getWritableDatabase();
+
+
+            String selection = UsersMaster.Users.COL_USER_CURRENT + " LIKE ?";
+            String[] selectionArgs = {"TRUE"};
+
+
+            Cursor cursor = db.query(UsersMaster.Users.TABLE_USER,
+                    projection,
+                    selection,
+                    selectionArgs,
+                    null, null, null);
+            String currentUsername;
+
+            if (cursor.moveToFirst()) {
+                do {
+                    currentUsername = cursor.getString(cursor.getColumnIndex(UsersMaster.UserCart.CART_NAME));
+                } while (cursor.moveToNext());
+            } else {
+                currentUsername = "321";
+            }
+            cursor.close();
+            return currentUsername;
+        }
+
+
     }
 
 }
