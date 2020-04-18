@@ -54,7 +54,7 @@
     <string name="payment">Payment</string>
     <string name="sub_total">Sub total</string>
     <string name="payment_method">Payment method</string>
-    <string name="add_to_card">Add to card</string>
+    <string name="add_to_card">Add To Cart</string>
     <string name="cash_on_delivery">Cash on delivery</string>
     <string name="wishlist">wishlist</string>
     <string name="delete">delete</string>
@@ -92,6 +92,17 @@
     <string name="comPW">CONFIRM PASSWORD</string>
     <string name="mobile_number">Mobile Number</string>
     <string name="confPW">Confirm Password</string>
+
+    <string name="address">Address</string>
+    <string name="mobile_numbercaps">MOBILE NUMBER</string>
+    <string name="addresscaps">ADDRESS</string>
+    <string name="ChangePassword">Change Password</string>
+    <string name="CurrPW">Current Password</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="Change">Change</string>
+    <string name="denim_title">Denims</string>
+    <string name="remove_cart">REMOVE FROM CART</string>
 
 
 </resources>

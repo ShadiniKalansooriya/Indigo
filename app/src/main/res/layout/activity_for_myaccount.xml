@@ -75,7 +75,7 @@
                     android:textSize="18sp" />
 
                 <Button
-                    android:id="@+id/buttonAddressBook"
+                    android:id="@+id/buttonChangePw"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
@@ -84,7 +84,7 @@
                     android:layout_marginBottom="8dp"
                     android:background="@android:color/holo_purple"
                     android:fontFamily="@font/baloo"
-                    android:text="@string/btnAddressBoook"
+                    android:text="@string/ChangePassword"
                     android:textColor="@color/white"
                     android:textSize="18sp" />
 
