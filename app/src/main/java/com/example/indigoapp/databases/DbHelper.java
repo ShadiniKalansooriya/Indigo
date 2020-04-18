@@ -43,7 +43,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
                 UsersMaster.Payment.COL_USER_NAME + " TEXT," +
                 UsersMaster.Payment.COL_USER_EMAIL + " TEXT," +
-                UsersMaster.Payment.COLUMN_NAME_AMOUNT + " TEXT," +
+                UsersMaster.Payment.COLUMN_USER_AMOUNT + " TEXT," +
                 UsersMaster.Payment.COL_USER_ADDRESS + " TEXT," +
 
 
@@ -90,7 +90,7 @@ public class DbHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(UsersMaster.Payment.COL_USER_NAME, pay.getUsername());
         values.put(UsersMaster.Payment.COL_USER_EMAIL, pay.getemail());
-        values.put(UsersMaster.Payment.COLUMN_NAME_AMOUNT, pay.getTotal());
+        values.put(UsersMaster.Payment.COLUMN_USER_AMOUNT, pay.getTotal());
 
         long newRowId = db.insert(UsersMaster.Payment.TABLE_NAME, null, values);
 
@@ -400,6 +400,89 @@ public class DbHelper extends SQLiteOpenHelper {
 
     private class payments {
 
+        public String getUsername() {
+            String[] projection = {
+                    UsersMaster.Payment.COL_USER_NAME
+            };
+            SQLiteDatabase db = getWritableDatabase();
+
+
+            String selection = UsersMaster.Users.COL_USER_CURRENT + " LIKE ?";
+            String[] selectionArgs = {"TRUE"};
+
+
+            Cursor cursor = db.query(UsersMaster.Users.TABLE_USER,
+                    projection,
+                    selection,
+                    selectionArgs,
+                    null, null, null);
+            String currentUsername;
+
+            if (cursor.moveToFirst()) {
+                do {
+                    currentUsername = cursor.getString(cursor.getColumnIndex(UsersMaster.Payment.COL_USER_NAME));
+                } while (cursor.moveToNext());
+            } else {
+                currentUsername = "321";
+            }
+            cursor.close();
+            return currentUsername;
+        }
+
+        public String getemail() {
+
+
+            String[] projection = {
+                    UsersMaster.Payment.COL_USER_EMAIL
+            };
+            SQLiteDatabase db = getWritableDatabase();
+            Cursor cursor = db.query(UsersMaster.Users.TABLE_USER,
+                    projection,
+                    UsersMaster.Users.COL_USER_CURRENT + " LIKE ? ",
+                    new String[]{"TRUE"},
+                    null, null, null);
+
+            String currentUsername;
+
+            if (cursor.moveToFirst()) {
+                do {
+                    currentUsername = cursor.getString(cursor.getColumnIndex(UsersMaster.Payment.COL_USER_EMAIL));
+                } while (cursor.moveToNext());
+            } else {
+                currentUsername = "321";
+
+            }
+            cursor.close();
+            return currentUsername;
+        }
+        public String getTotal() {
+            String[] projection = {
+                    UsersMaster.Payment.COLUMN_USER_AMOUNT
+            };
+            SQLiteDatabase db = getWritableDatabase();
+
+
+            String selection = UsersMaster.Users.COL_USER_CURRENT + " LIKE ?";
+            String[] selectionArgs = {"TRUE"};
+
+
+            Cursor cursor = db.query(UsersMaster.Users.TABLE_USER,
+                    projection,
+                    selection,
+                    selectionArgs,
+                    null, null, null);
+            String currentUsername;
+
+            if (cursor.moveToFirst()) {
+                do {
+                    currentUsername = cursor.getString(cursor.getColumnIndex(UsersMaster.Payment.COLUMN_USER_AMOUNT));
+                } while (cursor.moveToNext());
+            } else {
+                currentUsername = "321";
+            }
+            cursor.close();
+            return currentUsername;
+        }
     }
 
 }
