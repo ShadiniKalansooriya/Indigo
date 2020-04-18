@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:openDrawer="start"
+    tools:context=".views.MainActivity"
     android:background="@drawable/m2"
     >
 
@@ -56,7 +56,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Email"
+        android:text="@string/emailhint"
         android:textColor="@android:color/black"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -80,7 +80,7 @@
         android:text="@string/conform_purchasing"
         android:textColor="@android:color/black"
         android:textColorHighlight="@android:color/black"
-        android:textSize="19sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -114,14 +114,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="264dp"
+        android:layout_marginBottom="268dp"
         android:text="@string/payment_method"
         android:textColor="@android:color/black"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.054"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
@@ -191,7 +191,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/add_to_card"
-            android:textSize="16sp"
             android:textStyle="bold" />
 
         <RadioButton
@@ -199,7 +198,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/cash_on_delivery"
-            android:textSize="16sp"
             android:textStyle="bold" />
     </RadioGroup>
 
@@ -209,7 +207,6 @@
         android:layout_height="28dp"
         android:text="Address"
         android:textColor="@color/BlackHeader"
-        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

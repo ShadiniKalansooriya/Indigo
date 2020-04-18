@@ -5,9 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.graphics.Bitmap;
-
-import java.io.ByteArrayOutputStream;
 
 import static com.example.indigoapp.databases.UsersMaster.Users.TABLE_USER;
 
@@ -29,7 +26,7 @@ public class DbHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
         String SQL_CREATE_ENTRIES =
-                "CREATE TABLE " + TABLE_USER + " (" +
+                "CREATE TABLE " + UsersMaster.Users. TABLE_USER + " (" +
                         UsersMaster.Users._ID+" INTEGER PRIMARY KEY,"+
                         UsersMaster.Users.COL_USER_NAME + " TEXT,"+
                         UsersMaster.Users.COL_USER_EMAIL + " TEXT,"+
@@ -40,44 +37,13 @@ public class DbHelper extends SQLiteOpenHelper {
                        UsersMaster.Users.COL_USER_TYPE + " TEXT,"+
                         UsersMaster.Users.COL_USER_CURRENT + " TEXT)";
 
-        String PAYMENT_DETAILS_ENTRIES = "CREATE TABLE " + UsersMaster.Payment.TABLE_NAME + "(" +
-
-
-                UsersMaster.Payment.COL_USER_NAME + " TEXT," +
-                UsersMaster.Payment.COL_USER_EMAIL + " TEXT," +
-                UsersMaster.Payment.COLUMN_NAME_AMOUNT + " TEXT," +
-                UsersMaster.Payment.COL_USER_ADDRESS + " TEXT," +
-
-
-                " FOREIGN KEY (" + UsersMaster.Payment.COL_USER_NAME + ") REFERENCES " + UsersMaster.Payment.TABLE_NAME +
-                " ON DELETE CASCADE ON UPDATE CASCADE, )";
-
-        String CUSTOMER_CART_CREATES_ENTRIES = "CREATE TABLE " + UsersMaster.UserCart.TABLE_NAME + "(" +
-
-
-                UsersMaster.UserCart.TABLE_NAME +" TEXT,"+
-                UsersMaster.UserCart.COLUMN_NUMBER +" TEXT,"+
-                UsersMaster.UserCart.COLUMN_DATE +" TEXT,"+
-
-
-                " FOREIGN KEY (" + UsersMaster.UserCart.COLUMN_NUMBER + ") REFERENCES " + UsersMaster.UserCart.TABLE_NAME +
-                " ON DELETE CASCADE ON UPDATE CASCADE, )";
-
-
-
-
         sqLiteDatabase.execSQL(SQL_CREATE_ENTRIES);
-        sqLiteDatabase.execSQL(PAYMENT_DETAILS_ENTRIES);
-        sqLiteDatabase.execSQL(CUSTOMER_CART_CREATES_ENTRIES);
-
 
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_USER);
-        db.execSQL("DROP TABLE IF EXISTS "+UsersMaster.Payment.TABLE_NAME);
-        db.execSQL("DROP TABLE IF EXISTS "+UsersMaster.UserCart.TABLE_NAME);
         onCreate(db);
 
     }
@@ -103,35 +69,6 @@ public class DbHelper extends SQLiteOpenHelper {
 
 
     }
-    public void Customer_insert_payment_details(payments pay){
-        SQLiteDatabase db=getWritableDatabase();
-        ContentValues values=new ContentValues();
-        values.put(UsersMaster.Payment.COL_USER_NAME,pay.getName());
-        values.put(UsersMaster.Payment.COL_USER_EMAIL,pay.getEmail_id());
-        values.put(UsersMaster.Payment.COLUMN_NAME_AMOUNT,pay.getTotal());
-        values.put(UsersMaster.Payment.COL_USER_ADDRESS,pay.get_id());
-        long newRowId =db.insert(UsersMaster.Payment.TABLE_NAME,null,values);
-
-
-
-    }
-
-
-    public void User_insert_cart_details(Cart cart){
-        SQLiteDatabase db=getWritableDatabase();
-        ByteArrayOutputStream stream = new ByteArrayOutputStream();
-
-
-        ContentValues values=new ContentValues();
-        values.put( UsersMaster.UserCart.TABLE_NAME,cart.getName());
-        values.put(UsersMaster.UserCart.COLUMN_NUMBER,cart.getNumb());
-        values.put(UsersMaster.UserCart.COLUMN_DATE,cart.getDate());
-        long newRowId =db.insert(UsersMaster.UserCart.TABLE_NAME,null,values);
-
-    }
-
-
-
 
     public String checkUser (String email, String password){
         SQLiteDatabase db = getReadableDatabase();
@@ -460,9 +397,4 @@ public class DbHelper extends SQLiteOpenHelper {
 
     }
 
-    private class payments {
-    }
-
-    private class Cart {
-    }
 }
