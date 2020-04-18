@@ -22,4 +22,6 @@ public class UsersMaster {
         public static final String COL_USER_CURRENT = "Current";
 
     }
+
+
 }
