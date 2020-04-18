@@ -54,7 +54,7 @@
     <string name="payment">Payment</string>
     <string name="sub_total">Sub total</string>
     <string name="payment_method">Payment method</string>
-    <string name="add_to_card">Add To Cart</string>
+    <string name="add_to_card">Add to card</string>
     <string name="cash_on_delivery">Cash on delivery</string>
     <string name="wishlist">wishlist</string>
     <string name="delete">delete</string>
@@ -103,6 +103,9 @@
     <string name="Change">Change</string>
     <string name="denim_title">Denims</string>
     <string name="remove_cart">REMOVE FROM CART</string>
+    <string name="Name">Name</string>
+    <string name="Namecaps">NAME</string>
+    <string name="update">UPDATE</string>
 
 
 </resources>

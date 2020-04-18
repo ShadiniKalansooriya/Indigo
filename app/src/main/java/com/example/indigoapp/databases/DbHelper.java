@@ -259,15 +259,15 @@ public class DbHelper extends SQLiteOpenHelper {
     }
 
 
-    public void changeinfo (String userName,String email, String mobile,String address){
+    public void changeinfo (String Name,String Email, String Mobile,String Address){
         SQLiteDatabase db = getWritableDatabase();
 
 
         ContentValues values = new ContentValues();
-        values.put(UsersMaster.Users.COL_USER_NAME,userName);
-        values.put(UsersMaster.Users.COL_USER_EMAIL,userName);
-        values.put(UsersMaster.Users.COL_USER_MOBILE,mobile);
-        values.put(UsersMaster.Users.COL_USER_ADDRESS,address);
+        values.put(UsersMaster.Users.COL_USER_NAME,Name);
+        values.put(UsersMaster.Users.COL_USER_EMAIL,Email);
+        values.put(UsersMaster.Users.COL_USER_MOBILE,Mobile);
+        values.put(UsersMaster.Users.COL_USER_ADDRESS,Address);
 
 
         String selection = UsersMaster.Users.COL_USER_CURRENT + " LIKE ?";

@@ -3,6 +3,7 @@ package com.example.indigoapp.views;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -28,6 +29,7 @@ public class AccountOverview extends AppCompatActivity implements NavigationView
     androidx.appcompat.widget.Toolbar toolbar;
     ImageView imageViewPropic;
     TextView textViewUserName,textViewEmail,textViewPassword,textViewMobile,textViewAddress,textViewGender;
+    android.widget.Button buttonEdit, buttonDelete;
     DbHelper dbHelper;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -105,6 +107,8 @@ public class AccountOverview extends AppCompatActivity implements NavigationView
         textViewMobile = findViewById(R.id.textViewMobile);
         textViewAddress = findViewById(R.id.textViewAddress);
         textViewGender = findViewById(R.id.textViewgender);
+        buttonEdit = findViewById(R.id.buttonedit);
+        buttonDelete = findViewById(R.id.buttonDelete);
 
         textViewUserName.setText(dbHelper.getUsername());
         textViewEmail.setText(dbHelper.getEmail());
@@ -112,6 +116,14 @@ public class AccountOverview extends AppCompatActivity implements NavigationView
         textViewMobile.setText(dbHelper.getMobile());
         textViewAddress.setText(dbHelper.getAddress());
         textViewGender.setText(dbHelper.getGender());
+
+        buttonEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent editIntent = new Intent(AccountOverview.this, EditDetails.class);
+                startActivity(editIntent);
+            }
+        });
 
     }
 
