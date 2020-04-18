@@ -217,7 +217,7 @@
                         android:layout_weight="1"
                         android:background="@android:color/holo_purple"
                         android:fontFamily="@font/baloo"
-                        android:text="@string/DELETE"
+                        android:text="@string/DeleteAccount"
                         android:textColor="@color/white"
                         android:textSize="18sp" />
                 </LinearLayout>
