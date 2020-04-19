@@ -8,7 +8,8 @@ public class UsersMaster {
     }
 
     public static class Users implements BaseColumns {
-        public static final String TABLE_USER = "users";
+        public static final String TABLE_USER =  "users";
+//
         //Columns of TABLE_USER
         // public static final String COL_USER_USER_ID = "UserID";
         //public static final String COL_USER_USERNAME = "UserName";
@@ -20,6 +21,22 @@ public class UsersMaster {
         public static final String COL_USER_GENDER="Gender";
         public static final String COL_USER_TYPE = "UserType";
         public static final String COL_USER_CURRENT = "Current";
+
+    }
+
+    public static class Payment implements BaseColumns {
+        public static String TABLE_NAME;
+        public static final String COL_USER_NAME = "Name";
+        public static final String COL_USER_EMAIL = "Email";
+        public static final String COL_USER_ADDRESS = "Address";
+        public static final String COLUMN_USER_AMOUNT = "Sub total";
+    }
+
+    public static class UserCart implements BaseColumns{
+        public static String CART_NAME_USER;
+        public static final String CART_NAME="cart name";
+        public static final String COLUMN_NUMBER="cart number";
+        public static final String COLUMN_DATE="cart expiry date";
 
     }
 }

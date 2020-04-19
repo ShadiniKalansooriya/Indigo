@@ -106,6 +106,7 @@
     <string name="Name">Name</string>
     <string name="Namecaps">NAME</string>
     <string name="update">UPDATE</string>
+    <string name="DeleteAccount">DELETE ACCOUNT</string>
 
 
 </resources>
