@@ -8,8 +8,6 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.indigoapp.R;
-import com.example.indigoapp.Requestfeed;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Feedback extends AppCompatActivity {
 

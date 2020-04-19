@@ -31,7 +31,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="ExtraText">
-        <activity android:name=".Requestfeed">
+        <activity android:name=".views.Requestfeed">
 
         </activity>
         <activity android:name=".views.RecyclerMasterActivity"></activity>
