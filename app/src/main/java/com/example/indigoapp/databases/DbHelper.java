@@ -109,6 +109,8 @@ public class DbHelper extends SQLiteOpenHelper {
 
     public void Customer_insert_payment_details(payments pay) {
         SQLiteDatabase db = getWritableDatabase();
+
+
         ContentValues values = new ContentValues();
         values.put(UsersMaster.Payment.COL_USER_NAME, pay.getUsername());
         values.put(UsersMaster.Payment.COL_USER_EMAIL, pay.getemail());
@@ -129,8 +131,6 @@ public class DbHelper extends SQLiteOpenHelper {
         long newRowId =db.insert(UsersMaster.UserCart.CART_NAME_USER,null,values);
 
     }
-
-
 
 
     public String checkUser(String email, String password) {
