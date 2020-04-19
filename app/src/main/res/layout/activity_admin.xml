@@ -41,7 +41,7 @@
         app:layout_constraintVertical_bias="0.177" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/add_prod_admin_btn"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="@string/add_products"
@@ -54,18 +54,18 @@
         app:layout_constraintVertical_bias="0.338" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/edit_prod_admin_btn"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="@string/edit_prod"
         android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/button2"
+        app:layout_constraintBaseline_toBaselineOf="@+id/add_prod_admin_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.767"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/mng_gal_admin_btn"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="@string/mng_gallery"
@@ -78,7 +78,7 @@
         app:layout_constraintVertical_bias="0.462" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/add_voucher_admin_btn"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -92,7 +92,7 @@
         app:layout_constraintVertical_bias="0.462" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/add_promo_admin_btn"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
