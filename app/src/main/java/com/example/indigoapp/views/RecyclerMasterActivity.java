@@ -1,21 +1,30 @@
 package com.example.indigoapp.views;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.indigoapp.R;
 import com.example.indigoapp.adapter.RecyclerViewAdapter;
+import com.google.android.material.navigation.NavigationView;
+
 import java.util.ArrayList;
 
-public class RecyclerMasterActivity extends AppCompatActivity {
+public class RecyclerMasterActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private static final String TAG = "RecyclerViewActivity";
     private ArrayList<String> mNames = new ArrayList<>();
     private ArrayList<String> mImageUrls = new ArrayList<>();
     private ArrayList<String> mImagePrice = new ArrayList<>();
+    DrawerLayout drawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +34,7 @@ public class RecyclerMasterActivity extends AppCompatActivity {
         Log.d(TAG, "onCreate: started");
         initImageBitmaps();
         initRecyclerView();
+
     }
 
     private void initImageBitmaps(){
@@ -57,5 +67,55 @@ public class RecyclerMasterActivity extends AppCompatActivity {
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(mNames,mImageUrls,mImagePrice, this);
         recyclerView.setAdapter(adapter);
 
+    }
+
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+
+        switch (menuItem.getItemId()) {
+            case R.id.nav_home:
+                Intent intentHome = new Intent(RecyclerMasterActivity.this, MainActivity.class);
+                startActivity(intentHome);
+                break;
+
+            case R.id.nav_shoppingBag:
+                Intent intent = new Intent(RecyclerMasterActivity.this, MainActivity.class);
+                startActivity(intent);
+                break;
+
+            case R.id.nav_WishList:
+                Intent intent1 = new Intent(RecyclerMasterActivity.this, Wishlist.class);
+                startActivity(intent1);
+                break;
+            case R.id.nav_MyAccount:
+                Intent intent6 = new Intent(RecyclerMasterActivity.this, MyAccount.class);
+                startActivity(intent6);
+                break;
+
+            case R.id.nav_Promotions:
+                Intent intent7 = new Intent(RecyclerMasterActivity.this, MainActivity.class);
+                startActivity(intent7);
+                break;
+            case R.id.nav_Gallery:
+                Intent intent2 = new Intent(RecyclerMasterActivity.this, GalleryView.class);
+                startActivity(intent2);
+                break;
+
+            case R.id.nav_about:
+                Intent intent3 = new Intent(RecyclerMasterActivity.this, MainActivity.class);
+                startActivity(intent3);
+                break;
+            case R.id.nav_contactUs:
+                Intent intent4 = new Intent(RecyclerMasterActivity.this, MainActivity.class);
+                startActivity(intent4);
+                break;
+
+            case R.id.nav_Feedback:
+                Intent intent5 = new Intent(RecyclerMasterActivity.this, Feedback.class);
+                startActivity(intent5);
+                break;
+        }
+
+        drawerLayout.closeDrawer(GravityCompat.START);
+        return true;
     }
 }

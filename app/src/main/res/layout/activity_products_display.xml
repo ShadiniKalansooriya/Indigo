@@ -62,7 +62,7 @@
 
 
             <Button
-                android:id="@+id/button1"
+                android:id="@+id/topbtn"
                 android:layout_width="match_parent"
                 android:layout_height="109dp"
                 android:layout_marginTop="20dp"
@@ -82,7 +82,7 @@
 
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/denimbtn"
                 android:layout_width="match_parent"
                 android:layout_height="109dp"
                 android:layout_marginTop="20dp"
@@ -99,7 +99,7 @@
                 />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/pantbtn"
                 android:layout_width="match_parent"
                 android:layout_height="109dp"
                 android:layout_marginTop="20dp"
@@ -116,7 +116,7 @@
                 />
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/dressbtn"
                 android:layout_width="match_parent"
                 android:layout_height="109dp"
                 android:layout_marginTop="20dp"
@@ -133,7 +133,7 @@
                 />
 
             <Button
-                android:id="@+id/button5"
+                android:id="@+id/savingbtn"
                 android:layout_width="match_parent"
                 android:layout_height="109dp"
                 android:layout_marginTop="20dp"
@@ -151,7 +151,7 @@
                 />
 
             <Button
-                android:id="@+id/button6"
+                android:id="@+id/voucherbtn"
                 android:layout_width="match_parent"
                 android:layout_height="109dp"
                 android:layout_marginTop="20dp"

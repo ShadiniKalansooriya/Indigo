@@ -5,8 +5,8 @@
     <string name="top_button">Tops</string>
     <string name="denim_button">Denims</string>
     <string name="pant_button">Pants</string>
-    <string name="dress_button">Dress</string>
-    <string name="saving_button">Savings</string>
+    <string name="dress_button">Dresses</string>
+    <string name="saving_button">Cyber Savings</string>
     <string name="voucher_button">Vouchers</string>
     <string name="category_heading">Categories</string>
     <string name="hint_text">This is a hint</string>
