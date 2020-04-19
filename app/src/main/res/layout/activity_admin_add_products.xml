@@ -150,11 +150,11 @@
         android:background="@color/white"
         android:padding="4dp"
         android:text="@string/add_products"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/lightBlack"
         android:textSize="18dp"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="49dp"
         tools:layout_editor_absoluteY="483dp" />
-    -->
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

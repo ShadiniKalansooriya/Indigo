@@ -116,6 +116,8 @@
     <string name="product_price">Product Price</string>
     <string name="product_desc">Product Description</string>
     <string name="product_qty">Product Quantity</string>
+    <string name="search_btn">Search</string>
+    <string name="srch_prod_name">Search Product Name</string>
 
 
 </resources>
