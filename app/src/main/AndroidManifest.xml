@@ -31,7 +31,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="ExtraText">
-        <activity android:name=".AdminActivity"></activity>
+        <activity android:name=".AdminEditProducts"></activity>
+        <activity android:name=".AdminAddProducts" />
+        <activity android:name=".AdminActivity" />
         <activity android:name=".RecyclerMasterSavings" />
         <activity android:name=".RecyclerMasterVoucher" />
         <activity android:name=".views.RecyclerMasterTops" />

@@ -5,8 +5,10 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.graphics.Bitmap;
 
 import java.io.ByteArrayOutputStream;
+import java.util.ArrayList;
 
 import static com.example.indigoapp.databases.UsersMaster.Users.TABLE_USER;
 
@@ -92,6 +94,7 @@ public class DbHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_USER);
         db.execSQL("DROP TABLE IF EXISTS " + UsersMaster.Payment.TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS "+ UsersMaster.ProductsItems.TABLE_NAME);
 
         onCreate(db);
 
@@ -566,6 +569,46 @@ public class DbHelper extends SQLiteOpenHelper {
 
 
     }
+
+    public ArrayList Retrive_admin_product_details(){
+        ArrayList<Products> list=new ArrayList<>();
+        SQLiteDatabase db=getReadableDatabase();
+
+        String sql="SELECT * FROM "+ UsersMaster.ProductsItems.TABLE_NAME;
+
+        Cursor cu=db.rawQuery(sql,null);
+        byte[] image;
+        String name;
+        String count;
+        String price;
+        String desc;
+        String id;
+        String fid;
+
+        while(cu.moveToNext()){
+
+            id=cu.getString(0);
+            name=cu.getString(1);
+            count=cu.getString(2);
+            desc=cu.getString(3);
+            price=cu.getString(4);
+            image=cu.getBlob(5);
+            fid=cu.getString(7);
+            Bitmap bitmap;
+
+            bitmap= BitmapFactory.decodeByteArray(image,0,image.length);
+
+            Products products=new Products(id,name,bitmap,fid,count,desc,price);
+            list.add(products);
+
+        }
+        cu.close();
+
+        return list;
+
+    }
+
+
 
 }
 

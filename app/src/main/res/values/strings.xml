@@ -112,6 +112,10 @@
     <string name="mng_gallery">Manage Gallery</string>
     <string name="admin_title">Administration</string>
     <string name="add_voucher">Add Voucher</string>
+    <string name="prod_name">Product Name</string>
+    <string name="product_price">Product Price</string>
+    <string name="product_desc">Product Description</string>
+    <string name="product_qty">Product Quantity</string>
 
 
 </resources>

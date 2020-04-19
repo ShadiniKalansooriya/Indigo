@@ -41,7 +41,7 @@ public class UsersMaster {
     }
 
     public static class Products implements BaseColumns{
-        public static final String TABLE_NAME="Cake_Category";
+        public static String TABLE_NAME;
         public static final String COLUMN_NAME_ID="id";
         public static final String COLUMN_NAME_TITLE = "title";
         public static final String COLUMN_NAME_IMAGE = "image";
@@ -49,7 +49,7 @@ public class UsersMaster {
     }
 
     public static class ProductsItems implements BaseColumns{
-            public static final String TABLE_NAME="Products";
+            public static String TABLE_NAME;
             public static final String COLUMN_NAME_ID="id";
             public static final String COLUMN_NAME_PRODUCT_NAME="name";
             public static final String COLUMN_NAME_COUNT="count";
