@@ -47,6 +47,14 @@ public class AdminActivity extends AppCompatActivity {
             }
         });
 
+        addVoucher.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentVou = new Intent(getApplicationContext(), AdminAddVoucher.class);
+                startActivity(intentVou);
+            }
+        });
+
 
     }
 }
