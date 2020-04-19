@@ -3,6 +3,7 @@ package com.example.indigoapp.views;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -52,7 +53,7 @@ public class Login extends AppCompatActivity implements NavigationView.OnNavigat
                     break;
 
                 case R.id.nav_b_wishlist:
-                    Intent intent1 = new Intent(Login.this, Wishlist.class);
+                    Intent intent1 = new Intent(Login.this, MainActivity.class);
                     startActivity(intent1);
                     break;
 
@@ -103,6 +104,11 @@ public class Login extends AppCompatActivity implements NavigationView.OnNavigat
         bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
+
+        //Hide or show items
+        Menu menu = navigationView.getMenu();
+        menu.findItem(R.id.nav_Logout).setVisible(false);
+        menu.findItem(R.id.nav_MyAccount).setVisible(false);
 
 
         dbHelper = new DbHelper(this);
