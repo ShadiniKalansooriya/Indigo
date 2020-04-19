@@ -8,7 +8,8 @@ public class UsersMaster {
     }
 
     public static class Users implements BaseColumns {
-        public static final String TABLE_USER = "users";
+        public static final String TABLE_USER =  "users";
+//
         //Columns of TABLE_USER
         // public static final String COL_USER_USER_ID = "UserID";
         //public static final String COL_USER_USERNAME = "UserName";

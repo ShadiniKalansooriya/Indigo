@@ -31,16 +31,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="ExtraText">
-        <activity android:name=".views.RecyclerMasterActivity">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-        </activity>
+
         <activity android:name=".views.changePassword" />
         <activity android:name=".views.EditDetails"></activity>
-        <activity android:name=".views.changePassword" />
+<!--        <activity android:name=".views.changePassword" />-->
 <!--        <activity-->
 <!--            android:name=".views.SplashScreen"-->
 <!--            android:theme="@style/Theme.AppCompat.NoActionBar">-->
