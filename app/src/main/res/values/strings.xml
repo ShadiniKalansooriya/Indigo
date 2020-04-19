@@ -118,6 +118,7 @@
     <string name="product_qty">Product Quantity</string>
     <string name="search_btn">Search</string>
     <string name="srch_prod_name">Search Product Name</string>
+    <string name="edit_prod">Edit Products</string>
 
 
 </resources>

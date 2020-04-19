@@ -28,7 +28,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:background="@color/lightGray"
-        android:text="@string/add_products"
+        android:text="@string/edit_prod"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="@android:color/black"
@@ -163,6 +163,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/editText7"
         tools:layout_editor_absoluteY="204dp"
+        android:textStyle="bold"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -176,6 +177,7 @@
         app:layout_constraintStart_toEndOf="@+id/update_product_btn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:textStyle="bold"
         app:layout_constraintVertical_bias="0.918" />
 
     <Button
@@ -190,6 +192,7 @@
         app:layout_constraintHorizontal_bias="0.7"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:textStyle="bold"
         app:layout_constraintVertical_bias="0.827" />
 
 
