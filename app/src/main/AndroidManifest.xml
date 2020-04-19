@@ -31,7 +31,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="ExtraText">
-        <activity android:name=".RecyclerMasterVoucher"></activity>
+        <activity android:name=".RecyclerMasterSavings"></activity>
+        <activity android:name=".RecyclerMasterVoucher" />
         <activity android:name=".views.RecyclerMasterTops" />
         <activity android:name=".views.RecyclerMasterPants" />
         <activity android:name=".views.RecyclerMasterDresses" />
