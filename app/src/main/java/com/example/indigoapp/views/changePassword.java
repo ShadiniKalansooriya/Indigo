@@ -2,6 +2,7 @@ package com.example.indigoapp.views;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -102,6 +103,9 @@ public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
     BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
 
 
+    //Hide or show items
+    Menu menu = navigationView.getMenu();
+    menu.findItem(R.id.nav_Login).setVisible(false);
 
     dbHelper = new DbHelper(this);
     editTextCurrPw = findViewById(R.id.editTextcurrentPW);

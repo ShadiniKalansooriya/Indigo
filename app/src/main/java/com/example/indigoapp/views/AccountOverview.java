@@ -2,6 +2,7 @@ package com.example.indigoapp.views;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -99,6 +100,12 @@ public class AccountOverview extends AppCompatActivity implements NavigationView
         bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
+
+        //Hide or show items
+        Menu menu = navigationView.getMenu();
+        menu.findItem(R.id.nav_Login).setVisible(false);
+
+
 
 
         imageViewPropic = findViewById(R.id.imageViewpropic);

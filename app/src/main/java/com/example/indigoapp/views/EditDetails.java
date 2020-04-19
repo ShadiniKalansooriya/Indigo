@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -101,6 +102,10 @@ public class EditDetails extends AppCompatActivity implements NavigationView.OnN
         bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
+
+        //Hide or show items
+        Menu menu = navigationView.getMenu();
+        menu.findItem(R.id.nav_Login).setVisible(false);
 
         dbHelper = new DbHelper(this);
         editTextName = findViewById(R.id.editTextName);
