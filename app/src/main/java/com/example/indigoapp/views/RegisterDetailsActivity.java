@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -67,7 +68,7 @@ public class RegisterDetailsActivity extends AppCompatActivity implements Naviga
                     break;
 
                 case R.id.nav_b_wishlist:
-                    Intent intent1 = new Intent(RegisterDetailsActivity.this, Wishlist.class);
+                    Intent intent1 = new Intent(RegisterDetailsActivity.this, MainActivity.class);
                     startActivity(intent1);
                     break;
 
@@ -120,6 +121,14 @@ public class RegisterDetailsActivity extends AppCompatActivity implements Naviga
         bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
+
+
+        //Hide or show items
+        Menu menu = navigationView.getMenu();
+        menu.findItem(R.id.nav_Logout).setVisible(false);
+        menu.findItem(R.id.nav_MyAccount).setVisible(false);
+
+
 
         textViewSignIn = findViewById(R.id.textViewSignIn);
         editTextName = findViewById(R.id.editTextName);
@@ -347,7 +356,7 @@ public class RegisterDetailsActivity extends AppCompatActivity implements Naviga
                 break;
 
             case R.id.nav_WishList:
-                Intent intent1 = new Intent(RegisterDetailsActivity.this, Wishlist.class);
+                Intent intent1 = new Intent(RegisterDetailsActivity.this, MainActivity.class);
                 startActivity(intent1);
                 break;
             case R.id.nav_MyAccount:
