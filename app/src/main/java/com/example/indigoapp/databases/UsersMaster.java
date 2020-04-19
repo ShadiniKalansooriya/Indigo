@@ -60,4 +60,14 @@ public class UsersMaster {
             public static final String COLUMN_NAME_CATEGORY_NAME="cname";
         }
     }
+    public static class Feedback implements BaseColumns{
+        public static final String TABLE_NAME = "feedback";
+        public static final String COLUMN_NAME_NAME = "name";
+        public static final String COLUMN_NAME_EMAIL="email";
+        public static final String COLUMN_NAME_MESSAGE="message";
+        public static final String COLUMN_NAME_Report="report";
+    }
+
+
+
 }

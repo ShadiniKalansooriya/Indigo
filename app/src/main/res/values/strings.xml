@@ -121,6 +121,7 @@
     <string name="edit_prod">Edit Products</string>
     <string name="voucher_price">Voucher Price</string>
     <string name="voucher_qty">Voucher Quantity</string>
+    <string name="feedreq">Send feedback</string>
 
 
 </resources>
