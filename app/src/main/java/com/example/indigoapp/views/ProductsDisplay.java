@@ -65,6 +65,14 @@ public class ProductsDisplay extends AppCompatActivity {
             }
         });
 
+        voucherBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentVoucher = new Intent(getApplicationContext(), RecyclerMasterVoucher.class);
+                startActivity(intentVoucher);
+            }
+        });
+
 
     }
 
