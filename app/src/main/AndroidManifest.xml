@@ -31,28 +31,24 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="ExtraText">
-        <activity android:name=".AdminActivity"></activity>
-        <activity android:name=".RecyclerMasterSavings" />
-        <activity android:name=".RecyclerMasterVoucher" />
-        <activity android:name=".views.RecyclerMasterTops" />
-        <activity android:name=".views.RecyclerMasterPants" />
-        <activity android:name=".views.RecyclerMasterDresses" />
-        <activity android:name=".views.RecyclerMasterActivity" />
+        <activity android:name=".Requestfeed">
+
+        </activity>
+        <activity android:name=".views.RecyclerMasterActivity"></activity>
         <activity android:name=".views.changePassword" />
-        <activity android:name=".views.EditDetails" /> <!-- <activity android:name=".views.changePassword" /> -->
-        <!-- <activity -->
-        <!-- android:name=".views.SplashScreen" -->
-        <!-- android:theme="@style/Theme.AppCompat.NoActionBar"> -->
-        <!-- <intent-filter> -->
-        <!-- <action android:name="android.intent.action.MAIN" /> -->
-        <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-        <!-- </intent-filter> -->
-        <!-- </activity> -->
+        <activity android:name=".views.EditDetails" />
+        <activity
+            android:name=".views.SplashScreen"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+
+        </activity>
         <activity android:name=".views.HomePage" />
         <activity android:name=".views.GalleryView" />
         <activity android:name=".views.Gallery" />
         <activity android:name=".views.Wishlist" />
-        <activity android:name=".views.Feedback" />
+        <activity android:name=".views.Feedback">
+
+        </activity>
         <activity android:name=".views.Login" />
         <activity android:name=".views.MyAccount" />
         <activity android:name=".views.RegisterDetailsActivity" />
@@ -60,8 +56,9 @@
         <activity android:name=".views.ProductsDisplay" />
         <activity android:name=".views.ProductsDetails" />
         <activity android:name=".views.Savings_display" />
-        <activity android:name=".views.Vouchers_display" />
         <activity android:name=".views.Denims_display" />
+        <activity android:name=".views.Dresses_display" />
+        <activity android:name=".views.Pants_display" />
         <activity android:name=".adapter.RecyclerViewAdapter" />
         <activity android:name=".views.MainActivity">
             <intent-filter>

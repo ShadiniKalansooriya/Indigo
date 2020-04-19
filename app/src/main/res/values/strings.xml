@@ -112,6 +112,7 @@
     <string name="mng_gallery">Manage Gallery</string>
     <string name="admin_title">Administration</string>
     <string name="add_voucher">Add Voucher</string>
+    <string name="feedreq">Send feedback</string>
 
 
 </resources>
