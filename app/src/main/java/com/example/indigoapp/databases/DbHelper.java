@@ -6,6 +6,10 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+
+import com.example.indigoapp.model.CategoryItems;
+import com.example.indigoapp.model.Products;
 
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
@@ -87,7 +91,7 @@ public class DbHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(CUSTOMER_CART_CREATES_ENTRIES);
         sqLiteDatabase.execSQL(PRODUCT_DETAILS_ENTRIES);
         sqLiteDatabase.execSQL(ADMIN_PRODUCT_DETAILS_ENTRIES);
-
+        sqLiteDatabase.execSQL(PRODUCT_DETAILS_ENTRIES);
     }
 
     @Override
@@ -95,6 +99,7 @@ public class DbHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_USER);
         db.execSQL("DROP TABLE IF EXISTS " + UsersMaster.Payment.TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS "+ UsersMaster.ProductsItems.TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS "+ UsersMaster.Products.TABLE_NAME);
 
         onCreate(db);
 
@@ -581,7 +586,6 @@ public class DbHelper extends SQLiteOpenHelper {
         String name;
         String count;
         String price;
-        String desc;
         String id;
         String fid;
 
@@ -590,17 +594,79 @@ public class DbHelper extends SQLiteOpenHelper {
             id=cu.getString(0);
             name=cu.getString(1);
             count=cu.getString(2);
-            desc=cu.getString(3);
-            price=cu.getString(4);
-            image=cu.getBlob(5);
-            fid=cu.getString(7);
+            price=cu.getString(3);
+            image=cu.getBlob(4);
+            fid=cu.getString(6);
             Bitmap bitmap;
 
             bitmap= BitmapFactory.decodeByteArray(image,0,image.length);
 
-            Products products=new Products(id,name,bitmap,fid,count,desc,price);
+            Products products=new Products(id,name,price,bitmap,count,fid);
             list.add(products);
 
+        }
+        cu.close();
+
+        return list;
+
+    }
+
+    public ArrayList Retrive_admin_search_product_details(String pname){
+        ArrayList<Products> list=new ArrayList<>();
+        SQLiteDatabase db=getReadableDatabase();
+
+        String sql="SELECT * FROM "+ UsersMaster.ProductsItems.TABLE_NAME + " WHERE "+ UsersMaster.ProductsItems.COLUMN_NAME_PRODUCT_NAME
+                +" LIKE ? OR " +UsersMaster.ProductsItems.COLUMN_NAME_CATEGORY_NAME + " LIKE ?" ;
+        String []selectionArgs={"%" + pname + "%",pname +"%"};
+
+        Cursor cu=db.rawQuery(sql,selectionArgs);
+        byte[] image;
+        String name;
+        String count;
+        String price;
+        String id;
+        String fid;
+
+        while(cu.moveToNext()){
+
+            id=cu.getString(0);
+            name=cu.getString(1);
+            count=cu.getString(2);
+            price=cu.getString(3);
+            image=cu.getBlob(4);
+            fid=cu.getString(6);
+            Bitmap bitmap;
+
+            bitmap= BitmapFactory.decodeByteArray(image,0,image.length);
+
+            Products products=new Products(id,name,price,bitmap,count,fid);
+            list.add(products);
+
+        }
+        cu.close();
+
+        return list;
+
+    }
+
+    public ArrayList Retrive_Product_Category_Details(){
+        ArrayList<CategoryItems> list=new ArrayList<>();
+        SQLiteDatabase db=getReadableDatabase();
+
+        String sql="SELECT * FROM "+ UsersMaster.Products.TABLE_NAME;
+
+        Cursor cu=db.rawQuery(sql,null);
+        byte[] image;
+        while(cu.moveToNext()){
+            String id=cu.getString(0);
+            image=cu.getBlob(1);
+            String name=cu.getString(2);
+            Bitmap bitmap;
+
+            bitmap= BitmapFactory.decodeByteArray(image,0,image.length);
+            CategoryItems items=new CategoryItems(name,bitmap,id);
+            items.setId(id);
+            list.add(items);
         }
         cu.close();
 
