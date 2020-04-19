@@ -31,8 +31,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="ExtraText">
-
-
+        <activity android:name=".views.RecyclerMasterTops"/>
+        <activity android:name=".views.RecyclerMasterPants" />
+        <activity android:name=".views.RecyclerMasterDresses"/>
+        <activity android:name=".views.RecyclerMasterActivity"/>
         <activity android:name=".views.changePassword" />
         <activity android:name=".views.EditDetails"></activity>
 <!--        <activity android:name=".views.changePassword" />-->
@@ -59,8 +61,6 @@
         <activity android:name=".views.Savings_display" />
         <activity android:name=".views.Vouchers_display" />
         <activity android:name=".views.Denims_display" />
-        <activity android:name=".views.Dresses_display" />
-        <activity android:name=".views.Pants_display" />
         <activity android:name=".adapter.RecyclerViewAdapter" />
         <activity android:name=".views.MainActivity">
 

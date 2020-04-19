@@ -4,18 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.RecyclerMasterActivity">
-
-   <!-- <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        app:headerLayout="@layout/header"
-        app:menu="@menu/main_menu"
-        tools:ignore="MissingConstraints" />-->
-
-
+    tools:context=".views.RecyclerMasterTops">
 
     <ImageButton
         android:id="@+id/imageButton"
@@ -40,7 +29,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:background="@color/lightGray"
-        android:text="@string/denim_button"
+        android:text="@string/top_button"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="@android:color/holo_purple"
@@ -53,7 +42,7 @@
         app:layout_constraintVertical_bias="0.177" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
+        android:id="@+id/recycler_view_tops"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="180dp"
@@ -61,4 +50,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

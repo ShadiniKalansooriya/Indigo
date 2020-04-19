@@ -9,6 +9,7 @@
     app:cardElevation="15dp">
 
 
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -69,7 +70,7 @@
                     android:background="@color/lightGray"
                     android:elevation="6dp"
                     android:layout_marginLeft="103dp"
-                    android:text="@string/add_to_card"
+                    android:text="@string/add_to_button"
                     android:textSize="15dp" />
 
                 <Button
