@@ -82,6 +82,15 @@ public class DbHelper extends SQLiteOpenHelper {
                 UsersMaster.ProductsItems.COLUMN_NAME_FOREIGNKEY + ") REFERENCES "+ UsersMaster.ProductsItems.TABLE_NAME+"("+
                 UsersMaster.ProductsItems.COLUMN_NAME_ID +") ON DELETE CASCADE ON UPDATE CASCADE)";
 
+        String ADMIN_VOUCHER_DETAILS_ENTRIES="CREATE TABLE "+ UsersMaster.Vouchers.TABLE_NAME +"("+
+                UsersMaster.Vouchers.COLUMN_NAME_ID+" INTEGER PRIMARY KEY AUTOINCREMENT,"+
+                UsersMaster.Vouchers.COLUMN_NAME_COUNT +" INTEGER,"+
+                UsersMaster.Vouchers.COLUMN_NAME_PRICE + " TEXT,"+
+                UsersMaster.Vouchers.COLUMN_NAME_VOUCHERIMAGE + " LONGBLOB,"+
+                UsersMaster.Vouchers.COLUMN_NAME_FOREIGNKEY+" INTEGER,CONSTRAINT fk_vou_cat FOREIGN KEY ("+
+                UsersMaster.Vouchers.COLUMN_NAME_FOREIGNKEY + ") REFERENCES "+ UsersMaster.Vouchers.TABLE_NAME+"("+
+                UsersMaster.Vouchers.COLUMN_NAME_ID +") ON DELETE CASCADE ON UPDATE CASCADE)";
+
 
 
 
@@ -92,6 +101,8 @@ public class DbHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(PRODUCT_DETAILS_ENTRIES);
         sqLiteDatabase.execSQL(ADMIN_PRODUCT_DETAILS_ENTRIES);
         sqLiteDatabase.execSQL(PRODUCT_DETAILS_ENTRIES);
+        sqLiteDatabase.execSQL(ADMIN_VOUCHER_DETAILS_ENTRIES);
+
 
         String SQL_CREATE_FEED_ENTRIES =
                 "CREATE TABLE " +   UsersMaster.Feedback.TABLE_NAME + " ("+
@@ -111,6 +122,7 @@ public class DbHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + UsersMaster.Payment.TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS "+ UsersMaster.ProductsItems.TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS "+ UsersMaster.Products.TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS "+ UsersMaster.Vouchers.TABLE_NAME);
 
         onCreate(db);
 
@@ -699,6 +711,8 @@ public class DbHelper extends SQLiteOpenHelper {
         return list;
 
     }
+
+
 
 
 

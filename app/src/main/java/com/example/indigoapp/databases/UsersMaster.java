@@ -67,6 +67,15 @@ public class UsersMaster {
         public static final String COLUMN_NAME_MESSAGE="message";
         public static final String COLUMN_NAME_Report="report";
     }
+
+    public static class Vouchers implements BaseColumns{
+        public static String TABLE_NAME;
+        public static final String COLUMN_NAME_ID="id";
+        public static final String COLUMN_NAME_COUNT="count";
+        public static final String COLUMN_NAME_PRICE="price";
+        public static final String COLUMN_NAME_VOUCHERIMAGE="image";
+        public static final String COLUMN_NAME_FOREIGNKEY="vid";
+    }
 }
 
 
