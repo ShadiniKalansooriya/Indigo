@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/updateimagegallery"
+        android:orientation="vertical">
+
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:fillViewport="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="70dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="120dp">
+
+                <EditText
+                    android:id="@+id/editTextHashtag"
+                    android:layout_width="match_parent"
+                    android:layout_height="41dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginBottom="224dp"
+                    android:background="@color/white"
+                    android:ems="10"
+                    android:hint="@string/HashTag"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/lightBlack" />
+
+                <EditText
+                    android:id="@+id/editTextEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/editTextHashtag"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="17dp"
+                    android:ems="10"
+                    android:hint="Name"
+                    android:inputType="textPersonName"
+                    android:visibility="invisible" />
+
+                <Button
+                    android:id="@+id/buttonUpdate"
+                    android:layout_width="195dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/editTextHashtag"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginStart="94dp"
+                    android:layout_marginLeft="94dp"
+                    android:layout_marginTop="-97dp"
+                    android:layout_marginRight="70dp"
+                    android:background="@color/lightGray"
+                    android:text="@string/update"
+                    android:textColor="@color/BlackHeader"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/imageViewimg"
+                    android:layout_width="197dp"
+                    android:layout_height="167dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="112dp"
+                    android:layout_marginLeft="112dp"
+                    android:layout_marginTop="29dp"
+                    app:srcCompat="@mipmap/ic_launcher" />
+            </RelativeLayout>
+
+        </ScrollView>
+
+
+</RelativeLayout>
+</RelativeLayout>
