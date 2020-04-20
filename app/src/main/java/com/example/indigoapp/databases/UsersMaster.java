@@ -24,6 +24,18 @@ public class UsersMaster {
 
     }
 
+//    public static class Gallery implements BaseColumns {
+//        public static final String GALLERY =  "gallery";
+//
+//        public static final String COL_USER_EMAIL="email";
+//        public static final String COL_USER_HASHTAG = "hashtag";
+//        public static final String COL_USER_IMAGE="image";
+//
+//
+//    }
+
+
+
     public static class Payment implements BaseColumns {
         public static String TABLE_NAME = "payment";
         public static final String COL_USER_NAME = "Name";

@@ -47,6 +47,12 @@ public class DbHelper extends SQLiteOpenHelper {
                         UsersMaster.Users.COL_USER_CURRENT + " TEXT)";
 
 
+//        String SQL_CREATE_GALLERY =
+//                "CREATE TABLE "+ UsersMaster.Gallery.GALLERY + "(" +
+//                UsersMaster.Gallery._ID + " INTEGER PRIMARY KEY," +
+//                UsersMaster.Gallery.COL_USER_EMAIL +" TEXT,", price VARCHAR, image BLOB
+
+
 //        String PAYMENT_DETAILS_ENTRIES = "CREATE TABLE " + UsersMaster.Payment.TABLE_NAME + "(" +
 //                UsersMaster.Payment.COL_USER_NAME + " TEXT," +
 //                UsersMaster.Payment.COL_USER_EMAIL + " TEXT," +

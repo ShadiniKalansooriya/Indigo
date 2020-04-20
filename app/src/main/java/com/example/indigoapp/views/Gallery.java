@@ -52,12 +52,12 @@ public class Gallery extends AppCompatActivity implements NavigationView.OnNavig
     Button buttonchoose, buttonAdd;
     TextView textViewGallery,textViewEmail;
     ImageView imageView;
-    DbHelper dbHelper;
+
 
 
     final int REQUEST_CODE_GALLERY = 999;
 
-    public static DbHelper sqLiteHelper;
+    public static DbHelper  dbHelper;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
