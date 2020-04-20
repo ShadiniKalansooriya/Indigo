@@ -8,6 +8,10 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <meta-data android:name="com.google.android.backup.api_key" android:value="AEdPqrEAAAAIIDptAmYk4Ik2pLOl3bTD3yAmBs1n18T_UfRtsw" />
+
+
     <uses-permission
         android:name="android.permission.SET_TIME"
         tools:ignore="ProtectedPermissions" />
@@ -63,7 +67,7 @@
         <activity android:name=".views.ProductsDisplay" />
         <activity android:name=".views.ProductsDetails" />
         <activity android:name=".views.Savings_display" />
-        <activity android:name=".views.Vouchers_display" />
+<!--       <activity android:name=".views.Vouchers_display" />-->
         <activity android:name=".views.Denims_display" />
         <activity android:name=".adapter.RecyclerViewAdapter" />
         <activity android:name=".views.MainActivity">

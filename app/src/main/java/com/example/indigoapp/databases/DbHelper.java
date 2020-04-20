@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteStatement;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
@@ -46,62 +47,62 @@ public class DbHelper extends SQLiteOpenHelper {
                         UsersMaster.Users.COL_USER_CURRENT + " TEXT)";
 
 
-        String PAYMENT_DETAILS_ENTRIES = "CREATE TABLE " + UsersMaster.Payment.TABLE_NAME + "(" +
-                UsersMaster.Payment.COL_USER_NAME + " TEXT," +
-                UsersMaster.Payment.COL_USER_EMAIL + " TEXT," +
-                UsersMaster.Payment.COLUMN_USER_AMOUNT + " TEXT," +
-                UsersMaster.Payment.COL_USER_ADDRESS + " TEXT," +
+//        String PAYMENT_DETAILS_ENTRIES = "CREATE TABLE " + UsersMaster.Payment.TABLE_NAME + "(" +
+//                UsersMaster.Payment.COL_USER_NAME + " TEXT," +
+//                UsersMaster.Payment.COL_USER_EMAIL + " TEXT," +
+//                UsersMaster.Payment.COLUMN_USER_AMOUNT + " TEXT," +
+//                UsersMaster.Payment.COL_USER_ADDRESS + " TEXT," +
+//
+//                " FOREIGN KEY (" + UsersMaster.Payment.COL_USER_NAME + ") REFERENCES " + UsersMaster.Payment.TABLE_NAME +
+//                " ON DELETE CASCADE ON UPDATE CASCADE )";
+//
+//
+//        String CUSTOMER_CART_CREATES_ENTRIES = "CREATE TABLE " + UsersMaster.UserCart.CART_NAME_USER + "(" +
+//                UsersMaster.UserCart.CART_NAME +" TEXT,"+
+//                UsersMaster.UserCart.COLUMN_NUMBER +" TEXT,"+
+//                UsersMaster.UserCart.COLUMN_DATE +" TEXT,"+
+//
+//                " FOREIGN KEY (" + UsersMaster.UserCart.COLUMN_NUMBER + ") REFERENCES " + UsersMaster.UserCart.CART_NAME_USER +
+//                " ON DELETE CASCADE ON UPDATE CASCADE)";
 
-                " FOREIGN KEY (" + UsersMaster.Payment.COL_USER_NAME + ") REFERENCES " + UsersMaster.Payment.TABLE_NAME +
-                " ON DELETE CASCADE ON UPDATE CASCADE, )";
-
-
-        String CUSTOMER_CART_CREATES_ENTRIES = "CREATE TABLE " + UsersMaster.UserCart.CART_NAME_USER + "(" +
-                UsersMaster.UserCart.CART_NAME +" TEXT,"+
-                UsersMaster.UserCart.COLUMN_NUMBER +" TEXT,"+
-                UsersMaster.UserCart.COLUMN_DATE +" TEXT,"+
-
-                " FOREIGN KEY (" + UsersMaster.UserCart.COLUMN_NUMBER + ") REFERENCES " + UsersMaster.UserCart.CART_NAME_USER +
-                " ON DELETE CASCADE ON UPDATE CASCADE, )";
-
-        String PRODUCT_DETAILS_ENTRIES = "CREATE TABLE " + UsersMaster.Products.TABLE_NAME + " (" +
-                        UsersMaster.Products.COLUMN_NAME_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
-                        UsersMaster.Products.COLUMN_NAME_TITLE + " TEXT," +
-                        UsersMaster.Products.COLUMN_NAME_IMAGE + " LONGBLOB," +
-                        UsersMaster.Products.COLUMN_NAME_PRICE + " TEXT)";
-
-        String ADMIN_PRODUCT_DETAILS_ENTRIES="CREATE TABLE "+ UsersMaster.ProductsItems.TABLE_NAME +"("+
-                UsersMaster.ProductsItems.COLUMN_NAME_ID+" INTEGER PRIMARY KEY AUTOINCREMENT,"+
-                UsersMaster.ProductsItems.COLUMN_NAME_PRODUCT_NAME + " TEXT,"+
-                UsersMaster.ProductsItems.COLUMN_NAME_COUNT +" INTEGER,"+
-                UsersMaster.ProductsItems.COLUMN_NAME_DESCRIPTION +" TEXT,"+
-                UsersMaster.ProductsItems.COLUMN_NAME_PRICE + " TEXT,"+
-                UsersMaster.ProductsItems.COLUMN_NAME_PRODUCTIMAGE + " LONGBLOB,"+
-                UsersMaster.ProductsItems.COLUMN_NAME_CATEGORY_NAME +" TEXT," +
-                UsersMaster.ProductsItems.COLUMN_NAME_FOREIGNKEY+" INTEGER,CONSTRAINT fk_pro_cat FOREIGN KEY ("+
-                UsersMaster.ProductsItems.COLUMN_NAME_FOREIGNKEY + ") REFERENCES "+ UsersMaster.ProductsItems.TABLE_NAME+"("+
-                UsersMaster.ProductsItems.COLUMN_NAME_ID +") ON DELETE CASCADE ON UPDATE CASCADE)";
-
-        String ADMIN_VOUCHER_DETAILS_ENTRIES="CREATE TABLE "+ UsersMaster.Vouchers.TABLE_NAME +"("+
-                UsersMaster.Vouchers.COLUMN_NAME_ID+" INTEGER PRIMARY KEY AUTOINCREMENT,"+
-                UsersMaster.Vouchers.COLUMN_NAME_COUNT +" INTEGER,"+
-                UsersMaster.Vouchers.COLUMN_NAME_PRICE + " TEXT,"+
-                UsersMaster.Vouchers.COLUMN_NAME_VOUCHERIMAGE + " LONGBLOB,"+
-                UsersMaster.Vouchers.COLUMN_NAME_FOREIGNKEY+" INTEGER,CONSTRAINT fk_vou_cat FOREIGN KEY ("+
-                UsersMaster.Vouchers.COLUMN_NAME_FOREIGNKEY + ") REFERENCES "+ UsersMaster.Vouchers.TABLE_NAME+"("+
-                UsersMaster.Vouchers.COLUMN_NAME_ID +") ON DELETE CASCADE ON UPDATE CASCADE)";
+//        String PRODUCT_DETAILS_ENTRIES = "CREATE TABLE " + UsersMaster.Products.TABLE_NAME + " (" +
+//                        UsersMaster.Products.COLUMN_NAME_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+//                        UsersMaster.Products.COLUMN_NAME_TITLE + " TEXT," +
+//                        UsersMaster.Products.COLUMN_NAME_IMAGE + " LONGBLOB," +
+//                        UsersMaster.Products.COLUMN_NAME_PRICE + " TEXT)";
+//
+//        String ADMIN_PRODUCT_DETAILS_ENTRIES="CREATE TABLE "+ UsersMaster.ProductsItems.TABLE_NAME +"("+
+//                UsersMaster.ProductsItems.COLUMN_NAME_ID+" INTEGER PRIMARY KEY AUTOINCREMENT,"+
+//                UsersMaster.ProductsItems.COLUMN_NAME_PRODUCT_NAME + " TEXT,"+
+//                UsersMaster.ProductsItems.COLUMN_NAME_COUNT +" INTEGER,"+
+//                UsersMaster.ProductsItems.COLUMN_NAME_DESCRIPTION +" TEXT,"+
+//                UsersMaster.ProductsItems.COLUMN_NAME_PRICE + " TEXT,"+
+//                UsersMaster.ProductsItems.COLUMN_NAME_PRODUCTIMAGE + " LONGBLOB,"+
+//                UsersMaster.ProductsItems.COLUMN_NAME_CATEGORY_NAME +" TEXT," +
+//                UsersMaster.ProductsItems.COLUMN_NAME_FOREIGNKEY+" INTEGER,CONSTRAINT fk_pro_cat FOREIGN KEY ("+
+//                UsersMaster.ProductsItems.COLUMN_NAME_FOREIGNKEY + ") REFERENCES "+ UsersMaster.ProductsItems.TABLE_NAME+"("+
+//                UsersMaster.ProductsItems.COLUMN_NAME_ID +") ON DELETE CASCADE ON UPDATE CASCADE)";
+//
+//        String ADMIN_VOUCHER_DETAILS_ENTRIES="CREATE TABLE "+ UsersMaster.Vouchers.TABLE_NAME +"("+
+//                UsersMaster.Vouchers.COLUMN_NAME_ID+" INTEGER PRIMARY KEY AUTOINCREMENT,"+
+//                UsersMaster.Vouchers.COLUMN_NAME_COUNT +" INTEGER,"+
+//                UsersMaster.Vouchers.COLUMN_NAME_PRICE + " TEXT,"+
+//                UsersMaster.Vouchers.COLUMN_NAME_VOUCHERIMAGE + " LONGBLOB,"+
+//                UsersMaster.Vouchers.COLUMN_NAME_FOREIGNKEY+" INTEGER,CONSTRAINT fk_vou_cat FOREIGN KEY ("+
+//                UsersMaster.Vouchers.COLUMN_NAME_FOREIGNKEY + ") REFERENCES "+ UsersMaster.Vouchers.TABLE_NAME+"("+
+//                UsersMaster.Vouchers.COLUMN_NAME_ID +") ON DELETE CASCADE ON UPDATE CASCADE)";
 
 
 
 
 
         sqLiteDatabase.execSQL(SQL_CREATE_ENTRIES);
-        sqLiteDatabase.execSQL(PAYMENT_DETAILS_ENTRIES);
-        sqLiteDatabase.execSQL(CUSTOMER_CART_CREATES_ENTRIES);
-        sqLiteDatabase.execSQL(PRODUCT_DETAILS_ENTRIES);
-        sqLiteDatabase.execSQL(ADMIN_PRODUCT_DETAILS_ENTRIES);
-        sqLiteDatabase.execSQL(PRODUCT_DETAILS_ENTRIES);
-        sqLiteDatabase.execSQL(ADMIN_VOUCHER_DETAILS_ENTRIES);
+//        sqLiteDatabase.execSQL(PAYMENT_DETAILS_ENTRIES);
+//        sqLiteDatabase.execSQL(CUSTOMER_CART_CREATES_ENTRIES);
+//        sqLiteDatabase.execSQL(PRODUCT_DETAILS_ENTRIES);
+//        sqLiteDatabase.execSQL(ADMIN_PRODUCT_DETAILS_ENTRIES);
+//        sqLiteDatabase.execSQL(PRODUCT_DETAILS_ENTRIES);
+//        sqLiteDatabase.execSQL(ADMIN_VOUCHER_DETAILS_ENTRIES);
 
 
         String SQL_CREATE_FEED_ENTRIES =
@@ -114,6 +115,12 @@ public class DbHelper extends SQLiteOpenHelper {
 
         sqLiteDatabase.execSQL(SQL_CREATE_FEED_ENTRIES);
 
+    }
+
+    //Gallery
+    public void queryData(String sql){
+        SQLiteDatabase database = getWritableDatabase();
+        database.execSQL(sql);
     }
 
     @Override
@@ -712,6 +719,52 @@ public class DbHelper extends SQLiteOpenHelper {
 
     }
 
+
+    public void insertGallery(String email, String hashtag, byte[] image){
+        SQLiteDatabase database = getWritableDatabase();
+        String sql = "INSERT INTO GALLERY VALUES (NULL, ?, ?, ?)";
+
+        SQLiteStatement statement = database.compileStatement(sql);
+        statement.clearBindings();
+
+        statement.bindString(1, email);
+        statement.bindString(2, hashtag);
+        statement.bindBlob(3, image);
+
+        statement.executeInsert();
+    }
+
+    public void updateGallery(String email, String hashtag, byte[] image, int id) {
+        SQLiteDatabase database = getWritableDatabase();
+
+        String sql = "UPDATE GALLERY SET name = ?, price = ?, image = ? WHERE id = ?";
+        SQLiteStatement statement = database.compileStatement(sql);
+
+        statement.bindString(1, email);
+        statement.bindString(2, hashtag);
+        statement.bindBlob(3, image);
+        statement.bindDouble(4, (double)id);
+
+        statement.execute();
+        database.close();
+    }
+
+    public  void deleteGallery(int id) {
+        SQLiteDatabase database = getWritableDatabase();
+
+        String sql = "DELETE FROM GALLERY WHERE id = ?";
+        SQLiteStatement statement = database.compileStatement(sql);
+        statement.clearBindings();
+        statement.bindDouble(1, (double)id);
+
+        statement.execute();
+        database.close();
+    }
+
+    public Cursor getGallery(String sql){
+        SQLiteDatabase database = getReadableDatabase();
+        return database.rawQuery(sql, null);
+    }
 
 
 
