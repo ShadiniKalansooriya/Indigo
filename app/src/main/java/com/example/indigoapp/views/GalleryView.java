@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.TextView;
 
 import com.example.indigoapp.R;
@@ -102,15 +101,15 @@ public class GalleryView extends AppCompatActivity implements NavigationView.OnN
         menu.findItem(R.id.nav_Login).setVisible(false);
 
 
-        textViewGallery = findViewById(R.id.textViewUpload);
+//        textViewGallery = findViewById(R.id.textViewUpload);
 
-        textViewGallery.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(GalleryView.this,Gallery.class);
-                startActivity(intent);
-            }
-        });
+//        textViewGallery.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(GalleryView.this,Gallery.class);
+//                startActivity(intent);
+//            }
+//        });
     }
 
     @Override
