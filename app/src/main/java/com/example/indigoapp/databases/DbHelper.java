@@ -192,7 +192,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
     }
 
-    public void User_insert_cart_details(Cart cart){
+    public void User_insert_cart_details (Cart cart){
         SQLiteDatabase db=getWritableDatabase();
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
 
