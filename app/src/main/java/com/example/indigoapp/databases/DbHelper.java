@@ -3,6 +3,7 @@ package com.example.indigoapp.databases;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.graphics.Bitmap;
@@ -620,8 +621,10 @@ public class DbHelper extends SQLiteOpenHelper {
         String sql="SELECT * FROM "+ UsersMaster.ProductsItems.TABLE_NAME;
 
         Cursor cu=db.rawQuery(sql,null);
-        byte[] image;
+        //byte[] image;
         String name;
+        String desc;
+        String image;
         String count;
         String price;
         String id;
@@ -631,15 +634,16 @@ public class DbHelper extends SQLiteOpenHelper {
 
             id=cu.getString(0);
             name=cu.getString(1);
-            count=cu.getString(2);
-            price=cu.getString(3);
-            image=cu.getBlob(4);
-            fid=cu.getString(6);
+            desc=cu.getString(2);
+            count=cu.getString(3);
+            price=cu.getString(4);
+            image=cu.getString(5);
+            fid=cu.getString(7);
             Bitmap bitmap;
 
-            bitmap= BitmapFactory.decodeByteArray(image,0,image.length);
+            //bitmap= BitmapFactory.decodeByteArray(image,0,image.length);
 
-            Products products=new Products(id,name,price,bitmap,count,fid);
+            Products products=new Products(id,name,desc,price,image,count,fid);
             list.add(products);
 
         }
@@ -658,8 +662,10 @@ public class DbHelper extends SQLiteOpenHelper {
         String []selectionArgs={"%" + pname + "%",pname +"%"};
 
         Cursor cu=db.rawQuery(sql,selectionArgs);
-        byte[] image;
+        //byte[] image;
         String name;
+        String desc;
+        String image;
         String count;
         String price;
         String id;
@@ -669,15 +675,16 @@ public class DbHelper extends SQLiteOpenHelper {
 
             id=cu.getString(0);
             name=cu.getString(1);
-            count=cu.getString(2);
-            price=cu.getString(3);
-            image=cu.getBlob(4);
-            fid=cu.getString(6);
+            desc=cu.getString(2);
+            count=cu.getString(3);
+            price=cu.getString(4);
+            image=cu.getString(5);
+            fid=cu.getString(7);
             Bitmap bitmap;
 
-            bitmap= BitmapFactory.decodeByteArray(image,0,image.length);
+            //bitmap= BitmapFactory.decodeByteArray(image,0,image.length);
 
-            Products products=new Products(id,name,price,bitmap,count,fid);
+            Products products=new Products(id,name,desc,price,image,count,fid);
             list.add(products);
 
         }
@@ -712,6 +719,68 @@ public class DbHelper extends SQLiteOpenHelper {
 
     }
 
+    public void addProduct(String prodName, String prodCount ,String prodDesc, String price, String image, String category) {
+
+        SQLiteDatabase db = getWritableDatabase();
+
+
+        ContentValues values = new ContentValues();
+
+        values.put(UsersMaster.ProductsItems.COLUMN_NAME_PRODUCT_NAME, prodName);
+        values.put(UsersMaster.ProductsItems.COLUMN_NAME_COUNT, prodCount);
+        values.put(UsersMaster.ProductsItems.COLUMN_NAME_DESCRIPTION, prodDesc);
+        values.put(UsersMaster.ProductsItems.COLUMN_NAME_PRICE, price);
+        values.put(UsersMaster.ProductsItems.COLUMN_NAME_PRODUCTIMAGE, image);
+        values.put(UsersMaster.ProductsItems.COLUMN_NAME_CATEGORY_NAME, category);
+
+        long newRowId = db.insert(UsersMaster.ProductsItems.TABLE_NAME, null, values);
+
+
+    }
+    public boolean Admin_delete_current_product(String id){
+        try{
+            SQLiteDatabase db=getReadableDatabase();
+            String selection=UsersMaster.ProductsItems.COLUMN_NAME_ID + " = ?";
+            String[] selectionArgs = {id};
+            int rowsAffected=db.delete(UsersMaster.ProductsItems.TABLE_NAME,selection,selectionArgs);
+            return rowsAffected > 0;
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public Cursor Admin_Item_name_check(){
+        SQLiteDatabase db=getReadableDatabase();
+        String[] projection = {UsersMaster.ProductsItems.COLUMN_NAME_ID, UsersMaster.ProductsItems.COLUMN_NAME_PRODUCT_NAME,
+                UsersMaster.ProductsItems.COLUMN_NAME_COUNT, UsersMaster.ProductsItems.COLUMN_NAME_DESCRIPTION, UsersMaster.ProductsItems.COLUMN_NAME_PRICE,
+                UsersMaster.ProductsItems.COLUMN_NAME_PRODUCTIMAGE, UsersMaster.ProductsItems.COLUMN_NAME_CATEGORY_NAME,UsersMaster.ProductsItems.COLUMN_NAME_FOREIGNKEY};
+
+        return db.query(UsersMaster.ProductsItems.TABLE_NAME,projection,null,null,null,null,null);
+    }
+
+    public boolean Admin_update_product_info(String id,String name,String des,String price,byte[]image,String count, String cname){
+        try {
+            SQLiteDatabase db = getReadableDatabase();
+            ContentValues values = new ContentValues();
+            values.put(UsersMaster.ProductsItems.COLUMN_NAME_PRODUCT_NAME, name);
+            values.put(UsersMaster.ProductsItems.COLUMN_NAME_COUNT, count);
+            values.put(UsersMaster.ProductsItems.COLUMN_NAME_DESCRIPTION, des);
+            values.put(UsersMaster.ProductsItems.COLUMN_NAME_PRICE, price);
+            values.put(UsersMaster.ProductsItems.COLUMN_NAME_PRODUCTIMAGE, image);
+            values.put(UsersMaster.ProductsItems.COLUMN_NAME_CATEGORY_NAME, cname);
+            String selection = UsersMaster.ProductsItems.COLUMN_NAME_ID + " = ?";
+            String[] selectionArgs = {id};
+
+            int counts = db.update(UsersMaster.ProductsItems.TABLE_NAME, values, selection, selectionArgs);
+            return counts > 0;
+        }
+        catch (SQLException ex){
+            ex.printStackTrace();
+            return false;
+        }
+    }
 
 
 

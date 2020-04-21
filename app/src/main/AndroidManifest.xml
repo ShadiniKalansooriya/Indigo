@@ -31,7 +31,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="ExtraText">
-        <activity android:name=".views.AdminAddVoucher"/>
+        <activity android:name=".views.AdminEditVoucher"/>
+        <activity android:name=".views.AdminProductsList" />
+        <activity android:name=".views.AdminAddVoucher" />
         <activity android:name=".views.AdminEditProducts" />
         <activity android:name=".views.AdminAddProducts" />
         <activity android:name=".views.AdminActivity" />
@@ -63,7 +65,6 @@
         <activity android:name=".views.ProductsDisplay" />
         <activity android:name=".views.ProductsDetails" />
         <activity android:name=".views.Savings_display" />
-        <activity android:name=".views.Vouchers_display" />
         <activity android:name=".views.Denims_display" />
         <activity android:name=".adapter.RecyclerViewAdapter" />
         <activity android:name=".views.MainActivity">

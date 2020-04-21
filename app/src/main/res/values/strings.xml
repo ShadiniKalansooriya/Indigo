@@ -122,6 +122,12 @@
     <string name="voucher_price">Voucher Price</string>
     <string name="voucher_qty">Voucher Quantity</string>
     <string name="feedreq">Send feedback</string>
+    <string name="current">Currently Available</string>
+    <string name="ava">Available</string>
+    <string name="categ_name">Category Name</string>
+    <string name="price">Price</string>
+    <string name="prod_img_url">Product Image URL</string>
+    <string name="edit_vou">Edit Voucher</string>
 
 
 </resources>
