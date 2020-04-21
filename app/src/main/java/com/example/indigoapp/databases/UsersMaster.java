@@ -55,7 +55,7 @@ public class UsersMaster {
     }
 
     public static class UserCart implements BaseColumns{
-        public static String CART_NAME_USER = "usercart";
+        public static String CART_NAME_USER = "user cart";
         public static final String CART_NAME="cart name";
         public static final String COLUMN_NUMBER="cart number";
         public static final String COLUMN_DATE="cart expiry date";
