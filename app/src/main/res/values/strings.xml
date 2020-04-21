@@ -128,6 +128,11 @@
     <string name="price">Price</string>
     <string name="prod_img_url">Product Image URL</string>
     <string name="edit_vou">Edit Voucher</string>
+    <string name="export">Export</string>
+    <string name="add">Add</string>
+    <string name="choose_image">Choose Image</string>
+    <string name="HashTag">#HashTag</string>
+<!--    <string name="update">UPDATE</string>-->
 
 
 </resources>

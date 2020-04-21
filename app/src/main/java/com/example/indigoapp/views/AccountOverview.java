@@ -1,6 +1,8 @@
 package com.example.indigoapp.views;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -11,12 +13,18 @@ import android.widget.Toast;
 
 import com.example.indigoapp.R;
 import com.example.indigoapp.databases.DbHelper;
+import com.example.indigoapp.databases.SQLiteBackUp;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -31,7 +39,7 @@ public class AccountOverview extends AppCompatActivity implements NavigationView
     androidx.appcompat.widget.Toolbar toolbar;
     ImageView imageViewPropic;
     TextView textViewUserName,textViewEmail,textViewPassword,textViewMobile,textViewAddress,textViewGender;
-    android.widget.Button buttonEdit, buttonDelete;
+    android.widget.Button buttonEdit, buttonDelete, buttonExport;
     DbHelper dbHelper;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -117,6 +125,7 @@ public class AccountOverview extends AppCompatActivity implements NavigationView
         textViewGender = findViewById(R.id.textViewgender);
         buttonEdit = findViewById(R.id.buttonedit);
         buttonDelete = findViewById(R.id.buttonDelete);
+        buttonExport = findViewById(R.id.buttonExport);
 
         textViewUserName.setText(dbHelper.getUsername());
         textViewEmail.setText(dbHelper.getEmail());
@@ -143,6 +152,18 @@ public class AccountOverview extends AppCompatActivity implements NavigationView
             }
         });
 
+        buttonExport.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (checkPermissions()) {
+                    SQLiteBackUp sqLiteBackUp = new SQLiteBackUp(getApplicationContext());
+                    sqLiteBackUp.exportDB();
+                }
+
+            }
+        });
+
     }
 
     @Override
@@ -156,7 +177,27 @@ public class AccountOverview extends AppCompatActivity implements NavigationView
         }
 
     }
+    private boolean checkPermissions() {
 
+        String[] permissions = new String[]{
+                Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE};
+//                Manifest.permission.SEND_SMS};
+
+        int result;
+        List<String> listPermissionsNeeded = new ArrayList<>();
+        for (String p : permissions) {
+            result = ContextCompat.checkSelfPermission(this, p);
+            if (result != PackageManager.PERMISSION_GRANTED) {
+                listPermissionsNeeded.add(p);
+            }
+        }
+        if (!listPermissionsNeeded.isEmpty()) {
+            ActivityCompat.requestPermissions(this, listPermissionsNeeded.toArray(new String[listPermissionsNeeded.size()]), 100);
+            return false;
+        }
+        return true;
+    }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {

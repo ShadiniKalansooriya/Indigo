@@ -194,7 +194,7 @@
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="12dp"
                     android:layout_marginRight="8dp"
-                    android:layout_marginBottom="140dp"
+                    android:layout_marginBottom="10dp"
                     android:orientation="horizontal">
 
                     <Button
@@ -222,6 +222,22 @@
                         android:textSize="18sp" />
                 </LinearLayout>
 
+                <Button
+                    android:id="@+id/buttonExport"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="130dp"
+                    android:layout_weight="1"
+                    android:background="@color/indigooDarrrkk"
+                    android:fontFamily="@font/baloo"
+                    android:foregroundGravity="center"
+                    android:gravity="center"
+                    android:text="@string/export"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
             </LinearLayout>
         </ScrollView>
 

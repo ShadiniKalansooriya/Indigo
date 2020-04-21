@@ -46,7 +46,7 @@ public class MyAccount extends AppCompatActivity implements NavigationView.OnNav
                     break;
 
                 case R.id.nav_b_shoppingbag:
-                    Intent intent = new Intent(MyAccount.this, MainActivity.class);
+                    Intent intent = new Intent(MyAccount.this, MyAccount.class);
                     startActivity(intent);
                     break;
 

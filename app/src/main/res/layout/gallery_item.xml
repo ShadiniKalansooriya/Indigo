@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageViewimg"
+        android:layout_width="360dp"
+        android:layout_height="261dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/textViewEmail"
+        android:layout_width="258dp"
+        android:layout_height="29dp"
+        android:layout_below="@+id/imageViewimg"
+        android:layout_alignEnd="@+id/imageViewimg"
+        android:layout_alignRight="@+id/imageViewimg"
+        android:layout_marginEnd="51dp"
+        android:layout_marginRight="51dp"
+        android:background="@color/indigooDarrrkk"
+        android:text="@string/emailhint"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textViewHashtag"
+        android:layout_width="258dp"
+        android:layout_height="24dp"
+        android:layout_below="@+id/textViewEmail"
+        android:layout_alignEnd="@+id/textViewEmail"
+        android:layout_alignRight="@+id/textViewEmail"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:background="@color/colorAccent"
+        android:text="@string/HashTag"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+</RelativeLayout>
