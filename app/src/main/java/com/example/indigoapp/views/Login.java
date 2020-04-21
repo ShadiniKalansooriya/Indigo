@@ -114,7 +114,9 @@ public class Login extends AppCompatActivity implements NavigationView.OnNavigat
         dbHelper = new DbHelper(this);
         pref = getSharedPreferences("user_details",MODE_PRIVATE);
         editTextEmail = findViewById(R.id.editTextEmail);
+        editTextEmail.setText(dbHelper.getEmail());
         editTextPassword = findViewById(R.id.editTextPassword);
+        editTextPassword.setText(dbHelper.getpwd());
         buttonSignIn = findViewById(R.id.buttonSignIn);
         textViewSignUp = findViewById(R.id.textViewSignUp);
 
