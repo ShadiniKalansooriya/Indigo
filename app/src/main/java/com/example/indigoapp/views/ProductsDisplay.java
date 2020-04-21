@@ -110,7 +110,7 @@ public class ProductsDisplay extends AppCompatActivity implements NavigationView
         denimBtn = (Button) findViewById(R.id.denimbtn);
         dressBtn = (Button) findViewById(R.id.dressbtn);
         pantBtn = (Button) findViewById(R.id.pantbtn);
-//        savingBtn = (Button) findViewById(R.id.savingbtn);
+        //savingBtn = (Button) findViewById(R.id.savingbtn);
         voucherBtn = (Button) findViewById(R.id.voucherbtn);
 
         buttonClickActivity();
