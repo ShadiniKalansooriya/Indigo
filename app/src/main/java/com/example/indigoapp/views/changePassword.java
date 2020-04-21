@@ -54,7 +54,7 @@ public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         break;
 
         case R.id.nav_b_gallery:
-        Intent intent2 = new Intent(changePassword.this, GalleryView.class);
+        Intent intent2 = new Intent(changePassword.this, Gallery.class);
         startActivity(intent2);
         break;
 
@@ -243,7 +243,7 @@ public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 startActivity(intent7);
                 break;
             case R.id.nav_Gallery:
-                Intent intent2 =new Intent(changePassword.this, GalleryView.class);
+                Intent intent2 =new Intent(changePassword.this, Gallery.class);
                 startActivity(intent2);
                 break;
 

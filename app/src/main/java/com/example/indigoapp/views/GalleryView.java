@@ -375,7 +375,7 @@ public class GalleryView extends AppCompatActivity implements NavigationView.OnN
                 startActivity(intent7);
                 break;
             case R.id.nav_Gallery:
-                Intent intent2 =new Intent(GalleryView.this, GalleryView.class);
+                Intent intent2 =new Intent(GalleryView.this, Gallery.class);
                 startActivity(intent2);
                 break;
 

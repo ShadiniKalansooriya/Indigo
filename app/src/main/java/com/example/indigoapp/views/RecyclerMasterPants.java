@@ -53,7 +53,7 @@ public class RecyclerMasterPants extends AppCompatActivity implements Navigation
                     break;
 
                 case R.id.nav_b_gallery:
-                    Intent intent2 = new Intent(RecyclerMasterPants.this, GalleryView.class);
+                    Intent intent2 = new Intent(RecyclerMasterPants.this, Gallery.class);
                     startActivity(intent2);
                     break;
 
@@ -188,7 +188,7 @@ public class RecyclerMasterPants extends AppCompatActivity implements Navigation
                 startActivity(intent7);
                 break;
             case R.id.nav_Gallery:
-                Intent intent2 =new Intent(RecyclerMasterPants.this, GalleryView.class);
+                Intent intent2 =new Intent(RecyclerMasterPants.this, Gallery.class);
                 startActivity(intent2);
                 break;
 

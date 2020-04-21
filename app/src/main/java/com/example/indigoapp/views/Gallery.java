@@ -79,7 +79,7 @@ public class Gallery extends AppCompatActivity implements NavigationView.OnNavig
                     break;
 
                 case R.id.nav_b_gallery:
-                    Intent intent2 = new Intent(Gallery.this, GalleryView.class);
+                    Intent intent2 = new Intent(Gallery.this, Gallery.class);
                     startActivity(intent2);
                     break;
 
@@ -296,7 +296,7 @@ public class Gallery extends AppCompatActivity implements NavigationView.OnNavig
                 startActivity(intent7);
                 break;
             case R.id.nav_Gallery:
-                Intent intent2 =new Intent(Gallery.this, GalleryView.class);
+                Intent intent2 =new Intent(Gallery.this, Gallery.class);
                 startActivity(intent2);
                 break;
 

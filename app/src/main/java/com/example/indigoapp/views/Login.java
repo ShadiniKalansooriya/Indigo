@@ -58,7 +58,7 @@ public class Login extends AppCompatActivity implements NavigationView.OnNavigat
                     break;
 
                 case R.id.nav_b_gallery:
-                    Intent intent2 = new Intent(Login.this, GalleryView.class);
+                    Intent intent2 = new Intent(Login.this, Gallery.class);
                     startActivity(intent2);
                     break;
 
@@ -236,7 +236,7 @@ public class Login extends AppCompatActivity implements NavigationView.OnNavigat
                 startActivity(intent7);
                 break;
             case R.id.nav_Gallery:
-                Intent intent2 = new Intent(Login.this, GalleryView.class);
+                Intent intent2 = new Intent(Login.this, Gallery.class);
                 startActivity(intent2);
                 break;
 
