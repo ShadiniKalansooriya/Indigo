@@ -138,7 +138,7 @@ public class Login extends AppCompatActivity implements NavigationView.OnNavigat
                     String type = checkUser();
 
                     if (type.equals("RegisteredUser")) {
-                        Intent loginIntent = new Intent(Login.this, MyAccount.class);
+                        Intent loginIntent = new Intent(Login.this, ProductsDisplay.class);
                         Toast.makeText(Login.this, "Successfully Logged in", Toast.LENGTH_SHORT).show();
 
                         startActivity(loginIntent);

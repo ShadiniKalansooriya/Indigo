@@ -53,8 +53,8 @@ public class DbHelper extends SQLiteOpenHelper {
                         UsersMaster.Gallery.COLUMN_GALLERY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                         UsersMaster.Gallery.COLUMN_GALLERY_EMAIL + " TEXT," +
                         UsersMaster.Gallery.COLUMN_GALLERY_HASHTAG + " TEXT," +
-                        UsersMaster.Gallery.COLUMN_GALLERY_IMAGE + " LONGBLOB,"+
-                        UsersMaster.Gallery.COLUMN_GALLERY_CURRENT + " TEXT)";
+                        UsersMaster.Gallery.COLUMN_GALLERY_IMAGE + " LONGBLOB)";
+//                        UsersMaster.Gallery.COLUMN_GALLERY_CURRENT + " TEXT)";
 //                " FOREIGN KEY (" + UsersMaster.Gallery.COLUMN_GALLERY_EMAIL + ") REFERENCES " + UsersMaster.Users.TABLE_USER +"("+ UsersMaster.Users.COL_USER_EMAIL+"));";
 
 
