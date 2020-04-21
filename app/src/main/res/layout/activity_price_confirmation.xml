@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/product_image"
             android:layout_marginTop="2dp"
-            android:text="Product ID"
+            android:text="Product Description"
             android:textAlignment="center"
             android:textColor="@color/BlackHeader"
             android:textSize="16dp" />
@@ -70,7 +70,7 @@
         </com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>
 
         <Button
-            android:id="@+id/add_to_cart_btn"
+            android:id="@+id/payment_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/number_btn"
