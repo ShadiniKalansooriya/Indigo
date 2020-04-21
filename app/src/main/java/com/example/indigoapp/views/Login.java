@@ -58,7 +58,7 @@ public class Login extends AppCompatActivity implements NavigationView.OnNavigat
                     break;
 
                 case R.id.nav_b_gallery:
-                    Intent intent2 = new Intent(Login.this, GalleryView.class);
+                    Intent intent2 = new Intent(Login.this, Gallery.class);
                     startActivity(intent2);
                     break;
 
@@ -114,7 +114,9 @@ public class Login extends AppCompatActivity implements NavigationView.OnNavigat
         dbHelper = new DbHelper(this);
         pref = getSharedPreferences("user_details",MODE_PRIVATE);
         editTextEmail = findViewById(R.id.editTextEmail);
+        editTextEmail.setText(dbHelper.getEmail());
         editTextPassword = findViewById(R.id.editTextPassword);
+        editTextPassword.setText(dbHelper.getpwd());
         buttonSignIn = findViewById(R.id.buttonSignIn);
         textViewSignUp = findViewById(R.id.textViewSignUp);
 
@@ -136,7 +138,7 @@ public class Login extends AppCompatActivity implements NavigationView.OnNavigat
                     String type = checkUser();
 
                     if (type.equals("RegisteredUser")) {
-                        Intent loginIntent = new Intent(Login.this, MyAccount.class);
+                        Intent loginIntent = new Intent(Login.this, ProductsDisplay.class);
                         Toast.makeText(Login.this, "Successfully Logged in", Toast.LENGTH_SHORT).show();
 
                         startActivity(loginIntent);
@@ -234,7 +236,7 @@ public class Login extends AppCompatActivity implements NavigationView.OnNavigat
                 startActivity(intent7);
                 break;
             case R.id.nav_Gallery:
-                Intent intent2 = new Intent(Login.this, GalleryView.class);
+                Intent intent2 = new Intent(Login.this, Gallery.class);
                 startActivity(intent2);
                 break;
 

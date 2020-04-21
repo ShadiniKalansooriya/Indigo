@@ -57,7 +57,7 @@ public class EditDetails extends AppCompatActivity implements NavigationView.OnN
                     break;
 
                 case R.id.nav_b_gallery:
-                    Intent intent2 = new Intent(EditDetails.this, GalleryView.class);
+                    Intent intent2 = new Intent(EditDetails.this, Gallery.class);
                     startActivity(intent2);
                     break;
 
@@ -278,7 +278,7 @@ public class EditDetails extends AppCompatActivity implements NavigationView.OnN
                 startActivity(intent7);
                 break;
             case R.id.nav_Gallery:
-                Intent intent2 =new Intent(EditDetails.this, GalleryView.class);
+                Intent intent2 =new Intent(EditDetails.this, Gallery.class);
                 startActivity(intent2);
                 break;
 

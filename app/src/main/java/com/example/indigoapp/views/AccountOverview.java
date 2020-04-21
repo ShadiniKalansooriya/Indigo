@@ -62,7 +62,7 @@ public class AccountOverview extends AppCompatActivity implements NavigationView
                     break;
 
                 case R.id.nav_b_gallery:
-                    Intent intent2 = new Intent(AccountOverview.this, GalleryView.class);
+                    Intent intent2 = new Intent(AccountOverview.this, Gallery.class);
                     startActivity(intent2);
                     break;
 
@@ -225,7 +225,7 @@ public class AccountOverview extends AppCompatActivity implements NavigationView
                 startActivity(intent7);
                 break;
             case R.id.nav_Gallery:
-                Intent intent2 =new Intent(AccountOverview.this, GalleryView.class);
+                Intent intent2 =new Intent(AccountOverview.this, Gallery.class);
                 startActivity(intent2);
                 break;
 
