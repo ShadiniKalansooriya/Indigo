@@ -4,9 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.indigoapp.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class ProductsDisplay extends AppCompatActivity {
 
@@ -22,7 +24,7 @@ public class ProductsDisplay extends AppCompatActivity {
         denimBtn = (Button) findViewById(R.id.denimbtn);
         dressBtn = (Button) findViewById(R.id.dressbtn);
         pantBtn = (Button) findViewById(R.id.pantbtn);
-        savingBtn = (Button) findViewById(R.id.savingbtn);
+//        savingBtn = (Button) findViewById(R.id.savingbtn);
         voucherBtn = (Button) findViewById(R.id.voucherbtn);
 
         buttonClickActivity();
