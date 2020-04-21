@@ -192,26 +192,26 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <EditText
-        android:id="@+id/editText7"
+        android:id="@+id/admin_search_product"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/srch_prod_name"
         android:inputType="textPersonName"
-        app:layout_constraintBaseline_toBaselineOf="@+id/search_btn"
+        app:layout_constraintBaseline_toBaselineOf="@+id/product_search_btn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/search_btn"
+        app:layout_constraintEnd_toStartOf="@+id/product_search_btn"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/search_btn"
+        android:id="@+id/product_search_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/search_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/editText7"
+        app:layout_constraintStart_toEndOf="@+id/admin_search_product"
         tools:layout_editor_absoluteY="204dp"
         android:textStyle="bold"
         tools:ignore="MissingConstraints" />

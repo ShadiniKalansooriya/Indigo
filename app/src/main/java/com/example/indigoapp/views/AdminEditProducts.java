@@ -1,14 +1,17 @@
 package com.example.indigoapp.views;
 
 import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.indigoapp.R;
 import com.example.indigoapp.adapter.ProductsAdapter;
 import com.example.indigoapp.databases.DbHelper;
@@ -24,8 +27,8 @@ public class AdminEditProducts extends AppCompatActivity {
     private static final int REQUEST_CODE_GALLERY=2;
     private boolean ExceptionFound=false;
     private byte[] photo=null;
-    private EditText admin_product_name,admin_product_des,admin_product_price,admin_product_counts,admin_category_name,admin_product_img_url;
-    private Button delete_new_product_button,admin_update_button;
+    private EditText admin_product_name,admin_product_des,admin_product_price,admin_product_counts,admin_category_name,admin_product_img_url,admin_search_pro;
+    private Button delete_new_product_button,admin_update_button,admin_search_button;
     private DbHelper db;
     //private TextView admin_category_edit_heading;
     private RecyclerView recyclerView;
@@ -39,37 +42,40 @@ public class AdminEditProducts extends AppCompatActivity {
         setContentView(R.layout.activity_admin_edit_products);
 
 
-        admin_product_name=findViewById(R.id.edit_product_name);
-        admin_product_des=findViewById(R.id.edit_product_description);
-        admin_product_price=findViewById(R.id.edit_product_price);
-        admin_update_button=findViewById(R.id.admin_update_current_product);
-        admin_product_counts=findViewById(R.id.edit_product_count);
-        delete_new_product_button=findViewById(R.id.admin_edit_product_delete);
-        admin_category_name = findViewById(R.id.edit_category_name);
-        admin_product_img_url = findViewById(R.id.edit_product_img_url);}}
+        admin_product_name=(EditText) findViewById(R.id.edit_product_name);
+        admin_product_des=(EditText)findViewById(R.id.edit_product_description);
+        admin_product_price=(EditText)findViewById(R.id.edit_product_price);
+        admin_update_button=(Button) findViewById(R.id.admin_update_current_product);
+        admin_product_counts=(EditText)findViewById(R.id.edit_product_count);
+        delete_new_product_button=(Button)findViewById(R.id.admin_edit_product_delete);
+        admin_category_name = (EditText)findViewById(R.id.edit_category_name);
+        admin_product_img_url =(EditText) findViewById(R.id.edit_product_img_url);
+        admin_search_button = (Button)findViewById(R.id.product_search_btn);
+        admin_search_pro = (EditText) findViewById(R.id.admin_search_product);
         //dialog = new SpotsDialog(this,"Updating..");
-        /*admin_update_button.setOnClickListener(new View.OnClickListener() {
+
+        admin_update_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Toast.makeText(Admin_edit_products.this,"Product!",Toast.LENGTH_SHORT).show();
-                //Update_Admin_product_Details();
+                Toast.makeText(AdminEditProducts.this,"Product!",Toast.LENGTH_SHORT).show();
+                Update_Admin_product_Details();
             }
         });
 
-        //db=new DbHelper(this);
+        db=new DbHelper(this);
 
-       /* delete_new_product_button.setOnClickListener(new View.OnClickListener() {
+        delete_new_product_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //delete_admin_product();
+                delete_admin_product();
 
             }
-        });*/
+        });
 
-        //initializeComponents();
+        initializeComponents();
 
-    /*}
-/*
+    }
+
     private void initializeComponents(){
         admin_product_name.setText(Products.getProduct_name());
         admin_product_price.setText(Products.getProduct_price());
@@ -114,7 +120,7 @@ public class AdminEditProducts extends AppCompatActivity {
         photoPickerIntent.setType("image/*");
         startActivityForResult(photoPickerIntent, REQUEST_CODE_GALLERY);
     }*/
-/*
+
     private void Update_Admin_product_Details() {
 
 
@@ -183,7 +189,7 @@ public class AdminEditProducts extends AppCompatActivity {
         }
     }
 }
-*/
+
 
     /*
     @Override
