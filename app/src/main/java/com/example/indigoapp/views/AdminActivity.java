@@ -13,7 +13,7 @@ import com.example.indigoapp.R;
 @SuppressLint("Registered")
 public class AdminActivity extends AppCompatActivity {
 
-    Button addProd, editProd, addPromo, mngGallery, addVoucher;
+    Button addProd, editProd, addPromo, mngGallery, addVoucher, editVoucher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +25,7 @@ public class AdminActivity extends AppCompatActivity {
         addPromo = (Button) findViewById(R.id.add_promo_admin_btn);
         mngGallery = (Button) findViewById(R.id.mng_gal_admin_btn);
         addVoucher = (Button) findViewById(R.id.add_voucher_admin_btn);
-
+        editVoucher = (Button) findViewById(R.id.edit_voucher_admin_btn);
         buttonClickActivity();
     }
 
@@ -52,6 +52,14 @@ public class AdminActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intentVou = new Intent(getApplicationContext(), AdminAddVoucher.class);
                 startActivity(intentVou);
+            }
+        });
+
+        editVoucher.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentEditVou = new Intent(getApplicationContext(), AdminEditVoucher.class);
+                startActivity(intentEditVou);
             }
         });
 

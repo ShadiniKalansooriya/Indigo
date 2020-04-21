@@ -132,7 +132,7 @@
                 android:textSize="24sp"
                 />
 
-            <Button
+            <!--<Button
                 android:id="@+id/savingbtn"
                 android:layout_width="match_parent"
                 android:layout_height="109dp"
@@ -148,7 +148,7 @@
                 android:textColor="@android:color/white"
                 android:textSize="24sp"
 
-                />
+                />-->
 
             <Button
                 android:id="@+id/voucherbtn"
