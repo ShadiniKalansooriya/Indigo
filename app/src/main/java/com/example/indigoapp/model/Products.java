@@ -1,22 +1,23 @@
 package com.example.indigoapp.model;
 
-import android.graphics.Bitmap;
-
 public class Products {
 
     private String product_id;
     private String product_name;
+    private String product_desc;
     private String product_price;
-    private Bitmap bitmap;
+    private String imgUrl;
     private String count;
+    private String catName;
 
-    public Products(String product_id, String product_name, String product_price, Bitmap bitmap, String count, String product_foreign_key) {
+    public Products(String product_id, String product_name, String product_desc, String product_price, String imgUrl, String count, String catName) {
         this.product_id = product_id;
         this.product_name = product_name;
+        this.product_desc = product_desc;
         this.product_price = product_price;
-        this.bitmap = bitmap;
+        this.imgUrl = imgUrl;
         this.count = count;
-        this.product_foreign_key = product_foreign_key;
+        this.catName = catName;
     }
 
     public String getProduct_id() {
@@ -35,6 +36,14 @@ public class Products {
         this.product_name = product_name;
     }
 
+    public String getProduct_desc() {
+        return product_desc;
+    }
+
+    public void setProduct_desc(String product_desc) {
+        this.product_desc = product_desc;
+    }
+
     public String getProduct_price() {
         return product_price;
     }
@@ -43,12 +52,12 @@ public class Products {
         this.product_price = product_price;
     }
 
-    public Bitmap getBitmap() {
-        return bitmap;
+    public String getImgUrl() {
+        return imgUrl;
     }
 
-    public void setBitmap(Bitmap bitmap) {
-        this.bitmap = bitmap;
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
     }
 
     public String getCount() {
@@ -59,13 +68,11 @@ public class Products {
         this.count = count;
     }
 
-    public String getProduct_foreign_key() {
-        return product_foreign_key;
+    public String getCatName() {
+        return catName;
     }
 
-    public void setProduct_foreign_key(String product_foreign_key) {
-        this.product_foreign_key = product_foreign_key;
+    public void setCatName(String catName) {
+        this.catName = catName;
     }
-
-    private String product_foreign_key;
 }

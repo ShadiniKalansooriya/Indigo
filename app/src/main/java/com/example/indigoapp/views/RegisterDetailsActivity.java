@@ -14,19 +14,19 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.indigoapp.R;
-import com.example.indigoapp.databases.DbHelper;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationView;
-
-import java.util.Calendar;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+
+import com.example.indigoapp.R;
+import com.example.indigoapp.databases.DbHelper;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
+
+import java.util.Calendar;
 
 public class RegisterDetailsActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -188,8 +188,6 @@ public class RegisterDetailsActivity extends AppCompatActivity implements Naviga
 
 //             Toast.makeText(RegisterDetailsActivity.this,
 //                     radioButton.getText(), Toast.LENGTH_SHORT).show();
-
-
 
 
              if (validateUsername() == true &&validateEmail()== true && validatePassword() == true && validateMobile() == true && validateConfirmPassword()== true ){

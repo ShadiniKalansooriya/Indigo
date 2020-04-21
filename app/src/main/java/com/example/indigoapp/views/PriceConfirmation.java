@@ -3,10 +3,10 @@ package com.example.indigoapp.views;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.Button;
-
 import com.example.indigoapp.R;
-
 import androidx.appcompat.app.AppCompatActivity;
+
+
 
 public class PriceConfirmation extends AppCompatActivity {
 

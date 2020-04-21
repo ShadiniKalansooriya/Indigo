@@ -46,12 +46,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="276dp">
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="259dp">
 
 
         <EditText
-            android:id="@+id/product_name"
+            android:id="@+id/edit_product_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="55dp"
@@ -72,11 +72,11 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/input_layer1"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="349dp">
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="314dp">
 
         <EditText
-            android:id="@+id/product_description"
+            android:id="@+id/edit_product_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="55dp"
@@ -97,10 +97,10 @@
         android:layout_below="@+id/input_layer2"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="420dp">
+        tools:layout_editor_absoluteY="369dp">
 
         <EditText
-            android:id="@+id/product_price"
+            android:id="@+id/edit_product_price"
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -122,11 +122,11 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/input_layer3"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="498dp">
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="424dp">
 
         <EditText
-            android:id="@+id/product_counts"
+            android:id="@+id/edit_product_count"
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -139,6 +139,56 @@
             android:textColor="@color/colorPrimaryDark"
 
             android:textColorHint="@color/colorPrimaryDark" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layer5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/input_layer4"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="479dp">
+
+        <EditText
+            android:id="@+id/edit_category_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="55dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="55dp"
+            android:hint="@string/categ_name"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textColorHint="@color/colorPrimaryDark"
+            tools:ignore="MissingConstraints" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layer6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layer5"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="534dp">
+
+        <EditText
+            android:id="@+id/edit_product_img_url"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="55dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="55dp"
+            android:hint="@string/prod_img_url"
+            android:inputType="textUri"
+            android:padding="10dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textColorHint="@color/colorPrimaryDark"
+            tools:ignore="MissingConstraints" />
+
     </com.google.android.material.textfield.TextInputLayout>
 
     <EditText
@@ -167,33 +217,33 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/delete_product_btn"
+        android:id="@+id/admin_edit_product_delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/DELETE"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.7"
-        app:layout_constraintStart_toEndOf="@+id/update_product_btn"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toEndOf="@+id/admin_update_current_product"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:textStyle="bold"
-        app:layout_constraintVertical_bias="0.918" />
+        app:layout_constraintVertical_bias="0.961" />
 
     <Button
-        android:id="@+id/update_product_btn"
+        android:id="@+id/admin_update_current_product"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/update"
-        app:layout_constraintBaseline_toBaselineOf="@+id/delete_product_btn"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/admin_edit_product_delete"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/delete_product_btn"
-        app:layout_constraintHorizontal_bias="0.7"
+        app:layout_constraintEnd_toStartOf="@+id/admin_edit_product_delete"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:textStyle="bold"
-        app:layout_constraintVertical_bias="0.827" />
+        app:layout_constraintVertical_bias="0.976" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

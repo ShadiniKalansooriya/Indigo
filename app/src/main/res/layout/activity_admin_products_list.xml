@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.AdminProductsList">
+
+    <androidx.cardview.widget.CardView
+        app:cardBackgroundColor="@color/white"
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="8dp"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="14dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/admin_view_product_names"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/white"
+                        android:textSize="24sp" />
+
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:orientation="vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/admin_current_product_count"
+                                android:layout_gravity="center"
+                                android:layout_width="wrap_content"
+                                android:textSize="20sp"
+                                android:textColor="@android:color/black"
+                                android:layout_height="wrap_content"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="@string/current"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/admin_current_product_category"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:textColor="@android:color/black"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="@string/categ_name"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+                        <!--
+                                                <ImageView
+                                                    android:layout_marginLeft="16dp"
+                                                    android:layout_width="25dp"
+                                                    android:src="@drawable/slash"
+                                                    android:layout_height="match_parent" />
+
+                                                <LinearLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:orientation="vertical"
+                                                    android:layout_marginLeft="16dp"
+                                                    android:layout_height="wrap_content">
+
+                                                    <TextView
+                                                        android:id="@+id/admin_avilable_product_count"
+                                                        android:layout_gravity="center"
+                                                        android:layout_width="wrap_content"
+                                                        android:textSize="20sp"
+                                                        android:textColor="@android:color/black"
+                                                        android:layout_height="wrap_content"
+                                                        />
+
+                                                    <TextView
+                                                        android:layout_gravity="center"
+                                                        android:layout_width="wrap_content"
+                                                        android:textSize="14sp"
+                                                        android:textColor="@android:color/black"
+                                                        android:layout_height="wrap_content"
+                                                        android:text="@string/ava" />
+                                                </LinearLayout>-->
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/admin_view_product_Images"
+                        android:layout_width="170dp"
+                        android:layout_height="128dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="-8dp"
+                        android:layout_marginRight="5dp"
+                        android:src="@drawable/purplebg" />
+
+                    <LinearLayout
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/admin_view_product_Images"
+                        android:layout_marginTop="-2dp"
+                        android:orientation="horizontal">
+
+                        <!-- <ImageView
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/dollar" />-->
+
+                        <TextView
+                            android:id="@+id/admin_current_product_price"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="center"
+                            android:text="@string/price"
+                            android:textStyle="bold"
+                            android:textColor="@color/BlackHeader" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
