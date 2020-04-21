@@ -39,7 +39,7 @@ import java.util.ArrayList;
         @Override
         public void onBindViewHolder(@NonNull ProductViewAdapter holder, int position) {
             Products product=myitems.get(position);
-            holder.ProductImage.setImageBitmap(product.getBitmap());
+            //holder.ProductImage.setImageBitmap(product.getBitmap());
             holder.ProductName.setText(product.getProduct_name());
             holder.productPrice.setText("$"+product.getProduct_price());
             holder.ProductCount.setText(product.getCount());
@@ -69,7 +69,6 @@ import java.util.ArrayList;
                 ProductName=itemView.findViewById(R.id.admin_view_product_names);
                 productPrice=itemView.findViewById(R.id.admin_current_product_price);
                 ProductCount=itemView.findViewById(R.id.admin_current_product_count);
-                availableProductCount=itemView.findViewById(R.id.admin_avilable_product_count);
                 ProductImage.setOnClickListener(this);
             }
 
