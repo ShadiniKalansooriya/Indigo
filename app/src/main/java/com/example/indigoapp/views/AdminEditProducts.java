@@ -1,17 +1,16 @@
 package com.example.indigoapp.views;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.indigoapp.R;
 import com.example.indigoapp.adapter.ProductsAdapter;
 import com.example.indigoapp.databases.DbHelper;
@@ -36,6 +35,9 @@ public class AdminEditProducts extends AppCompatActivity {
     private ArrayList<Products> admin_items;
 
     private Bitmap bp=null;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,7 +60,7 @@ public class AdminEditProducts extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(AdminEditProducts.this,"Product!",Toast.LENGTH_SHORT).show();
-                Update_Admin_product_Details();
+                //Update_Admin_product_Details();
             }
         });
 
@@ -67,16 +69,16 @@ public class AdminEditProducts extends AppCompatActivity {
         delete_new_product_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                delete_admin_product();
+                //delete_admin_product();
 
             }
         });
 
-        initializeComponents();
+        //initializeComponents();
 
     }
 
-    private void initializeComponents(){
+    /*private void initializeComponents(){
         admin_product_name.setText(Products.getProduct_name());
         admin_product_price.setText(Products.getProduct_price());
         admin_product_des.setText(Products.getProduct_desc());
@@ -115,11 +117,11 @@ public class AdminEditProducts extends AppCompatActivity {
 
     }
 
-    /*private void selectImage(){
+    *//*private void selectImage(){
         Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
         photoPickerIntent.setType("image/*");
         startActivityForResult(photoPickerIntent, REQUEST_CODE_GALLERY);
-    }*/
+    }*//*
 
     private void Update_Admin_product_Details() {
 
@@ -187,7 +189,7 @@ public class AdminEditProducts extends AppCompatActivity {
 
 
         }
-    }
+    }*/
 }
 
 

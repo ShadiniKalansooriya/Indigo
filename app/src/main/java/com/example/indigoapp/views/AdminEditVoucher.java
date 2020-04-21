@@ -1,24 +1,22 @@
 package com.example.indigoapp.views;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.indigoapp.R;
 import com.example.indigoapp.adapter.ProductsAdapter;
 import com.example.indigoapp.databases.DbHelper;
 import com.example.indigoapp.model.Products;
-import com.example.indigoapp.model.Vouchers;
-import java.util.ArrayList;
 
+import java.util.ArrayList;
 
 public class AdminEditVoucher extends AppCompatActivity {
 
@@ -52,7 +50,7 @@ public class AdminEditVoucher extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(AdminEditVoucher.this,"Product!",Toast.LENGTH_SHORT).show();
-                Update_Admin_voucher_Details();
+                //Update_Admin_voucher_Details();
             }
         });
 
@@ -61,16 +59,16 @@ public class AdminEditVoucher extends AppCompatActivity {
         vouDelBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                delete_admin_voucher();
+                //delete_admin_voucher();
 
             }
         });
 
-        initializeComponents();
+        //initializeComponents();
 
     }
 
-    private void initializeComponents(){
+    /*private void initializeComponents(){
         vouPrice.setText(Vouchers.getVoucher_price());
         vouQty.setText(Vouchers.getVoucher_count());
 
@@ -117,4 +115,7 @@ public class AdminEditVoucher extends AppCompatActivity {
             }  else {
 
 
-            }}}}
+            }
+        }
+    }*/
+}

@@ -45,35 +45,42 @@
         android:id="@+id/input_layer1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="169dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.272">
 
 
-    <EditText
-        android:id="@+id/product_name"
-        android:inputType="text"
-        android:textColorHint="@color/colorPrimaryDark"
-        android:padding="10dp"
-        android:layout_marginRight="55dp"
-        android:layout_marginTop="150dp"
-        android:layout_marginLeft="55dp"
-        android:layout_width="match_parent"
-        android:hint="@string/prod_name"
-        android:textColor="@color/colorPrimaryDark"
+        <EditText
+            android:id="@+id/product_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="55dp"
+            android:layout_marginTop="150dp"
+            android:layout_marginRight="55dp"
+            android:hint="@string/prod_name"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textColor="@color/colorPrimaryDark"
 
-        android:layout_height="wrap_content" />
+            android:textColorHint="@color/colorPrimaryDark" />
 
-</com.google.android.material.textfield.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/input_layer2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/input_layer1"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-16dp"
-        tools:layout_editor_absoluteY="244dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.353">
 
         <EditText
             android:id="@+id/product_description"
@@ -90,65 +97,43 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/input_layer3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/input_layer2"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="318dp">
-
-    <EditText
-        android:id="@+id/product_price"
-
-        android:textColorHint="@color/colorPrimaryDark"
-        android:padding="10dp"
-        android:layout_marginRight="55dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="55dp"
-        android:inputType="number|numberDecimal"
-        android:layout_width="match_parent"
-        android:hint="@string/product_price"
-        android:textColor="@color/colorPrimaryDark"
-
-        android:layout_height="wrap_content" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/input_layer4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/input_layer3"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="398dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.46">
 
-    <EditText
-        android:id="@+id/product_counts"
-        android:textColorHint="@color/colorPrimaryDark"
-        android:padding="10dp"
-        android:layout_marginRight="55dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="55dp"
-        android:inputType="number|numberDecimal"
-        android:layout_width="match_parent"
-        android:hint="@string/product_qty"
-        android:textColor="@color/colorPrimaryDark"
-        android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/product_counts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="55dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="55dp"
+            android:hint="@string/product_qty"
+            android:inputType="number|numberDecimal"
+            android:padding="10dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textColorHint="@color/colorPrimaryDark" />
     </com.google.android.material.textfield.TextInputLayout>
-
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/layer5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/input_layer4"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="466dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.565">
 
         <EditText
             android:id="@+id/category_name"
@@ -171,9 +156,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/layer5"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="537dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.761">
 
         <EditText
             android:id="@+id/product_img_url"
@@ -187,7 +175,10 @@
             android:padding="10dp"
             android:textColor="@color/colorPrimaryDark"
             android:textColorHint="@color/colorPrimaryDark"
-            tools:ignore="MissingConstraints" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -203,9 +194,41 @@
         android:textColor="@color/lightBlack"
         android:textSize="18dp"
         android:textStyle="bold"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="610dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.877" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_layer3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/input_layer2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.662">
+
+        <EditText
+            android:id="@+id/product_price"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="55dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="55dp"
+            android:hint="@string/product_price"
+            android:inputType="number|numberDecimal"
+            android:padding="10dp"
+            android:textColor="@color/colorPrimaryDark"
+
+            android:textColorHint="@color/colorPrimaryDark" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

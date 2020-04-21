@@ -38,9 +38,15 @@
         <activity android:name=".views.AdminEditVoucher"/>
         <activity android:name=".views.AdminProductsList" />
         <activity android:name=".views.AdminAddVoucher" />
-        <activity android:name=".views.AdminEditProducts" />
+        <activity android:name=".views.AdminEditProducts"/>
         <activity android:name=".views.AdminAddProducts" />
-        <activity android:name=".views.AdminActivity" />
+        <activity android:name=".views.AdminActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".views.RecyclerMasterSavings" />
         <activity android:name=".views.RecyclerMasterVoucher" />
         <activity android:name=".views.RecyclerMasterTops" />
@@ -72,11 +78,11 @@
         <activity android:name=".views.Denims_display" />
         <activity android:name=".adapter.RecyclerViewAdapter" />
         <activity android:name=".views.MainActivity">
-            <intent-filter>
+           <!-- <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter>-->
         </activity>
 
         <meta-data
