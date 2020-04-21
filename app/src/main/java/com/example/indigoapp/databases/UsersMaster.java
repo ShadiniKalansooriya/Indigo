@@ -34,6 +34,16 @@ public class UsersMaster {
 //
 //    }
 
+    public static class Gallery implements BaseColumns{
+        public static String GALLERY ="gallery";
+        public static final String COLUMN_GALLERY_ID="id";
+        public static final String COLUMN_GALLERY_EMAIL = "email";
+        public static final String COLUMN_GALLERY_IMAGE = "image";
+        public static final String COLUMN_GALLERY_HASHTAG = "hashtag";
+        public static final String COLUMN_GALLERY_CURRENT = "Current";
+
+    }
+
 
 
     public static class Payment implements BaseColumns {

@@ -48,9 +48,9 @@ public class Gallery extends AppCompatActivity implements NavigationView.OnNavig
     NavigationView navigationView;
     androidx.appcompat.widget.Toolbar toolbar;
 
-    EditText editTextHashtag;
+    EditText editTextHashtag,textViewEmail;
     Button buttonchoose, buttonAdd;
-    TextView textViewGallery,textViewEmail;
+    TextView textViewGallery;
     ImageView imageView;
 
 
@@ -102,7 +102,7 @@ public class Gallery extends AppCompatActivity implements NavigationView.OnNavig
         setContentView(R.layout.activity_gallery);
         init();
         dbHelper = new DbHelper(this);
-        dbHelper.queryData("CREATE TABLE IF NOT EXISTS GALLERY(Id INTEGER PRIMARY KEY AUTOINCREMENT, email VARCHAR, hashtag VARCHAR, image BLOB)");
+//        dbHelper.queryData("CREATE TABLE IF NOT EXISTS GALLERY(Id INTEGER PRIMARY KEY AUTOINCREMENT, email VARCHAR, hashtag VARCHAR, image BLOB)");
 
         /*=============Hooks================== */
         bottomNavigationView = findViewById(R.id.bottom_navigation);
@@ -325,6 +325,7 @@ public class Gallery extends AppCompatActivity implements NavigationView.OnNavig
    buttonAdd = findViewById(R.id.buttonAdd);
    textViewGallery = findViewById(R.id.textViewGallerylink);
    textViewEmail = findViewById(R.id.textViewEmail);
+   //textViewEmail.setText(dbHelper.getEmail2());
    imageView = findViewById(R.id.imageViewUpload);
 
     }

@@ -26,6 +26,7 @@ import android.widget.Toast;
 
 import com.example.indigoapp.R;
 import com.example.indigoapp.adapter.GalleryLIstAdapter;
+import com.example.indigoapp.databases.DbHelper;
 import com.example.indigoapp.model.Gallery;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
@@ -51,6 +52,7 @@ public class GalleryView extends AppCompatActivity implements NavigationView.OnN
     NavigationView navigationView;
     androidx.appcompat.widget.Toolbar toolbar;
     TextView textViewGallery;
+    DbHelper dbHelper;
 
     GridView gridView;
     ArrayList<Gallery> list;
@@ -76,7 +78,7 @@ public class GalleryView extends AppCompatActivity implements NavigationView.OnN
                     break;
 
                 case R.id.nav_b_gallery:
-                    Intent intent2 = new Intent(GalleryView.this, Gallery.class);
+                    Intent intent2 = new Intent(GalleryView.this, com.example.indigoapp.views.Gallery.class);
                     startActivity(intent2);
                     break;
 
@@ -118,6 +120,7 @@ public class GalleryView extends AppCompatActivity implements NavigationView.OnN
         navigationView.setNavigationItemSelectedListener(this);
 
         navigationView.setCheckedItem(R.id.nav_Gallery);
+        DbHelper dbHelper = new DbHelper(this);
 
 
         //bottom navigationview listener
@@ -135,7 +138,7 @@ public class GalleryView extends AppCompatActivity implements NavigationView.OnN
         gridView.setAdapter(adapter);
 
         // get all data from sqlite
-        Cursor cursor = com.example.indigoapp.views.Gallery.dbHelper.getGallery("SELECT * FROM GALLERY");
+        Cursor cursor = dbHelper.getGallery("SELECT * FROM GALLERY");
         list.clear();
         while (cursor.moveToNext()) {
             int id = cursor.getInt(0);
@@ -185,6 +188,8 @@ public class GalleryView extends AppCompatActivity implements NavigationView.OnN
             }
         });
 
+
+
     }
         ImageView imageViewimg;
 
@@ -195,8 +200,10 @@ public class GalleryView extends AppCompatActivity implements NavigationView.OnN
             dialog.setTitle("Update");
 
             imageViewimg = (ImageView) dialog.findViewById(R.id.imageViewimg);
-            final EditText edtName = (EditText) dialog.findViewById(R.id.editTextEmail);
-            final EditText edtPrice = (EditText) dialog.findViewById(R.id.editTextHashtag);
+           final EditText editTextEmail = (EditText) dialog.findViewById(R.id.editTextEmail);
+
+//            editTextEmail.setText(dbHelper.getEmail());
+            final EditText editTextHashtag = (EditText) dialog.findViewById(R.id.editTextHashtag);
             Button btnUpdate = (Button) dialog.findViewById(R.id.buttonUpdate);
 
             // set width for dialog
@@ -223,8 +230,8 @@ public class GalleryView extends AppCompatActivity implements NavigationView.OnN
                 public void onClick(View v) {
                     try {
                         com.example.indigoapp.views.Gallery.dbHelper.updateGallery(
-                                edtName.getText().toString().trim(),
-                                edtPrice.getText().toString().trim(),
+                                editTextEmail.getText().toString().trim(),
+                                editTextHashtag.getText().toString().trim(),
                                 com.example.indigoapp.views.Gallery.imageViewToByte(imageViewimg),
                                 position
                         );

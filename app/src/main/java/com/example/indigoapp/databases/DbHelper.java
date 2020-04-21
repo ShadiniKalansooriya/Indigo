@@ -46,6 +46,18 @@ public class DbHelper extends SQLiteOpenHelper {
                         UsersMaster.Users.COL_USER_TYPE + " TEXT," +
                         UsersMaster.Users.COL_USER_CURRENT + " TEXT)";
 
+        System.out.println("User table"+SQL_CREATE_ENTRIES);
+
+        String sql = "CREATE TABLE " + UsersMaster.Gallery.GALLERY + " (" +
+                        UsersMaster.Gallery.COLUMN_GALLERY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+                        UsersMaster.Gallery.COLUMN_GALLERY_EMAIL + " TEXT," +
+                        UsersMaster.Gallery.COLUMN_GALLERY_HASHTAG + " TEXT," +
+                        UsersMaster.Gallery.COLUMN_GALLERY_IMAGE + " LONGBLOB,"+
+                        UsersMaster.Gallery.COLUMN_GALLERY_CURRENT + " TEXT)";
+//                " FOREIGN KEY (" + UsersMaster.Gallery.COLUMN_GALLERY_EMAIL + ") REFERENCES " + UsersMaster.Users.TABLE_USER +"("+ UsersMaster.Users.COL_USER_EMAIL+"));";
+
+
+        System.out.println("Gallery Table" +sql);
 
 //        String SQL_CREATE_GALLERY =
 //                "CREATE TABLE "+ UsersMaster.Gallery.GALLERY + "(" +
@@ -99,10 +111,8 @@ public class DbHelper extends SQLiteOpenHelper {
 //                UsersMaster.Vouchers.COLUMN_NAME_ID +") ON DELETE CASCADE ON UPDATE CASCADE)";
 
 
-
-
-
         sqLiteDatabase.execSQL(SQL_CREATE_ENTRIES);
+        sqLiteDatabase.execSQL(sql);
 //        sqLiteDatabase.execSQL(PAYMENT_DETAILS_ENTRIES);
 //        sqLiteDatabase.execSQL(CUSTOMER_CART_CREATES_ENTRIES);
 //        sqLiteDatabase.execSQL(PRODUCT_DETAILS_ENTRIES);
@@ -112,21 +122,26 @@ public class DbHelper extends SQLiteOpenHelper {
 
 
         String SQL_CREATE_FEED_ENTRIES =
-                "CREATE TABLE " +   UsersMaster.Feedback.TABLE_NAME + " ("+
-                        "id INTEGER PRIMARY KEY AUTOINCREMENT,"+
-                        UsersMaster.Feedback.COLUMN_NAME_NAME + " TEXT,"+
+                "CREATE TABLE " + UsersMaster.Feedback.TABLE_NAME + " (" +
+                        "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                        UsersMaster.Feedback.COLUMN_NAME_NAME + " TEXT," +
                         UsersMaster.Feedback.COLUMN_NAME_EMAIL + " TEXT," +
                         UsersMaster.Feedback.COLUMN_NAME_Report + " TEXT," +
                         UsersMaster.Feedback.COLUMN_NAME_MESSAGE + " TEXT)";
 
         sqLiteDatabase.execSQL(SQL_CREATE_FEED_ENTRIES);
 
-    }
 
-    //Gallery
-    public void queryData(String sql){
-        SQLiteDatabase database = getWritableDatabase();
-        database.execSQL(sql);
+        //Gallery
+
+
+//        String sql = "CREATE TABLE IF NOT EXISTS GALLERY(Id INTEGER PRIMARY KEY AUTOINCREMENT, email VARCHAR, hashtag VARCHAR, image BLOB)";
+
+//        SQLiteDatabase database = getWritableDatabase();
+
+//        sqLiteDatabase.execSQL(sql);
+
+
     }
 
     @Override
@@ -136,6 +151,7 @@ public class DbHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS "+ UsersMaster.ProductsItems.TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS "+ UsersMaster.Products.TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS "+ UsersMaster.Vouchers.TABLE_NAME);
+//        db.execSQL("DROP TABLE IF EXISTS "+ GALLERY);
 
         onCreate(db);
 
@@ -263,6 +279,35 @@ public class DbHelper extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 currentUsername = cursor.getString(cursor.getColumnIndex(UsersMaster.Users.COL_USER_EMAIL));
+            } while (cursor.moveToNext());
+        } else {
+            currentUsername = "123";
+
+        }
+        cursor.close();
+        return currentUsername;
+    }
+
+
+    public String getEmail2() {
+
+
+        String[] projection = {
+                UsersMaster.Gallery.COLUMN_GALLERY_EMAIL
+        };
+        SQLiteDatabase db = getWritableDatabase();
+        Cursor cursor = db.query(UsersMaster.Gallery.GALLERY,
+
+                projection,
+                UsersMaster.Gallery.COLUMN_GALLERY_CURRENT + " LIKE ? ",
+                new String[]{"TRUE"},
+                null, null, null);
+//        cursor.moveToFirst();
+        String currentUsername;
+
+        if (cursor.moveToFirst()) {
+            do {
+                currentUsername = cursor.getString(cursor.getColumnIndex(UsersMaster.Gallery.COLUMN_GALLERY_EMAIL));
             } while (cursor.moveToNext());
         } else {
             currentUsername = "123";
@@ -549,6 +594,8 @@ public class DbHelper extends SQLiteOpenHelper {
             cursor.close();
             return currentUsername;
         }
+
+
         public String getTotal() {
             String[] projection = {
                     UsersMaster.Payment.COLUMN_USER_AMOUNT
@@ -743,7 +790,7 @@ public class DbHelper extends SQLiteOpenHelper {
     public void updateGallery(String email, String hashtag, byte[] image, int id) {
         SQLiteDatabase database = getWritableDatabase();
 
-        String sql = "UPDATE GALLERY SET name = ?, price = ?, image = ? WHERE id = ?";
+        String sql = "UPDATE GALLERY SET email = ?, hashtag = ?, image = ? WHERE id = ?";
         SQLiteStatement statement = database.compileStatement(sql);
 
         statement.bindString(1, email);
@@ -768,11 +815,22 @@ public class DbHelper extends SQLiteOpenHelper {
     }
 
     public Cursor getGallery(String sql){
+
         SQLiteDatabase database = getReadableDatabase();
         return database.rawQuery(sql, null);
     }
 
-
+//    public ArrayList getGallery()
+//    {
+//        ArrayList<Gallery> list = new ArrayList<>();
+//        SQLiteDatabase database = getReadableDatabase();
+//
+//        String sql="SELECT * FROM "+ com.example.indigoapp.views.Gallery.dbHelper;
+//
+//        Cursor cu = database.rawQuery(sql, null);
+//        byte [] image;
+//
+//    }
 
 
 }

@@ -56,7 +56,7 @@ public class MyAccount extends AppCompatActivity implements NavigationView.OnNav
                     break;
 
                 case R.id.nav_b_gallery:
-                    Intent intent2 = new Intent(MyAccount.this, GalleryView.class);
+                    Intent intent2 = new Intent(MyAccount.this, Gallery.class);
                     startActivity(intent2);
                     break;
 
