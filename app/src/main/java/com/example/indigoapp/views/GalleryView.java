@@ -392,6 +392,12 @@ public class GalleryView extends AppCompatActivity implements NavigationView.OnN
                 Intent intent5 = new Intent(GalleryView.this, Feedback.class);
                 startActivity(intent5);
                 break;
+            case R.id.nav_Logout:
+                dbHelper.changeuser();
+                Intent intent8 = new Intent(GalleryView.this,Login.class);
+                startActivity((intent8));
+                Toast.makeText(getApplicationContext(),"Successfully Logged Out",Toast.LENGTH_LONG).show();
+
         }
 
         drawerLayout.closeDrawer(GravityCompat.START);

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.example.indigoapp.R;
 import com.example.indigoapp.adapter.RecyclerViewAdapter;
@@ -20,6 +21,8 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import static com.example.indigoapp.views.Gallery.dbHelper;
 
 public class RecyclerMasterActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -202,6 +205,13 @@ public class RecyclerMasterActivity extends AppCompatActivity implements Navigat
                 Intent intent5 = new Intent(RecyclerMasterActivity.this, Feedback.class);
                 startActivity(intent5);
                 break;
+
+            case R.id.nav_Logout:
+                dbHelper.changeuser();
+                Intent intent8 = new Intent(RecyclerMasterActivity.this,Login.class);
+                startActivity((intent8));
+                Toast.makeText(getApplicationContext(),"Successfully Logged Out",Toast.LENGTH_LONG).show();
+
         }
 
         drawerLayout.closeDrawer(GravityCompat.START);

@@ -22,7 +22,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/indigodark1"
+        android:background="@color/colorindigo1"
         android:orientation="vertical">
 
         <include
