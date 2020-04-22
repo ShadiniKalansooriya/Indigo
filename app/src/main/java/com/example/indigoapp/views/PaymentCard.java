@@ -1,5 +1,6 @@
 package com.example.indigoapp.views;
 
+import android.app.Notification;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +13,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class PaymentCard {
 
+
+    private PaymentCard dbHelper;
+    private Notification.MessagingStyle.Message editTextEmail;
 
     public abstract class Payment extends AppCompatActivity implements View.OnClickListener {
         EditText nameCard, cardNo, cardEp;
@@ -51,4 +55,16 @@ public class PaymentCard {
             cardEp = (EditText) findViewById(R.id.et9);
         }
     }
+//
+//    private void User_insert_cart_details(){
+//
+//        String nameCard = EditText.getText().toString().trim();
+//        String cardNo = EditText.getText().toString().trim();
+//        String cardEp = EditText.getText().toString().trim();
+//
+//
+//
+//        dbHelper.User_insert_cart_details(nameCard,cardNo,cardEp);
+//    }
+
 }
