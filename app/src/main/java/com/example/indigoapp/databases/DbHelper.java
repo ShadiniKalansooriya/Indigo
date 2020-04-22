@@ -66,22 +66,23 @@ public class DbHelper extends SQLiteOpenHelper {
 //                UsersMaster.Gallery.COL_USER_EMAIL +" TEXT,", price VARCHAR, image BLOB
 
 
-        String PAYMENT_DETAILS_ENTRIES = "CREATE TABLE " + UsersMaster.Payment.TABLE_NAME + "(" +
-                UsersMaster.Payment.COL_USER_NAME + " TEXT," +
-                UsersMaster.Payment.COL_USER_EMAIL + " TEXT," +
-                UsersMaster.Payment.COLUMN_USER_AMOUNT + " TEXT," +
-                UsersMaster.Payment.COL_USER_ADDRESS + " TEXT," +
-
-                " FOREIGN KEY (" + UsersMaster.Payment.COL_USER_NAME + ") REFERENCES " + UsersMaster.Payment.TABLE_NAME +
-                " ON DELETE CASCADE ON UPDATE CASCADE )";
-
-        String CUSTOMER_CART_CREATES_ENTRIES = "CREATE TABLE " + UsersMaster.UserCart.CART_NAME_USER + "(" +
-                UsersMaster.UserCart.CART_NAME +" TEXT,"+
-                UsersMaster.UserCart.COLUMN_NUMBER +" TEXT,"+
-                UsersMaster.UserCart.COLUMN_DATE +" TEXT,"+
-
-                " FOREIGN KEY (" + UsersMaster.UserCart.COLUMN_NUMBER + ") REFERENCES " + UsersMaster.UserCart.CART_NAME_USER +
-                " ON DELETE CASCADE ON UPDATE CASCADE)";
+//        String PAYMENT_DETAILS_ENTRIES = "CREATE TABLE " + UsersMaster.Payment.TABLE_NAME + "(" +
+//                UsersMaster.Payment.COL_USER_NAME + " TEXT," +
+//                UsersMaster.Payment.COL_USER_EMAIL + " TEXT," +
+//                UsersMaster.Payment.COLUMN_USER_AMOUNT + " TEXT," +
+//                UsersMaster.Payment.COL_USER_ADDRESS + " TEXT," +
+//
+//                " FOREIGN KEY (" + UsersMaster.Payment.COL_USER_NAME + ") REFERENCES " + UsersMaster.Payment.TABLE_NAME +
+//                " ON DELETE CASCADE ON UPDATE CASCADE )";
+//
+//
+//        String CUSTOMER_CART_CREATES_ENTRIES = "CREATE TABLE " + UsersMaster.UserCart.CART_NAME_USER + "(" +
+//                UsersMaster.UserCart.CART_NAME +" TEXT,"+
+//                UsersMaster.UserCart.COLUMN_NUMBER +" TEXT,"+
+//                UsersMaster.UserCart.COLUMN_DATE +" TEXT,"+
+//
+//                " FOREIGN KEY (" + UsersMaster.UserCart.COLUMN_NUMBER + ") REFERENCES " + UsersMaster.UserCart.CART_NAME_USER +
+//                " ON DELETE CASCADE ON UPDATE CASCADE)";
 
 //        String PRODUCT_DETAILS_ENTRIES = "CREATE TABLE " + UsersMaster.Products.TABLE_NAME + " (" +
 //                        UsersMaster.Products.COLUMN_NAME_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -113,8 +114,8 @@ public class DbHelper extends SQLiteOpenHelper {
 
         sqLiteDatabase.execSQL(SQL_CREATE_ENTRIES);
         sqLiteDatabase.execSQL(sql);
-        sqLiteDatabase.execSQL(PAYMENT_DETAILS_ENTRIES);
-        sqLiteDatabase.execSQL(CUSTOMER_CART_CREATES_ENTRIES);
+//        sqLiteDatabase.execSQL(PAYMENT_DETAILS_ENTRIES);
+//        sqLiteDatabase.execSQL(CUSTOMER_CART_CREATES_ENTRIES);
 //        sqLiteDatabase.execSQL(PRODUCT_DETAILS_ENTRIES);
 //        sqLiteDatabase.execSQL(ADMIN_PRODUCT_DETAILS_ENTRIES);
 //        sqLiteDatabase.execSQL(PRODUCT_DETAILS_ENTRIES);

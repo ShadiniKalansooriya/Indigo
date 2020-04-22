@@ -46,7 +46,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="70dp"
                     android:contentDescription="@string/propicdescription"
-                    app:srcCompat="@drawable/myaccountimg" />
+                    app:srcCompat="@drawable/abc" />
 
                 <TextView
                     android:id="@+id/textViewName"

@@ -42,23 +42,26 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/input_layer1"
+        android:id="@+id/input_layer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="264dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.436">
 
 
         <EditText
-            android:id="@+id/product_name"
+            android:id="@+id/voucher_price"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="55dp"
             android:layout_marginTop="150dp"
             android:layout_marginRight="55dp"
             android:hint="@string/voucher_price"
-            android:inputType="text"
+            android:inputType="number"
             android:padding="10dp"
             android:textColor="@color/colorPrimaryDark"
 
@@ -67,23 +70,26 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/input_layer2"
+        android:id="@+id/input_layer_qty"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/input_layer1"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="338dp">
+        android:layout_below="@+id/input_layer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.566">
 
         <EditText
-            android:id="@+id/product_description"
+            android:id="@+id/voucher_qty"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="55dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="55dp"
             android:hint="@string/voucher_qty"
-            android:inputType="textMultiLine"
+            android:inputType="text"
             android:padding="10dp"
             android:textColor="@color/colorPrimaryDark"
             android:textColorHint="@color/colorPrimaryDark" />
@@ -91,18 +97,20 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/admin_add_new_product"
+        android:id="@+id/admin_add_voucher_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/input_layer4"
+        android:layout_below="@+id/input_layer_qty"
         android:background="@color/white"
         android:padding="4dp"
         android:text="@string/add_voucher"
         android:textColor="@color/lightBlack"
         android:textSize="18dp"
         android:textStyle="bold"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-8dp"
-        tools:layout_editor_absoluteY="443dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.761" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
