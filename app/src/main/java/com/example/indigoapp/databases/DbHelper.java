@@ -66,23 +66,23 @@ public class DbHelper extends SQLiteOpenHelper {
 //                UsersMaster.Gallery.COL_USER_EMAIL +" TEXT,", price VARCHAR, image BLOB
 
 
-//        String PAYMENT_DETAILS_ENTRIES = "CREATE TABLE " + UsersMaster.Payment.TABLE_NAME + "(" +
-//                UsersMaster.Payment.COL_USER_NAME + " TEXT," +
-//                UsersMaster.Payment.COL_USER_EMAIL + " TEXT," +
-//                UsersMaster.Payment.COLUMN_USER_AMOUNT + " TEXT," +
-//                UsersMaster.Payment.COL_USER_ADDRESS + " TEXT," +
+        String PAYMENT_DETAILS_ENTRIES = "CREATE TABLE " + UsersMaster.Payment.TABLE_NAME + "(" +
+                UsersMaster.Payment.COL_USER_NAME + " TEXT," +
+                UsersMaster.Payment.COL_USER_EMAIL + " TEXT," +
+//                UsersMaster.Payment.COLUMN_USER_AMOUNT + " TEXT ,"  +
+                UsersMaster.Payment.COL_USER_ADDRESS + " TEXT," +
+
+                " FOREIGN KEY (" + UsersMaster.Payment.COL_USER_NAME + ") REFERENCES " + UsersMaster.Payment.TABLE_NAME +
+                " ON DELETE CASCADE ON UPDATE CASCADE )";
 //
-//                " FOREIGN KEY (" + UsersMaster.Payment.COL_USER_NAME + ") REFERENCES " + UsersMaster.Payment.TABLE_NAME +
-//                " ON DELETE CASCADE ON UPDATE CASCADE )";
 //
-//
-//        String CUSTOMER_CART_CREATES_ENTRIES = "CREATE TABLE " + UsersMaster.UserCart.CART_NAME_USER + "(" +
-//                UsersMaster.UserCart.CART_NAME +" TEXT,"+
-//                UsersMaster.UserCart.COLUMN_NUMBER +" TEXT,"+
-//                UsersMaster.UserCart.COLUMN_DATE +" TEXT,"+
-//
-//                " FOREIGN KEY (" + UsersMaster.UserCart.COLUMN_NUMBER + ") REFERENCES " + UsersMaster.UserCart.CART_NAME_USER +
-//                " ON DELETE CASCADE ON UPDATE CASCADE)";
+        String CUSTOMER_CART_CREATES_ENTRIES = "CREATE TABLE " + UsersMaster.UserCart.CART_NAME_USER + "(" +
+                UsersMaster.UserCart.CART_NAME +" TEXT,"+
+                UsersMaster.UserCart.COLUMN_NUMBER +" TEXT,"+
+                UsersMaster.UserCart.COLUMN_DATE +" TEXT,"+
+
+                " FOREIGN KEY (" + UsersMaster.UserCart.COLUMN_NUMBER + ") REFERENCES " + UsersMaster.UserCart.CART_NAME_USER +
+                " ON DELETE CASCADE ON UPDATE CASCADE)";
 
 //        String PRODUCT_DETAILS_ENTRIES = "CREATE TABLE " + UsersMaster.Products.TABLE_NAME + " (" +
 //                        UsersMaster.Products.COLUMN_NAME_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -114,8 +114,8 @@ public class DbHelper extends SQLiteOpenHelper {
 
         sqLiteDatabase.execSQL(SQL_CREATE_ENTRIES);
         sqLiteDatabase.execSQL(sql);
-//        sqLiteDatabase.execSQL(PAYMENT_DETAILS_ENTRIES);
-//        sqLiteDatabase.execSQL(CUSTOMER_CART_CREATES_ENTRIES);
+        sqLiteDatabase.execSQL(PAYMENT_DETAILS_ENTRIES);
+        sqLiteDatabase.execSQL(CUSTOMER_CART_CREATES_ENTRIES);
 //        sqLiteDatabase.execSQL(PRODUCT_DETAILS_ENTRIES);
 //        sqLiteDatabase.execSQL(ADMIN_PRODUCT_DETAILS_ENTRIES);
 //        sqLiteDatabase.execSQL(PRODUCT_DETAILS_ENTRIES);
@@ -179,27 +179,29 @@ public class DbHelper extends SQLiteOpenHelper {
 
     }
 
-    public void Customer_insert_payment_details(payments pay) {
+    public void Customer_insert_payment_details(String Username, String email, String Total) {
         SQLiteDatabase db = getWritableDatabase();
 
 
         ContentValues values = new ContentValues();
-        values.put(UsersMaster.Payment.COL_USER_NAME, pay.getUsername());
-        values.put(UsersMaster.Payment.COL_USER_EMAIL, pay.getemail());
-        values.put(UsersMaster.Payment.COLUMN_USER_AMOUNT, pay.getTotal());
+        values.put(UsersMaster.Payment.COL_USER_NAME, Username);
+        values.put(UsersMaster.Payment.COL_USER_EMAIL, email);
+        values.put(UsersMaster.Payment.COLUMN_USER_AMOUNT, Total);
 
         long newRowId = db.insert(UsersMaster.Payment.TABLE_NAME, null, values);
 
     }
 
-    public void User_insert_cart_details(Cart cart){
+
+
+    public void User_insert_cart_details(String nameCard,String cardNo , String cardEp){
         SQLiteDatabase db=getWritableDatabase();
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
 
         ContentValues values=new ContentValues();
-        values.put( UsersMaster.UserCart.CART_NAME,cart.Name());
-//        values.put(UsersMaster.UserCart.COLUMN_NUMBER,cart.Numb);
-//        values.put(UsersMaster.UserCart.COLUMN_DATE,cart.Date);
+        values.put( UsersMaster.UserCart.CART_NAME,nameCard);
+        values.put(UsersMaster.UserCart.COLUMN_NUMBER,cardNo);
+        values.put(UsersMaster.UserCart.COLUMN_DATE,cardEp);
         long newRowId =db.insert(UsersMaster.UserCart.CART_NAME_USER,null,values);
 
     }

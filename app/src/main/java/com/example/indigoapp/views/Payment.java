@@ -12,30 +12,30 @@ import android.widget.Toast;
 
 
 import com.example.indigoapp.R;
+import com.example.indigoapp.databases.DbHelper;
 
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public abstract class Payment extends  AppCompatActivity implements View.OnClickListener{
+public abstract class Payment extends  AppCompatActivity implements View.OnClickListener {
 
 
     EditText Uname;
-    EditText email;
+    String email;
     EditText lctn;
     EditText subto;
     TextView address;
     RadioButton paymentM;
-    Button btnS,btnS1,btnU;
-    EditText et1, et2, et3,et7,et8,et9;
+    Button btnS, btnS1, btnU;
+    EditText et1, et2, et3, et7, et8, et9;
 
     private RadioGroup rg;
     private RadioButton rb;
-    private Button submit,switch1;
+    private Button submit, switch1;
     private Button start;
     private TextView text;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
-
-
+    private DbHelper dbHelper;
 
 
     @Override
@@ -51,13 +51,11 @@ public abstract class Payment extends  AppCompatActivity implements View.OnClick
 
         submit = (Button) findViewById(R.id.btnS);
         Uname = (EditText) findViewById(R.id.et1);
-        email = (EditText) findViewById(R.id.et2);
+        email = String.valueOf((EditText) findViewById(R.id.et2));
         subto = (EditText) findViewById(R.id.et3);
-        address= (TextView) findViewById(R.id.address);
+        address = (TextView) findViewById(R.id.address);
         paymentM = (RadioButton) findViewById(R.id.radioButton1);
         paymentM = (RadioButton) findViewById(R.id.radioButton2);
-
-
 
 
         btnS = (Button) findViewById(R.id.btnS);
@@ -81,6 +79,7 @@ public abstract class Payment extends  AppCompatActivity implements View.OnClick
 
 
     }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -104,10 +103,16 @@ public abstract class Payment extends  AppCompatActivity implements View.OnClick
                 }
 
         }
+        private void Customer_insert_payment_details();
+
+        String Username = Uname.getText().toString().trim();
+//        String email = String.getText.toString().trim();
+
+        String Total = subto.getText().toString().trim();
+
+
+        dbHelper.Customer_insert_payment_details(Username, email, Total);
 
 
     }
-
-
-
 }

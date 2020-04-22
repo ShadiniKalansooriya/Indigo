@@ -7,19 +7,14 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.indigoapp.R;
 import com.example.indigoapp.databases.DbHelper;
@@ -27,6 +22,13 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.Calendar;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 public class RegisterDetailsActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -41,6 +43,8 @@ public class RegisterDetailsActivity extends AppCompatActivity implements Naviga
     RadioButton radioButtonGirl;
     RadioButton radioButtonGuy;
     RadioButton radioButton;
+    Spinner mySpinner;
+
 
     TextView TextViewdate;
     TextView TextViewdateSelect;
@@ -139,6 +143,13 @@ public class RegisterDetailsActivity extends AppCompatActivity implements Naviga
         editTextAddress = findViewById(R.id.editTextAddress);
         buttonSignUp = findViewById(R.id.buttonsignup);
         radioGroupgender = findViewById(R.id.gender);
+        mySpinner = (Spinner) findViewById(R.id.spinner);
+
+        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(RegisterDetailsActivity.this,
+                android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.user));
+        myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        mySpinner.setAdapter(myAdapter);
+
 //        radioButtonGirl = findViewById(R.id.radioButtonGirl);
 //        radioButtonGuy = findViewById(R.id.radioButtonGuy);
         //extViewdate = (TextView)findViewById(R.id.textViewdate);
@@ -208,7 +219,8 @@ public class RegisterDetailsActivity extends AppCompatActivity implements Naviga
         String pwd = editTextPassword.getText().toString().trim();
         String mob = editTextmobile.getText().toString().trim();
         String address = editTextAddress.getText().toString().trim();
-       String type = "RegisteredUser";
+        String type = mySpinner.getSelectedItem().toString().trim();
+
 
 
         dbHelper.addUser(uname,email,pwd,mob,address,gender,type);
