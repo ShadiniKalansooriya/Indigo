@@ -20,6 +20,7 @@ public class UsersMaster {
         public static final String COL_USER_ADDRESS = "Address";
         public static final String COL_USER_GENDER="Gender";
         public static final String COL_USER_TYPE = "UserType";
+        public static final String COL_USER_PROPIC= "propic";
         public static final String COL_USER_CURRENT = "Current";
 
     }
@@ -75,7 +76,7 @@ public class UsersMaster {
             public static final String COLUMN_NAME_ID="id";
             public static final String COLUMN_NAME_PRODUCT_NAME="name";
             public static final String COLUMN_NAME_COUNT="count";
-            public static final String  COLUMN_NAME_PRICE="price";
+            public static final String COLUMN_NAME_PRICE="price";
             public static final String COLUMN_NAME_DESCRIPTION="description";
             public static final String COLUMN_NAME_PRODUCTIMAGE="image";
             public static final String COLUMN_NAME_FOREIGNKEY="cid";

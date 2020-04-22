@@ -10,16 +10,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.indigoapp.R;
-import com.example.indigoapp.databases.DbHelper;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationView;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+
+import com.example.indigoapp.R;
+import com.example.indigoapp.databases.DbHelper;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 
 
 public class MyAccount extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -49,7 +49,7 @@ public class MyAccount extends AppCompatActivity implements NavigationView.OnNav
                     break;
 
                 case R.id.nav_b_shoppingbag:
-                    Intent intent = new Intent(MyAccount.this, MyAccount.class);
+                    Intent intent = new Intent(MyAccount.this, ProductsDetails.class);
                     startActivity(intent);
                     break;
 
@@ -113,6 +113,9 @@ public class MyAccount extends AppCompatActivity implements NavigationView.OnNav
         btnAccountOverView = findViewById(R.id.buttonAccountOverview);
         buttonChangePW = findViewById(R.id.buttonChangePw);
         textViewName = findViewById(R.id.textViewName);
+        imageViewPropic = findViewById(R.id.imageViewpropic);
+        //imageViewPropic.setImageBitmap(dbHelper.getProPic());
+
 
         //Hide or show items
         Menu menu = navigationView.getMenu();
@@ -120,6 +123,13 @@ public class MyAccount extends AppCompatActivity implements NavigationView.OnNav
 
         x = dbHelper.getUsername();
         textViewName.setText(x);
+//        ViewHolder holder = new ViewHolder();
+
+
+//        byte[] propicImage = User.getPropic();
+//        Bitmap bitmap = BitmapFactory.decodeByteArray(propicImage, 0, propicImage.length);
+//        imageViewPropic.setImageBitmap(bitmap);
+
 
         btnAccountOverView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -151,6 +161,9 @@ public class MyAccount extends AppCompatActivity implements NavigationView.OnNav
 
     }
 
+//    private  class ViewHolder{
+//        ImageView imageView;
+//    }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -160,7 +173,7 @@ public class MyAccount extends AppCompatActivity implements NavigationView.OnNav
                 break;
 
             case R.id.nav_shoppingBag:
-                Intent intent =new Intent(MyAccount.this,MainActivity.class);
+                Intent intent =new Intent(MyAccount.this,ProductsDetails.class);
                 startActivity(intent);
                 break;
 
