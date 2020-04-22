@@ -103,7 +103,7 @@ public abstract class Payment extends  AppCompatActivity implements View.OnClick
                 }
 
         }
-        private void Customer_insert_payment_details();
+   //     private void Customer_insert_payment_details();
 
         String Username = Uname.getText().toString().trim();
 //        String email = String.getText.toString().trim();
