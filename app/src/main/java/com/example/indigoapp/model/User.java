@@ -12,6 +12,15 @@ public class User {
     public String confPassword;
     public  String DOB;
     public String gender;
+    public byte[] propic;
+
+    public byte[] getPropic() {
+        return propic;
+    }
+
+    public void setPropic(byte[] propic) {
+        this.propic = propic;
+    }
 
     public int getId() {
         return id;
@@ -77,6 +86,8 @@ public class User {
         cv.put("pwd",getPassword());
         cv.put("conf_Pwd",getConfPassword());
         cv.put("dob",getDOB());
+        cv.put("gen",getGender());
+        cv.put("propic",getPropic());
 
         return cv;
     }

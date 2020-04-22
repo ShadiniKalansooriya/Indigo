@@ -9,11 +9,13 @@ import android.widget.Button;
 import android.widget.TextView;
 
 
+import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 import com.example.indigoapp.R;
 
 public class PriceConform extends AppCompatActivity {
 
-    Button addToCartBtn;
+    Button UPDATE;
+    ElegantNumberButton numberBtn;
 
     TextView productPrice, productName;
 
@@ -24,8 +26,9 @@ public class PriceConform extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payemt_total);
 
-        addToCartBtn = (Button) findViewById(R.id.payment_btn);
+        UPDATE = (Button) findViewById(R.id.update_btn);
         productPrice = (TextView) findViewById(R.id.product_price);
+        numberBtn = (ElegantNumberButton) findViewById(R.id.number_btn);
         productName = (TextView) findViewById(R.id.product_name);
     }
 }

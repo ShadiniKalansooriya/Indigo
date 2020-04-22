@@ -23,7 +23,7 @@ public class Denims_display extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_denims_display);
 
-        addToCartBtn = (Button) findViewById(R.id.payment_btn);
+        addToCartBtn = (Button) findViewById(R.id.update_btn);
         wishListBtn = (Button) findViewById(R.id.imageButton2);
         removeCartBtn = (Button) findViewById(R.id.remove_cart_btn);
         numberBtn = (ElegantNumberButton) findViewById(R.id.number_btn);

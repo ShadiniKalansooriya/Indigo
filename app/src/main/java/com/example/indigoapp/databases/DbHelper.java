@@ -45,6 +45,7 @@ public class DbHelper extends SQLiteOpenHelper {
                         UsersMaster.Users.COL_USER_ADDRESS + " TEXT," +
                         UsersMaster.Users.COL_USER_GENDER + " TEXT," +
                         UsersMaster.Users.COL_USER_TYPE + " TEXT," +
+                        UsersMaster.Users.COL_USER_PROPIC + " LONGBLOB," +
                         UsersMaster.Users.COL_USER_CURRENT + " TEXT)";
 
         System.out.println("User table"+SQL_CREATE_ENTRIES);
@@ -80,6 +81,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 UsersMaster.UserCart.CART_NAME +" TEXT,"+
                 UsersMaster.UserCart.COLUMN_NUMBER +" TEXT,"+
                 UsersMaster.UserCart.COLUMN_DATE +" TEXT,"+
+
 
                 " FOREIGN KEY (" + UsersMaster.UserCart.COLUMN_NUMBER + ") REFERENCES " + UsersMaster.UserCart.CART_NAME_USER +
                 " ON DELETE CASCADE ON UPDATE CASCADE)";
@@ -158,7 +160,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
     }
 
-    public void addUser(String userName, String email, String password, String mobile, String address, String gender, String type) {
+    public void addUser(String userName, String email, String password, String mobile, String address, String gender, String type,byte[] propic) {
 
         SQLiteDatabase db = getWritableDatabase();
 
@@ -172,6 +174,7 @@ public class DbHelper extends SQLiteOpenHelper {
         values.put(UsersMaster.Users.COL_USER_ADDRESS, address);
         values.put(UsersMaster.Users.COL_USER_GENDER, gender);
         values.put(UsersMaster.Users.COL_USER_TYPE, type);
+        values.put(UsersMaster.Users.COL_USER_PROPIC,propic);
         values.put(UsersMaster.Users.COL_USER_CURRENT, "FALSE");
 
         long newRowId = db.insert(UsersMaster.Users.TABLE_USER, null, values);
@@ -382,6 +385,42 @@ public class DbHelper extends SQLiteOpenHelper {
         cursor.close();
         return currentUsername;
     }
+
+    public  Bitmap getProPic() {
+
+
+        String[] projection = {
+                UsersMaster.Users.COL_USER_PROPIC
+        };
+        SQLiteDatabase db = getWritableDatabase();
+
+
+        String selection = UsersMaster.Users.COL_USER_CURRENT + " LIKE ?";
+        String[] selectionArgs = {"TRUE"};
+
+        Bitmap bitmap;
+
+        Cursor cursor = db.query(UsersMaster.Users.TABLE_USER,
+                projection,
+                selection,
+                selectionArgs,
+                null, null, null);
+        byte []currentUsername ;
+
+        if (cursor.moveToFirst()) {
+            do {
+                currentUsername = cursor.getBlob(cursor.getColumnIndex(UsersMaster.Users.COL_USER_PROPIC));
+               // bitmap = BitmapFactory.decodeByteArray(currentUsername,0,currentUsername.length);
+            } while (cursor.moveToNext());
+        } else {
+            return null;
+        }
+        cursor.close();
+        return  BitmapFactory.decodeByteArray(currentUsername, 0, currentUsername.length);
+
+
+    }
+
 
     public String getGender() {
 
