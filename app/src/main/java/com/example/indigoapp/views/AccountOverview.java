@@ -134,6 +134,11 @@ public class AccountOverview extends AppCompatActivity implements NavigationView
         textViewAddress.setText(dbHelper.getAddress());
         textViewGender.setText(dbHelper.getGender());
 
+
+        imageViewPropic.setImageBitmap(dbHelper.getProPic());
+
+
+
         buttonEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -164,7 +169,14 @@ public class AccountOverview extends AppCompatActivity implements NavigationView
             }
         });
 
+
+
+
+
     }
+
+
+
 
     @Override
     public void onBackPressed() {
