@@ -28,14 +28,14 @@
         <activity android:name=".views.RecyclerMasterActivity" />
         <activity android:name=".views.changePassword" />
         <activity android:name=".views.EditDetails" /> <!-- <activity android:name=".views.changePassword" /> -->
-         <activity
-         android:name=".views.SplashScreen"
-         android:theme="@style/Theme.AppCompat.NoActionBar">
-         <intent-filter>
-         <action android:name="android.intent.action.MAIN" />
-         <category android:name="android.intent.category.LAUNCHER" />
-         </intent-filter>
-         </activity>
+<!--         <activity-->
+<!--         android:name=".views.SplashScreen"-->
+<!--         android:theme="@style/Theme.AppCompat.NoActionBar">-->
+<!--         <intent-filter>-->
+<!--         <action android:name="android.intent.action.MAIN" />-->
+<!--         <category android:name="android.intent.category.LAUNCHER" />-->
+<!--         </intent-filter>-->
+<!--         </activity>-->
         <activity android:name=".views.HomePage" />
         <activity android:name=".views.GalleryView" />
         <activity android:name=".views.Gallery" />
@@ -52,11 +52,11 @@
         <activity android:name=".adapter.RecyclerViewAdapter" />
         <activity android:name=".views.Requestfeed" />
         <activity android:name=".views.MainActivity">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <meta-data
