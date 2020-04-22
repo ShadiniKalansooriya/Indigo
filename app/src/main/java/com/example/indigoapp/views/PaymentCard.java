@@ -55,16 +55,18 @@ public class PaymentCard {
             cardEp = (EditText) findViewById(R.id.et9);
         }
     }
+
+
+//    public void User_insert_cart_details() {
 //
-//    private void User_insert_cart_details(){
-//
-//        EditText nameCard = nameCard.getText().toString().trim();
-//        EditText cardNo = cardNo.getText().toString().trim();
-//        EditText cardEp = cardEp.getText().toString().trim();
+//        EditText Name = nameCard.getText().toString().trim();
+//        EditText Numb = cardNo.getText().toString().trim();
+//        EditText Date = Date.getText().toString().trim();
 //
 //
 //
-//        dbHelper.User_insert_cart_details(nameCard,cardNo,cardEp);
+//        dbHelper.User_insert_cart_details(Name,Numb,Date);
 //    }
+
 
 }

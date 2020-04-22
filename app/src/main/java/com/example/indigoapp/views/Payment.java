@@ -1,7 +1,9 @@
 package com.example.indigoapp.views;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,7 +23,7 @@ public abstract class Payment extends  AppCompatActivity implements View.OnClick
 
 
     EditText Uname;
-    String email;
+    EditText editTextEmail;
     EditText lctn;
     EditText subto;
     TextView address;
@@ -38,6 +40,7 @@ public abstract class Payment extends  AppCompatActivity implements View.OnClick
     private DbHelper dbHelper;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,7 +54,7 @@ public abstract class Payment extends  AppCompatActivity implements View.OnClick
 
         submit = (Button) findViewById(R.id.btnS);
         Uname = (EditText) findViewById(R.id.et1);
-        email = String.valueOf((EditText) findViewById(R.id.et2));
+        editTextEmail = (EditText) findViewById(R.id.et2));
         subto = (EditText) findViewById(R.id.et3);
         address = (TextView) findViewById(R.id.address);
         paymentM = (RadioButton) findViewById(R.id.radioButton1);
@@ -80,6 +83,11 @@ public abstract class Payment extends  AppCompatActivity implements View.OnClick
 
     }
 
+
+
+
+
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -102,17 +110,18 @@ public abstract class Payment extends  AppCompatActivity implements View.OnClick
                     Toast.makeText(Payment.this, "invalid", Toast.LENGTH_LONG).show();
                 }
 
+
+
         }
 
-        private void Customer_insert_payment_details();
+        private void Customer_insert_payment_details() {
 
         String Username = Uname.getText().toString().trim();
-//        String email = String.getText.toString().trim();
-
+        String email = editTextEmail.getText().toString().trim();
         String Total = subto.getText().toString().trim();
 
 
-        dbHelper.Customer_insert_payment_details(Username, email, Total);
+        dbHelper.Customer_insert_payment_details(Username,email,Total);
 
 
     }
