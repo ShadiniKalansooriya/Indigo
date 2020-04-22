@@ -23,7 +23,7 @@ public class AdminAddProducts extends AppCompatActivity {
         dbHelperp = new DbHelper(this);
 
         prodName = (EditText) findViewById(R.id.product_name);
-        prodDesc = (EditText) findViewById(R.id.product_description);
+        prodDesc = (EditText) findViewById(R.id.product_id);
         prodPrice = (EditText) findViewById(R.id.product_price);
         prodquatity = (EditText) findViewById(R.id.product_counts);
         catName = (EditText) findViewById(R.id.category_name);
