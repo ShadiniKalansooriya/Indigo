@@ -31,7 +31,7 @@ public class RecyclerMasterVoucher extends AppCompatActivity {
 
     private void initImageBitmaps() {
         Log.d(TAG, "initImageBitmaps: started");
-        mImageUrls.add("");
+        mImageUrls.add("@drawable/thou.png");
         mNames.add("Gift Voucher");
         mImagePrice.add("Rs.1000");
         mImageUrls.add("");

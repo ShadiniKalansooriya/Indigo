@@ -6,13 +6,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.example.indigoapp.R;
-import com.example.indigoapp.adapter.RecyclerViewAdapter;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationView;
-
-import java.util.ArrayList;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,6 +13,15 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.indigoapp.R;
+import com.example.indigoapp.adapter.RecyclerViewAdapter;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
+
+import java.util.ArrayList;
+
+
 
 public class RecyclerMasterActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -134,7 +136,6 @@ public class RecyclerMasterActivity extends AppCompatActivity implements Navigat
         mImageUrls.add("https://bananarepublic.gap.com/webcontent/0017/521/230/cn17521230.jpg");
         mNames.add("Wide-Leg Jeans");
         mImagePrice.add("Rs.3600");
-
 
     }
     private void initRecyclerView(){
