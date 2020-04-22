@@ -541,9 +541,9 @@ public class DbHelper extends SQLiteOpenHelper {
 
     }
 
-    private class payments {
 
-        public String getUsername() {
+
+        public String getName() {
             String[] projection = {
                     UsersMaster.Payment.COL_USER_NAME
             };
@@ -628,7 +628,7 @@ public class DbHelper extends SQLiteOpenHelper {
             cursor.close();
             return currentUsername;
         }
-    }
+
 
     private class Cart {
 

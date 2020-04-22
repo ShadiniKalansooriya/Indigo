@@ -58,9 +58,9 @@ public class PaymentCard {
 //
 //    private void User_insert_cart_details(){
 //
-//        String nameCard = EditText.getText().toString().trim();
-//        String cardNo = EditText.getText().toString().trim();
-//        String cardEp = EditText.getText().toString().trim();
+//        EditText nameCard = nameCard.getText().toString().trim();
+//        EditText cardNo = cardNo.getText().toString().trim();
+//        EditText cardEp = cardEp.getText().toString().trim();
 //
 //
 //
