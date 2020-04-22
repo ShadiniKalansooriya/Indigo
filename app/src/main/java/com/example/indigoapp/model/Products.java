@@ -13,10 +13,10 @@ public class Products {
     public Products(String product_id, String product_name, String product_desc, String product_price, String imgUrl, String count, String catName) {
         this.product_id = product_id;
         this.product_name = product_name;
+        this.count = count;
         this.product_desc = product_desc;
         this.product_price = product_price;
         this.imgUrl = imgUrl;
-        this.count = count;
         this.catName = catName;
     }
 

@@ -8,13 +8,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.example.indigoapp.R;
-import com.example.indigoapp.adapter.RecyclerViewAdapter;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationView;
-
-import java.util.ArrayList;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,6 +15,14 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.indigoapp.R;
+import com.example.indigoapp.adapter.RecyclerViewAdapter;
+import com.example.indigoapp.databases.DbHelper;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
+
+import java.util.ArrayList;
 
 import static com.example.indigoapp.views.Gallery.dbHelper;
 
@@ -77,11 +78,24 @@ public class RecyclerMasterPants extends AppCompatActivity implements Navigation
     private ArrayList<String> mImageUrls = new ArrayList<>();
     private ArrayList<String> mImagePrice = new ArrayList<>();
 
+    private DbHelper dbHelperp;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler_master_pants);
+
+        RecyclerView recyclerView = findViewById(R.id.recycler_view_pants);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+
+        dbHelperp = new DbHelper(this);
+        ArrayList data = dbHelperp.Retrive_admin_product_details();
+
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this,data);
+        recyclerView.setAdapter(adapter);
 
         /*=============Hooks================== */
         bottomNavigationView = findViewById(R.id.bottom_navigation);
@@ -116,8 +130,8 @@ public class RecyclerMasterPants extends AppCompatActivity implements Navigation
 
 
         Log.d(TAG, "onCreate: started");
-        initImageBitmaps();
-        initRecyclerView();
+        //initImageBitmaps();
+        //initRecyclerView();
     }
 
     private void initImageBitmaps() {
@@ -142,14 +156,14 @@ public class RecyclerMasterPants extends AppCompatActivity implements Navigation
         mImagePrice.add("Rs.3600");
     }
 
-    private void initRecyclerView() {
-        Log.d(TAG, "initRecyclerView: started");
-        RecyclerView recyclerView = findViewById(R.id.recycler_view_pants);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(mNames, mImageUrls, mImagePrice, this);
-        recyclerView.setAdapter(adapter);
-
-    }
+//    private void initRecyclerView() {
+//        Log.d(TAG, "initRecyclerView: started");
+//        RecyclerView recyclerView = findViewById(R.id.recycler_view_pants);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+//        RecyclerViewAdapter adapter = new RecyclerViewAdapter(mNames, mImageUrls, mImagePrice, this);
+//        recyclerView.setAdapter(adapter);
+//
+//    }
 
 
     @Override

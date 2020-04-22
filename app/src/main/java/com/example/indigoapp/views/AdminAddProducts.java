@@ -1,8 +1,11 @@
 package com.example.indigoapp.views;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -28,13 +31,13 @@ public class AdminAddProducts extends AppCompatActivity {
         prodquatity = (EditText) findViewById(R.id.product_counts);
         catName = (EditText) findViewById(R.id.category_name);
         prodImageURL = (EditText) findViewById(R.id.product_img_url);
-        add_products = (Button) findViewById(R.id.add_prod_admin_btn);
+        add_products = (Button) findViewById(R.id.admin_add_new_product);
 
-        //buttonClickActivity();
+        buttonClickActivity();
 
     }
 
-   /* private void buttonClickActivity() {
+   private void buttonClickActivity() {
         add_products.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,7 +45,7 @@ public class AdminAddProducts extends AppCompatActivity {
                 addProduct();
                 Intent AddProdIntent = new Intent(AdminAddProducts.this, AdminProductsList.class);
                 startActivity(AddProdIntent);
-                Toast.makeText(getApplicationContext(), "Successfully Added Product Details!", Toast.LENGTH_LONG).show();
+                //Toast.makeText(getApplicationContext(), "Successfully Added Product Details!", Toast.LENGTH_LONG).show();
 
             }
         });
@@ -59,6 +62,7 @@ public class AdminAddProducts extends AppCompatActivity {
         String type = "ProductList";
 
         dbHelperp.addProduct(productName,productQty,productDesc,productPrice,prodUrl,categoryName);
-    }*/
+        Toast.makeText(getApplicationContext(), "Successfully Added Product Details!", Toast.LENGTH_LONG).show();
+    }
 
 }

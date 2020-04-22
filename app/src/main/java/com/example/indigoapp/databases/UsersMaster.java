@@ -76,7 +76,7 @@ public class UsersMaster {
             public static final String COLUMN_NAME_ID="id";
             public static final String COLUMN_NAME_PRODUCT_NAME="name";
             public static final String COLUMN_NAME_COUNT="count";
-            public static final String  COLUMN_NAME_PRICE="price";
+            public static final String COLUMN_NAME_PRICE="price";
             public static final String COLUMN_NAME_DESCRIPTION="description";
             public static final String COLUMN_NAME_PRODUCTIMAGE="image";
             public static final String COLUMN_NAME_FOREIGNKEY="cid";

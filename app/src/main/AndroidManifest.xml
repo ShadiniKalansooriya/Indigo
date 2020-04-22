@@ -20,7 +20,6 @@
         <activity android:name=".views.AdminEditProducts" />
         <activity android:name=".views.AdminAddProducts" />
         <activity android:name=".views.AdminActivity" />
-        <activity android:name=".views.RecyclerMasterSavings" />
         <activity android:name=".views.RecyclerMasterVoucher" />
         <activity android:name=".views.RecyclerMasterTops" />
         <activity android:name=".views.RecyclerMasterPants" />

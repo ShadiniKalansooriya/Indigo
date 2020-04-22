@@ -10,16 +10,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.indigoapp.R;
-import com.example.indigoapp.databases.DbHelper;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationView;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+
+import com.example.indigoapp.R;
+import com.example.indigoapp.databases.DbHelper;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 
 
 public class MyAccount extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -114,7 +114,7 @@ public class MyAccount extends AppCompatActivity implements NavigationView.OnNav
         buttonChangePW = findViewById(R.id.buttonChangePw);
         textViewName = findViewById(R.id.textViewName);
         imageViewPropic = findViewById(R.id.imageViewpropic);
-        imageViewPropic.setImageBitmap(dbHelper.getProPic());
+        //imageViewPropic.setImageBitmap(dbHelper.getProPic());
 
 
         //Hide or show items

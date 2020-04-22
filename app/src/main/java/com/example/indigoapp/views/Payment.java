@@ -10,14 +10,12 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.indigoapp.R;
 import com.example.indigoapp.databases.DbHelper;
 
-
-import androidx.appcompat.app.AppCompatActivity;
-
-public abstract class Payment extends  AppCompatActivity implements View.OnClickListener {
+public abstract class Payment extends AppCompatActivity implements View.OnClickListener {
 
 
     EditText Uname;
@@ -103,16 +101,12 @@ public abstract class Payment extends  AppCompatActivity implements View.OnClick
                 }
 
         }
-        private void Customer_insert_payment_details();
+    }
 
+    private void Customer_insert_payment_details() {
         String Username = Uname.getText().toString().trim();
 //        String email = String.getText.toString().trim();
-
         String Total = subto.getText().toString().trim();
-
-
-        dbHelper.Customer_insert_payment_details(Username, email, Total);
-
-
+       // dbHelper.Customer_insert_payment_details(Username, email, Total);
     }
 }
