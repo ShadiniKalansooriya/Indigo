@@ -3,43 +3,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.indigoapp">
 
-    <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
-    <meta-data android:name="com.google.android.backup.api_key" android:value="AEdPqrEAAAAIIDptAmYk4Ik2pLOl3bTD3yAmBs1n18T_UfRtsw" />
-
-
-    <uses-permission
-        android:name="android.permission.SET_TIME"
-        tools:ignore="ProtectedPermissions" />
-    <uses-permission
-        android:name="android.permission.WRITE_SETTINGS"
-        tools:ignore="ProtectedPermissions" />
-    <uses-permission
-        android:name="android.permission.WRITE_SECURE_SETTINGS"
-        tools:ignore="ProtectedPermissions" />
-
-    <uses-feature
-        android:glEsVersion="0x00020000"
-        android:required="true" />
-
     <application
         android:allowBackup="true"
         android:exported="true"
-        android:icon="@drawable/logo"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_indigo_round"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:ignore="ExtraText"
-        tools:replace="android:icon">
-        <activity android:name=".views.AdminEditVoucher"/>
+        tools:ignore="ExtraText">
+        <activity android:name=".views.PayemtTotal"></activity>
+        <activity android:name=".views.AdminEditVoucher" />
         <activity android:name=".views.AdminProductsList" />
         <activity android:name=".views.AdminAddVoucher" />
-        <activity android:name=".views.AdminEditProducts" />
+        <activity android:name=".views.AdminEditProducts"/>
         <activity android:name=".views.AdminAddProducts" />
         <activity android:name=".views.AdminActivity" />
         <activity android:name=".views.RecyclerMasterSavings" />
@@ -50,14 +27,14 @@
         <activity android:name=".views.RecyclerMasterActivity" />
         <activity android:name=".views.changePassword" />
         <activity android:name=".views.EditDetails" /> <!-- <activity android:name=".views.changePassword" /> -->
-         <activity
-         android:name=".views.SplashScreen"
-         android:theme="@style/Theme.AppCompat.NoActionBar">
-         <intent-filter>
-         <action android:name="android.intent.action.MAIN" />
-         <category android:name="android.intent.category.LAUNCHER" />
-         </intent-filter>
-         </activity>
+        <!-- <activity -->
+        <!-- android:name=".views.SplashScreen" -->
+        <!-- android:theme="@style/Theme.AppCompat.NoActionBar"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.MAIN" /> -->
+        <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+        <!-- </intent-filter> -->
+        <!-- </activity> -->
         <activity android:name=".views.HomePage" />
         <activity android:name=".views.GalleryView" />
         <activity android:name=".views.Gallery" />
@@ -72,12 +49,13 @@
         <activity android:name=".views.Savings_display" />
         <activity android:name=".views.Denims_display" />
         <activity android:name=".adapter.RecyclerViewAdapter" />
+        <activity android:name=".views.Requestfeed" />
         <activity android:name=".views.MainActivity">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <meta-data
@@ -87,5 +65,29 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
+    <meta-data
+        android:name="com.google.android.backup.api_key"
+        android:value="AEdPqrEAAAAIIDptAmYk4Ik2pLOl3bTD3yAmBs1n18T_UfRtsw" />
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.SET_TIME"
+        tools:ignore="ProtectedPermissions" />
+
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+
+    <uses-permission
+        android:name="android.permission.WRITE_SECURE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
 
 </manifest>

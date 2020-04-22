@@ -5,9 +5,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 import com.example.indigoapp.R;
 
@@ -25,7 +23,7 @@ public class Denims_display extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_denims_display);
 
-        addToCartBtn = (Button) findViewById(R.id.add_to_cart_btn);
+        addToCartBtn = (Button) findViewById(R.id.payment_btn);
         wishListBtn = (Button) findViewById(R.id.imageButton2);
         removeCartBtn = (Button) findViewById(R.id.remove_cart_btn);
         numberBtn = (ElegantNumberButton) findViewById(R.id.number_btn);

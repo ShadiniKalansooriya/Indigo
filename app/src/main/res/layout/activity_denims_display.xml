@@ -62,7 +62,7 @@
                 </com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>
 
                 <Button
-                    android:id="@+id/add_to_cart_btn"
+                    android:id="@+id/payment_btn"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/number_btn"
@@ -77,7 +77,7 @@
                     android:id="@+id/remove_cart_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/add_to_cart_btn"
+                    android:layout_below="@+id/payment_btn"
                     android:layout_marginLeft="97dp"
                     android:layout_marginTop="10dp"
                     android:background="@color/lightGray"
@@ -89,7 +89,7 @@
                     android:id="@+id/imageButton2"
                     android:layout_width="53dp"
                     android:layout_height="53dp"
-                    android:layout_below="@+id/add_to_cart_btn"
+                    android:layout_below="@+id/payment_btn"
                     android:layout_marginLeft="252dp"
                     android:layout_marginTop="6dp"
                     android:background="@drawable/heartt" />
