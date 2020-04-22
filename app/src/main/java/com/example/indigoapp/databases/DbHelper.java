@@ -81,6 +81,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 UsersMaster.UserCart.COLUMN_NUMBER +" TEXT,"+
                 UsersMaster.UserCart.COLUMN_DATE +" TEXT,"+
 
+
                 " FOREIGN KEY (" + UsersMaster.UserCart.COLUMN_NUMBER + ") REFERENCES " + UsersMaster.UserCart.CART_NAME_USER +
                 " ON DELETE CASCADE ON UPDATE CASCADE)";
 

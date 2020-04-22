@@ -36,7 +36,7 @@
             android:id="@+id/product_price"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/product_description"
+            android:layout_below="@+id/product_id"
             android:text="Product Price"
             android:textAlignment="center"
             android:textSize="18dp"
@@ -44,7 +44,7 @@
             />
 
         <TextView
-            android:id="@+id/product_description"
+            android:id="@+id/product_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/product_image"
@@ -70,7 +70,7 @@
         </com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>
 
         <Button
-            android:id="@+id/payment_btn"
+            android:id="@+id/update_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/add_to_card"
