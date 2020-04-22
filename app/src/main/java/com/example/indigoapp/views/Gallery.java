@@ -87,6 +87,7 @@ public class Gallery extends AppCompatActivity implements NavigationView.OnNavig
                     Intent intent3 = new Intent(Gallery.this, ProductsDisplay.class);
                     startActivity(intent3);
 
+
             }
 
             return true;
@@ -313,6 +314,13 @@ public class Gallery extends AppCompatActivity implements NavigationView.OnNavig
                 Intent intent5 = new Intent(Gallery.this, Feedback.class);
                 startActivity(intent5);
                 break;
+
+            case R.id.nav_Logout:
+                dbHelper.changeuser();
+                Intent intent8 = new Intent(Gallery.this,Login.class);
+                startActivity((intent8));
+                Toast.makeText(getApplicationContext(),"Successfully Logged Out",Toast.LENGTH_LONG).show();
+
         }
 
         drawerLayout.closeDrawer(GravityCompat.START);

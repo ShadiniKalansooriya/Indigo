@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.indigoapp.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -16,6 +17,8 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+
+import static com.example.indigoapp.views.Gallery.dbHelper;
 
 public class ProductsDisplay extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -221,6 +224,12 @@ public class ProductsDisplay extends AppCompatActivity implements NavigationView
                 Intent intent5 = new Intent(ProductsDisplay.this, Feedback.class);
                 startActivity(intent5);
                 break;
+            case R.id.nav_Logout:
+                dbHelper.changeuser();
+                Intent intent8 = new Intent(ProductsDisplay.this,Login.class);
+                startActivity((intent8));
+                Toast.makeText(getApplicationContext(),"Successfully Logged Out",Toast.LENGTH_LONG).show();
+
         }
 
         drawerLayout.closeDrawer(GravityCompat.START);

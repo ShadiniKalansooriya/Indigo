@@ -2,11 +2,13 @@ package com.example.indigoapp.views;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.indigoapp.R;
 import com.example.indigoapp.databases.DbHelper;
@@ -35,6 +37,7 @@ public class MyAccount extends AppCompatActivity implements NavigationView.OnNav
     ImageView imageViewPropic;
     TextView textViewName;
     String x;
+    DbHelper dbHelper;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -78,7 +81,7 @@ public class MyAccount extends AppCompatActivity implements NavigationView.OnNav
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_for_myaccount);
 
-       DbHelper dbHelper = new DbHelper(this);
+        dbHelper = new DbHelper(this);
 
         /*=============Hooks================== */
         bottomNavigationView = findViewById(R.id.bottom_navigation);
@@ -110,6 +113,10 @@ public class MyAccount extends AppCompatActivity implements NavigationView.OnNav
         btnAccountOverView = findViewById(R.id.buttonAccountOverview);
         buttonChangePW = findViewById(R.id.buttonChangePw);
         textViewName = findViewById(R.id.textViewName);
+
+        //Hide or show items
+        Menu menu = navigationView.getMenu();
+        menu.findItem(R.id.nav_Login).setVisible(false);
 
         x = dbHelper.getUsername();
         textViewName.setText(x);
@@ -188,6 +195,13 @@ public class MyAccount extends AppCompatActivity implements NavigationView.OnNav
                 Intent intent5 = new Intent(MyAccount.this, Feedback.class);
                 startActivity(intent5);
                 break;
+
+            case R.id.nav_Logout:
+                dbHelper.changeuser();
+                Intent intent8 = new Intent(MyAccount.this,Login.class);
+                startActivity((intent8));
+                Toast.makeText(getApplicationContext(),"Successfully Logged Out",Toast.LENGTH_LONG).show();
+
         }
 
         drawerLayout.closeDrawer(GravityCompat.START);

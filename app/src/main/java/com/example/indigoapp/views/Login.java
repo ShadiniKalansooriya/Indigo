@@ -143,10 +143,15 @@ public class Login extends AppCompatActivity implements NavigationView.OnNavigat
 
                         startActivity(loginIntent);
                     }
+                    if (type.equals("Admin")) {
+                        Intent loginIntent = new Intent(Login.this, AdminActivity.class);
+                        startActivity(loginIntent);
+                    }
+                }
                     else
                         Toast.makeText(Login.this, "Invalid Username or Password", Toast.LENGTH_SHORT).show();
 
-                }
+
 
 
 
