@@ -6,12 +6,13 @@
     <application
         android:allowBackup="true"
         android:exported="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_indigo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher_indigo_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:ignore="ExtraText">
+        tools:ignore="ExtraText"
+        tools:replace="android:icon">
         <activity android:name=".views.PayemtTotal"></activity>
         <activity android:name=".views.AdminEditVoucher" />
         <activity android:name=".views.AdminProductsList" />
