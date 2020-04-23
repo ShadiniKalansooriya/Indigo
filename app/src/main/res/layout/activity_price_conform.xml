@@ -19,6 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Price conformation"
+            android:textSize="20dp"
             android:textAlignment="center"
             android:textColor="@color/BlackHeader"
             android:textStyle="bold" />
@@ -40,6 +41,7 @@
             android:layout_below="@+id/product_id"
             android:layout_marginTop="25dp"
             android:text="Product Price"
+
             android:textAlignment="center"
             android:textColor="@color/BlackHeader"
             android:textSize="18dp" />
@@ -53,7 +55,7 @@
             android:text="Product Id"
             android:textAlignment="center"
             android:textColor="@color/BlackHeader"
-            android:textSize="16dp" />
+            android:textSize="18dp" />
 
         <TextView
             android:id="@+id/textView8"

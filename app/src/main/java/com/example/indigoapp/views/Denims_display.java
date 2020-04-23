@@ -30,6 +30,8 @@ public class Denims_display extends AppCompatActivity {
         productImage = (ImageView) findViewById(R.id.product_image);
         productPrice = (TextView) findViewById(R.id.product_price);
         productName = (TextView) findViewById(R.id.product_name);
+
+
     }
    /*     addToCartBtn.setOnClickListener(new View.OnClickListener() {
             @Override

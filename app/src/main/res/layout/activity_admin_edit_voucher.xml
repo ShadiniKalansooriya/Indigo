@@ -106,7 +106,7 @@
         android:layout_marginBottom="16dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="@string/search_you"
+        android:hint="@string/search_vou"
         app:layout_constraintBottom_toTopOf="@+id/input_layer1"
         app:layout_constraintEnd_toStartOf="@+id/admin_search_voucher_btn"
         app:layout_constraintStart_toStartOf="parent"
