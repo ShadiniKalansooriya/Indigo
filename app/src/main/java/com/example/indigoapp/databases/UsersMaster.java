@@ -41,7 +41,7 @@ public class UsersMaster {
         public static final String COLUMN_GALLERY_EMAIL = "email";
         public static final String COLUMN_GALLERY_IMAGE = "image";
         public static final String COLUMN_GALLERY_HASHTAG = "hashtag";
-        public static final String COLUMN_GALLERY_CURRENT = "Current";
+//        public static final String COLUMN_GALLERY_CURRENT = "Current";
 
     }
 

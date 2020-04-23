@@ -8,6 +8,8 @@ public class Cart {
     private String name;
     private String price;
     private String count;
+    public  String email;
+
 
 
     public Cart(String name,  String price,String product_id) {
@@ -40,6 +42,13 @@ public class Cart {
 ////            return product_id;
 //    }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
 
     public String getPrice() {
