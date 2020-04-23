@@ -17,11 +17,13 @@
         <TextView
             android:id="@+id/product_name"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="53dp"
+            android:background="@android:color/holo_purple"
+            android:fontFamily="@font/concert_one"
             android:text="Price conformation"
-            android:textSize="20dp"
             android:textAlignment="center"
-            android:textColor="@color/BlackHeader"
+            android:textColor="@color/white"
+            android:textSize="30dp"
             android:textStyle="bold" />
 
         <ImageView
