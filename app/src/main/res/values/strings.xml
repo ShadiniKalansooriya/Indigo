@@ -144,6 +144,8 @@
         <item>RegisteredUser</item>
         <item>Admin</item>
     </string-array>
+    <string name="view_prod">View Products List</string>
+    <string name="view_vouc">View Voucher List</string>
 
 
 </resources>

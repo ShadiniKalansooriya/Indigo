@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.indigoapp.R;
-import com.example.indigoapp.adapter.ProductsAdapter;
+import com.example.indigoapp.adapter.ProductsItemListAdapter;
 import com.example.indigoapp.databases.DbHelper;
 import com.example.indigoapp.model.Products;
 
@@ -31,7 +31,7 @@ public class AdminEditProducts extends AppCompatActivity {
     private DbHelper db;
     //private TextView admin_category_edit_heading;
     private RecyclerView recyclerView;
-    private ProductsAdapter itemsAdapter;
+    private ProductsItemListAdapter itemsAdapter;
     private ArrayList<Products> admin_items;
 
     private Bitmap bp=null;

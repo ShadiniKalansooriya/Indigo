@@ -39,7 +39,7 @@ public class AdminAddVoucher extends AppCompatActivity {
             public void onClick(View v) {
 
                 add_voucher();
-                Intent AddVouIntent = new Intent(AdminAddVoucher.this, AdminProductsList.class);
+                Intent AddVouIntent = new Intent(AdminAddVoucher.this, AdminVoucherItemList.class);
                 startActivity(AddVouIntent);
                 //Toast.makeText(getApplicationContext(), "Successfully Added Product Details!", Toast.LENGTH_LONG).show();
 
