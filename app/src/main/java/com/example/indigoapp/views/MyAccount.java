@@ -33,7 +33,7 @@ public class MyAccount extends AppCompatActivity implements NavigationView.OnNav
     androidx.appcompat.widget.Toolbar toolbar;
 
 
-    Button btnAccountOverView,buttonChangePW,buttonOrderHistory,buttonWishlist,buttonStoreCredit,buttonNewsletter,buttonLogout;
+    Button btnAccountOverView,buttonChangePW,buttonChangeProPic,buttonWishlist,buttonStoreCredit,buttonNewsletter,buttonLogout;
     ImageView imageViewPropic;
     TextView textViewName;
     String x;
@@ -112,6 +112,7 @@ public class MyAccount extends AppCompatActivity implements NavigationView.OnNav
 
         btnAccountOverView = findViewById(R.id.buttonAccountOverview);
         buttonChangePW = findViewById(R.id.buttonChangePw);
+        buttonChangeProPic = findViewById(R.id.buttonChangeProPic);
         textViewName = findViewById(R.id.textViewName);
         imageViewPropic = findViewById(R.id.imageViewpropic);
         imageViewPropic.setImageBitmap(dbHelper.getProPic());
@@ -147,6 +148,15 @@ public class MyAccount extends AppCompatActivity implements NavigationView.OnNav
                 startActivity(changePwIntent);
             }
         });
+        buttonChangeProPic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent changePwIntent = new Intent(MyAccount.this, ChangeProfilePic.class);
+                startActivity(changePwIntent);
+            }
+        });
+
+
     }
 
     @Override

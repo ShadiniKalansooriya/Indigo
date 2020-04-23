@@ -54,8 +54,8 @@ public class DbHelper extends SQLiteOpenHelper {
                         UsersMaster.Gallery.COLUMN_GALLERY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                         UsersMaster.Gallery.COLUMN_GALLERY_EMAIL + " TEXT," +
                         UsersMaster.Gallery.COLUMN_GALLERY_HASHTAG + " TEXT," +
-                        UsersMaster.Gallery.COLUMN_GALLERY_IMAGE + " LONGBLOB,"+
-                        UsersMaster.Gallery.COLUMN_GALLERY_CURRENT + " TEXT)";
+                        UsersMaster.Gallery.COLUMN_GALLERY_IMAGE + " LONGBLOB)";
+//                        UsersMaster.Gallery.COLUMN_GALLERY_CURRENT + " TEXT)";
 //                " FOREIGN KEY (" + UsersMaster.Gallery.COLUMN_GALLERY_EMAIL + ") REFERENCES " + UsersMaster.Users.TABLE_USER +"("+ UsersMaster.Users.COL_USER_EMAIL+"));";
 
 
@@ -117,7 +117,7 @@ public class DbHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(SQL_CREATE_ENTRIES);
         sqLiteDatabase.execSQL(sql);
         sqLiteDatabase.execSQL(PAYMENT_DETAILS_ENTRIES);
-        sqLiteDatabase.execSQL(CUSTOMER_CART_CREATES_ENTRIES);
+//        sqLiteDatabase.execSQL(CUSTOMER_CART_CREATES_ENTRIES);
 //        sqLiteDatabase.execSQL(PRODUCT_DETAILS_ENTRIES);
 //        sqLiteDatabase.execSQL(ADMIN_PRODUCT_DETAILS_ENTRIES);
 //        sqLiteDatabase.execSQL(PRODUCT_DETAILS_ENTRIES);
@@ -181,6 +181,21 @@ public class DbHelper extends SQLiteOpenHelper {
 
 
     }
+
+
+
+    public  void changeProPic(byte[] propic){
+        SQLiteDatabase db = getWritableDatabase();
+
+
+        ContentValues values = new ContentValues();
+        values.put(UsersMaster.Users.COL_USER_PROPIC, propic);
+
+        String selection = UsersMaster.Users.COL_USER_CURRENT + " LIKE ?";
+        String[] selectionArgs = {"TRUE"};
+        db.update(UsersMaster.Users.TABLE_USER, values, selection, selectionArgs);
+    }
+
 
     public void Customer_insert_payment_details(String Username, String email, String Total) {
         SQLiteDatabase db = getWritableDatabase();
@@ -295,33 +310,33 @@ public class DbHelper extends SQLiteOpenHelper {
     }
 
 
-    public String getEmail2() {
-
-
-        String[] projection = {
-                UsersMaster.Gallery.COLUMN_GALLERY_EMAIL
-        };
-        SQLiteDatabase db = getWritableDatabase();
-        Cursor cursor = db.query(UsersMaster.Gallery.GALLERY,
-
-                projection,
-                UsersMaster.Gallery.COLUMN_GALLERY_CURRENT + " LIKE ? ",
-                new String[]{"TRUE"},
-                null, null, null);
-//        cursor.moveToFirst();
-        String currentUsername;
-
-        if (cursor.moveToFirst()) {
-            do {
-                currentUsername = cursor.getString(cursor.getColumnIndex(UsersMaster.Gallery.COLUMN_GALLERY_EMAIL));
-            } while (cursor.moveToNext());
-        } else {
-            currentUsername = "123";
-
-        }
-        cursor.close();
-        return currentUsername;
-    }
+//    public String getEmail2() {
+//
+//
+//        String[] projection = {
+//                UsersMaster.Gallery.COLUMN_GALLERY_EMAIL
+//        };
+//        SQLiteDatabase db = getWritableDatabase();
+//        Cursor cursor = db.query(UsersMaster.Gallery.GALLERY,
+//
+//                projection,
+//                UsersMaster.Gallery.COLUMN_GALLERY_CURRENT + " LIKE ? ",
+//                new String[]{"TRUE"},
+//                null, null, null);
+////        cursor.moveToFirst();
+//        String currentUsername;
+//
+//        if (cursor.moveToFirst()) {
+//            do {
+//                currentUsername = cursor.getString(cursor.getColumnIndex(UsersMaster.Gallery.COLUMN_GALLERY_EMAIL));
+//            } while (cursor.moveToNext());
+//        } else {
+//            currentUsername = "123";
+//
+//        }
+//        cursor.close();
+//        return currentUsername;
+//    }
 
     public String getMobile() {
 
@@ -471,6 +486,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
 
     }
+
 
 
     public void changepwd(String pwd) {

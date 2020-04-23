@@ -89,7 +89,7 @@
                     android:textSize="18sp" />
 
                 <Button
-                    android:id="@+id/buttonOrderHistory"
+                    android:id="@+id/buttonChangeProPic"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
@@ -98,10 +98,10 @@
                     android:layout_marginBottom="8dp"
                     android:background="@color/indigodark1"
                     android:fontFamily="@font/baloo"
-                    android:text="@string/btnOrderHistory"
+                    android:text="@string/changeProPic"
                     android:textColor="@color/white"
                     android:textSize="18sp"
-                    tools:text="@string/btnOrderHistory" />
+                    tools:text="@string/changeProPic" />
 
                 <Button
                     android:id="@+id/buttonWishlist"
