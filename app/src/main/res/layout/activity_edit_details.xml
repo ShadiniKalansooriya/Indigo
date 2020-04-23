@@ -22,7 +22,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/editbg"
+        android:background="@color/yellow"
         android:orientation="vertical">
 
         <include

@@ -83,7 +83,8 @@
                     android:layout_marginRight="8dp"
                     android:background="@color/indigodark1"
                     android:inputType="textEmailAddress"
-                    android:padding="2dp"
+                    android:paddingLeft="3dp"
+                    android:paddingTop="10dp"
                     android:text="@string/emailhint"
                     android:textColor="@color/lightGray"
                     android:textSize="18sp" />
@@ -109,7 +110,8 @@
                     android:background="@color/indigodark1"
                     android:ems="10"
                     android:inputType="textPassword"
-                    android:padding="2dp"
+                    android:paddingLeft="3dp"
+                    android:paddingTop="10dp"
                     android:text="@string/password"
                     android:textColor="@color/lightGray" />
 
@@ -133,7 +135,8 @@
                     android:layout_marginRight="8dp"
                     android:background="@color/indigodark1"
                     android:inputType="number"
-                    android:padding="2dp"
+                    android:paddingLeft="3dp"
+                    android:paddingTop="10dp"
                     android:text="@string/mobile_number"
                     android:textColor="@color/lightGray"
                     android:textSize="18sp" />
@@ -158,7 +161,8 @@
                     android:layout_marginRight="8dp"
                     android:background="@color/indigodark1"
                     android:inputType="text"
-                    android:padding="2dp"
+                    android:paddingLeft="3dp"
+                    android:paddingTop="10dp"
                     android:text="@string/address"
                     android:textColor="@color/lightGray"
                     android:textSize="18sp" />
@@ -183,7 +187,8 @@
                     android:layout_marginRight="8dp"
                     android:background="@color/indigodark1"
                     android:inputType="textPersonName"
-                    android:padding="2dp"
+                    android:paddingLeft="3dp"
+                    android:paddingTop="10dp"
                     android:text="@string/radiobuttonGirl"
                     android:textColor="@color/lightGray"
                     android:textSize="18sp" />
@@ -203,7 +208,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="8dp"
                         android:layout_weight="1"
-                        android:background="@android:color/holo_purple"
+                        android:background="@color/colorPrimary"
                         android:fontFamily="@font/baloo"
                         android:text="@string/edit"
                         android:textColor="@color/white"
@@ -215,7 +220,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="8dp"
                         android:layout_weight="1"
-                        android:background="@android:color/holo_purple"
+                        android:background="@color/colorPrimary"
                         android:fontFamily="@font/baloo"
                         android:text="@string/DeleteAccount"
                         android:textColor="@color/white"
