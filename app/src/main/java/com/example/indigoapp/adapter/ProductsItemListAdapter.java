@@ -47,7 +47,12 @@ public class ProductsItemListAdapter extends RecyclerView.Adapter<ProductsItemLi
                 .inflate(R.layout.activity_admin_products_list, viewGroup, false);
 
         return new MyViewHolder(itemView);
+
     }
+
+
+
+
 
 
     @Override
@@ -58,6 +63,14 @@ public class ProductsItemListAdapter extends RecyclerView.Adapter<ProductsItemLi
         holder.available.setText(data.getCount());
         holder.category.setText(data.getCatName());
         holder.price.setText(data.getProduct_price());
+
+
+
+    }
+
+
+
+
 
         /*holder.layout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,7 +88,7 @@ public class ProductsItemListAdapter extends RecyclerView.Adapter<ProductsItemLi
                 }
             }
         });*/
-    }
+
 
     @Override
     public int getItemCount() {

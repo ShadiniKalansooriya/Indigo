@@ -618,6 +618,7 @@ public class DbHelper extends SQLiteOpenHelper {
         ArrayList<Products> list=new ArrayList<>();
         SQLiteDatabase db=getReadableDatabase();
 
+
         String sql="SELECT * FROM "+ UsersMaster.ProductsItems.TABLE_NAME;
 
         Cursor cu=db.rawQuery(sql,null);
@@ -728,6 +729,31 @@ public class DbHelper extends SQLiteOpenHelper {
         values.put(UsersMaster.ProductsItems.COLUMN_NAME_CATEGORY_NAME, category);
 
         db.insert(UsersMaster.ProductsItems.TABLE_NAME, null, values);
+    }
+
+    public void addToCart(String prodName, String prodCount ,String price, String image) {
+        SQLiteDatabase db = getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+
+        values.put(UsersMaster.ProductsItems.COLUMN_NAME_PRODUCT_NAME, prodName);
+        values.put(UsersMaster.ProductsItems.COLUMN_NAME_COUNT, prodCount);
+        values.put(UsersMaster.ProductsItems.COLUMN_NAME_PRICE, price);
+        values.put(UsersMaster.ProductsItems.COLUMN_NAME_PRODUCTIMAGE, image);
+
+        db.insert(UsersMaster.ProductsItems.TABLE_NAME, null, values);
+    }
+
+    public void addVoucher(String vouPrice, String vouQty ) {
+        SQLiteDatabase db = getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+
+        values.put(UsersMaster.Vouchers.COLUMN_NAME_PRICE, vouPrice);
+        values.put(UsersMaster.Vouchers.COLUMN_NAME_COUNT, vouQty);
+
+
+        db.insert(UsersMaster.Vouchers.TABLE_NAME, null, values);
     }
 
     public boolean Admin_delete_current_product(String id){

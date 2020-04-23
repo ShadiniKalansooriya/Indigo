@@ -65,7 +65,7 @@ public class ProductsDisplay extends AppCompatActivity implements NavigationView
 
     };
 
-    Button topBtn, denimBtn, dressBtn, pantBtn, savingBtn, voucherBtn;
+    Button topBtn, denimBtn, dressBtn, pantBtn, voucherBtn;
 //    BottomNavigationView bottomNavigationView;
 
 
