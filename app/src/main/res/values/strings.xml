@@ -136,6 +136,7 @@
     <string name="changeProPic">Change Profile Picture</string>
     <string name="Select_Image">Select Image</string>
     <string name="CHANGE">CHANGE</string>
+    <string name="search_vou">search Voucher</string>
     <!--    <string name="update">UPDATE</string>-->
 
     <string-array name="user">

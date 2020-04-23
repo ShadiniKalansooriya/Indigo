@@ -17,6 +17,7 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -25,7 +26,6 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
 
 import com.example.indigoapp.R;
 import com.example.indigoapp.databases.DbHelper;
@@ -45,14 +45,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-
-
-import com.example.indigoapp.R;
-import com.example.indigoapp.databases.DbHelper;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationView;
-
-import java.util.Calendar;
 
 
 public class RegisterDetailsActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -172,10 +164,10 @@ public class RegisterDetailsActivity extends AppCompatActivity implements Naviga
         mySpinner = (Spinner) findViewById(R.id.spinner);
         imageViewPropic = findViewById(R.id.imageViewprofilepic);
 
-        /*ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(RegisterDetailsActivity.this,
+        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(RegisterDetailsActivity.this,
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.user));
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        mySpinner.setAdapter(myAdapter);*/
+        mySpinner.setAdapter(myAdapter);
 
 
         imageViewPropic.setOnClickListener(new View.OnClickListener() {
@@ -271,7 +263,7 @@ public class RegisterDetailsActivity extends AppCompatActivity implements Naviga
         byte[] propic = imageViewToByte(imageViewPropic);
 
 
-        //dbHelper.addUser(uname, email, pwd, mob, address, gender, type, propic);
+        dbHelper.addUser(uname, email, pwd, mob, address, gender, type, propic);
     }
 
     public static byte[] imageViewToByte(ImageView image) {
