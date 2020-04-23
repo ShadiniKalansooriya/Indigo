@@ -10,6 +10,7 @@ import android.database.sqlite.SQLiteStatement;
 import android.graphics.Bitmap;
 
 import com.example.indigoapp.model.Products;
+import com.example.indigoapp.model.User;
 
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
@@ -59,13 +60,13 @@ public class DbHelper extends SQLiteOpenHelper {
                 " FOREIGN KEY (" + UsersMaster.Payment.COL_USER_NAME + ") REFERENCES " + UsersMaster.Payment.TABLE_NAME +
                 " ON DELETE CASCADE ON UPDATE CASCADE )";
 
-//        String CUSTOMER_CART_CREATES_ENTRIES = "CREATE TABLE " + UsersMaster.UserCart.CART_NAME_USER + "(" +
-//                UsersMaster.UserCart.CART_NAME +" TEXT,"+
-//                UsersMaster.UserCart.COLUMN_NUMBER +" TEXT,"+
-//                UsersMaster.UserCart.COLUMN_DATE +" TEXT,"+
-//
-//                " FOREIGN KEY (" + UsersMaster.UserCart.COLUMN_NUMBER + ") REFERENCES " + UsersMaster.UserCart.CART_NAME_USER +
-//                " ON DELETE CASCADE ON UPDATE CASCADE)";
+        String  CUSTOMER_CART_CREATES_ENTRIES = "CREATE TABLE " + UsersMaster.UserCart.CART_NAME_USER + "(" +
+                UsersMaster.UserCart.CART_NAME +" TEXT, "+
+                UsersMaster.UserCart.COLUMN_NUMBER +" TEXT,"+
+                UsersMaster.UserCart.COLUMN_DATE +" TEXT,"+
+
+                " FOREIGN KEY (" + UsersMaster.UserCart.COLUMN_NUMBER + ") REFERENCES " + UsersMaster.UserCart.CART_NAME_USER +
+                " ON DELETE CASCADE ON UPDATE CASCADE)";
 
 //        String PRODUCT_DETAILS_ENTRIES = "CREATE TABLE " + UsersMaster.Products.TABLE_NAME + " (" +
 //                UsersMaster.Products.COLUMN_NAME_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -96,7 +97,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
         sqLiteDatabase.execSQL(SQL_CREATE_ENTRIES);
         sqLiteDatabase.execSQL(PAYMENT_DETAILS_ENTRIES);
-//        sqLiteDatabase.execSQL(CUSTOMER_CART_CREATES_ENTRIES);
+        sqLiteDatabase.execSQL(CUSTOMER_CART_CREATES_ENTRIES);
 //        sqLiteDatabase.execSQL(PRODUCT_DETAILS_ENTRIES);
         sqLiteDatabase.execSQL(ADMIN_PRODUCT_DETAILS_ENTRIES);
         sqLiteDatabase.execSQL(ADMIN_VOUCHER_DETAILS_ENTRIES);
@@ -127,6 +128,7 @@ public class DbHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS "+ UsersMaster.ProductsItems.TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS "+ UsersMaster.Products.TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS "+ UsersMaster.Vouchers.TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS "+ UsersMaster.UserCart.CART_NAME_USER);
 
         onCreate(db);
     }
