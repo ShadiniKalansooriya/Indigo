@@ -10,16 +10,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.indigoapp.R;
+import com.example.indigoapp.databases.DbHelper;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-
-import com.example.indigoapp.R;
-import com.example.indigoapp.databases.DbHelper;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationView;
 
 
 public class MyAccount extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -33,7 +33,7 @@ public class MyAccount extends AppCompatActivity implements NavigationView.OnNav
     androidx.appcompat.widget.Toolbar toolbar;
 
 
-    Button btnAccountOverView,buttonChangePW,buttonOrderHistory,buttonWishlist,buttonStoreCredit,buttonNewsletter,buttonLogout;
+    Button btnAccountOverView,buttonChangePW,buttonChangeProPic,buttonWishlist,buttonStoreCredit,buttonNewsletter,buttonLogout;
     ImageView imageViewPropic;
     TextView textViewName;
     String x;
@@ -112,9 +112,10 @@ public class MyAccount extends AppCompatActivity implements NavigationView.OnNav
 
         btnAccountOverView = findViewById(R.id.buttonAccountOverview);
         buttonChangePW = findViewById(R.id.buttonChangePw);
+        buttonChangeProPic = findViewById(R.id.buttonChangeProPic);
         textViewName = findViewById(R.id.textViewName);
         imageViewPropic = findViewById(R.id.imageViewpropic);
-        //imageViewPropic.setImageBitmap(dbHelper.getProPic());
+        imageViewPropic.setImageBitmap(dbHelper.getProPic());
 
 
         //Hide or show items
@@ -147,6 +148,15 @@ public class MyAccount extends AppCompatActivity implements NavigationView.OnNav
                 startActivity(changePwIntent);
             }
         });
+        buttonChangeProPic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent changePwIntent = new Intent(MyAccount.this, ChangeProfilePic.class);
+                startActivity(changePwIntent);
+            }
+        });
+
+
     }
 
     @Override

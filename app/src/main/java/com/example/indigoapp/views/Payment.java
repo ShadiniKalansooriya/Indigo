@@ -1,9 +1,7 @@
 package com.example.indigoapp.views;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,10 +10,8 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
 import com.example.indigoapp.R;
 import com.example.indigoapp.databases.DbHelper;
-
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -54,7 +50,7 @@ public abstract class Payment extends  AppCompatActivity implements View.OnClick
 
         submit = (Button) findViewById(R.id.btnS);
         Uname = (EditText) findViewById(R.id.et1);
-        editTextEmail = (EditText) findViewById(R.id.et2));
+        editTextEmail = (EditText) findViewById(R.id.et2);
         subto = (EditText) findViewById(R.id.et3);
         address = (TextView) findViewById(R.id.address);
         paymentM = (RadioButton) findViewById(R.id.radioButton1);
@@ -111,7 +107,7 @@ public abstract class Payment extends  AppCompatActivity implements View.OnClick
                 }
 
 
-
+        }
         }
 
         private void Customer_insert_payment_details() {
