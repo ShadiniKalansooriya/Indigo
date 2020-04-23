@@ -10,7 +10,6 @@ import android.database.sqlite.SQLiteStatement;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
-import com.example.indigoapp.model.CategoryItems;
 import com.example.indigoapp.model.Products;
 
 import java.io.ByteArrayOutputStream;

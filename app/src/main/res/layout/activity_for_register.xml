@@ -22,6 +22,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/cnew"
         android:orientation="vertical">
 
         <include
@@ -40,70 +41,72 @@
                 android:orientation="vertical">
 
 
-<!--                <TextView-->
-<!--                    android:id="@+id/textView2"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginBottom="4dp"-->
-<!--                    android:fontFamily="sans-serif-condensed-light"-->
-<!--                    android:text="@string/signupwith"-->
-<!--                    android:textAlignment="center"-->
-<!--                    android:textColor="@color/lightBlack"-->
-<!--                    android:textSize="24sp" />-->
+                <!--                <TextView-->
+                <!--                    android:id="@+id/textView2"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginBottom="4dp"-->
+                <!--                    android:fontFamily="sans-serif-condensed-light"-->
+                <!--                    android:text="@string/signupwith"-->
+                <!--                    android:textAlignment="center"-->
+                <!--                    android:textColor="@color/lightBlack"-->
+                <!--                    android:textSize="24sp" />-->
 
-<!--                <LinearLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginTop="10dp"-->
-<!--                    android:weightSum="2">-->
+                <!--                <LinearLayout-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginTop="10dp"-->
+                <!--                    android:weightSum="2">-->
 
-<!--                    <ImageView-->
-<!--                        android:id="@+id/imageViewfb"-->
-<!--                        android:layout_width="41dp"-->
-<!--                        android:layout_height="77dp"-->
-<!--                        android:layout_marginLeft="8dp"-->
-<!--                        android:layout_marginRight="8dp"-->
-<!--                        android:layout_weight="1"-->
-<!--                        android:contentDescription="@string/fbicon"-->
-<!--                        app:srcCompat="@drawable/fb" />-->
+                <!--                    <ImageView-->
+                <!--                        android:id="@+id/imageViewfb"-->
+                <!--                        android:layout_width="41dp"-->
+                <!--                        android:layout_height="77dp"-->
+                <!--                        android:layout_marginLeft="8dp"-->
+                <!--                        android:layout_marginRight="8dp"-->
+                <!--                        android:layout_weight="1"-->
+                <!--                        android:contentDescription="@string/fbicon"-->
+                <!--                        app:srcCompat="@drawable/fb" />-->
 
-<!--                    <ImageView-->
-<!--                        android:id="@+id/imageViewGoogle"-->
-<!--                        android:layout_width="31dp"-->
-<!--                        android:layout_height="match_parent"-->
-<!--                        android:layout_marginLeft="8dp"-->
-<!--                        android:layout_marginRight="8dp"-->
-<!--                        android:layout_weight="1"-->
-<!--                        android:contentDescription="@string/google"-->
-<!--                        app:srcCompat="@drawable/google2" />-->
+                <!--                    <ImageView-->
+                <!--                        android:id="@+id/imageViewGoogle"-->
+                <!--                        android:layout_width="31dp"-->
+                <!--                        android:layout_height="match_parent"-->
+                <!--                        android:layout_marginLeft="8dp"-->
+                <!--                        android:layout_marginRight="8dp"-->
+                <!--                        android:layout_weight="1"-->
+                <!--                        android:contentDescription="@string/google"-->
+                <!--                        app:srcCompat="@drawable/google2" />-->
 
-<!--                </LinearLayout>-->
+                <!--                </LinearLayout>-->
 
-<!--                <TextView-->
-<!--                    android:id="@+id/textView3"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="@string/or"-->
-<!--                    android:textAlignment="center"-->
-<!--                    android:textColor="@color/lightBlack"-->
-<!--                    android:textSize="24sp" />-->
+                <!--                <TextView-->
+                <!--                    android:id="@+id/textView3"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:text="@string/or"-->
+                <!--                    android:textAlignment="center"-->
+                <!--                    android:textColor="@color/lightBlack"-->
+                <!--                    android:textSize="24sp" />-->
 
                 <ImageView
                     android:id="@+id/imageViewprofilepic"
-                    android:layout_width="150dp"
+                    android:layout_width="156dp"
                     android:layout_height="157dp"
                     android:layout_gravity="center"
-                    app:srcCompat="@mipmap/ic_launcher_round" />
+                    app:srcCompat="@drawable/imagehere" />
 
                 <TextView
                     android:id="@+id/textView4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:background="@color/lightGray"
                     android:fontFamily="sans-serif-condensed-light"
                     android:text="@string/emailsignup"
                     android:textAlignment="center"
-                    android:textColor="@color/lightBlack"
+                    android:textColor="@color/BlackHeader"
+                    android:textColorHint="@color/lightBlack"
                     android:textSize="24sp" />
 
                 <EditText
@@ -116,6 +119,8 @@
                     android:ems="10"
                     android:hint="@string/name"
                     android:inputType="textPersonName"
+                    android:textColor="@color/BlackHeader"
+                    android:textColorHint="@color/lightBlack"
                     android:textSize="24sp" />
 
                 <EditText
@@ -128,6 +133,8 @@
                     android:ems="10"
                     android:hint="@string/emailcump"
                     android:inputType="textEmailAddress"
+                    android:textColor="@color/BlackHeader"
+                    android:textColorHint="@color/lightBlack"
                     android:textSize="24sp" />
 
                 <EditText
@@ -140,6 +147,8 @@
                     android:ems="10"
                     android:hint="@string/pwcump"
                     android:inputType="textPassword"
+                    android:textColor="@color/BlackHeader"
+                    android:textColorHint="@color/lightBlack"
                     android:textSize="24sp" />
 
 
@@ -153,6 +162,8 @@
                     android:ems="10"
                     android:hint="@string/confPW"
                     android:inputType="textPassword"
+                    android:textColor="@color/BlackHeader"
+                    android:textColorHint="@color/lightBlack"
                     android:textSize="24sp" />
 
                 <EditText
@@ -165,6 +176,8 @@
                     android:ems="10"
                     android:hint="@string/mobile_number"
                     android:inputType="number"
+                    android:textColor="@color/BlackHeader"
+                    android:textColorHint="@color/lightBlack"
                     android:textSize="24sp" />
 
                 <EditText
@@ -177,8 +190,9 @@
                     android:ems="10"
                     android:hint="Address"
                     android:inputType="text"
+                    android:textColor="@color/BlackHeader"
+                    android:textColorHint="@color/lightBlack"
                     android:textSize="24sp" />
-
 
 
                 <TextView
@@ -204,24 +218,23 @@
                         android:layout_weight="1">
 
 
+                        <RadioButton
+                            android:id="@+id/radioButtonGirl"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/radiobuttonGirl"
+                            android:textColor="@color/lightBlack"
+                            android:textSize="18sp" />
 
-                            <RadioButton
-                                android:id="@+id/radioButtonGirl"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/radiobuttonGirl"
-                                android:textColor="@color/lightBlack"
-                                android:textSize="18sp" />
-
-                            <RadioButton
-                                android:id="@+id/radioButtonGuy"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/radioButtonguy"
-                                android:textColor="@color/lightBlack"
-                                android:textSize="18sp" />
+                        <RadioButton
+                            android:id="@+id/radioButtonGuy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/radioButtonguy"
+                            android:textColor="@color/lightBlack"
+                            android:textSize="18sp" />
 
 
                     </RadioGroup>
