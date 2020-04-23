@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.indigoapp.R;
-import com.example.indigoapp.adapter.RecyclerViewAdapter;
+import com.example.indigoapp.adapter.RecyclerViewAdapterVoucher;
 import com.example.indigoapp.databases.DbHelper;
 
 import java.util.ArrayList;
@@ -32,9 +32,9 @@ public class RecyclerMasterVoucher extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
 
         dbHelperp = new DbHelper(this);
-        ArrayList data = dbHelperp.Retrive_admin_product_details();
+        ArrayList data = dbHelperp.Retrive_admin_voucher_details();
 
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this,data);
+        RecyclerViewAdapterVoucher adapter = new RecyclerViewAdapterVoucher(this,data);
         recyclerView.setAdapter(adapter);
 
         Log.d(TAG, "onCreate: started");
