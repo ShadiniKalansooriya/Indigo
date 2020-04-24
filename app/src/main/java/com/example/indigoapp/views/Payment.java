@@ -21,7 +21,7 @@ public abstract class Payment extends  AppCompatActivity implements View.OnClick
     EditText Uname;
     EditText editTextEmail;
     EditText lctn;
-    EditText subto;
+    EditText sub;
     TextView address;
     RadioButton paymentM;
     Button btnS, btnS1, btnU;
@@ -51,7 +51,7 @@ public abstract class Payment extends  AppCompatActivity implements View.OnClick
         submit = (Button) findViewById(R.id.btnS);
         Uname = (EditText) findViewById(R.id.et1);
         editTextEmail = (EditText) findViewById(R.id.et2);
-        subto = (EditText) findViewById(R.id.et3);
+        sub = (EditText) findViewById(R.id.et3);
         address = (TextView) findViewById(R.id.address);
         paymentM = (RadioButton) findViewById(R.id.radioButton1);
         paymentM = (RadioButton) findViewById(R.id.radioButton2);
@@ -114,7 +114,7 @@ public abstract class Payment extends  AppCompatActivity implements View.OnClick
 
         String Username = Uname.getText().toString().trim();
         String email = editTextEmail.getText().toString().trim();
-        String Total = subto.getText().toString().trim();
+        String Total = sub.getText().toString().trim();
 
 
         dbHelper.Customer_insert_payment_details(Username,email,Total);
