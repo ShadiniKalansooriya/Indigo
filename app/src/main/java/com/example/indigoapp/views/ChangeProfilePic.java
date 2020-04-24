@@ -8,13 +8,19 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.indigoapp.R;
 import com.example.indigoapp.databases.DbHelper;
@@ -24,13 +30,6 @@ import com.google.android.material.navigation.NavigationView;
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
 
 public class ChangeProfilePic extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -136,25 +135,25 @@ public class ChangeProfilePic extends AppCompatActivity implements NavigationVie
             }
         });
 
-        buttonChange.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                dbHelper.changeProPic(imageViewToByte(imageViewEditPic));
-
-                try {
-                    dbHelper.changeProPic(
-                            imageViewToByte(imageViewEditPic)
-                    );
-                    Toast.makeText(getApplicationContext(), "Update successfully!!!",Toast.LENGTH_SHORT).show();
-                }
-                catch (Exception error) {
-                    Log.e("Update error", error.getMessage());
-                }
-
-                }
-
-        });
-
+//        buttonChange.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+////                dbHelper.changeProPic(imageViewToByte(imageViewEditPic));
+//
+//                try {
+//                    dbHelper.changeProPic(
+//                            imageViewToByte(imageViewEditPic)
+//                    );
+//                    Toast.makeText(getApplicationContext(), "Update successfully!!!",Toast.LENGTH_SHORT).show();
+//                }
+//                catch (Exception error) {
+//                    Log.e("Update error", error.getMessage());
+//                }
+//
+//                }
+//
+//        });
+//
 
 //        dbHelper.changepwd(editTextNewPw.getText().toString().trim());
 //        Toast.makeText(getApplicationContext(),"Password Updated",Toast.LENGTH_LONG).show();

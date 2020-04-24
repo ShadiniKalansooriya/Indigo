@@ -63,13 +63,13 @@ public class UsersMaster {
 
     }
 
-    public static class Products implements BaseColumns{
-        public static String TABLE_NAME="products";
-        public static final String COLUMN_NAME_ID="id";
-        public static final String COLUMN_NAME_TITLE = "title";
-        public static final String COLUMN_NAME_IMAGE = "image";
-        public static final String COLUMN_NAME_PRICE = "price";
-    }
+//    public static class Products implements BaseColumns{
+//        public static String TABLE_NAME="products";
+//        public static final String COLUMN_NAME_ID="id";
+//        public static final String COLUMN_NAME_TITLE = "title";
+//        public static final String COLUMN_NAME_IMAGE = "image";
+//        public static final String COLUMN_NAME_PRICE = "price";
+//    }
 
     public static class ProductsItems implements BaseColumns{
             public static String TABLE_NAME="productitems";

@@ -70,7 +70,7 @@
         <activity android:name=".views.MyAccount" />
         <activity android:name=".views.RegisterDetailsActivity" />
         <activity android:name=".views.AccountOverview" />
-        <activity android:name=".views.ProductsDisplay" />
+        <activity android:name=".views.ProductsDisplay"/>
         <activity android:name=".views.ProductsDetails" />
         <activity android:name=".views.Savings_display" />
         <activity android:name=".views.Denims_display" />

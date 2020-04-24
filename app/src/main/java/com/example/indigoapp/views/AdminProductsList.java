@@ -13,6 +13,7 @@ import com.example.indigoapp.databases.DbHelper;
 import java.util.ArrayList;
 
 public class AdminProductsList extends AppCompatActivity {
+
     private RecyclerView recyler;
     private DbHelper dbHelperp;
 
