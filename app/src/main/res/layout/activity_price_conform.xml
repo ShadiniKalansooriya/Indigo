@@ -93,7 +93,7 @@
             android:layout_below="@+id/number_btn"
             android:layout_marginLeft="155dp"
             android:layout_marginTop="6dp"
-            android:background="@color/colorPrimary"
+            android:background="@android:color/holo_green_light"
 
             android:elevation="6dp"
             android:text="Update" />
