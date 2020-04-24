@@ -64,13 +64,13 @@
 
                 <Button
                     android:id="@+id/update_btn"
-                    android:layout_width="200dp"
+                    android:layout_width="187dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/number_btn"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="10dp"
                     android:background="@color/lightGray"
                     android:elevation="6dp"
-                    android:layout_marginLeft="103dp"
+                    android:layout_marginLeft="112dp"
                     android:text="@string/add_to_button"
                     android:textSize="15dp" />
 
@@ -79,7 +79,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/update_btn"
-                    android:layout_marginLeft="97dp"
+                    android:layout_marginLeft="109dp"
+                    android:padding="4dp"
                     android:layout_marginTop="10dp"
                     android:background="@color/lightGray"
                     android:elevation="6dp"
@@ -88,11 +89,11 @@
 
                 <ImageButton
                     android:id="@+id/imageButton2"
-                    android:layout_width="53dp"
-                    android:layout_height="53dp"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
                     android:layout_below="@+id/update_btn"
-                    android:layout_marginLeft="252dp"
-                    android:layout_marginTop="6dp"
+                    android:layout_marginLeft="268dp"
+                    android:layout_marginTop="8dp"
                     android:background="@drawable/heartt" />
 
 

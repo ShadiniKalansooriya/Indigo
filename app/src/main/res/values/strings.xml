@@ -107,7 +107,7 @@
     <string name="Namecaps">NAME</string>
     <string name="update">UPDATE</string>
     <string name="DeleteAccount">DELETE ACCOUNT</string>
-    <string name="add_products">Add Products</string>
+    <string name="add_products">Add Product</string>
     <string name="add_promo">Add Promotions</string>
     <string name="mng_gallery">Manage Gallery</string>
     <string name="admin_title">Administration</string>
@@ -146,6 +146,7 @@
     </string-array>
     <string name="view_prod">View Products List</string>
     <string name="view_vouc">View Voucher List</string>
+    <string name="sel_pro_image">Choose your Products Image</string>
 
 
 </resources>
