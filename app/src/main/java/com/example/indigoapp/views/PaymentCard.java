@@ -64,21 +64,20 @@ public class PaymentCard {
 
 
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    public void User_insert_cart_details() {
-
-        String Name = nameCard.getText().toString().trim();
-        String Numb = cardNo.getText().toString().trim();
-        String Date = cardEp.getText().toString().trim();
-
-
-
-        
-        dbHelper.User_insert_cart_details(Name, Numb, Date);
-    }
-
-    private void User_insert_cart_details(String name, String numb, String date) {
-    }
+//
+//    public void User_insert_cart_details() {
+//
+//        String Name = nameCard.getText().toString().trim();
+//        String Numb = cardNo.getText().toString().trim();
+//        String Date = cardEp.getText().toString().trim();
+//        String type = "CartList";
+//
+//
+//
+//
+//        dbHelper.User_insert_cart_details(Name, Numb, Date);
+//        Toast.makeText(getApplicationContext(), "Successfully Added Cart List!", Toast.LENGTH_LONG).show();
+//    }
 
 
 }

@@ -149,24 +149,6 @@ public class DbHelper extends SQLiteOpenHelper {
 
     }
 
-
-
-
-    public void User_insert_cart_details(String Name, String Numb, String Date){
-        SQLiteDatabase db=getWritableDatabase();
-        ByteArrayOutputStream stream = new ByteArrayOutputStream();
-
-        ContentValues values=new ContentValues();
-        values.put( UsersMaster.UserCart.CART_NAME,Name);
-        values.put(UsersMaster.UserCart.COLUMN_NUMBER,Numb);
-        values.put(UsersMaster.UserCart.COLUMN_DATE,Date);
-        long newRowId =db.insert(UsersMaster.UserCart.CART_NAME_USER,null,values);
-
-    }
-
-
-
-
     public String checkUser(String email, String password) {
         SQLiteDatabase db = getReadableDatabase();
 
@@ -565,6 +547,17 @@ public class DbHelper extends SQLiteOpenHelper {
     }
 
 
+    public void User_insert_cart_details(String Name, String Numb, String Date){
+        SQLiteDatabase db=getWritableDatabase();
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+
+        ContentValues values=new ContentValues();
+        values.put( UsersMaster.UserCart.CART_NAME,Name);
+        values.put(UsersMaster.UserCart.COLUMN_NUMBER,Numb);
+        values.put(UsersMaster.UserCart.COLUMN_DATE,Date);
+        long newRowId =db.insert(UsersMaster.UserCart.CART_NAME_USER,null,values);
+
+    }
 
 
 
