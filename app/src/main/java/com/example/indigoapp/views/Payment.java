@@ -115,9 +115,11 @@ public abstract class Payment extends  AppCompatActivity implements View.OnClick
         String Username = Uname.getText().toString().trim();
         String email = editTextEmail.getText().toString().trim();
         String Total = sub.getText().toString().trim();
+            String type = "PaymentList";
 
 
         dbHelper.Customer_insert_payment_details(Username,email,Total);
+            Toast.makeText(getApplicationContext(), "Successfully Added Payment List!", Toast.LENGTH_LONG).show();
 
 
     }

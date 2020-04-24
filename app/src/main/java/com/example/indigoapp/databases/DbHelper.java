@@ -60,14 +60,14 @@ public class DbHelper extends SQLiteOpenHelper {
                 " FOREIGN KEY (" + UsersMaster.Payment.COL_USER_NAME + ") REFERENCES " + UsersMaster.Payment.TABLE_NAME +
                 " ON DELETE CASCADE ON UPDATE CASCADE )";
 
-//
-//        String  CUSTOMER_CART_CREATES_ENTRIES ="CREATE TABLE"+ UsersMaster.UserCart.CART_NAME_USER + "(" +
-//                UsersMaster.UserCart.CART_NAME +" TEXT, "+
-//                UsersMaster.UserCart.COLUMN_NUMBER +" TEXT,"+
-//                UsersMaster.UserCart.COLUMN_DATE +" TEXT,"+
-//
-//                " FOREIGN KEY (" + UsersMaster.UserCart.COLUMN_NUMBER + ") REFERENCES " + UsersMaster.UserCart.CART_NAME_USER +
-//                " ON DELETE CASCADE ON UPDATE CASCADE)";
+
+        String  CUSTOMER_CART_CREATES_ENTRIES ="CREATE TABLE"+ UsersMaster.UserCart.CART_NAME_USER + "(" +
+                UsersMaster.UserCart.CART_NAME +" TEXT, "+
+                UsersMaster.UserCart.COLUMN_NUMBER +" TEXT,"+
+                UsersMaster.UserCart.COLUMN_DATE +" TEXT,"+
+
+                " FOREIGN KEY (" + UsersMaster.UserCart.COLUMN_NUMBER + ") REFERENCES " + UsersMaster.UserCart.CART_NAME_USER +
+                " ON DELETE CASCADE ON UPDATE CASCADE)";
 
 
         String ADMIN_PRODUCT_DETAILS_ENTRIES="CREATE TABLE "+ UsersMaster.ProductsItems.TABLE_NAME +"("+
@@ -93,7 +93,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
         sqLiteDatabase.execSQL(SQL_CREATE_ENTRIES);
         sqLiteDatabase.execSQL(PAYMENT_DETAILS_ENTRIES);
-//        sqLiteDatabase.execSQL(CUSTOMER_CART_CREATES_ENTRIES);
+        sqLiteDatabase.execSQL(CUSTOMER_CART_CREATES_ENTRIES);
         sqLiteDatabase.execSQL(ADMIN_PRODUCT_DETAILS_ENTRIES);
         sqLiteDatabase.execSQL(ADMIN_VOUCHER_DETAILS_ENTRIES);
 
@@ -123,7 +123,7 @@ public class DbHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS "+ UsersMaster.ProductsItems.TABLE_NAME);
         //db.execSQL("DROP TABLE IF EXISTS "+ UsersMaster.Products.TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS "+ UsersMaster.Vouchers.TABLE_NAME);
-//        db.execSQL("DROP TABLE IF EXISTS "+ UsersMaster.UserCart.CART_NAME_USER);
+        db.execSQL("DROP TABLE IF EXISTS "+ UsersMaster.UserCart.CART_NAME_USER);
 
         onCreate(db);
     }
@@ -151,7 +151,8 @@ public class DbHelper extends SQLiteOpenHelper {
 
 
 
-    public void User_insert_cart_details(String Name,String Numb,String Date){
+
+    public void User_insert_cart_details(String Name, String Numb, String Date){
         SQLiteDatabase db=getWritableDatabase();
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
 
@@ -967,7 +968,10 @@ public class DbHelper extends SQLiteOpenHelper {
     }
 
 
+    private class Date {
+    }
 
-
+    private class Numb {
+    }
 }
 

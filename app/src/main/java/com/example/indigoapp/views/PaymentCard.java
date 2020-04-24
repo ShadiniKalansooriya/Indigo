@@ -1,6 +1,7 @@
 package com.example.indigoapp.views;
 
 import android.app.Notification;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,6 +10,7 @@ import android.widget.Toast;
 
 import com.example.indigoapp.R;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class PaymentCard {
@@ -16,6 +18,9 @@ public class PaymentCard {
 
     private PaymentCard dbHelper;
     private Notification.MessagingStyle.Message editTextEmail;
+    private Notification.MessagingStyle.Message cardNo;
+    private Notification.MessagingStyle.Message nameCard;
+    private Notification.MessagingStyle.Message cardEp;
 
     public abstract class Payment extends AppCompatActivity implements View.OnClickListener {
         EditText nameCard, cardNo, cardEp;
@@ -59,16 +64,21 @@ public class PaymentCard {
 
 
 
-//    public void User_insert_cart_details() {
-//
-//        EditText Name = nameCard.getText().toString().trim();
-//        EditText Numb = cardNo.getText().toString().trim();
-//        EditText Date = Date.getText().toString().trim();
-//
-//
-//
-//        dbHelper.User_insert_cart_details(Name,Numb,Date);
-//    }
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public void User_insert_cart_details() {
+
+        String Name = nameCard.getText().toString().trim();
+        String Numb = cardNo.getText().toString().trim();
+        String Date = cardEp.getText().toString().trim();
+
+
+
+        
+        dbHelper.User_insert_cart_details(Name, Numb, Date);
+    }
+
+    private void User_insert_cart_details(String name, String numb, String date) {
+    }
 
 
 }
