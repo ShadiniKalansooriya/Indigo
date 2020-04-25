@@ -451,18 +451,18 @@ public class DbHelper extends SQLiteOpenHelper {
 
 
 
-
-    public void Customer_insert_payment_details(String Username, String email, String total) {
+    public void Customer_insert_payment_details(String username, String email, String total) {
         SQLiteDatabase db = getWritableDatabase();
 
 
         ContentValues values = new ContentValues();
-        values.put(UsersMaster.Payment.COL_USER_NAME,Username);
+        values.put(UsersMaster.Payment.COL_USER_NAME,username);
         values.put(UsersMaster.Payment.COL_USER_EMAIL, email);
         values.put(UsersMaster.Payment.COLUMN_USER_AMOUNT, total);
-
+//        values.put(UsersMaster.Payment.COL_USER_ADDRESS, address);
         long newRowId = db.insert(UsersMaster.Payment.TABLE_NAME, null, values);
     }
+
     public String getName() {
         String[] projection = {
                 UsersMaster.Payment.COL_USER_NAME
@@ -972,6 +972,7 @@ public class DbHelper extends SQLiteOpenHelper {
         SQLiteDatabase database = getReadableDatabase();
         return database.rawQuery(sql, null);
     }
+
 
 
     private class Date {
