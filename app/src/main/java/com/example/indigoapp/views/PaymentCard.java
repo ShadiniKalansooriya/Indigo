@@ -1,6 +1,7 @@
 package com.example.indigoapp.views;
 
 import android.app.Notification;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -28,7 +29,7 @@ public class PaymentCard {
         private EditText cardEp;
         private Button Update, Delete, Purchase;
         private DbHelper db;
-
+        DbHelper dbHelperp;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -61,17 +62,22 @@ public class PaymentCard {
             Toast.makeText(Payment.this, "input the card expiry date", Toast.LENGTH_LONG).show();
 
 
+            dbHelperp = new DbHelper(this);
             nameCard = (EditText) findViewById(R.id.et7);
             cardNo = (EditText) findViewById(R.id.et8);
             cardEp = (EditText) findViewById(R.id.et9);
             Update = (Button) findViewById(R.id.Update_cart);
             Delete = (Button) findViewById(R.id.Delete_cart_btn);
             Purchase = (Button) findViewById(R.id.btnS1);
+            buttonClickActivity();
+
+
+
 
             Delete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    //delete_admin_product();
+
                     db.delete_cart_details(cardNo);
                     Toast.makeText(Payment.this, "One record deleted", Toast.LENGTH_SHORT).show();
                     clear();
@@ -79,28 +85,44 @@ public class PaymentCard {
             });
         }
 
+        private void buttonClickActivity() {
+            Update.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    User_insert_cart_details();
+                    Intent AddPayIntent = new Intent(Payment.this, PaymentCard.class);
+                      startActivity(AddPayIntent);
+                        Toast.makeText(getApplicationContext(), "Successfully Added Cart Details!", Toast.LENGTH_LONG).show();
+
+                }
+            });
+        }
+
+        private void User_insert_cart_details() {
+
+            String Name = nameCard.getText().toString().trim();
+        String Numb = cardNo.getText().toString().trim();
+        String Date = cardEp.getText().toString().trim();
+        String type = "CartList";
+
+
+
+
+        dbHelperp.User_insert_cart_details(Name, Numb, Date);
+        Toast.makeText(new Payment(), "Successfully Added Cart List!", Toast.LENGTH_LONG).show();
+        }
+
         private void clear() {
             nameCard.setText("");
-//            cardNo.trim("");
+            cardNo.setText("");
             cardEp.setText("");
 
         }
 
 
-//    public void User_insert_cart_details() {
-//
-//        String Name = nameCard.getText().toString().trim();
-//        String Numb = cardNo.getText().toString().trim();
-//        String Date = cardEp.getText().toString().trim();
-//        String type = "CartList";
-//
-//
-//
-//
-//        dbHelper.User_insert_cart_details(Name, Numb, Date);
-//        Toast.makeText(new Payment(), "Successfully Added Cart List!", Toast.LENGTH_LONG).show();
-//    }
 
 
     }
+
+
 }
