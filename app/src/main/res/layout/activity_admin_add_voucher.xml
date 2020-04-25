@@ -6,10 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".views.AdminAddVoucher">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+
     <ImageButton
         android:id="@+id/imageButton"
         android:layout_width="210dp"
         android:layout_height="109dp"
+        android:layout_marginStart="90dp"
         android:background="@drawable/logo"
         android:contentDescription="@string/logo_name"
         app:layout_constraintBottom_toTopOf="@+id/textView7"
@@ -50,7 +61,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.436">
+        app:layout_constraintVertical_bias="0.344">
 
 
         <EditText
@@ -79,7 +90,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.566">
+        app:layout_constraintVertical_bias="0.461">
 
         <EditText
             android:id="@+id/voucher_qty"
@@ -96,12 +107,56 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/choose_vou"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/BlackHeader"/>
+
+    <ImageView
+        android:id="@+id/productImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/upload"
+        tools:layout_editor_absoluteX="0dp"
+        android:layout_marginTop="10dp"
+        tools:layout_editor_absoluteY="270dp" />
+
+    <Button
+        android:id="@+id/chooseVouImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="80dp"
+        android:background="@color/lightGray"
+        android:padding="4dp"
+        android:text="@string/choose_image"
+        android:textColor="@color/lightBlack"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.375"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.774" />
+
     <Button
         android:id="@+id/admin_add_voucher_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/input_layer_qty"
-        android:background="@color/white"
+        android:layout_below="@+id/chooseVouImage"
+        android:layout_marginTop="10dp"
+        android:background="@color/lightGray"
         android:padding="4dp"
         android:text="@string/add_voucher"
         android:textColor="@color/lightBlack"
@@ -109,8 +164,11 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.761" />
+        app:layout_constraintVertical_bias="0.874" />
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

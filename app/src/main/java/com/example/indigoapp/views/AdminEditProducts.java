@@ -55,7 +55,7 @@ public class AdminEditProducts extends AppCompatActivity {
         admin_product_counts = (EditText) findViewById(R.id.edit_product_count);
         delete_new_product_button = (Button) findViewById(R.id.admin_edit_product_delete);
         admin_category_name = (EditText) findViewById(R.id.edit_category_name);
-        admin_product_img_url = (EditText) findViewById(R.id.edit_product_img_url);
+        //admin_product_img_url = (EditText) findViewById(R.id.edit_product_img_url);
         admin_search_pro = (EditText) findViewById(R.id.admin_search_product);
         //dialog = new SpotsDialog(this,"Updating..");
 

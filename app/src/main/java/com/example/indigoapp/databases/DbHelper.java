@@ -76,7 +76,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 UsersMaster.ProductsItems.COLUMN_NAME_COUNT +" INTEGER,"+
                 UsersMaster.ProductsItems.COLUMN_NAME_DESCRIPTION +" TEXT,"+
                 UsersMaster.ProductsItems.COLUMN_NAME_PRICE + " TEXT,"+
-                UsersMaster.ProductsItems.COLUMN_NAME_PRODUCTIMAGE + " LONGBLOB,"+
+                //UsersMaster.ProductsItems.COLUMN_NAME_PRODUCTIMAGE + " LONGBLOB,"+
                 UsersMaster.ProductsItems.COLUMN_NAME_CATEGORY_NAME +" TEXT," +
                 UsersMaster.ProductsItems.COLUMN_NAME_FOREIGNKEY+" INTEGER,CONSTRAINT fk_pro_cat FOREIGN KEY ("+
                 UsersMaster.ProductsItems.COLUMN_NAME_FOREIGNKEY + ") REFERENCES "+ UsersMaster.ProductsItems.TABLE_NAME+"("+
@@ -610,18 +610,17 @@ public class DbHelper extends SQLiteOpenHelper {
 
     }
 
-    //Retrieve all item data from database
-    public ArrayList<Products> Retrive_admin_product_details(){
+    //Retrieve selected item data from database
+    public ArrayList<Products> Retrive_selected_product_details(String category){
         ArrayList<Products> list=new ArrayList<>();
         SQLiteDatabase db=getReadableDatabase();
 
-        String sql="SELECT * FROM "+ UsersMaster.ProductsItems.TABLE_NAME;
+        String sql="SELECT * FROM "+ UsersMaster.ProductsItems.TABLE_NAME+ " WHERE "+  UsersMaster.ProductsItems.COLUMN_NAME_CATEGORY_NAME + " LIKE '"+ category +"'";
 
         Cursor cu=db.rawQuery(sql,null);
         //byte[] image;
         String name;
         String desc;
-        String image;
         String count;
         String price;
         String id;
@@ -634,12 +633,52 @@ public class DbHelper extends SQLiteOpenHelper {
             count=cu.getString(2);
             desc=cu.getString(3);
             price=cu.getString(4);
-            image=cu.getString(5);
+            //image=cu.getBlob(5);
             cna = cu.getString(6);
             //cid=cu.getString(7);
             Bitmap bitmap;
 
-            Products products=new Products(id,name,desc,price,image,count,cna);
+            //bitmap= BitmapFactory.decodeByteArray(image,0,image.length);
+
+            Products products=new Products(id,name,desc,price,count,cna);
+            list.add(products);
+        }
+        cu.close();
+
+        return list;
+    }
+
+    //Retrieve all item data from database
+    public ArrayList<Products> Retrive_admin_product_details(){
+        ArrayList<Products> list=new ArrayList<>();
+        SQLiteDatabase db=getReadableDatabase();
+
+        String sql="SELECT * FROM "+ UsersMaster.ProductsItems.TABLE_NAME;
+
+        Cursor cu=db.rawQuery(sql,null);
+        //byte[] image;
+        String name;
+        String desc;
+        String count;
+        String price;
+        String id;
+        String cna;
+        String cid;
+
+        while(cu.moveToNext()){
+            id=cu.getString(0);
+            name=cu.getString(1);
+            count=cu.getString(2);
+            desc=cu.getString(3);
+            price=cu.getString(4);
+            //image=cu.getBlob(5);
+            cna = cu.getString(6);
+            //cid=cu.getString(7);
+            Bitmap bitmap;
+
+            //bitmap= BitmapFactory.decodeByteArray(image,0,image.length);
+
+            Products products=new Products(id,name,desc,price,count,cna);
             list.add(products);
         }
         cu.close();
@@ -660,7 +699,7 @@ public class DbHelper extends SQLiteOpenHelper {
         //byte[] image;
         String name;
         String desc;
-        String image;
+        //String image;
         String count;
         String price;
         String cna;
@@ -674,14 +713,14 @@ public class DbHelper extends SQLiteOpenHelper {
             desc=cu.getString(3);
             count=cu.getString(2);
             price=cu.getString(4);
-            image=cu.getString(5);
-            cna=cu.getString(6);
-            fid=cu.getString(7);
+            //image=cu.getBlob(5);
+            cna=cu.getString(5);
+            fid=cu.getString(6);
             Bitmap bitmap;
 
             //bitmap= BitmapFactory.decodeByteArray(image,0,image.length);
 
-            Products product =new Products(id,name,desc,price,image,count,cna);
+            Products product =new Products(id,name,desc,price,count,cna);
             list.add(product);
         }
         cu.close();
@@ -714,7 +753,7 @@ public class DbHelper extends SQLiteOpenHelper {
             values.put(UsersMaster.ProductsItems.COLUMN_NAME_COUNT, count);
             values.put(UsersMaster.ProductsItems.COLUMN_NAME_DESCRIPTION, des);
             values.put(UsersMaster.ProductsItems.COLUMN_NAME_PRICE, price);
-            values.put(UsersMaster.ProductsItems.COLUMN_NAME_PRODUCTIMAGE, image);
+            //values.put(UsersMaster.ProductsItems.COLUMN_NAME_PRODUCTIMAGE, image);
             values.put(UsersMaster.ProductsItems.COLUMN_NAME_CATEGORY_NAME, cname);
             String selection = UsersMaster.ProductsItems.COLUMN_NAME_ID + " = ?";
             String[] selectionArgs = {id};
@@ -833,7 +872,7 @@ public class DbHelper extends SQLiteOpenHelper {
     }
 
 
-    public void addProduct(String prodName, String prodCount ,String prodDesc, String price, String image, String category) {
+    public void addProduct(String prodName, String prodCount ,String prodDesc, String price, String category) {
         SQLiteDatabase db = getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -842,7 +881,7 @@ public class DbHelper extends SQLiteOpenHelper {
         values.put(UsersMaster.ProductsItems.COLUMN_NAME_COUNT, prodCount);
         values.put(UsersMaster.ProductsItems.COLUMN_NAME_DESCRIPTION, prodDesc);
         values.put(UsersMaster.ProductsItems.COLUMN_NAME_PRICE, price);
-        values.put(UsersMaster.ProductsItems.COLUMN_NAME_PRODUCTIMAGE, image);
+        //values.put(UsersMaster.ProductsItems.COLUMN_NAME_PRODUCTIMAGE, image);
         values.put(UsersMaster.ProductsItems.COLUMN_NAME_CATEGORY_NAME, category);
 
         db.insert(UsersMaster.ProductsItems.TABLE_NAME, null, values);

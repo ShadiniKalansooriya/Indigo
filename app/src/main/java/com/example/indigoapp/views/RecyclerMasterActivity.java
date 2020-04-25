@@ -84,12 +84,15 @@ public class RecyclerMasterActivity extends AppCompatActivity implements Navigat
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler_master);
 
+
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
+
         dbHelperp = new DbHelper(this);
-        ArrayList data = dbHelperp.Retrive_admin_product_details();
+        //ArrayList data = dbHelperp.Retrive_admin_product_details();
+        ArrayList data = dbHelperp.Retrive_selected_product_details("Denims");
 
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(this,data);
         recyclerView.setAdapter(adapter);

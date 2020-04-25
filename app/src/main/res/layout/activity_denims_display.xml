@@ -41,6 +41,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/product_image"
+                    android:layout_marginTop="54dp"
                     android:text="Product Price"
                     android:textAlignment="center"
                     android:textColor="@color/BlackHeader"

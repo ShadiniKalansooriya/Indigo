@@ -147,6 +147,14 @@
     <string name="view_prod">View Products List</string>
     <string name="view_vouc">View Voucher List</string>
     <string name="sel_pro_image">Choose your Products Image</string>
+    <string name="choose_vou">Choose Voucher Image</string>
+
+    <string-array name="category">
+        <item>Tops</item>
+        <item>Dresses</item>
+        <item>Pants</item>
+        <item>Denims</item>
+    </string-array>
 
 
 </resources>
