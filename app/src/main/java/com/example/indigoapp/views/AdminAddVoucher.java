@@ -22,6 +22,7 @@ public class AdminAddVoucher extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_add_voucher);
+        setContentView(R.layout.activity_admin_add_voucher);
 
         dbHelperp = new DbHelper(this);
 

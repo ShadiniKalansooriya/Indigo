@@ -100,10 +100,9 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.875"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.6" />
+        app:layout_constraintVertical_bias="0.73" />
 
     <EditText
         android:id="@+id/et8"
@@ -159,18 +158,33 @@
         app:layout_constraintVertical_bias="0.174" />
 
     <Button
-        android:id="@+id/btnU"
+        android:id="@+id/Update_cart"
         android:layout_width="114dp"
         android:layout_height="50dp"
-        android:background="@android:color/holo_purple"
+        android:background="@android:color/holo_green_light"
         android:text="Update"
         android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.174"
+        app:layout_constraintHorizontal_bias="0.888"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.6" />
+        app:layout_constraintVertical_bias="0.599" />
+
+    <Button
+        android:id="@+id/Delete_cart_btn"
+        android:layout_width="114dp"
+        android:layout_height="50dp"
+        android:background="@android:color/holo_red_light"
+        android:text="Delete"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.141"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.599" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
