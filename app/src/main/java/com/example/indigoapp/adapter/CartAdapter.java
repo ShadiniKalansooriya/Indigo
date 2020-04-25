@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.indigoapp.R;
 import com.example.indigoapp.model.Cart;
-
 
 import java.util.ArrayList;
 
@@ -46,7 +44,7 @@ public abstract class CartAdapter extends RecyclerView.Adapter {
     }
 
     class CartViewAdapter extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
-        ImageView ProductImage, user_delete_button;
+//        ImageView ProductImage, user_delete_button;
         TextView ProductName;
         TextView ProductCount;
         TextView productPrice;

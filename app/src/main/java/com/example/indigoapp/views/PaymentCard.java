@@ -1,17 +1,16 @@
 package com.example.indigoapp.views;
 
 import android.app.Notification;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.indigoapp.R;
-
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.indigoapp.R;
+import com.example.indigoapp.databases.DbHelper;
 
 public class PaymentCard {
 
@@ -22,8 +21,14 @@ public class PaymentCard {
     private Notification.MessagingStyle.Message nameCard;
     private Notification.MessagingStyle.Message cardEp;
 
-    public abstract class Payment extends AppCompatActivity implements View.OnClickListener {
-        EditText nameCard, cardNo, cardEp;
+
+    public class Payment extends AppCompatActivity implements View.OnClickListener {
+        private EditText nameCard;
+        private EditText cardNo;
+        private EditText cardEp;
+        private Button Update, Delete, Purchase;
+        private DbHelper db;
+
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -40,31 +45,48 @@ public class PaymentCard {
             switch (view.getId()) {
                 case R.id.btnS1:
                     if (nameCard.length() != 0 && cardNo.length() != 0 && cardEp.length() != 0) {
-                    nameCard.setText("");
-                    cardNo.setText("");
-                    cardEp.setText("");
-                    Toast.makeText(this, "purchase conformed", Toast.LENGTH_LONG).show();
+                        nameCard.setText("");
+                        cardNo.setText("");
+                        cardEp.setText("");
+                        Toast.makeText(this, "purchase conformed", Toast.LENGTH_LONG).show();
+                    }
             }
-            }  if (nameCard.getText().toString().isEmpty()) {
+            if (nameCard.getText().toString().isEmpty()) {
                 Toast.makeText(Payment.this, "Please put card name", Toast.LENGTH_LONG).show();
             } else if (cardNo.getText().toString().isEmpty()) {
                 Toast.makeText(Payment.this, " input the card number", Toast.LENGTH_LONG).show();
             } else {
                 cardEp.getText().toString();
             }
-                Toast.makeText(Payment.this, "input the card expiry date", Toast.LENGTH_LONG).show();
+            Toast.makeText(Payment.this, "input the card expiry date", Toast.LENGTH_LONG).show();
 
 
             nameCard = (EditText) findViewById(R.id.et7);
             cardNo = (EditText) findViewById(R.id.et8);
             cardEp = (EditText) findViewById(R.id.et9);
+            Update = (Button) findViewById(R.id.Update_cart);
+            Delete = (Button) findViewById(R.id.Delete_cart_btn);
+            Purchase = (Button) findViewById(R.id.btnS1);
+
+            Delete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    //delete_admin_product();
+                    db.delete_cart_details(cardNo);
+                    Toast.makeText(Payment.this, "One record deleted", Toast.LENGTH_SHORT).show();
+                    clear();
+                }
+            });
         }
-    }
+
+        private void clear() {
+            nameCard.setText("");
+//            cardNo.trim("");
+            cardEp.setText("");
+
+        }
 
 
-
-
-//
 //    public void User_insert_cart_details() {
 //
 //        String Name = nameCard.getText().toString().trim();
@@ -76,8 +98,9 @@ public class PaymentCard {
 //
 //
 //        dbHelper.User_insert_cart_details(Name, Numb, Date);
-//        Toast.makeText(getApplicationContext(), "Successfully Added Cart List!", Toast.LENGTH_LONG).show();
+//        Toast.makeText(new Payment(), "Successfully Added Cart List!", Toast.LENGTH_LONG).show();
 //    }
 
 
+    }
 }

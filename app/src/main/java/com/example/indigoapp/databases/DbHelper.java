@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteStatement;
 import android.graphics.Bitmap;
+import android.widget.EditText;
 
 import com.example.indigoapp.model.Products;
 import com.example.indigoapp.model.Vouchers;
@@ -559,7 +560,19 @@ public class DbHelper extends SQLiteOpenHelper {
 
     }
 
-
+    public boolean delete_cart_details(EditText id){
+        try{
+            SQLiteDatabase db=getReadableDatabase();
+            String selection=UsersMaster.UserCart.CART_NAME_USER + " = ?";
+            String[] selectionArgs = {id};
+            int rowsAffected=db.delete(UsersMaster.UserCart.CART_NAME,selection,selectionArgs);
+            return rowsAffected > 0;
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+    }
 
 
 
