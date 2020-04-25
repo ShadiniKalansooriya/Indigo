@@ -127,7 +127,6 @@ public class ProductsDisplay extends AppCompatActivity implements NavigationView
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), RecyclerMasterTops.class);
                 startActivity(intent);
-
             }
         });
 
@@ -150,8 +149,8 @@ public class ProductsDisplay extends AppCompatActivity implements NavigationView
         pantBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentPant = new Intent(getApplicationContext(), RecyclerMasterPants.class);
-                startActivity(intentPant);
+                Intent intentPants = new Intent(getApplicationContext(), RecyclerMasterPants.class);
+                startActivity(intentPants);
             }
         });
 
@@ -237,3 +236,4 @@ public class ProductsDisplay extends AppCompatActivity implements NavigationView
 
 
 }
+//intent.putExtra("CategoryType", "Denims");

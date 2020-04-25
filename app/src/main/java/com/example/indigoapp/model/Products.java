@@ -6,17 +6,17 @@ public class Products {
     private String product_name;
     private String product_desc;
     private String product_price;
-    private String imgUrl;
+    //private Bitmap bitmap;
     private String count;
     private String catName;
 
-    public Products(String product_id, String product_name, String product_desc, String product_price, String imgUrl, String count, String catName) {
+    public Products(String product_id, String product_name, String product_desc, String product_price, String count, String catName) {
         this.product_id = product_id;
         this.product_name = product_name;
         this.count = count;
         this.product_desc = product_desc;
         this.product_price = product_price;
-        this.imgUrl = imgUrl;
+        //this.bitmap = bitmap;
         this.catName = catName;
     }
 
@@ -52,13 +52,15 @@ public class Products {
         this.product_price = product_price;
     }
 
-    public String getImgUrl() {
-        return imgUrl;
-    }
-
-    public void setImgUrl(String imgUrl) {
-        this.imgUrl = imgUrl;
-    }
+//    public Bitmap getBitmap() {
+//
+//        return bitmap;
+//    }
+//
+//    public void setBitmap(Bitmap bitmap) {
+//
+//        this.bitmap = bitmap;
+//    }
 
     public String getCount() {
         return count;
