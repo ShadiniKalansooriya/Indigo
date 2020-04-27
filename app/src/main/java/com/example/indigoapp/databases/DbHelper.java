@@ -111,8 +111,8 @@ public class DbHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(SQL_CREATE_ENTRIES);
 //        sqLiteDatabase.execSQL(PAYMENT_DETAILS_ENTRIES);
 //        sqLiteDatabase.execSQL(CUSTOMER_CART_CREATES_ENTRIES);
-//        sqLiteDatabase.execSQL(ADMIN_PRODUCT_DETAILS_ENTRIES);
-//        sqLiteDatabase.execSQL(ADMIN_VOUCHER_DETAILS_ENTRIES);
+        sqLiteDatabase.execSQL(ADMIN_PRODUCT_DETAILS_ENTRIES);
+        sqLiteDatabase.execSQL(ADMIN_VOUCHER_DETAILS_ENTRIES);
         sqLiteDatabase.execSQL(sql);
 
 

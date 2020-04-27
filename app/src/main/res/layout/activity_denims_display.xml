@@ -20,7 +20,7 @@
                     android:id="@+id/product_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Product Name"
+                    android:text="@string/prod_name"
                     android:textAlignment="center"
                     android:textColor="@color/BlackHeader"
                     android:textSize="25dp"
@@ -32,7 +32,7 @@
                     android:layout_height="200dp"
                     android:layout_below="@+id/product_name"
                     android:scaleType="centerCrop"
-                    android:layout_marginTop="2dp"
+                    android:layout_marginTop="10dp"
                     android:paddingTop="15dp"
                     />
 
@@ -42,7 +42,8 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/product_image"
                     android:layout_marginTop="54dp"
-                    android:text="Product Price"
+                    android:text="@string/product_price"
+                    android:textStyle="bold"
                     android:textAlignment="center"
                     android:textColor="@color/BlackHeader"
                     android:textSize="25dp" />
@@ -70,8 +71,7 @@
                     android:layout_below="@+id/number_btn"
                     android:layout_marginTop="10dp"
                     android:background="@color/lightGray"
-                    android:elevation="6dp"
-                    android:layout_marginLeft="112dp"
+                    android:layout_marginStart="112dp"
                     android:text="@string/add_to_button"
                     android:textSize="15dp" />
 
@@ -80,11 +80,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/update_btn"
-                    android:layout_marginLeft="109dp"
+                    android:layout_marginStart="109dp"
                     android:padding="4dp"
                     android:layout_marginTop="10dp"
                     android:background="@color/lightGray"
-                    android:elevation="6dp"
                     android:text="@string/remove_from_cart"
                     android:textSize="15dp" />
 
@@ -93,8 +92,8 @@
                     android:layout_width="32dp"
                     android:layout_height="32dp"
                     android:layout_below="@+id/update_btn"
-                    android:layout_marginLeft="268dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="268dp"
+                    android:layout_marginTop="10dp"
                     android:background="@drawable/heartt" />
 
 
