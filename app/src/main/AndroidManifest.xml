@@ -35,7 +35,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="ExtraText">
-        <activity android:name=".views.AdminVoucherItemList"/>
+        <activity android:name=".views.AdminVoucherItemList">
+
+        </activity>
         <activity android:name=".views.AdminVoucherList" />
         <activity android:name=".views.ChangeProfilePic" />
         <activity android:name=".views.PriceConform" />
@@ -45,7 +47,9 @@
         <activity android:name=".views.AdminAddVoucher" />
         <activity android:name=".views.AdminEditProducts" />
         <activity android:name=".views.AdminAddProducts" />
-        <activity android:name=".views.AdminActivity" />
+        <activity android:name=".views.AdminActivity" >
+
+        </activity>
         <activity android:name=".views.RecyclerMasterVoucher" />
         <activity android:name=".views.RecyclerMasterTops" />
         <activity android:name=".views.RecyclerMasterPants" />
@@ -70,18 +74,23 @@
         <activity android:name=".views.MyAccount" />
         <activity android:name=".views.RegisterDetailsActivity" />
         <activity android:name=".views.AccountOverview" />
-        <activity android:name=".views.ProductsDisplay"/>
-        <activity android:name=".views.ProductsDetails" />
-        <activity android:name=".views.Savings_display" />
-        <activity android:name=".views.Denims_display" />
-        <activity android:name=".adapter.RecyclerViewAdapter" />
-        <activity android:name=".views.Requestfeed" />
-        <activity android:name=".views.MainActivity">
+        <activity android:name=".views.ProductsDisplay">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".views.ProductsDetails" />
+        <activity android:name=".views.Denims_display" />
+        <activity android:name=".adapter.RecyclerViewAdapter" />
+        <activity android:name=".views.Requestfeed" />
+        <activity android:name=".views.MainActivity">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
 
         <meta-data

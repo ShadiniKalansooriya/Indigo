@@ -38,6 +38,7 @@
                         android:id="@+id/admin_view_product_names"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textStyle="bold"
                         android:gravity="center"
                         android:textSize="24sp" />
 
@@ -59,6 +60,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
+                                android:textStyle="bold"
                                 android:textColor="@android:color/black"
                                 android:textSize="20sp" />
 
@@ -85,6 +87,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
+                                android:textStyle="bold"
                                 android:textColor="@android:color/black"
                                 android:textSize="18sp" />
 

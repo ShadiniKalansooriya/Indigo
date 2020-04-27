@@ -40,11 +40,11 @@ public class VoucherItemListAdapter extends RecyclerView.Adapter<VoucherItemList
     }
 
     @Override
-    public VoucherItemListAdapter.MyViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
+    public MyViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
         final View itemView = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.activity_admin_voucher_list, viewGroup, false);
 
-        return new VoucherItemListAdapter.MyViewHolder(itemView);
+        return new MyViewHolder(itemView);
 
     }
 
@@ -52,7 +52,7 @@ public class VoucherItemListAdapter extends RecyclerView.Adapter<VoucherItemList
 
 
     @Override
-    public void onBindViewHolder(final VoucherItemListAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(final MyViewHolder holder, int position) {
         final Vouchers data = list.get(position);
 
         holder.available.setText(data.getVoucher_count());

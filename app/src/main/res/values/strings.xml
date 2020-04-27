@@ -155,6 +155,8 @@
         <item>Pants</item>
         <item>Denims</item>
     </string-array>
+    <string name="prod_list_admin">Products List</string>
+    <string name="vou_list_admin">Vouchers List</string>
 
 
 </resources>
