@@ -7,14 +7,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.indigoapp.R;
 import com.example.indigoapp.adapter.RecyclerViewAdapter;
 import com.example.indigoapp.databases.DbHelper;
@@ -22,6 +14,14 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import static com.example.indigoapp.views.Gallery.dbHelper;
 
@@ -76,7 +76,7 @@ public class RecyclerMasterActivity extends AppCompatActivity implements Navigat
     private ArrayList<String> mImageUrls = new ArrayList<>();
     private ArrayList<String> mImagePrice = new ArrayList<>();
 
-    private DbHelper dbHelperp;
+    public DbHelper dbHelperp;
 
 
     @Override

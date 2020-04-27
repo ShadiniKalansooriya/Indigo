@@ -9,7 +9,7 @@ public class UsersMaster {
 
     public static class Users implements BaseColumns {
         public static final String TABLE_USER =  "users";
-//
+        //
         //Columns of TABLE_USER
         // public static final String COL_USER_USER_ID = "UserID";
         //public static final String COL_USER_USERNAME = "UserName";
@@ -73,16 +73,16 @@ public class UsersMaster {
 //    }
 
     public static class ProductsItems implements BaseColumns{
-            public static String TABLE_NAME="productitems";
-            public static final String COLUMN_NAME_ID="id";
-            public static final String COLUMN_NAME_PRODUCT_NAME="name";
-            public static final String COLUMN_NAME_COUNT="count";
-            public static final String COLUMN_NAME_PRICE="price";
-            public static final String COLUMN_NAME_DESCRIPTION="description";
-            //public static final String COLUMN_NAME_PRODUCTIMAGE="image";
-            public static final String COLUMN_NAME_FOREIGNKEY="cid";
-            public static final String COLUMN_NAME_CATEGORY_NAME="cname";
-        }
+        public static String TABLE_NAME="productitems";
+        public static final String COLUMN_NAME_ID="id";
+        public static final String COLUMN_NAME_PRODUCT_NAME="name";
+        public static final String COLUMN_NAME_COUNT="count";
+        public static final String COLUMN_NAME_PRICE="price";
+        public static final String COLUMN_NAME_DESCRIPTION="description";
+        //public static final String COLUMN_NAME_PRODUCTIMAGE="image";
+        public static final String COLUMN_NAME_FOREIGNKEY="cid";
+        public static final String COLUMN_NAME_CATEGORY_NAME="cname";
+    }
 
     public static class Feedback implements BaseColumns{
         public static final String TABLE_NAME = "feedback";

@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteStatement;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.widget.EditText;
 
 import com.example.indigoapp.model.Products;
@@ -44,7 +45,22 @@ public class DbHelper extends SQLiteOpenHelper {
                         UsersMaster.Users.COL_USER_ADDRESS + " TEXT," +
                         UsersMaster.Users.COL_USER_GENDER + " TEXT," +
                         UsersMaster.Users.COL_USER_TYPE + " TEXT," +
+                        UsersMaster.Users.COL_USER_PROPIC + " LONGBLOB," +
                         UsersMaster.Users.COL_USER_CURRENT + " TEXT)";
+
+
+        System.out.println("User table"+SQL_CREATE_ENTRIES);
+
+        String sql = "CREATE TABLE " + UsersMaster.Gallery.GALLERY + " (" +
+                UsersMaster.Gallery.COLUMN_GALLERY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+                UsersMaster.Gallery.COLUMN_GALLERY_EMAIL + " TEXT," +
+                UsersMaster.Gallery.COLUMN_GALLERY_HASHTAG + " TEXT," +
+                UsersMaster.Gallery.COLUMN_GALLERY_IMAGE + " LONGBLOB)";
+//                        UsersMaster.Gallery.COLUMN_GALLERY_CURRENT + " TEXT)";
+//                " FOREIGN KEY (" + UsersMaster.Gallery.COLUMN_GALLERY_EMAIL + ") REFERENCES " + UsersMaster.Users.TABLE_USER +"("+ UsersMaster.Users.COL_USER_EMAIL+"));";
+
+
+        System.out.println("Gallery Table" +sql);
 
 //        String SQL_CREATE_GALLERY =
 //                "CREATE TABLE "+ UsersMaster.Gallery.GALLERY + "(" +
@@ -53,10 +69,10 @@ public class DbHelper extends SQLiteOpenHelper {
 
 
         String PAYMENT_DETAILS_ENTRIES ="CREATE TABLE"+ UsersMaster.Payment.TABLE_NAME +"(" +
-             UsersMaster.Payment.COL_USER_NAME + "TEXT," +
-             UsersMaster.Payment.COL_USER_EMAIL + "TEXT," +
+                UsersMaster.Payment.COL_USER_NAME + "TEXT," +
+                UsersMaster.Payment.COL_USER_EMAIL + "TEXT," +
                 UsersMaster.Payment.COLUMN_USER_AMOUNT + "TEXT," +
-             UsersMaster.Payment.COL_USER_ADDRESS  + "TEXT," +
+                UsersMaster.Payment.COL_USER_ADDRESS  + "TEXT," +
 
                 " FOREIGN KEY (" + UsersMaster.Payment.COL_USER_NAME + ") REFERENCES " + UsersMaster.Payment.TABLE_NAME +
                 " ON DELETE CASCADE ON UPDATE CASCADE )";
@@ -93,10 +109,12 @@ public class DbHelper extends SQLiteOpenHelper {
                 UsersMaster.Vouchers.COLUMN_NAME_ID +") ON DELETE CASCADE ON UPDATE CASCADE)";
 
         sqLiteDatabase.execSQL(SQL_CREATE_ENTRIES);
-        sqLiteDatabase.execSQL(PAYMENT_DETAILS_ENTRIES);
-        sqLiteDatabase.execSQL(CUSTOMER_CART_CREATES_ENTRIES);
-        sqLiteDatabase.execSQL(ADMIN_PRODUCT_DETAILS_ENTRIES);
-        sqLiteDatabase.execSQL(ADMIN_VOUCHER_DETAILS_ENTRIES);
+//        sqLiteDatabase.execSQL(PAYMENT_DETAILS_ENTRIES);
+//        sqLiteDatabase.execSQL(CUSTOMER_CART_CREATES_ENTRIES);
+//        sqLiteDatabase.execSQL(ADMIN_PRODUCT_DETAILS_ENTRIES);
+//        sqLiteDatabase.execSQL(ADMIN_VOUCHER_DETAILS_ENTRIES);
+        sqLiteDatabase.execSQL(sql);
+
 
 
         String SQL_CREATE_FEED_ENTRIES =
@@ -129,7 +147,7 @@ public class DbHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void addUser(String userName, String email, String password, String mobile, String address, String gender, String type) {
+    public void addUser(String userName, String email, String password, String mobile, String address, String gender, String type, byte[]propic) {
 
         SQLiteDatabase db = getWritableDatabase();
 
@@ -143,6 +161,7 @@ public class DbHelper extends SQLiteOpenHelper {
         values.put(UsersMaster.Users.COL_USER_ADDRESS, address);
         values.put(UsersMaster.Users.COL_USER_GENDER, gender);
         values.put(UsersMaster.Users.COL_USER_TYPE, type);
+        values.put(UsersMaster.Users.COL_USER_PROPIC,propic);
         values.put(UsersMaster.Users.COL_USER_CURRENT, "FALSE");
 
         long newRowId = db.insert(UsersMaster.Users.TABLE_USER, null, values);
@@ -576,34 +595,34 @@ public class DbHelper extends SQLiteOpenHelper {
 
 
 
-        public String Name() {
-            String[] projection = {
-                    UsersMaster.UserCart.CART_NAME
-            };
-            SQLiteDatabase db = getWritableDatabase();
+    public String Name() {
+        String[] projection = {
+                UsersMaster.UserCart.CART_NAME
+        };
+        SQLiteDatabase db = getWritableDatabase();
 
 
-            String selection = UsersMaster.Users.COL_USER_CURRENT + " LIKE ?";
-            String[] selectionArgs = {"TRUE"};
+        String selection = UsersMaster.Users.COL_USER_CURRENT + " LIKE ?";
+        String[] selectionArgs = {"TRUE"};
 
 
-            Cursor cursor = db.query(UsersMaster.Users.TABLE_USER,
-                    projection,
-                    selection,
-                    selectionArgs,
-                    null, null, null);
-            String currentUsername;
+        Cursor cursor = db.query(UsersMaster.Users.TABLE_USER,
+                projection,
+                selection,
+                selectionArgs,
+                null, null, null);
+        String currentUsername;
 
-            if (cursor.moveToFirst()) {
-                do {
-                    currentUsername = cursor.getString(cursor.getColumnIndex(UsersMaster.UserCart.CART_NAME));
-                } while (cursor.moveToNext());
-            } else {
-                currentUsername = "321";
-            }
-            cursor.close();
-            return currentUsername;
+        if (cursor.moveToFirst()) {
+            do {
+                currentUsername = cursor.getString(cursor.getColumnIndex(UsersMaster.UserCart.CART_NAME));
+            } while (cursor.moveToNext());
+        } else {
+            currentUsername = "321";
         }
+        cursor.close();
+        return currentUsername;
+    }
 
 
 
@@ -983,7 +1002,7 @@ public class DbHelper extends SQLiteOpenHelper {
     public void updateGallery(String email, String hashtag, byte[] image, int id) {
         SQLiteDatabase database = getWritableDatabase();
 
-        String sql = "UPDATE GALLERY SET name = ?, price = ?, image = ? WHERE id = ?";
+        String sql = "UPDATE GALLERY SET email = ?, hashtag = ?, image = ? WHERE id = ?";
         SQLiteStatement statement = database.compileStatement(sql);
 
         statement.bindString(1, email);
@@ -1019,5 +1038,55 @@ public class DbHelper extends SQLiteOpenHelper {
 
     private class Numb {
     }
+
+    public  Bitmap getProPic() {
+
+
+        String[] projection = {
+                UsersMaster.Users.COL_USER_PROPIC
+        };
+        SQLiteDatabase db = getWritableDatabase();
+
+
+        String selection = UsersMaster.Users.COL_USER_CURRENT + " LIKE ?";
+        String[] selectionArgs = {"TRUE"};
+
+        Bitmap bitmap;
+
+        Cursor cursor = db.query(UsersMaster.Users.TABLE_USER,
+                projection,
+                selection,
+                selectionArgs,
+                null, null, null);
+        byte []currentUsername ;
+
+        if (cursor.moveToFirst()) {
+            do {
+                currentUsername = cursor.getBlob(cursor.getColumnIndex(UsersMaster.Users.COL_USER_PROPIC));
+                // bitmap = BitmapFactory.decodeByteArray(currentUsername,0,currentUsername.length);
+            } while (cursor.moveToNext());
+        } else {
+            return null;
+        }
+        cursor.close();
+        return  BitmapFactory.decodeByteArray(currentUsername, 0, currentUsername.length);
+
+
+    }
+
+
+    public  void changeProPic(byte[] propic){
+        SQLiteDatabase db = getWritableDatabase();
+
+
+        ContentValues values = new ContentValues();
+        values.put(UsersMaster.Users.COL_USER_PROPIC, propic);
+
+        String selection = UsersMaster.Users.COL_USER_CURRENT + " LIKE ?";
+        String[] selectionArgs = {"TRUE"};
+        db.update(UsersMaster.Users.TABLE_USER, values, selection, selectionArgs);
+    }
+
+
 }
 

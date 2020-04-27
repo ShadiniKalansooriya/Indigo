@@ -191,60 +191,60 @@ public class GalleryView extends AppCompatActivity implements NavigationView.OnN
 
 
     }
-        ImageView imageViewimg;
+    ImageView imageViewimg;
 
-        private void showDialogUpdate(Activity activity, final int position){
+    private void showDialogUpdate(Activity activity, final int position){
 
-            final Dialog dialog = new Dialog(activity);
-            dialog.setContentView(R.layout.update_gallery_image);
-            dialog.setTitle("Update");
+        final Dialog dialog = new Dialog(activity);
+        dialog.setContentView(R.layout.update_gallery_image);
+        dialog.setTitle("Update");
 
-            imageViewimg = (ImageView) dialog.findViewById(R.id.imageViewimg);
-           final EditText editTextEmail = (EditText) dialog.findViewById(R.id.editTextEmail);
+        imageViewimg = (ImageView) dialog.findViewById(R.id.imageViewimg);
+        final EditText editTextEmail = (EditText) dialog.findViewById(R.id.editTextEmail);
 
 //            editTextEmail.setText(dbHelper.getEmail());
-            final EditText editTextHashtag = (EditText) dialog.findViewById(R.id.editTextHashtag);
-            Button btnUpdate = (Button) dialog.findViewById(R.id.buttonUpdate);
+        final EditText editTextHashtag = (EditText) dialog.findViewById(R.id.editTextHashtag);
+        Button btnUpdate = (Button) dialog.findViewById(R.id.buttonUpdate);
 
-            // set width for dialog
-            int width = (int) (activity.getResources().getDisplayMetrics().widthPixels * 0.95);
-            // set height for dialog
-            int height = (int) (activity.getResources().getDisplayMetrics().heightPixels * 0.7);
-            dialog.getWindow().setLayout(width, height);
-            dialog.show();
+        // set width for dialog
+        int width = (int) (activity.getResources().getDisplayMetrics().widthPixels * 0.95);
+        // set height for dialog
+        int height = (int) (activity.getResources().getDisplayMetrics().heightPixels * 0.7);
+        dialog.getWindow().setLayout(width, height);
+        dialog.show();
 
-            imageViewimg.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    // request photo library
-                    ActivityCompat.requestPermissions(
-                            GalleryView.this,
-                            new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
-                            888
+        imageViewimg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // request photo library
+                ActivityCompat.requestPermissions(
+                        GalleryView.this,
+                        new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+                        888
+                );
+            }
+        });
+
+        btnUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    com.example.indigoapp.views.Gallery.dbHelper.updateGallery(
+                            editTextEmail.getText().toString().trim(),
+                            editTextHashtag.getText().toString().trim(),
+                            com.example.indigoapp.views.Gallery.imageViewToByte(imageViewimg),
+                            position
                     );
+                    dialog.dismiss();
+                    Toast.makeText(getApplicationContext(), "Update successfully!!!",Toast.LENGTH_SHORT).show();
                 }
-            });
-
-            btnUpdate.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    try {
-                        com.example.indigoapp.views.Gallery.dbHelper.updateGallery(
-                                editTextEmail.getText().toString().trim(),
-                                editTextHashtag.getText().toString().trim(),
-                                com.example.indigoapp.views.Gallery.imageViewToByte(imageViewimg),
-                                position
-                        );
-                        dialog.dismiss();
-                        Toast.makeText(getApplicationContext(), "Update successfully!!!",Toast.LENGTH_SHORT).show();
-                    }
-                    catch (Exception error) {
-                        Log.e("Update error", error.getMessage());
-                    }
-                    updateGalleryList();
+                catch (Exception error) {
+                    Log.e("Update error", error.getMessage());
                 }
-            });
-        }
+                updateGalleryList();
+            }
+        });
+    }
 
     private void showDialogDelete(final int idGalley){
         final AlertDialog.Builder dialogDelete = new AlertDialog.Builder(GalleryView.this);
