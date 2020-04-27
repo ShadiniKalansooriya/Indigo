@@ -47,6 +47,7 @@ public class ProductsItemListAdapter extends RecyclerView.Adapter<ProductsItemLi
                 .inflate(R.layout.activity_admin_products_list, viewGroup, false);
 
         return new MyViewHolder(itemView);
+
     }
 
 
@@ -59,24 +60,7 @@ public class ProductsItemListAdapter extends RecyclerView.Adapter<ProductsItemLi
         holder.category.setText(data.getCatName());
         holder.price.setText(data.getProduct_price());
 
-        /*holder.layout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show();
-
-                if(holder.selected.isChecked()){
-                    //Toast.makeText(context, "Unchecked", Toast.LENGTH_SHORT).show();
-                    holder.selected.setChecked(false);
-                    data.setChkStatus(false);
-                }else{
-                    //Toast.makeText(context, "Checked", Toast.LENGTH_SHORT).show();
-                    holder.selected.setChecked(true);
-                    data.setChkStatus(true);
-                }
-            }
-        });*/
     }
-
     @Override
     public int getItemCount() {
         return list.size();

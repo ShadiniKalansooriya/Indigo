@@ -3,6 +3,7 @@ package com.example.indigoapp.views;
 import android.app.AlertDialog;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,31 +13,37 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.indigoapp.R;
-import com.example.indigoapp.adapter.ProductsAdapter;
+import com.example.indigoapp.adapter.ProductsItemListAdapter;
 import com.example.indigoapp.databases.DbHelper;
 import com.example.indigoapp.model.Products;
+import com.example.indigoapp.model.Vouchers;
 
 import java.util.ArrayList;
 
 public class AdminEditVoucher extends AppCompatActivity {
 
     private AlertDialog dialog;
-    private static final int REQUEST_CODE_GALLERY=2;
-    private boolean ExceptionFound=false;
-    private byte[] photo=null;
+    private static final int REQUEST_CODE_GALLERY = 2;
+    private boolean ExceptionFound = false;
+    private byte[] photo = null;
     private EditText vouPrice, vouQty, searchVou;
-    private Button vouUpdateBtn,vouDelBtn, vouSearBtn;
+    private Button vouUpdateBtn, vouDelBtn, vouSearBtn;
     private DbHelper db;
     //private TextView admin_category_edit_heading;
     private RecyclerView recyclerView;
-    private ProductsAdapter itemsAdapter;
+    private ProductsItemListAdapter itemsAdapter;
     private ArrayList<Products> admin_items;
-    private Bitmap bp=null;
+    private Bitmap bp = null;
+
+    private String itemID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_edit_voucher);
+
+        db = new DbHelper(this);
+        db.Retrive_admin_product_details();
 
         vouPrice = (EditText) findViewById(R.id.admin_voucher_price);
         vouQty = (EditText) findViewById(R.id.admin_voucher_qty);
@@ -46,76 +53,67 @@ public class AdminEditVoucher extends AppCompatActivity {
         vouDelBtn = (Button) findViewById(R.id.admin_delete_voucher_btn);
 
 
+        //Search a voucher item
+        vouSearBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String item = searchVou.getText().toString();
+                if (!TextUtils.isEmpty(item)) {
+                    ArrayList<Vouchers> vouItem = db.Retrive_admin_search_voucher_details(item);
+                    if (vouItem.size() > 0) {
+                        itemID = vouItem.get(0).getVoucher_id();
+                        vouPrice.setText(vouItem.get(0).getVoucher_price());
+                        vouQty.setText(vouItem.get(0).getVoucher_count());
+
+                    } else {
+                        Toast.makeText(AdminEditVoucher.this, "Item not found", Toast.LENGTH_SHORT).show();
+                    }
+
+                } else {
+                    searchVou.setError("Enter valid voucher price");
+                }
+
+            }
+        });
+
+        //Update a voucher item
         vouUpdateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(AdminEditVoucher.this,"Product!",Toast.LENGTH_SHORT).show();
-                //Update_Admin_voucher_Details();
+                String item = searchVou.getText().toString();
+                if (!TextUtils.isEmpty(item)) {
+                    String productQty = vouQty.getText().toString().trim();
+                    String productPrice = vouPrice.getText().toString().trim();
+                    //String prodUrl = prodImageURL.getText().toString().trim();
+
+                    db.Admin_update_voucher_info(itemID, productPrice, productQty);
+                    //Admin_update_product_info(String id,String name,String des,String price,byte[]image,String count, String cname){
+
+                    Toast.makeText(AdminEditVoucher.this, "One item updated", Toast.LENGTH_SHORT).show();
+                } else {
+                    searchVou.setError("Enter valid voucher price");
+                }
             }
         });
 
-        db=new DbHelper(this);
 
+        //Delete a voucher item
         vouDelBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //delete_admin_voucher();
-
+                //delete_admin_product();
+                db.Admin_delete_current_voucher(itemID);
+                Toast.makeText(AdminEditVoucher.this, "One record deleted", Toast.LENGTH_SHORT).show();
+                clear();
             }
         });
-
-        //initializeComponents();
-
-    }
-
-    /*private void initializeComponents(){
-        vouPrice.setText(Vouchers.getVoucher_price());
-        vouQty.setText(Vouchers.getVoucher_count());
-
     }
 
 
-    private void delete_admin_voucher(){
-
-
-        AlertDialog.Builder builder=new AlertDialog.Builder(this);
-        builder.setTitle("Add new Vouchers").setMessage("Are you sure want to delete this Item?").setPositiveButton("ok", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                boolean isDeleted=db.//Admin_delete_current_product(Vouchers.getVoucher_id());
-                if(isDeleted){
-                    Toast.makeText(AdminEditVoucher.this,"Voucher deleted Sucessfully!!",Toast.LENGTH_SHORT).show();
-                    Intent intent=new Intent(AdminEditVoucher.this,AdminEditVoucher.class);
-                    startActivity(intent);
-                }
-                else{
-                    Toast.makeText(AdminEditVoucher.this,"Error Occur Cannot Delete",Toast.LENGTH_SHORT).show();
-                }
-            }
-
-        }).setNegativeButton("cancel", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                Toast.makeText(AdminEditVoucher.this, "Delete Cancel..", Toast.LENGTH_SHORT).show();
-            }
-        }).setCancelable(false).show();
-
-
-
+    //Clear voucher item fields
+    private void clear() {
+        vouPrice.setText("");
+        vouQty.setText("");
     }
 
-    private void Update_Admin_voucher_Details() {
-
-
-        if (vouPrice.getText().toString().isEmpty()) {
-            Toast.makeText(AdminEditVoucher.this, "Please Enter product Name..", Toast.LENGTH_SHORT).show();
-        } else{
-            if (vouQty.getText().toString().isEmpty()) {
-                Toast.makeText(AdminEditVoucher.this, "Please Enter voucher quantity..", Toast.LENGTH_SHORT).show();
-            }  else {
-
-
-            }
-        }
-    }*/
 }

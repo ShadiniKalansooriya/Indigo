@@ -51,8 +51,9 @@ public class UsersMaster {
         public static String TABLE_NAME = "payment";
         public static final String COL_USER_NAME = "Name";
         public static final String COL_USER_EMAIL = "Email";
-        public static final String COL_USER_ADDRESS = "Address";
         public static final String COLUMN_USER_AMOUNT = "Sub total";
+        public static final String COL_USER_ADDRESS = "Address";
+
     }
 
     public static class UserCart implements BaseColumns{
@@ -63,13 +64,13 @@ public class UsersMaster {
 
     }
 
-    public static class Products implements BaseColumns{
-        public static String TABLE_NAME="products";
-        public static final String COLUMN_NAME_ID="id";
-        public static final String COLUMN_NAME_TITLE = "title";
-        public static final String COLUMN_NAME_IMAGE = "image";
-        public static final String COLUMN_NAME_PRICE = "price";
-    }
+//    public static class Products implements BaseColumns{
+//        public static String TABLE_NAME="products";
+//        public static final String COLUMN_NAME_ID="id";
+//        public static final String COLUMN_NAME_TITLE = "title";
+//        public static final String COLUMN_NAME_IMAGE = "image";
+//        public static final String COLUMN_NAME_PRICE = "price";
+//    }
 
     public static class ProductsItems implements BaseColumns{
             public static String TABLE_NAME="productitems";
@@ -78,7 +79,7 @@ public class UsersMaster {
             public static final String COLUMN_NAME_COUNT="count";
             public static final String COLUMN_NAME_PRICE="price";
             public static final String COLUMN_NAME_DESCRIPTION="description";
-            public static final String COLUMN_NAME_PRODUCTIMAGE="image";
+            //public static final String COLUMN_NAME_PRODUCTIMAGE="image";
             public static final String COLUMN_NAME_FOREIGNKEY="cid";
             public static final String COLUMN_NAME_CATEGORY_NAME="cname";
         }

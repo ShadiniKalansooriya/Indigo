@@ -10,10 +10,10 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.indigoapp.R;
 import com.example.indigoapp.databases.DbHelper;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 public abstract class Payment extends  AppCompatActivity implements View.OnClickListener {
 
@@ -21,7 +21,7 @@ public abstract class Payment extends  AppCompatActivity implements View.OnClick
     EditText Uname;
     EditText editTextEmail;
     EditText lctn;
-    EditText subto;
+    EditText sub;
     TextView address;
     RadioButton paymentM;
     Button btnS, btnS1, btnU;
@@ -34,7 +34,8 @@ public abstract class Payment extends  AppCompatActivity implements View.OnClick
     private TextView text;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     private DbHelper dbHelper;
-
+    DbHelper dbHelperp;
+    private View editText6;
 
 
     @Override
@@ -46,15 +47,17 @@ public abstract class Payment extends  AppCompatActivity implements View.OnClick
         et1 = findViewById(R.id.et1);
         et2 = findViewById(R.id.et2);
         et3 = findViewById(R.id.et3);
+        editText6= findViewById(R.id.editText6);
 
 
         submit = (Button) findViewById(R.id.btnS);
         Uname = (EditText) findViewById(R.id.et1);
         editTextEmail = (EditText) findViewById(R.id.et2);
-        subto = (EditText) findViewById(R.id.et3);
-        address = (TextView) findViewById(R.id.address);
+        sub = (EditText) findViewById(R.id.et3);
+        address = (TextView) findViewById(R.id.editText6);
         paymentM = (RadioButton) findViewById(R.id.radioButton1);
         paymentM = (RadioButton) findViewById(R.id.radioButton2);
+        buttonClickActivity();
 
 
         btnS = (Button) findViewById(R.id.btnS);
@@ -66,6 +69,21 @@ public abstract class Payment extends  AppCompatActivity implements View.OnClick
 
 
         rg = (RadioGroup) findViewById(R.id.radioGroup4);
+    }
+
+    private void buttonClickActivity() {
+        btnS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Customer_insert_payment_details();
+//                Intent AddpurchaseIntent = new Intent(AppCompatActivity.this, Payment.class);
+//                startActivity(AddpurchaseIntent);
+//                Toast.makeText(getApplicationContext(), "Successfully Added Cart Details!", Toast.LENGTH_LONG).show();
+
+            }
+        });
+
+
     }
 
     public void rbclick(View v) {
@@ -108,16 +126,20 @@ public abstract class Payment extends  AppCompatActivity implements View.OnClick
 
 
         }
+
         }
 
         private void Customer_insert_payment_details() {
 
         String Username = Uname.getText().toString().trim();
         String email = editTextEmail.getText().toString().trim();
-        String Total = subto.getText().toString().trim();
+        String Total = sub.getText().toString().trim();
+//        String address = editText6.getText().toString().trim();
+            String type = "PaymentList";
 
 
         dbHelper.Customer_insert_payment_details(Username,email,Total);
+            Toast.makeText(getApplicationContext(), "Successfully Added Payment List!", Toast.LENGTH_LONG).show();
 
 
     }

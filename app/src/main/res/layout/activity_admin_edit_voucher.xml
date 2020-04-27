@@ -6,10 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".views.AdminEditVoucher">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+
     <ImageButton
         android:id="@+id/imageButton"
         android:layout_width="210dp"
         android:layout_height="109dp"
+        android:layout_marginStart="90dp"
         android:background="@drawable/logo"
         android:contentDescription="@string/logo_name"
         app:layout_constraintBottom_toTopOf="@+id/textView7"
@@ -40,46 +51,97 @@
         app:layout_constraintTop_toBottomOf="@+id/imageButton"
         app:layout_constraintVertical_bias="0.177" />
 
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/input_layer1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.397">
-
-
-        <EditText
-            android:id="@+id/admin_voucher_price"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="55dp"
-            android:layout_marginTop="150dp"
-            android:layout_marginRight="55dp"
-            android:hint="@string/voucher_price"
-            android:inputType="text"
-            android:padding="10dp"
-            android:textColor="@color/colorPrimaryDark"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
 
-            android:textColorHint="@color/colorPrimaryDark" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <EditText
+                android:id="@+id/admin_search_voucher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="@string/search_vou"
+                app:layout_constraintBottom_toTopOf="@+id/input_layer1"
+                app:layout_constraintEnd_toStartOf="@+id/admin_search_voucher_btn"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView7"
+                app:layout_constraintVertical_bias="0.411" />
+        </LinearLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/admin_search_voucher_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:text="@string/search_btn"
+                app:layout_constraintBottom_toTopOf="@+id/input_layer1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/admin_search_voucher"
+                app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        </LinearLayout>
+        </LinearLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_layer1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.374">
+
+
+                <EditText
+                    android:id="@+id/admin_voucher_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="55dp"
+                    android:layout_marginTop="150dp"
+                    android:layout_marginRight="55dp"
+                    android:hint="@string/voucher_price"
+                    android:inputType="text"
+                    android:padding="10dp"
+                    android:textColor="@color/colorPrimaryDark"
+
+                    android:textColorHint="@color/colorPrimaryDark" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/input_layer2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/input_layer1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="338dp">
+        app:layout_constraintVertical_bias="0.455">
 
         <EditText
             android:id="@+id/admin_voucher_qty"
@@ -96,37 +158,61 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/admin_search_voucher"
-        android:layout_width="wrap_content"
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="@string/search_vou"
-        app:layout_constraintBottom_toTopOf="@+id/input_layer1"
-        app:layout_constraintEnd_toStartOf="@+id/admin_search_voucher_btn"
+        android:text="@string/choose_vou"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7"
-        app:layout_constraintVertical_bias="0.411" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/BlackHeader"/>
+
+    <ImageView
+        android:id="@+id/productImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/upload"
+        tools:layout_editor_absoluteX="0dp"
+        android:layout_marginTop="10dp"
+        tools:layout_editor_absoluteY="270dp" />
 
     <Button
-        android:id="@+id/admin_search_voucher_btn"
-        android:layout_width="wrap_content"
+        android:id="@+id/editVouImage"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/search_btn"
-        app:layout_constraintBottom_toTopOf="@+id/input_layer1"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="80dp"
+        android:background="@color/lightGray"
+        android:padding="4dp"
+        android:text="@string/choose_image"
+        android:textColor="@color/lightBlack"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/admin_search_voucher"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintHorizontal_bias="0.375"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.774" />
 
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
     <Button
         android:id="@+id/admin_delete_voucher_btn"
         android:layout_width="wrap_content"
@@ -139,22 +225,33 @@
         app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toEndOf="@+id/admin_update_voucher_btn"
         app:layout_constraintStart_toStartOf="parent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="90dp"
+            android:orientation="vertical">
 
     <Button
         android:id="@+id/admin_update_voucher_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
         android:text="@string/update"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/admin_delete_voucher_btn"
-        app:layout_constraintHorizontal_bias="0.283"
+        app:layout_constraintHorizontal_bias="0.542"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/input_layer2"
-        app:layout_constraintVertical_bias="0.209" />
+        app:layout_constraintVertical_bias="0.887" />
+
+        </LinearLayout>
+        </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

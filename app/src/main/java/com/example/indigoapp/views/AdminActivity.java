@@ -13,7 +13,7 @@ import com.example.indigoapp.R;
 @SuppressLint("Registered")
 public class AdminActivity extends AppCompatActivity {
 
-    Button addProd, editProd, addPromo, mngGallery, addVoucher, editVoucher;
+    Button addProd, editProd, addPromo, mngGallery, addVoucher, editVoucher, viewProd, viewVou;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +26,8 @@ public class AdminActivity extends AppCompatActivity {
         mngGallery = (Button) findViewById(R.id.mng_gal_admin_btn);
         addVoucher = (Button) findViewById(R.id.add_voucher_admin_btn);
         editVoucher = (Button) findViewById(R.id.edit_voucher_admin_btn);
+        viewProd = (Button) findViewById(R.id.view_prod);
+        viewVou = (Button) findViewById(R.id.view_vou);
         buttonClickActivity();
     }
 
@@ -59,6 +61,22 @@ public class AdminActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intentEditVou = new Intent(getApplicationContext(), AdminEditVoucher.class);
+                startActivity(intentEditVou);
+            }
+        });
+
+        viewProd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentEditVou = new Intent(getApplicationContext(), AdminProductsList.class);
+                startActivity(intentEditVou);
+            }
+        });
+
+        viewVou.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentEditVou = new Intent(getApplicationContext(), AdminVoucherItemList.class);
                 startActivity(intentEditVou);
             }
         });

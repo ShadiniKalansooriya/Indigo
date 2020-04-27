@@ -7,7 +7,7 @@
     <string name="pant_button">Pants</string>
     <string name="dress_button">Dresses</string>
     <string name="saving_button">Cyber Savings</string>
-    <string name="voucher_button">Vouchers</string>
+    <string name="voucher_button">Gift Voucher</string>
     <string name="category_heading">Categories</string>
     <string name="hint_text">This is a hint</string>
     <string name="top1_name">Long Sleeve White and Blue Linen Top</string>
@@ -107,7 +107,7 @@
     <string name="Namecaps">NAME</string>
     <string name="update">UPDATE</string>
     <string name="DeleteAccount">DELETE ACCOUNT</string>
-    <string name="add_products">Add Products</string>
+    <string name="add_products">Add Product</string>
     <string name="add_promo">Add Promotions</string>
     <string name="mng_gallery">Manage Gallery</string>
     <string name="admin_title">Administration</string>
@@ -143,6 +143,17 @@
         <!--        <item>Patient</item>-->
         <item>RegisteredUser</item>
         <item>Admin</item>
+    </string-array>
+    <string name="view_prod">View Products List</string>
+    <string name="view_vouc">View Voucher List</string>
+    <string name="sel_pro_image">Choose your Products Image</string>
+    <string name="choose_vou">Choose Voucher Image</string>
+
+    <string-array name="category">
+        <item>Tops</item>
+        <item>Dresses</item>
+        <item>Pants</item>
+        <item>Denims</item>
     </string-array>
 
 

@@ -35,7 +35,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="ExtraText">
-        <activity android:name=".views.ChangeProfilePic"></activity>
+        <activity android:name=".views.AdminVoucherItemList"/>
+        <activity android:name=".views.AdminVoucherList" />
+        <activity android:name=".views.ChangeProfilePic" />
         <activity android:name=".views.PriceConform" />
         <activity android:name=".views.PayemtTotal" />
         <activity android:name=".views.AdminEditVoucher" />
@@ -68,7 +70,7 @@
         <activity android:name=".views.MyAccount" />
         <activity android:name=".views.RegisterDetailsActivity" />
         <activity android:name=".views.AccountOverview" />
-        <activity android:name=".views.ProductsDisplay" />
+        <activity android:name=".views.ProductsDisplay"/>
         <activity android:name=".views.ProductsDetails" />
         <activity android:name=".views.Savings_display" />
         <activity android:name=".views.Denims_display" />

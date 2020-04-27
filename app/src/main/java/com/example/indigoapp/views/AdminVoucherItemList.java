@@ -7,12 +7,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.indigoapp.R;
-import com.example.indigoapp.adapter.ProductsItemListAdapter;
+import com.example.indigoapp.adapter.VoucherItemListAdapter;
 import com.example.indigoapp.databases.DbHelper;
 
 import java.util.ArrayList;
 
-public class AdminProductsList extends AppCompatActivity {
+public class AdminVoucherItemList extends AppCompatActivity {
 
     private RecyclerView recyler;
     private DbHelper dbHelperp;
@@ -20,17 +20,16 @@ public class AdminProductsList extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin_products_item_list);
+        setContentView(R.layout.activity_admin_voucher_item_list);
 
-        recyler = findViewById(R.id.recycler_item_list);
+        recyler = findViewById(R.id.recycler_voucher_list);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyler.setLayoutManager(layoutManager);
 
         dbHelperp = new DbHelper(this);
-        ArrayList data = dbHelperp.Retrive_admin_product_details();
-        //ArrayList data = dbHelperp.Retrive_selected_product_details("Denims");
+        ArrayList data = dbHelperp.Retrive_admin_voucher_details();
 
-        ProductsItemListAdapter mAdapter = new ProductsItemListAdapter(this,data);
+        VoucherItemListAdapter mAdapter = new VoucherItemListAdapter(this,data);
         recyler.setAdapter(mAdapter);
     }
 }

@@ -7,9 +7,6 @@
     tools:context=".views.PayemtTotal">
 
 
-
-
-
     <RelativeLayout
         android:id="@+id/User_relative_layout1"
         android:layout_width="match_parent"
@@ -19,7 +16,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.056">
+        app:layout_constraintVertical_bias="0.002">
 
         <TextView
             android:id="@+id/total_amount_display"
@@ -28,10 +25,11 @@
             android:layout_alignParentBottom="true"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="23dp"
+            android:fontFamily="@font/concert_one"
             android:gravity="center"
             android:text="Total Price"
             android:textColor="@android:color/white"
-            android:textSize="20sp" />
+            android:textSize="25sp" />
 
 
     </RelativeLayout>
@@ -44,7 +42,8 @@
         android:background="@color/indigo23"
         android:text="paymet"
         android:textColor="@android:color/white"
-        android:textSize="18dp"
+        android:textSize="20dp"
+        android:fontFamily="@font/concert_one"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
