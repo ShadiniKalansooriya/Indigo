@@ -97,10 +97,6 @@ public class RecyclerMasterActivity extends AppCompatActivity implements Navigat
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(this,data);
         recyclerView.setAdapter(adapter);
 
-
-
-
-
         /*=============Hooks================== */
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         /*===================Hooks======================*/
