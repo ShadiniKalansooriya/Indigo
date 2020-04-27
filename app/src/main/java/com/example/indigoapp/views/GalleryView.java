@@ -65,6 +65,8 @@ public class GalleryView extends AppCompatActivity implements NavigationView.OnN
         public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
             switch (menuItem.getItemId()) {
                 case R.id.nav_b_home:
+                    Intent intenthome =new Intent(GalleryView.this,HomePage.class);
+                    startActivity(intenthome);
                     break;
 
                 case R.id.nav_b_shoppingbag:
@@ -354,6 +356,8 @@ public class GalleryView extends AppCompatActivity implements NavigationView.OnN
 
         switch (menuItem.getItemId()){
             case R.id.nav_home:
+                Intent intenthome =new Intent(GalleryView.this,HomePage.class);
+                startActivity(intenthome);
                 break;
 
             case R.id.nav_shoppingBag:

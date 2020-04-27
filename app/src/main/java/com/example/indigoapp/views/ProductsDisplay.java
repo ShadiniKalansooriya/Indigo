@@ -8,15 +8,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.indigoapp.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-
-import com.example.indigoapp.R;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationView;
 
 import static com.example.indigoapp.views.Gallery.dbHelper;
 
@@ -36,6 +36,8 @@ public class ProductsDisplay extends AppCompatActivity implements NavigationView
         public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
             switch (menuItem.getItemId()) {
                 case R.id.nav_b_home:
+                    Intent intenthome =new Intent(ProductsDisplay.this,HomePage.class);
+                    startActivity(intenthome);
                     break;
 
                 case R.id.nav_b_shoppingbag:
@@ -184,6 +186,8 @@ public class ProductsDisplay extends AppCompatActivity implements NavigationView
 
         switch (menuItem.getItemId()){
             case R.id.nav_home:
+                Intent intenthome =new Intent(ProductsDisplay.this,HomePage.class);
+                startActivity(intenthome);
                 break;
 
             case R.id.nav_shoppingBag:

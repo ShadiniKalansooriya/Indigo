@@ -49,6 +49,8 @@ public class AccountOverview extends AppCompatActivity implements NavigationView
         public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
             switch (menuItem.getItemId()) {
                 case R.id.nav_b_home:
+                    Intent intenthome =new Intent(AccountOverview.this,HomePage.class);
+                    startActivity(intenthome);
                     break;
 
                 case R.id.nav_b_shoppingbag:
@@ -216,7 +218,10 @@ public class AccountOverview extends AppCompatActivity implements NavigationView
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
         switch (menuItem.getItemId()){
+
             case R.id.nav_home:
+                Intent intenthome =new Intent(AccountOverview.this,HomePage.class);
+                startActivity(intenthome);
                 break;
 
             case R.id.nav_shoppingBag:
