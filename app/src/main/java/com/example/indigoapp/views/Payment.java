@@ -22,7 +22,7 @@ public abstract class Payment extends  AppCompatActivity implements View.OnClick
     EditText editTextEmail;
     EditText lctn;
     EditText sub;
-    TextView address;
+    EditText address;
     RadioButton paymentM;
     Button btnS, btnS1, btnU;
     EditText et1, et2, et3, et7, et8, et9;
@@ -47,14 +47,14 @@ public abstract class Payment extends  AppCompatActivity implements View.OnClick
         et1 = findViewById(R.id.et1);
         et2 = findViewById(R.id.et2);
         et3 = findViewById(R.id.et3);
-        editText6= findViewById(R.id.editText6);
+        address= findViewById(R.id.et6);
 
 
         submit = (Button) findViewById(R.id.btnS);
         Uname = (EditText) findViewById(R.id.et1);
         editTextEmail = (EditText) findViewById(R.id.et2);
         sub = (EditText) findViewById(R.id.et3);
-        address = (TextView) findViewById(R.id.editText6);
+        address = (EditText) findViewById(R.id.et6);
         paymentM = (RadioButton) findViewById(R.id.radioButton1);
         paymentM = (RadioButton) findViewById(R.id.radioButton2);
         buttonClickActivity();
@@ -76,9 +76,10 @@ public abstract class Payment extends  AppCompatActivity implements View.OnClick
             @Override
             public void onClick(View view) {
                 Customer_insert_payment_details();
-//                Intent AddpurchaseIntent = new Intent(AppCompatActivity.this, Payment.class);
-//                startActivity(AddpurchaseIntent);
-//                Toast.makeText(getApplicationContext(), "Successfully Added Cart Details!", Toast.LENGTH_LONG).show();
+                Intent AddpurchaseIntent;
+                AddpurchaseIntent = new Intent(Payment.this, Payment.class);
+                startActivity(AddpurchaseIntent);
+                Toast.makeText(getApplicationContext(), "Successfully Added Cart Details!", Toast.LENGTH_LONG).show();
 
             }
         });
@@ -116,8 +117,8 @@ public abstract class Payment extends  AppCompatActivity implements View.OnClick
                     Toast.makeText(Payment.this, "Please put valid email", Toast.LENGTH_LONG).show();
                 } else if (et1.getText().toString().isEmpty()) {
                     Toast.makeText(Payment.this, " Name is empty", Toast.LENGTH_LONG).show();
-                } else if (et2.getText().toString().isEmpty()) {
-                    Toast.makeText(Payment.this, "Email is empty", Toast.LENGTH_LONG).show();
+                } else if (address.getText().toString().isEmpty()) {
+                    Toast.makeText(Payment.this, "Address is empty", Toast.LENGTH_LONG).show();
                 } else if (et3.getText().toString().isEmpty()) {
                     Toast.makeText(Payment.this, "Total is empty", Toast.LENGTH_LONG).show();
                 } else {
@@ -134,11 +135,11 @@ public abstract class Payment extends  AppCompatActivity implements View.OnClick
         String Username = Uname.getText().toString().trim();
         String email = editTextEmail.getText().toString().trim();
         String Total = sub.getText().toString().trim();
-//        String address = editText6.getText().toString().trim();
+        String Address = address.getText().toString().trim();
             String type = "PaymentList";
 
 
-        dbHelper.Customer_insert_payment_details(Username,email,Total);
+        dbHelper.Customer_insert_payment_details(Username,email,Total,Address);
             Toast.makeText(getApplicationContext(), "Successfully Added Payment List!", Toast.LENGTH_LONG).show();
 
 
