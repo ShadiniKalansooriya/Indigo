@@ -470,7 +470,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
 
 
-    public void Customer_insert_payment_details(String username, String email, String total) {
+    public void Customer_insert_payment_details(String username, String email, String total, String Address) {
         SQLiteDatabase db = getWritableDatabase();
 
 
@@ -478,7 +478,7 @@ public class DbHelper extends SQLiteOpenHelper {
         values.put(UsersMaster.Payment.COL_USER_NAME,username);
         values.put(UsersMaster.Payment.COL_USER_EMAIL, email);
         values.put(UsersMaster.Payment.COLUMN_USER_AMOUNT, total);
-//        values.put(UsersMaster.Payment.COL_USER_ADDRESS, address);
+        values.put(UsersMaster.Payment.COL_USER_ADDRESS, Address);
         long newRowId = db.insert(UsersMaster.Payment.TABLE_NAME, null, values);
     }
 
