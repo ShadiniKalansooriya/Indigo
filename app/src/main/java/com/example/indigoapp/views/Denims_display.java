@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 import com.example.indigoapp.R;
+import com.example.indigoapp.databases.DbHelper;
 
 public class Denims_display extends AppCompatActivity {
 
@@ -17,6 +18,8 @@ public class Denims_display extends AppCompatActivity {
     ImageView productImage;
     ElegantNumberButton numberBtn;
     TextView productPrice, productName;
+    DbHelper dbHelperp;
+
 
 
     @SuppressLint("WrongViewCast")
@@ -25,18 +28,19 @@ public class Denims_display extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_denims_display);
 
-        addToCartBtn = (Button) findViewById(R.id.update_btn);
-        wishListBtn = (Button) findViewById(R.id.imageButton2);
-        removeCartBtn = (Button) findViewById(R.id.remove_cart_btn);
+        dbHelperp = new DbHelper(this);
+
+
         numberBtn = (ElegantNumberButton) findViewById(R.id.number_btn);
         productImage = (ImageView) findViewById(R.id.product_image);
         productPrice = (TextView) findViewById(R.id.product_price);
         productName = (TextView) findViewById(R.id.product_name);
-
+        addToCartBtn = (Button) findViewById(R.id.update_btn);
+        removeCartBtn = (Button) findViewById(R.id.remove_cart_btn);
+        wishListBtn = (Button) findViewById(R.id.imageButton2);
 
     }
-
-
+}
 
 //        addToCartBtn.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -46,49 +50,37 @@ public class Denims_display extends AppCompatActivity {
 //        });
 //        initialize_details();
 //    }
-//}
+
+
+//    private void insert_cart_details() {
+//        int total=Integer.(productPrice.getText().toString())*Integer.(numberBtn.getNumber().toString());
 //
-//private void addToCart(){
+//        Cart cart=new Cart(productName.getText().toString(),productPrice.getText().toString(),
+//                String.valueOf(total),numberBtn.getNumber().toString());
 //
-//        int total=Integer.parseInt(productPrice.getText().toString())*Integer.parseInt(numberBtn.getNumber());
-//        String productName = prodName.getText().toString().trim();
-//        String productQty = prodquatity.getText().toString().trim();
-//        String productDesc = prodDesc.getText().toString().trim();
-//        String productPrice = prodPrice.getText().toString().trim();
-//        String categoryName = catName.getText().toString().trim();
-//        String prodUrl = prodImageURL.getText().toString().trim();
-//        String type = "ProductList";
+//        boolean isInserted=dbHelperp.User_insert_cart_details(cart);
 //
-//        dbHelperp.addProduct(productName,productQty,productDesc,productPrice,prodUrl,categoryName);
-//        Toast.makeText(getApplicationContext(), "Successfully Added Product Details!", Toast.LENGTH_LONG).show();
-//        }
-//
-//    private void insert_cart_details(){
-//        int total=Integer.parseInt(productPrice.getText().toString())*Integer.parseInt(numberBtn.getNumber());
-//
-//
-//        boolean isInserted=db.User_insert_cart_details(cart);
-//
-//
-//        if(isInserted&&isAdd){
-//        Toast.makeText(Denims_display.this,"sucessfully inserted",Toast.LENGTH_SHORT).show();
+//        if(isInserted){
+//            Toast.makeText(Denims_display.this,"Sucessfully inserted",Toast.LENGTH_SHORT).show();
 //
 //        }
 //        else{
-//        Toast.makeText(Denims_display.this,"Error cannot insert!!",Toast.LENGTH_SHORT).show();
+//            Toast.makeText(Denims_display.this,"Error cannot insert!!",Toast.LENGTH_SHORT).show();
 //        }
 //
-//        }
+//    }
+//
 //    private void initialize_details() {
 //
-//        try {
-//            productImage.setImageBitmap(Prevelent.current_user_products.getBitmap());
-//            productPrice.setText(Prevelent.current_user_products.getProduct_price());
-//            productName.setText(Prevelent.current_user_products.getProduct_name());
-//        } catch (Exception e) {
-//            e.printStackTrace();
+//            //product_image.setImageBitmap(Prevelent.current_user_products.getBitmap());
+//            String proPrice = productPrice.getText().toString().trim();
+//            String proName = productName.getText().toString().trim();
+//
+//
+//            dbHelperp.initialize_details(proPrice,proName);
+//            Toast.makeText(getApplicationContext(), "Successfully Added Product Details!", Toast.LENGTH_LONG).show();
+//
 //        }
-    }
-
-
+//
+//    }
 

@@ -43,10 +43,16 @@
         <activity android:name=".views.PriceConform" />
         <activity android:name=".views.PayemtTotal" />
         <activity android:name=".views.AdminEditVoucher" />
-        <activity android:name=".views.AdminProductsList" />
+        <activity android:name=".views.AdminProductsList" >
+
+        </activity>
         <activity android:name=".views.AdminAddVoucher" />
-        <activity android:name=".views.AdminEditProducts" />
-        <activity android:name=".views.AdminAddProducts" />
+        <activity android:name=".views.AdminEditProducts" >
+
+        </activity>
+        <activity android:name=".views.AdminAddProducts" >
+
+        </activity>
         <activity android:name=".views.AdminActivity" >
 
         </activity>
@@ -66,7 +72,13 @@
         <!-- </intent-filter> -->
         <!-- </activity> -->
         <activity android:name=".views.HomePage" />
-        <activity android:name=".views.GalleryView" />
+        <activity android:name=".views.GalleryView" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".views.Gallery" />
         <activity android:name=".views.Wishlist" />
         <activity android:name=".views.Feedback" />
@@ -75,11 +87,7 @@
         <activity android:name=".views.RegisterDetailsActivity" />
         <activity android:name=".views.AccountOverview" />
         <activity android:name=".views.ProductsDisplay">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".views.ProductsDetails" />
         <activity android:name=".views.Denims_display" />

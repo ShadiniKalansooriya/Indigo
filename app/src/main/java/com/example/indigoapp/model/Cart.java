@@ -1,7 +1,5 @@
 package com.example.indigoapp.model;
 
-import android.graphics.Bitmap;
-
 public class Cart {
 
     private String id;
@@ -41,6 +39,14 @@ public class Cart {
 //           public String getProduct_id() {
 ////            return product_id;
 //    }
+
+    public String getCount() {
+        return count;
+    }
+
+    public void setCount(String count) {
+        this.count = count;
+    }
 
     public String getEmail() {
         return email;
