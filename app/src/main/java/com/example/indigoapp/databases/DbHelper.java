@@ -634,6 +634,20 @@ public class DbHelper extends SQLiteOpenHelper {
         return currentUsername;
     }
 
+    public void User_insert_price_details(String name, String price, String count) {
+        SQLiteDatabase db=getWritableDatabase();
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+
+        ContentValues values=new ContentValues();
+//        values.put( UsersMaster.PriceConform.COLUMN_NAME_ID,id);
+        values.put( UsersMaster.PriceConform.COLUMN_NAME_PRODUCT_NAME,name);
+        values.put(UsersMaster.PriceConform.COLUMN_NAME_PRICE,price);
+//        values.put(UsersMaster.PriceConform.COLUMN_NAME_COUNT,count);
+        long newRowId =db.insert(UsersMaster.PriceConform.PRICE_CONFORM_USER,null,values);
+    }
+
+
+
 
 
     public  void addfeed(String name,String email,String message,String report){
@@ -1040,6 +1054,7 @@ public class DbHelper extends SQLiteOpenHelper {
         SQLiteDatabase database = getReadableDatabase();
         return database.rawQuery(sql, null);
     }
+
 
 
 
