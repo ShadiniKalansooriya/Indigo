@@ -49,7 +49,7 @@ public class UsersMaster {
 
     public static class Payment implements BaseColumns {
         public static String TABLE_NAME = "payment";
-        public static final String COL_USER_NAME = "Name";
+        public static final String COL_USER_NAME = "Username";
         public static final String COL_USER_EMAIL = "Email";
         public static final String COLUMN_USER_AMOUNT = "Sub total";
         public static final String COL_USER_ADDRESS = "Address";
