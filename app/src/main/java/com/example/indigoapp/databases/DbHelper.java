@@ -72,19 +72,19 @@ public class DbHelper extends SQLiteOpenHelper {
                 UsersMaster.Payment.COL_USER_NAME + "TEXT," +
                 UsersMaster.Payment.COL_USER_EMAIL + "TEXT," +
                 UsersMaster.Payment.COLUMN_USER_AMOUNT + "TEXT," +
-                UsersMaster.Payment.COL_USER_ADDRESS  + "TEXT," +
+                UsersMaster.Payment.COL_USER_ADDRESS  + "TEXT)" ;
 
-                " FOREIGN KEY (" + UsersMaster.Payment.COL_USER_NAME + ") REFERENCES " + UsersMaster.Payment.TABLE_NAME +
-                " ON DELETE CASCADE ON UPDATE CASCADE )";
+//                " FOREIGN KEY (" + UsersMaster.Payment.COL_USER_NAME + ") REFERENCES " + UsersMaster.Payment.TABLE_NAME +
+//                " ON DELETE CASCADE ON UPDATE CASCADE )";
 
 
         String  CUSTOMER_CART_CREATES_ENTRIES ="CREATE TABLE"+ UsersMaster.UserCart.CART_NAME_USER + "(" +
                 UsersMaster.UserCart.CART_NAME +" TEXT, "+
                 UsersMaster.UserCart.COLUMN_NUMBER +" TEXT,"+
-                UsersMaster.UserCart.COLUMN_DATE +" TEXT,"+
+                UsersMaster.UserCart.COLUMN_DATE +" TEXT)";
 
-                " FOREIGN KEY (" + UsersMaster.UserCart.COLUMN_NUMBER + ") REFERENCES " + UsersMaster.UserCart.CART_NAME_USER +
-                " ON DELETE CASCADE ON UPDATE CASCADE)";
+//                " FOREIGN KEY (" + UsersMaster.UserCart.COLUMN_NUMBER + ") REFERENCES " + UsersMaster.UserCart.CART_NAME_USER +
+//                " ON DELETE CASCADE ON UPDATE CASCADE)";
 
 
         String  CUSTOMER_PRICE_CONFORM ="CREATE TABLE"+ UsersMaster.PriceConform.PRICE_CONFORM_USER + "(" +
