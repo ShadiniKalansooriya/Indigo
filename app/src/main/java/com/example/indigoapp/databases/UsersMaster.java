@@ -64,6 +64,15 @@ public class UsersMaster {
 
     }
 
+    public static class PriceConform implements BaseColumns{
+        public static String PRICE_CONFORM_USER = "price conform";
+        public static final String COLUMN_NAME_ID="id";
+        public static final String COLUMN_NAME_PRODUCT_NAME="name";
+        public static final String COLUMN_NAME_PRICE="price";
+        public static final String COLUMN_NAME_COUNT="count";
+
+    }
+
 //    public static class Products implements BaseColumns{
 //        public static String TABLE_NAME="products";
 //        public static final String COLUMN_NAME_ID="id";
