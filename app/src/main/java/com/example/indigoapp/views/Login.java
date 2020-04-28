@@ -45,6 +45,8 @@ public class Login extends AppCompatActivity implements NavigationView.OnNavigat
         public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
             switch (menuItem.getItemId()) {
                 case R.id.nav_b_home:
+                    Intent intenthome =new Intent(Login.this,HomePage.class);
+                    startActivity(intenthome);
                     break;
 
                 case R.id.nav_b_shoppingbag:
@@ -138,7 +140,7 @@ public class Login extends AppCompatActivity implements NavigationView.OnNavigat
                     String type = checkUser();
 
                     if (type.equals("RegisteredUser")) {
-                        Intent loginIntent = new Intent(Login.this, ProductsDisplay.class);
+                        Intent loginIntent = new Intent(Login.this, HomePage.class);
                         Toast.makeText(Login.this, "Successfully Logged in", Toast.LENGTH_SHORT).show();
 
                         startActivity(loginIntent);
@@ -219,6 +221,8 @@ public class Login extends AppCompatActivity implements NavigationView.OnNavigat
 
         switch (menuItem.getItemId()) {
             case R.id.nav_home:
+                Intent intenthome =new Intent(Login.this,HomePage.class);
+                startActivity(intenthome);
                 break;
 
             case R.id.nav_shoppingBag:

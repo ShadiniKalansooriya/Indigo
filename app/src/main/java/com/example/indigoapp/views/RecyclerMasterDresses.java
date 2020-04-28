@@ -42,6 +42,8 @@ public class RecyclerMasterDresses extends AppCompatActivity implements Navigati
         public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
             switch (menuItem.getItemId()) {
                 case R.id.nav_b_home:
+                    Intent intenthome =new Intent(RecyclerMasterDresses.this,HomePage.class);
+                    startActivity(intenthome);
                     break;
 
                 case R.id.nav_b_shoppingbag:
@@ -181,6 +183,8 @@ public class RecyclerMasterDresses extends AppCompatActivity implements Navigati
 
         switch (menuItem.getItemId()){
             case R.id.nav_home:
+                Intent intenthome =new Intent(RecyclerMasterDresses.this,HomePage.class);
+                startActivity(intenthome);
                 break;
 
             case R.id.nav_shoppingBag:

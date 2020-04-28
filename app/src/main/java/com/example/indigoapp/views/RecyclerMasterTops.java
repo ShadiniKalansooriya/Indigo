@@ -44,6 +44,8 @@ public class RecyclerMasterTops extends AppCompatActivity implements NavigationV
         public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
             switch (menuItem.getItemId()) {
                 case R.id.nav_b_home:
+                    Intent intenthome =new Intent(RecyclerMasterTops.this,HomePage.class);
+                    startActivity(intenthome);
                     break;
 
                 case R.id.nav_b_shoppingbag:
@@ -182,6 +184,8 @@ public class RecyclerMasterTops extends AppCompatActivity implements NavigationV
 
         switch (menuItem.getItemId()){
             case R.id.nav_home:
+                Intent intenthome =new Intent(RecyclerMasterTops.this,HomePage.class);
+                startActivity(intenthome);
                 break;
 
             case R.id.nav_shoppingBag:
