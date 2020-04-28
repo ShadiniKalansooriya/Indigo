@@ -42,6 +42,8 @@ public class RecyclerMasterActivity extends AppCompatActivity implements Navigat
         public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
             switch (menuItem.getItemId()) {
                 case R.id.nav_b_home:
+                    Intent intenthome =new Intent(RecyclerMasterActivity.this,HomePage.class);
+                    startActivity(intenthome);
                     break;
 
                 case R.id.nav_b_shoppingbag:
@@ -96,10 +98,6 @@ public class RecyclerMasterActivity extends AppCompatActivity implements Navigat
 
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(this,data);
         recyclerView.setAdapter(adapter);
-
-
-
-
 
         /*=============Hooks================== */
         bottomNavigationView = findViewById(R.id.bottom_navigation);
@@ -184,6 +182,8 @@ public class RecyclerMasterActivity extends AppCompatActivity implements Navigat
 
         switch (menuItem.getItemId()){
             case R.id.nav_home:
+                Intent intenthome =new Intent(RecyclerMasterActivity.this,HomePage.class);
+                startActivity(intenthome);
                 break;
 
             case R.id.nav_shoppingBag:

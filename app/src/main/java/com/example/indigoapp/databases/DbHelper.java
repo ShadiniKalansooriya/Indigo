@@ -87,6 +87,13 @@ public class DbHelper extends SQLiteOpenHelper {
                 " ON DELETE CASCADE ON UPDATE CASCADE)";
 
 
+        String  CUSTOMER_PRICE_CONFORM ="CREATE TABLE"+ UsersMaster.PriceConform.PRICE_CONFORM_USER + "(" +
+                UsersMaster.PriceConform.COLUMN_NAME_ID +" NTEGER PRIMARY KEY AUTOINCREMENT,, "+
+                UsersMaster.PriceConform.COLUMN_NAME_PRODUCT_NAME +" TEXT,"+
+                UsersMaster.PriceConform.COLUMN_NAME_PRICE +" TEXT,"+
+                UsersMaster.PriceConform.COLUMN_NAME_COUNT +" TEXT)";
+
+
         String ADMIN_PRODUCT_DETAILS_ENTRIES="CREATE TABLE "+ UsersMaster.ProductsItems.TABLE_NAME +"("+
                 UsersMaster.ProductsItems.COLUMN_NAME_ID+" INTEGER PRIMARY KEY AUTOINCREMENT,"+
                 UsersMaster.ProductsItems.COLUMN_NAME_PRODUCT_NAME + " TEXT,"+
@@ -109,8 +116,9 @@ public class DbHelper extends SQLiteOpenHelper {
                 UsersMaster.Vouchers.COLUMN_NAME_ID +") ON DELETE CASCADE ON UPDATE CASCADE)";
 
         sqLiteDatabase.execSQL(SQL_CREATE_ENTRIES);
-//        sqLiteDatabase.execSQL(PAYMENT_DETAILS_ENTRIES);
-//        sqLiteDatabase.execSQL(CUSTOMER_CART_CREATES_ENTRIES);
+        sqLiteDatabase.execSQL(PAYMENT_DETAILS_ENTRIES);
+        sqLiteDatabase.execSQL(CUSTOMER_CART_CREATES_ENTRIES);
+        sqLiteDatabase.execSQL(CUSTOMER_PRICE_CONFORM);
         sqLiteDatabase.execSQL(ADMIN_PRODUCT_DETAILS_ENTRIES);
         sqLiteDatabase.execSQL(ADMIN_VOUCHER_DETAILS_ENTRIES);
         sqLiteDatabase.execSQL(sql);
@@ -139,10 +147,12 @@ public class DbHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_USER);
         db.execSQL("DROP TABLE IF EXISTS " + UsersMaster.Payment.TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS "+ UsersMaster.UserCart.CART_NAME_USER);
+        db.execSQL("DROP TABLE IF EXISTS "+ UsersMaster.PriceConform.PRICE_CONFORM_USER);
         db.execSQL("DROP TABLE IF EXISTS "+ UsersMaster.ProductsItems.TABLE_NAME);
         //db.execSQL("DROP TABLE IF EXISTS "+ UsersMaster.Products.TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS "+ UsersMaster.Vouchers.TABLE_NAME);
-        db.execSQL("DROP TABLE IF EXISTS "+ UsersMaster.UserCart.CART_NAME_USER);
+
 
         onCreate(db);
     }
@@ -624,6 +634,20 @@ public class DbHelper extends SQLiteOpenHelper {
         return currentUsername;
     }
 
+    public void User_insert_price_details(String name, String price, String count) {
+        SQLiteDatabase db=getWritableDatabase();
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+
+        ContentValues values=new ContentValues();
+//        values.put( UsersMaster.PriceConform.COLUMN_NAME_ID,id);
+        values.put( UsersMaster.PriceConform.COLUMN_NAME_PRODUCT_NAME,name);
+        values.put(UsersMaster.PriceConform.COLUMN_NAME_PRICE,price);
+//        values.put(UsersMaster.PriceConform.COLUMN_NAME_COUNT,count);
+        long newRowId =db.insert(UsersMaster.PriceConform.PRICE_CONFORM_USER,null,values);
+    }
+
+
+
 
 
     public  void addfeed(String name,String email,String message,String report){
@@ -1024,6 +1048,7 @@ public class DbHelper extends SQLiteOpenHelper {
         SQLiteDatabase database = getReadableDatabase();
         return database.rawQuery(sql, null);
     }
+
 
 
 

@@ -54,6 +54,8 @@ public class ChangeProfilePic extends AppCompatActivity implements NavigationVie
         public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
             switch (menuItem.getItemId()) {
                 case R.id.nav_b_home:
+                    Intent intenthome =new Intent(ChangeProfilePic.this,HomePage.class);
+                    startActivity(intenthome);
                     break;
 
                 case R.id.nav_b_shoppingbag:
@@ -215,6 +217,8 @@ public class ChangeProfilePic extends AppCompatActivity implements NavigationVie
 
         switch (menuItem.getItemId()){
             case R.id.nav_home:
+                Intent intenthome =new Intent(ChangeProfilePic.this,HomePage.class);
+                startActivity(intenthome);
                 break;
 
             case R.id.nav_shoppingBag:

@@ -83,6 +83,8 @@ public class RegisterDetailsActivity extends AppCompatActivity implements Naviga
         public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
             switch (menuItem.getItemId()) {
                 case R.id.nav_b_home:
+                    Intent intenthome =new Intent(RegisterDetailsActivity.this,HomePage.class);
+                    startActivity(intenthome);
                     break;
 
                 case R.id.nav_b_shoppingbag:
@@ -470,6 +472,8 @@ public class RegisterDetailsActivity extends AppCompatActivity implements Naviga
 
         switch (menuItem.getItemId()) {
             case R.id.nav_home:
+                Intent intenthome =new Intent(RegisterDetailsActivity.this,HomePage.class);
+                startActivity(intenthome);
                 break;
 
             case R.id.nav_shoppingBag:

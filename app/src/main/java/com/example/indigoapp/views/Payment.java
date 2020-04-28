@@ -15,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.indigoapp.R;
 import com.example.indigoapp.databases.DbHelper;
 
-public abstract class Payment extends  AppCompatActivity implements View.OnClickListener {
+public class Payment extends  AppCompatActivity implements View.OnClickListener {
 
 
     EditText Uname;
