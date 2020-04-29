@@ -1,9 +1,11 @@
 package com.example.indigoapp.adapter;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -25,12 +27,14 @@ public class RecyclerViewAdapterVoucher extends RecyclerView.Adapter<RecyclerVie
     public class MyViewHolder extends RecyclerView.ViewHolder {
         RelativeLayout layout;
         TextView  name,price;
+        ImageView image;
 
         public MyViewHolder(View itemView) {
             super(itemView);
 
             name = itemView.findViewById(R.id.product_name);
             price = itemView.findViewById(R.id.product_price);
+            image = itemView.findViewById(R.id.product_image);
 
             layout = itemView.findViewById(R.id.layoutclothesItems);
         }
@@ -54,6 +58,7 @@ public class RecyclerViewAdapterVoucher extends RecyclerView.Adapter<RecyclerVie
 
         holder.name.setText("Gift Voucher");
         holder.price.setText(data.getVoucher_price());
+        holder.image.setImageDrawable(Drawable.createFromPath("@drawable/voucher.jpg"));
 
     }
 

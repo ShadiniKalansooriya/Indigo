@@ -13,7 +13,7 @@ import com.example.indigoapp.R;
 @SuppressLint("Registered")
 public class AdminActivity extends AppCompatActivity {
 
-    Button addProd, editProd, addPromo, mngGallery, addVoucher, editVoucher, viewProd, viewVou;
+    Button addProd, editProd,  mngGallery, addVoucher, editVoucher, viewProd, viewVou;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +22,6 @@ public class AdminActivity extends AppCompatActivity {
 
         addProd = findViewById(R.id.add_prod_admin_btn);
         editProd = findViewById(R.id.edit_prod_admin_btn);
-        addPromo = findViewById(R.id.add_promo_admin_btn);
         mngGallery = findViewById(R.id.mng_gal_admin_btn);
         addVoucher = findViewById(R.id.add_voucher_admin_btn);
         editVoucher = findViewById(R.id.edit_voucher_admin_btn);
