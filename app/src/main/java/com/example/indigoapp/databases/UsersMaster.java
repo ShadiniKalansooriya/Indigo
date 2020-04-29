@@ -65,6 +65,7 @@ public class UsersMaster {
     }
 
     public static class PriceConform implements BaseColumns{
+        public static final String COLUMN_NAME_IMAGE ="image" ;
         public static String PRICE_CONFORM_USER = "price conform";
         public static final String COLUMN_NAME_ID="id";
         public static final String COLUMN_NAME_PRODUCT_NAME="name";
@@ -88,7 +89,7 @@ public class UsersMaster {
         public static final String COLUMN_NAME_COUNT="count";
         public static final String COLUMN_NAME_PRICE="price";
         public static final String COLUMN_NAME_DESCRIPTION="description";
-        public static final String COLUMN_NAME_PRODUCTIMAGE="image";
+        //public static final String COLUMN_NAME_PRODUCTIMAGE="image";
         public static final String COLUMN_NAME_FOREIGNKEY="cid";
         public static final String COLUMN_NAME_CATEGORY_NAME="cname";
     }

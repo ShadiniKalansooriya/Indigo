@@ -38,9 +38,7 @@ public class Denims_display extends AppCompatActivity {
         addToCartBtn = (Button) findViewById(R.id.update_btn);
         removeCartBtn = (Button) findViewById(R.id.remove_cart_btn);
         wishListBtn = (Button) findViewById(R.id.imageButton2);
-
-    }
-}
+    }}
 
 //        addToCartBtn.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -48,10 +46,11 @@ public class Denims_display extends AppCompatActivity {
 //                insert_cart_details();
 //            }
 //        });
-//        initialize_details();
+//      initialize_details();
 //    }
-
-
+//
+//
+//
 //    private void insert_cart_details() {
 //        int total=Integer.(productPrice.getText().toString())*Integer.(numberBtn.getNumber().toString());
 //
@@ -70,14 +69,22 @@ public class Denims_display extends AppCompatActivity {
 //
 //    }
 //
+//    public static byte[] imageViewToByte(ImageView image) {
+//        Bitmap bitmap = ((BitmapDrawable)image.getDrawable()).getBitmap();
+//        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+//        bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+//        byte[] byteArray = stream.toByteArray();
+//        return byteArray;
+//    }
+//
 //    private void initialize_details() {
 //
-//            //product_image.setImageBitmap(Prevelent.current_user_products.getBitmap());
+//
 //            String proPrice = productPrice.getText().toString().trim();
 //            String proName = productName.getText().toString().trim();
+//            //byte[] imageView = imageViewToByte(productImage);
 //
-//
-//            dbHelperp.initialize_details(proPrice,proName);
+//            dbHelperp.initialize_details(proName,proPrice);
 //            Toast.makeText(getApplicationContext(), "Successfully Added Product Details!", Toast.LENGTH_LONG).show();
 //
 //        }

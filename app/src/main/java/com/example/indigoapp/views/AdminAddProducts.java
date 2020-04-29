@@ -1,6 +1,5 @@
 package com.example.indigoapp.views;
 
-import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -22,7 +21,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 
 import com.example.indigoapp.R;
 import com.example.indigoapp.databases.DbHelper;
@@ -50,15 +48,15 @@ public class AdminAddProducts extends AppCompatActivity {
 
         dbHelperp = new DbHelper(this);
 
-        prodName = (EditText) findViewById(R.id.product_name);
-        prodDesc = (EditText) findViewById(R.id.product_id);
-        prodPrice = (EditText) findViewById(R.id.product_price);
-        prodquatity = (EditText) findViewById(R.id.product_counts);
+        prodName = findViewById(R.id.product_name);
+        prodDesc = findViewById(R.id.product_id);
+        prodPrice = findViewById(R.id.product_price);
+        prodquatity = findViewById(R.id.product_counts);
         //catName = (EditText) findViewById(R.id.category_name);
-        btnChoose = (Button) findViewById(R.id.chooseProImage);
-        imageView = (ImageView) findViewById(R.id.productImage);
-        mySpinner = (Spinner) findViewById(R.id.spinner);
-        add_products = (Button) findViewById(R.id.admin_add_new_product);
+        btnChoose = findViewById(R.id.chooseProImage);
+        imageView = findViewById(R.id.productImage);
+        mySpinner = findViewById(R.id.spinner);
+        add_products = findViewById(R.id.admin_add_new_product);
 
 
         ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(AdminAddProducts.this,
@@ -83,16 +81,16 @@ public class AdminAddProducts extends AppCompatActivity {
             }
         });
 
-       btnChoose.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
-               ActivityCompat.requestPermissions(
-                       AdminAddProducts.this,
-                       new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
-                       REQUEST_CODE_GALLERY
-               );
-           }
-       });
+//       btnChoose.setOnClickListener(new View.OnClickListener() {
+//           @Override
+//           public void onClick(View view) {
+//               ActivityCompat.requestPermissions(
+//                       AdminAddProducts.this,
+//                       new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+//                       REQUEST_CODE_GALLERY
+//               );
+//           }
+//       });
     }
 
     public static byte[] imageViewToByte(ImageView image) {
@@ -180,12 +178,12 @@ public class AdminAddProducts extends AppCompatActivity {
         String productDesc = prodDesc.getText().toString().trim();
         String productPrice = prodPrice.getText().toString().trim();
         String categoryName = mySpinner.getSelectedItem().toString().trim();
-        byte[] imView = imageViewToByte(imageView);
+        //byte[] imView = imageViewToByte(imageView);
 
 
         String type = "ProductList";
 
-        dbHelperp.addProduct(productName,productQty,productDesc,productPrice, imView, categoryName);
+        dbHelperp.addProduct(productName,productQty,productDesc,productPrice, categoryName);
         Toast.makeText(getApplicationContext(), "Successfully Added Product Details!", Toast.LENGTH_LONG).show();
     }
 

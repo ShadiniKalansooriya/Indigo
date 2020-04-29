@@ -35,9 +35,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="ExtraText">
-        <activity android:name=".views.AdminVoucherItemList">
-
-        </activity>
+        <activity android:name=".views.AdminVoucherItemList"/>
         <activity android:name=".views.AdminVoucherList" />
         <activity android:name=".views.ChangeProfilePic" />
         <activity android:name=".views.PriceConform" />

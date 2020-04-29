@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -44,7 +45,8 @@ public abstract class CartAdapter extends RecyclerView.Adapter {
     }
 
     class CartViewAdapter extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
-//        ImageView ProductImage, user_delete_button;
+        ImageView ProductImage;
+//                user_delete_button;
         TextView ProductName;
         TextView ProductCount;
         TextView productPrice;
@@ -58,7 +60,7 @@ public abstract class CartAdapter extends RecyclerView.Adapter {
             ProductName = itemView.findViewById(R.id.product_name);
             productPrice = itemView.findViewById(R.id.product_price);
             ProductCount = itemView.findViewById(R.id.number_btn);
-
+            ProductImage = itemView.findViewById(R.id.product_image);
             Update = itemView.findViewById(R.id.update_btn);
 
 

@@ -20,14 +20,14 @@ public class AdminActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
 
-        addProd = (Button) findViewById(R.id.add_prod_admin_btn);
-        editProd = (Button) findViewById(R.id.edit_prod_admin_btn);
-        addPromo = (Button) findViewById(R.id.add_promo_admin_btn);
-        mngGallery = (Button) findViewById(R.id.mng_gal_admin_btn);
-        addVoucher = (Button) findViewById(R.id.add_voucher_admin_btn);
-        editVoucher = (Button) findViewById(R.id.edit_voucher_admin_btn);
-        viewProd = (Button) findViewById(R.id.view_prod);
-        viewVou = (Button) findViewById(R.id.view_vou);
+        addProd = findViewById(R.id.add_prod_admin_btn);
+        editProd = findViewById(R.id.edit_prod_admin_btn);
+        addPromo = findViewById(R.id.add_promo_admin_btn);
+        mngGallery = findViewById(R.id.mng_gal_admin_btn);
+        addVoucher = findViewById(R.id.add_voucher_admin_btn);
+        editVoucher = findViewById(R.id.edit_voucher_admin_btn);
+        viewProd = findViewById(R.id.view_prod);
+        viewVou = findViewById(R.id.view_vou);
         buttonClickActivity();
     }
 
