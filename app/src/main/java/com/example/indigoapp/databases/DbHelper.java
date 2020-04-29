@@ -72,19 +72,26 @@ public class DbHelper extends SQLiteOpenHelper {
                 UsersMaster.Payment.COL_USER_NAME + "TEXT," +
                 UsersMaster.Payment.COL_USER_EMAIL + "TEXT," +
                 UsersMaster.Payment.COLUMN_USER_AMOUNT + "TEXT," +
-                UsersMaster.Payment.COL_USER_ADDRESS  + "TEXT," +
+                UsersMaster.Payment.COL_USER_ADDRESS  + "TEXT)" ;
 
-                " FOREIGN KEY (" + UsersMaster.Payment.COL_USER_NAME + ") REFERENCES " + UsersMaster.Payment.TABLE_NAME +
-                " ON DELETE CASCADE ON UPDATE CASCADE )";
+//                " FOREIGN KEY (" + UsersMaster.Payment.COL_USER_NAME + ") REFERENCES " + UsersMaster.Payment.TABLE_NAME +
+//                " ON DELETE CASCADE ON UPDATE CASCADE )";
 
 
         String  CUSTOMER_CART_CREATES_ENTRIES="CREATE TABLE "+ UsersMaster.UserCart.CART_NAME_USER +"(" +
                 UsersMaster.UserCart.CART_NAME +" TEXT, "+
                 UsersMaster.UserCart.COLUMN_NUMBER +" TEXT,"+
-                UsersMaster.UserCart.COLUMN_DATE +" TEXT,"+
+                UsersMaster.UserCart.COLUMN_DATE +" TEXT)";
 
-                " FOREIGN KEY (" + UsersMaster.UserCart.COLUMN_NUMBER + ") REFERENCES " + UsersMaster.UserCart.CART_NAME_USER +
-                " ON DELETE CASCADE ON UPDATE CASCADE)";
+//                " FOREIGN KEY (" + UsersMaster.UserCart.COLUMN_NUMBER + ") REFERENCES " + UsersMaster.UserCart.CART_NAME_USER +
+//                " ON DELETE CASCADE ON UPDATE CASCADE)";
+
+
+        String  CUSTOMER_PRICE_CONFORM ="CREATE TABLE"+ UsersMaster.PriceConform.PRICE_CONFORM_USER + "(" +
+                UsersMaster.PriceConform.COLUMN_NAME_ID +" NTEGER PRIMARY KEY AUTOINCREMENT,, "+
+                UsersMaster.PriceConform.COLUMN_NAME_PRODUCT_NAME +" TEXT,"+
+                UsersMaster.PriceConform.COLUMN_NAME_PRICE +" TEXT,"+
+                UsersMaster.PriceConform.COLUMN_NAME_COUNT +" TEXT)";
 
 
         String ADMIN_PRODUCT_DETAILS_ENTRIES="CREATE TABLE "+ UsersMaster.ProductsItems.TABLE_NAME +"("+
@@ -109,8 +116,9 @@ public class DbHelper extends SQLiteOpenHelper {
                 UsersMaster.Vouchers.COLUMN_NAME_ID +") ON DELETE CASCADE ON UPDATE CASCADE)";
 
         sqLiteDatabase.execSQL(SQL_CREATE_ENTRIES);
-//        sqLiteDatabase.execSQL(PAYMENT_DETAILS_ENTRIES);
-//        sqLiteDatabase.execSQL(CUSTOMER_CART_CREATES_ENTRIES);
+        sqLiteDatabase.execSQL(PAYMENT_DETAILS_ENTRIES);
+        sqLiteDatabase.execSQL(CUSTOMER_CART_CREATES_ENTRIES);
+        sqLiteDatabase.execSQL(CUSTOMER_PRICE_CONFORM);
         sqLiteDatabase.execSQL(ADMIN_PRODUCT_DETAILS_ENTRIES);
         sqLiteDatabase.execSQL(ADMIN_VOUCHER_DETAILS_ENTRIES);
         sqLiteDatabase.execSQL(sql);
