@@ -36,7 +36,7 @@ public class UsersMaster {
 //    }
 
     public static class Gallery implements BaseColumns{
-        public static String GALLERY ="gallery";
+        public static  String GALLERY ="gallery";
         public static final String COLUMN_GALLERY_ID="id";
         public static final String COLUMN_GALLERY_EMAIL = "email";
         public static final String COLUMN_GALLERY_IMAGE = "image";
@@ -48,7 +48,7 @@ public class UsersMaster {
 
 
     public static class Payment implements BaseColumns {
-        public static String TABLE_NAME = "payment";
+        public static final String TABLE_NAME = "payment";
         public static final String COL_USER_NAME = "Username";
         public static final String COL_USER_EMAIL = "Email";
         public static final String COLUMN_USER_AMOUNT = "Sub total";
@@ -57,7 +57,7 @@ public class UsersMaster {
     }
 
     public static class UserCart implements BaseColumns{
-        public static String CART_NAME_USER = "user cart";
+        public static final String CART_NAME_USER = "user cart";
         public static final String CART_NAME="cart name";
         public static final String COLUMN_NUMBER="cart number";
         public static final String COLUMN_DATE="cart expiry date";
@@ -65,7 +65,7 @@ public class UsersMaster {
     }
 
     public static class PriceConform implements BaseColumns{
-        public static String PRICE_CONFORM_USER = "price conform";
+        public static final String PRICE_CONFORM_USER = "price conform";
         public static final String COLUMN_NAME_ID="id";
         public static final String COLUMN_NAME_PRODUCT_NAME="name";
         public static final String COLUMN_NAME_PRICE="price";

@@ -58,16 +58,16 @@ public class PriceConform extends AppCompatActivity {
     }
     private void User_insert_price_details() {
 
-//        String id = nameCard.getText().toString().trim();
+
         String name = productName.getText().toString().trim();
         String price = productPrice.getText().toString().trim();
-//        String count = numberBtn.getText().toString().trim();
+
         String type = "PaymentConformList";
 
 
 
 
-//        dbHelperp.User_insert_price_details(name, price);
+        dbHelperp.User_insert_price_details(name, price);
         Toast.makeText(new Payment(), "Successfully Added Cart List!", Toast.LENGTH_LONG).show();
     }
 
