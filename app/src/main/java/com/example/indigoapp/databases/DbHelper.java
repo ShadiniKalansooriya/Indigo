@@ -85,8 +85,8 @@ public class DbHelper extends SQLiteOpenHelper {
                 UsersMaster.PriceConform.COLUMN_NAME_ID +" NTEGER PRIMARY KEY AUTOINCREMENT,, "+
                 UsersMaster.PriceConform.COLUMN_NAME_PRODUCT_NAME +" TEXT,"+
                 UsersMaster.PriceConform.COLUMN_NAME_PRICE +" TEXT,"+
-                UsersMaster.PriceConform.COLUMN_NAME_COUNT +" TEXT,"+
-                UsersMaster.PriceConform.COLUMN_NAME_IMAGE + "LONGBLOB,"+")";
+                UsersMaster.PriceConform.COLUMN_NAME_COUNT +" TEXT,"+")";
+//                UsersMaster.PriceConform.COLUMN_NAME_IMAGE + "LONGBLOB,"+")";
 
 
         String ADMIN_PRODUCT_DETAILS_ENTRIES="CREATE TABLE "+ UsersMaster.ProductsItems.TABLE_NAME +"("+
