@@ -72,19 +72,13 @@ public class DbHelper extends SQLiteOpenHelper {
                 UsersMaster.Payment.COL_USER_NAME + "TEXT," +
                 UsersMaster.Payment.COL_USER_EMAIL + "TEXT," +
                 UsersMaster.Payment.COLUMN_USER_AMOUNT + "TEXT," +
-                UsersMaster.Payment.COL_USER_ADDRESS  + "TEXT," +
-
-                " FOREIGN KEY (" + UsersMaster.Payment.COL_USER_NAME + ") REFERENCES " + UsersMaster.Payment.TABLE_NAME +
-                " ON DELETE CASCADE ON UPDATE CASCADE )";
+                UsersMaster.Payment.COL_USER_ADDRESS  + "TEXT)" ;
 
 
         String  CUSTOMER_CART_CREATES_ENTRIES ="CREATE TABLE"+ UsersMaster.UserCart.CART_NAME_USER + "(" +
                 UsersMaster.UserCart.CART_NAME +" TEXT, "+
                 UsersMaster.UserCart.COLUMN_NUMBER +" TEXT,"+
-                UsersMaster.UserCart.COLUMN_DATE +" TEXT,"+
-
-                " FOREIGN KEY (" + UsersMaster.UserCart.COLUMN_NUMBER + ") REFERENCES " + UsersMaster.UserCart.CART_NAME_USER +
-                " ON DELETE CASCADE ON UPDATE CASCADE)";
+                UsersMaster.UserCart.COLUMN_DATE +" TEXT)";
 
 
         String  CUSTOMER_PRICE_CONFORM ="CREATE TABLE"+ UsersMaster.PriceConform.PRICE_CONFORM_USER + "(" +
@@ -604,7 +598,20 @@ public class DbHelper extends SQLiteOpenHelper {
         }
     }
 
+    public boolean Crate_cart_info(String name, String numb, String date) {
+        try {
+            SQLiteDatabase db = getReadableDatabase();
+            ContentValues values = new ContentValues();
+            values.put(UsersMaster.UserCart.CART_NAME, name);
+            values.put(UsersMaster.UserCart.COLUMN_NUMBER, numb);
+            values.put(UsersMaster.UserCart.COLUMN_DATE, date);
 
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return false;
+        }
+        return false;
+    }
 
     public String Name() {
         String[] projection = {
@@ -635,7 +642,7 @@ public class DbHelper extends SQLiteOpenHelper {
         return currentUsername;
     }
 
-    public void User_insert_price_details(String name, String price, String count) {
+    public void User_insert_price_details(String name, String price) {
         SQLiteDatabase db=getWritableDatabase();
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
 
@@ -643,7 +650,7 @@ public class DbHelper extends SQLiteOpenHelper {
 //        values.put( UsersMaster.PriceConform.COLUMN_NAME_ID,id);
         values.put( UsersMaster.PriceConform.COLUMN_NAME_PRODUCT_NAME,name);
         values.put(UsersMaster.PriceConform.COLUMN_NAME_PRICE,price);
-//        values.put(UsersMaster.PriceConform.COLUMN_NAME_COUNT,count);
+
         long newRowId =db.insert(UsersMaster.PriceConform.PRICE_CONFORM_USER,null,values);
     }
 
@@ -1048,6 +1055,9 @@ public class DbHelper extends SQLiteOpenHelper {
         SQLiteDatabase database = getReadableDatabase();
         return database.rawQuery(sql, null);
     }
+
+
+
 
 
 

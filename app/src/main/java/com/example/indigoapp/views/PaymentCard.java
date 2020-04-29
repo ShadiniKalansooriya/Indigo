@@ -3,6 +3,7 @@ package com.example.indigoapp.views;
 import android.app.Notification;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -51,7 +52,7 @@ public class PaymentCard {
                         cardEp.setText("");
                         Toast.makeText(this, "purchase conformed", Toast.LENGTH_LONG).show();
                     }
-            }
+            }     //validations
             if (nameCard.getText().toString().isEmpty()) {
                 Toast.makeText(Payment.this, "Please put card name", Toast.LENGTH_LONG).show();
             } else if (cardNo.getText().toString().isEmpty()) {
@@ -73,7 +74,31 @@ public class PaymentCard {
 
 
 
+            //Update a cart detail
+            Update.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    String item = Update.getText().toString();
+                    if (!TextUtils.isEmpty(item)) {
+                        String Name = nameCard.getText().toString().trim();
+                        String Numb = cardNo.getText().toString().trim();
+                        String Date = cardEp.getText().toString().trim();
 
+                        //String prodUrl = prodImageURL.getText().toString().trim();
+
+                        db.Crate_cart_info(Name,Numb,Date);
+                        //Admin_update_product_info(String id,String name,String des,String price,byte[]image,String count, String cname){
+
+                        Toast.makeText(Payment.this, "One item updated", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Update.setError("Enter valid product name");
+                    }
+                }
+            });
+
+
+
+            //Delete a Cart detail
             Delete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -98,6 +123,9 @@ public class PaymentCard {
             });
         }
 
+
+
+        //Insert cart detail
         private void User_insert_cart_details() {
 
             String Name = nameCard.getText().toString().trim();
@@ -112,6 +140,7 @@ public class PaymentCard {
         Toast.makeText(new Payment(), "Successfully Added Cart List!", Toast.LENGTH_LONG).show();
         }
 
+        //Clear Cart fields
         private void clear() {
             nameCard.setText("");
             cardNo.setText("");

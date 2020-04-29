@@ -71,6 +71,16 @@ public class Payment extends  AppCompatActivity implements View.OnClickListener 
         rg = (RadioGroup) findViewById(R.id.radioGroup4);
     }
 
+    public void rbclick(View v) {
+        int radiobuttonid = rg.getCheckedRadioButtonId();
+        rb = (RadioButton) findViewById(radiobuttonid);
+
+        if (rb.getText().equals("Add to card")) {
+            startActivity(new Intent(getApplicationContext(), Payment.class));
+        }
+
+    }
+
     private void buttonClickActivity() {
         btnS.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,21 +97,6 @@ public class Payment extends  AppCompatActivity implements View.OnClickListener 
 
     }
 
-    public void rbclick(View v) {
-        int radiobuttonid = rg.getCheckedRadioButtonId();
-        rb = (RadioButton) findViewById(radiobuttonid);
-
-        if (rb.getText().equals("Add to card")) {
-            startActivity(new Intent(getApplicationContext(), Payment.class));
-        }
-
-
-    }
-
-
-
-
-
 
     @Override
     public void onClick(View v) {
@@ -112,6 +107,7 @@ public class Payment extends  AppCompatActivity implements View.OnClickListener 
                     et2.setText("");
                     et3.setText("");
 
+                    //validations
                     Toast.makeText(Payment.this, "confirm your payment", Toast.LENGTH_LONG).show();
                 } else if (et1.getText().toString().trim().matches(emailPattern)) {
                     Toast.makeText(Payment.this, "Please put valid email", Toast.LENGTH_LONG).show();
@@ -130,6 +126,7 @@ public class Payment extends  AppCompatActivity implements View.OnClickListener 
 
         }
 
+    //insert payment detail
         private void Customer_insert_payment_details() {
 
         String Username = Uname.getText().toString().trim();

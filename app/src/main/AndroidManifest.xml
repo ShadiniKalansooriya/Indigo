@@ -38,8 +38,16 @@
         <activity android:name=".views.AdminVoucherItemList"/>
         <activity android:name=".views.AdminVoucherList" />
         <activity android:name=".views.ChangeProfilePic" />
+        <activity android:name=".views.Payment"/>
+        <activity android:name=".views.PaymentCard"/>
         <activity android:name=".views.PriceConform" />
-        <activity android:name=".views.PayemtTotal" />
+        <activity android:name=".views.PayemtTotal"/>
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
         <activity android:name=".views.AdminEditVoucher" />
         <activity android:name=".views.AdminProductsList" />
         <activity android:name=".views.AdminAddVoucher" />
