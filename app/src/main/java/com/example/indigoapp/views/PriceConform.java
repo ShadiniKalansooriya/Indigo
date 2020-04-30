@@ -56,7 +56,7 @@ public class PriceConform extends AppCompatActivity {
     }
     private void User_insert_price_details() {
 
-//        String id = nameCard.getText().toString().trim();
+
         String name = productName.getText().toString().trim();
         String price = productPrice.getText().toString().trim();
 //        String count = numberBtn.getText().toString().trim();
