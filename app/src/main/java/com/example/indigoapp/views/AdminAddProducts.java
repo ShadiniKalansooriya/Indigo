@@ -1,5 +1,6 @@
 package com.example.indigoapp.views;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -21,6 +22,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import com.example.indigoapp.R;
 import com.example.indigoapp.databases.DbHelper;
@@ -68,7 +70,7 @@ public class AdminAddProducts extends AppCompatActivity {
 
     }
 
-   private void buttonClickActivity() {
+    private void buttonClickActivity() {
         add_products.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -81,16 +83,16 @@ public class AdminAddProducts extends AppCompatActivity {
             }
         });
 
-//       btnChoose.setOnClickListener(new View.OnClickListener() {
-//           @Override
-//           public void onClick(View view) {
-//               ActivityCompat.requestPermissions(
-//                       AdminAddProducts.this,
-//                       new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
-//                       REQUEST_CODE_GALLERY
-//               );
-//           }
-//       });
+        btnChoose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ActivityCompat.requestPermissions(
+                        AdminAddProducts.this,
+                        new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+                        REQUEST_CODE_GALLERY
+                );
+            }
+        });
     }
 
     public static byte[] imageViewToByte(ImageView image) {
@@ -178,12 +180,11 @@ public class AdminAddProducts extends AppCompatActivity {
         String productDesc = prodDesc.getText().toString().trim();
         String productPrice = prodPrice.getText().toString().trim();
         String categoryName = mySpinner.getSelectedItem().toString().trim();
-        //byte[] imView = imageViewToByte(imageView);
-
+        byte[] imView = imageViewToByte(imageView);
 
         String type = "ProductList";
 
-        dbHelperp.addProduct(productName,productQty,productDesc,productPrice, categoryName);
+        dbHelperp.addProduct(productName,productQty,productDesc,productPrice, imView, categoryName);
         Toast.makeText(getApplicationContext(), "Successfully Added Product Details!", Toast.LENGTH_LONG).show();
     }
 

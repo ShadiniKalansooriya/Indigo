@@ -10,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 import com.example.indigoapp.R;
-import com.example.indigoapp.databases.DbHelper;
 
 public class Denims_display extends AppCompatActivity {
 
@@ -18,7 +17,7 @@ public class Denims_display extends AppCompatActivity {
     ImageView productImage;
     ElegantNumberButton numberBtn;
     TextView productPrice, productName;
-    DbHelper dbHelperp;
+    //DbHelper dbHelperp;
 
 
 
@@ -28,16 +27,16 @@ public class Denims_display extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_denims_display);
 
-        dbHelperp = new DbHelper(this);
+        //dbHelperp = new DbHelper(this);
 
 
-        numberBtn = (ElegantNumberButton) findViewById(R.id.number_btn);
-        productImage = (ImageView) findViewById(R.id.product_image);
-        productPrice = (TextView) findViewById(R.id.product_price);
-        productName = (TextView) findViewById(R.id.product_name);
-        addToCartBtn = (Button) findViewById(R.id.update_btn);
-        removeCartBtn = (Button) findViewById(R.id.remove_cart_btn);
-        wishListBtn = (Button) findViewById(R.id.imageButton2);
+        numberBtn = findViewById(R.id.number_btn);
+        productImage = findViewById(R.id.product_image);
+        productPrice = findViewById(R.id.product_price);
+        productName = findViewById(R.id.product_name);
+        addToCartBtn = findViewById(R.id.update_btn);
+        removeCartBtn = findViewById(R.id.remove_cart_btn);
+        wishListBtn = findViewById(R.id.imageButton2);
     }}
 
 //        addToCartBtn.setOnClickListener(new View.OnClickListener() {

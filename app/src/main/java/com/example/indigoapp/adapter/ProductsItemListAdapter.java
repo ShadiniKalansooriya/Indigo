@@ -2,6 +2,8 @@ package com.example.indigoapp.adapter;
 
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -63,9 +65,9 @@ public class ProductsItemListAdapter extends RecyclerView.Adapter<ProductsItemLi
         holder.category.setText(data.getCatName());
         holder.price.setText(data.getProduct_price());
 
-//        byte[] productImage = data.getImage();
-//        Bitmap bitmap = BitmapFactory.decodeByteArray(productImage, 0, productImage.length);
-//        holder.image.setImageBitmap(bitmap);
+        byte[] productImage = data.getImage();
+        Bitmap bitmap = BitmapFactory.decodeByteArray(productImage, 0, productImage.length);
+        holder.image.setImageBitmap(bitmap);
 
     }
     @Override

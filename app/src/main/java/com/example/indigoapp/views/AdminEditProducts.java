@@ -103,10 +103,10 @@ public class AdminEditProducts extends AppCompatActivity {
                     String productDesc = admin_product_des.getText().toString().trim();
                     String productPrice = admin_product_price.getText().toString().trim();
                     String categoryName = admin_category_name.getText().toString().trim();
-                    //byte[] imageView = AdminAddProducts.imageViewToByte(image);
+                    byte[] imageView = AdminAddProducts.imageViewToByte(image);
                             //position
 
-                    db.Admin_update_product_info(itemID, productName, productDesc, productPrice, productQty, categoryName);
+                    db.Admin_update_product_info(itemID, productName, productDesc, imageView, productPrice, productQty, categoryName);
                     //Admin_update_product_info(String id,String name,String des,String price,byte[]image,String count, String cname){
 
                     Toast.makeText(AdminEditProducts.this, "One item updated", Toast.LENGTH_SHORT).show();
