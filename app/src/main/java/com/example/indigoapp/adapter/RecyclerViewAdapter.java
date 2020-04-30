@@ -1,9 +1,12 @@
 package com.example.indigoapp.adapter;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -26,12 +29,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public class MyViewHolder extends RecyclerView.ViewHolder {
         RelativeLayout layout;
         TextView name, price;
+        ImageView image;
 
         public MyViewHolder(View itemView) {
             super(itemView);
 
             name = itemView.findViewById(R.id.product_name);
             price = itemView.findViewById(R.id.product_price);
+            image = itemView.findViewById(R.id.product_image);
 
             layout = itemView.findViewById(R.id.layoutclothesItems);
         }
@@ -53,22 +58,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.name.setText(data.getProduct_name());
         holder.price.setText(data.getProduct_price());
 
-         /*holder.layout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show();
+        byte[] productImage = data.getImage();
+        Bitmap bitmap = BitmapFactory.decodeByteArray(productImage, 0, productImage.length);
+        holder.image.setImageBitmap(bitmap);
 
-                if(holder.selected.isChecked()){
-                    //Toast.makeText(context, "Unchecked", Toast.LENGTH_SHORT).show();
-                    holder.selected.setChecked(false);
-                    data.setChkStatus(false);
-                }else{
-                    //Toast.makeText(context, "Checked", Toast.LENGTH_SHORT).show();
-                    holder.selected.setChecked(true);
-                    data.setChkStatus(true);
-                }
-            }
-        });*/
 
     }
 
