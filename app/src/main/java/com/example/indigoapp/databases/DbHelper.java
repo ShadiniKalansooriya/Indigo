@@ -866,6 +866,7 @@ public class DbHelper extends SQLiteOpenHelper {
             //cid=cu.getString(7);
             Bitmap bitmap;
 
+            //bitmap= BitmapFactory.decodeByteArray(image,0,image.length);
 
             Products products=new Products(id,name,desc,price,image,count,cna);
             list.add(products);
@@ -1053,7 +1054,7 @@ public class DbHelper extends SQLiteOpenHelper {
     }
 
 
-    public void addProduct(String prodName, String prodCount ,String prodDesc, byte[] image, String price, String category) {
+    public void addProduct(String prodName, String prodCount ,String prodDesc, String price, byte[] image, String category) {
         SQLiteDatabase db = getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -1067,7 +1068,6 @@ public class DbHelper extends SQLiteOpenHelper {
 
         db.insert(UsersMaster.ProductsItems.TABLE_NAME, null, values);
     }
-
 
     public void addVoucher(String vouPrice, String vouQty ) {
         SQLiteDatabase db = getWritableDatabase();
