@@ -13,7 +13,7 @@ import com.example.indigoapp.R;
 @SuppressLint("Registered")
 public class AdminActivity extends AppCompatActivity {
 
-    Button addProd, editProd,  mngGallery, addVoucher, editVoucher, viewProd, viewVou;
+    Button addProd, editProd, mngGallery, addVoucher, editVoucher, viewProd, viewVou;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

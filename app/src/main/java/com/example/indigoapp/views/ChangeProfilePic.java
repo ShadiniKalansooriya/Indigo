@@ -54,7 +54,7 @@ public class ChangeProfilePic extends AppCompatActivity implements NavigationVie
         public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
             switch (menuItem.getItemId()) {
                 case R.id.nav_b_home:
-                    Intent intenthome =new Intent(ChangeProfilePic.this,HomePage.class);
+                    Intent intenthome = new Intent(ChangeProfilePic.this, HomePage.class);
                     startActivity(intenthome);
                     break;
 
@@ -141,7 +141,6 @@ public class ChangeProfilePic extends AppCompatActivity implements NavigationVie
         buttonChange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                dbHelper.changeProPic(imageViewToByte(imageViewEditPic));
 
                 try {
                     dbHelper.changeProPic(
@@ -157,8 +156,9 @@ public class ChangeProfilePic extends AppCompatActivity implements NavigationVie
         });
 
     }
+
     public static byte[] imageViewToByte(ImageView image) {
-        Bitmap bitmap = ((BitmapDrawable)image.getDrawable()).getBitmap();
+        Bitmap bitmap = ((BitmapDrawable) image.getDrawable()).getBitmap();
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
         byte[] byteArray = stream.toByteArray();
@@ -168,13 +168,12 @@ public class ChangeProfilePic extends AppCompatActivity implements NavigationVie
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
 
-        if(requestCode == 888){
-            if(grantResults.length >0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+        if (requestCode == 888) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 Intent intent = new Intent(Intent.ACTION_PICK);
                 intent.setType("image/*");
                 startActivityForResult(intent, 888);
-            }
-            else {
+            } else {
                 Toast.makeText(getApplicationContext(), "You don't have permission to access file location!", Toast.LENGTH_SHORT).show();
             }
             return;
@@ -185,7 +184,7 @@ public class ChangeProfilePic extends AppCompatActivity implements NavigationVie
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-        if(requestCode == 888 && resultCode == RESULT_OK && data != null){
+        if (requestCode == 888 && resultCode == RESULT_OK && data != null) {
             Uri uri = data.getData();
             try {
                 InputStream inputStream = getContentResolver().openInputStream(uri);
@@ -203,10 +202,9 @@ public class ChangeProfilePic extends AppCompatActivity implements NavigationVie
     @Override
     public void onBackPressed() {
 
-        if(drawerLayout.isDrawerOpen(GravityCompat.START)){
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START);
-        }
-        else {
+        } else {
             super.onBackPressed();
         }
 
@@ -215,14 +213,14 @@ public class ChangeProfilePic extends AppCompatActivity implements NavigationVie
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
-        switch (menuItem.getItemId()){
+        switch (menuItem.getItemId()) {
             case R.id.nav_home:
-                Intent intenthome =new Intent(ChangeProfilePic.this,HomePage.class);
+                Intent intenthome = new Intent(ChangeProfilePic.this, HomePage.class);
                 startActivity(intenthome);
                 break;
 
             case R.id.nav_shoppingBag:
-                Intent intent =new Intent(ChangeProfilePic.this,MainActivity.class);
+                Intent intent = new Intent(ChangeProfilePic.this, MainActivity.class);
                 startActivity(intent);
                 break;
 
@@ -231,7 +229,7 @@ public class ChangeProfilePic extends AppCompatActivity implements NavigationVie
                 startActivity(intent1);
                 break;
             case R.id.nav_MyAccount:
-                Intent intent6 =new Intent(ChangeProfilePic.this, MyAccount.class);
+                Intent intent6 = new Intent(ChangeProfilePic.this, MyAccount.class);
                 startActivity(intent6);
                 break;
 
@@ -240,7 +238,7 @@ public class ChangeProfilePic extends AppCompatActivity implements NavigationVie
                 startActivity(intent7);
                 break;
             case R.id.nav_Gallery:
-                Intent intent2 =new Intent(ChangeProfilePic.this, Gallery.class);
+                Intent intent2 = new Intent(ChangeProfilePic.this, Gallery.class);
                 startActivity(intent2);
                 break;
 
@@ -249,7 +247,7 @@ public class ChangeProfilePic extends AppCompatActivity implements NavigationVie
                 startActivity(intent3);
                 break;
             case R.id.nav_contactUs:
-                Intent intent4 =new Intent(ChangeProfilePic.this,MainActivity.class);
+                Intent intent4 = new Intent(ChangeProfilePic.this, MainActivity.class);
                 startActivity(intent4);
                 break;
 
@@ -260,9 +258,9 @@ public class ChangeProfilePic extends AppCompatActivity implements NavigationVie
 
             case R.id.nav_Logout:
                 dbHelper.changeuser();
-                Intent intent8 = new Intent(ChangeProfilePic.this,Login.class);
+                Intent intent8 = new Intent(ChangeProfilePic.this, Login.class);
                 startActivity((intent8));
-                Toast.makeText(getApplicationContext(),"Successfully Logged Out",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Successfully Logged Out", Toast.LENGTH_LONG).show();
 
         }
 

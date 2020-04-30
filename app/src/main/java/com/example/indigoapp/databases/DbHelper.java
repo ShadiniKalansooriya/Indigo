@@ -49,7 +49,7 @@ public class DbHelper extends SQLiteOpenHelper {
                         UsersMaster.Users.COL_USER_CURRENT + " TEXT)";
 
 
-        System.out.println("User table"+SQL_CREATE_ENTRIES);
+        System.out.println("User table" + SQL_CREATE_ENTRIES);
 
         String sql = "CREATE TABLE " + UsersMaster.Gallery.GALLERY + " (" +
                 UsersMaster.Gallery.COLUMN_GALLERY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -60,7 +60,7 @@ public class DbHelper extends SQLiteOpenHelper {
 //                " FOREIGN KEY (" + UsersMaster.Gallery.COLUMN_GALLERY_EMAIL + ") REFERENCES " + UsersMaster.Users.TABLE_USER +"("+ UsersMaster.Users.COL_USER_EMAIL+"));";
 
 
-        System.out.println("Gallery Table" +sql);
+        System.out.println("Gallery Table" + sql);
 
 //        String SQL_CREATE_GALLERY =
 //                "CREATE TABLE "+ UsersMaster.Gallery.GALLERY + "(" +
@@ -68,26 +68,30 @@ public class DbHelper extends SQLiteOpenHelper {
 //                UsersMaster.Gallery.COL_USER_EMAIL +" TEXT,", price VARCHAR, image BLOB
 
 
-//        String PAYMENT_DETAILS_ENTRIES ="CREATE TABLE"+ UsersMaster.Payment.TABLE_NAME +"(" +
-//                UsersMaster.Payment.COL_USER_NAME + "TEXT," +
-//                UsersMaster.Payment.COL_USER_EMAIL + "TEXT," +
-//                UsersMaster.Payment.COLUMN_USER_AMOUNT + "TEXT," +
-//                UsersMaster.Payment.COL_USER_ADDRESS  + "TEXT)" ;
-//
-//
-//        String  CUSTOMER_CART_CREATES_ENTRIES ="CREATE TABLE"+ UsersMaster.UserCart.CART_NAME_USER + "(" +
-//                UsersMaster.UserCart.CART_NAME +" TEXT, "+
-//                UsersMaster.UserCart.COLUMN_NUMBER +" TEXT,"+
-//                UsersMaster.UserCart.COLUMN_DATE +" TEXT)";
-//
-//
-//        String  CUSTOMER_PRICE_CONFORM ="CREATE TABLE"+ UsersMaster.PriceConform.PRICE_CONFORM_USER + "(" +
-//                UsersMaster.PriceConform.COLUMN_NAME_ID +" NTEGER PRIMARY KEY AUTOINCREMENT,, "+
-//                UsersMaster.PriceConform.COLUMN_NAME_PRODUCT_NAME +" TEXT,"+
-//                UsersMaster.PriceConform.COLUMN_NAME_PRICE +" TEXT,"+
-//                UsersMaster.PriceConform.COLUMN_NAME_COUNT +" TEXT,"+")";
-////                UsersMaster.PriceConform.COLUMN_NAME_IMAGE + "LONGBLOB,"+")";
+        String PAYMENT_DETAILS_ENTRIES = "CREATE TABLE " + UsersMaster.Payment.TABLE_NAME + "(" +
+                UsersMaster.Payment.COL_USER_NAME + "TEXT," +
+                UsersMaster.Payment.COL_USER_EMAIL + "TEXT," +
+                UsersMaster.Payment.COLUMN_USER_AMOUNT + "TEXT," +
+                UsersMaster.Payment.COL_USER_ADDRESS + "TEXT)";
 
+//                " FOREIGN KEY (" + UsersMaster.Payment.COL_USER_NAME + ") REFERENCES " + UsersMaster.Payment.TABLE_NAME +
+//                " ON DELETE CASCADE ON UPDATE CASCADE )";
+
+
+        String CUSTOMER_CART_CREATES_ENTRIES = "CREATE TABLE " + UsersMaster.UserCart.CART_NAME_USER + "(" +
+                UsersMaster.UserCart.CART_NAME + " TEXT, " +
+                UsersMaster.UserCart.COLUMN_NUMBER + " TEXT," +
+                UsersMaster.UserCart.COLUMN_DATE + " TEXT)";
+
+//                " FOREIGN KEY (" + UsersMaster.UserCart.COLUMN_NUMBER + ") REFERENCES " + UsersMaster.UserCart.CART_NAME_USER +
+//                " ON DELETE CASCADE ON UPDATE CASCADE)";
+
+
+        String CUSTOMER_PRICE_CONFORM = "CREATE TABLE" + UsersMaster.PriceConform.PRICE_CONFORM_USER + "(" +
+                UsersMaster.PriceConform.COLUMN_NAME_ID + " NTEGER PRIMARY KEY AUTOINCREMENT,, " +
+                UsersMaster.PriceConform.COLUMN_NAME_PRODUCT_NAME + " TEXT," +
+                UsersMaster.PriceConform.COLUMN_NAME_PRICE + " TEXT," +
+                UsersMaster.PriceConform.COLUMN_NAME_COUNT + " TEXT)";
 
         String ADMIN_PRODUCT_DETAILS_ENTRIES="CREATE TABLE "+ UsersMaster.ProductsItems.TABLE_NAME +"("+
                 UsersMaster.ProductsItems.COLUMN_NAME_ID+" INTEGER PRIMARY KEY AUTOINCREMENT,"+
@@ -101,14 +105,14 @@ public class DbHelper extends SQLiteOpenHelper {
                 UsersMaster.ProductsItems.COLUMN_NAME_FOREIGNKEY + ") REFERENCES "+ UsersMaster.ProductsItems.TABLE_NAME+"("+
                 UsersMaster.ProductsItems.COLUMN_NAME_ID +") ON DELETE CASCADE ON UPDATE CASCADE)";
 
-        String ADMIN_VOUCHER_DETAILS_ENTRIES="CREATE TABLE "+ UsersMaster.Vouchers.TABLE_NAME +"("+
-                UsersMaster.Vouchers.COLUMN_NAME_ID+" INTEGER PRIMARY KEY AUTOINCREMENT,"+
-                UsersMaster.Vouchers.COLUMN_NAME_COUNT +" INTEGER,"+
-                UsersMaster.Vouchers.COLUMN_NAME_PRICE + " TEXT,"+
-                UsersMaster.Vouchers.COLUMN_NAME_VOUCHERIMAGE + " LONGBLOB,"+
-                UsersMaster.Vouchers.COLUMN_NAME_FOREIGNKEY+" INTEGER,CONSTRAINT fk_vou_cat FOREIGN KEY ("+
-                UsersMaster.Vouchers.COLUMN_NAME_FOREIGNKEY + ") REFERENCES "+ UsersMaster.Vouchers.TABLE_NAME+"("+
-                UsersMaster.Vouchers.COLUMN_NAME_ID +") ON DELETE CASCADE ON UPDATE CASCADE)";
+        String ADMIN_VOUCHER_DETAILS_ENTRIES = "CREATE TABLE " + UsersMaster.Vouchers.TABLE_NAME + "(" +
+                UsersMaster.Vouchers.COLUMN_NAME_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+                UsersMaster.Vouchers.COLUMN_NAME_COUNT + " INTEGER," +
+                UsersMaster.Vouchers.COLUMN_NAME_PRICE + " TEXT," +
+                UsersMaster.Vouchers.COLUMN_NAME_VOUCHERIMAGE + " LONGBLOB," +
+                UsersMaster.Vouchers.COLUMN_NAME_FOREIGNKEY + " INTEGER,CONSTRAINT fk_vou_cat FOREIGN KEY (" +
+                UsersMaster.Vouchers.COLUMN_NAME_FOREIGNKEY + ") REFERENCES " + UsersMaster.Vouchers.TABLE_NAME + "(" +
+                UsersMaster.Vouchers.COLUMN_NAME_ID + ") ON DELETE CASCADE ON UPDATE CASCADE)";
 
         sqLiteDatabase.execSQL(SQL_CREATE_ENTRIES);
 //        sqLiteDatabase.execSQL(PAYMENT_DETAILS_ENTRIES);
@@ -133,7 +137,7 @@ public class DbHelper extends SQLiteOpenHelper {
     }
 
     //Gallery
-    public void queryData(String sql){
+    public void queryData(String sql) {
         SQLiteDatabase database = getWritableDatabase();
         database.execSQL(sql);
     }
@@ -152,7 +156,8 @@ public class DbHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void addUser(String userName, String email, String password, String mobile, String address, String gender, String type, byte[]propic) {
+
+    public void addUser(String userName, String email, String password, String mobile, String address, String gender, String type, byte[] propic) {
 
         SQLiteDatabase db = getWritableDatabase();
 
@@ -166,7 +171,7 @@ public class DbHelper extends SQLiteOpenHelper {
         values.put(UsersMaster.Users.COL_USER_ADDRESS, address);
         values.put(UsersMaster.Users.COL_USER_GENDER, gender);
         values.put(UsersMaster.Users.COL_USER_TYPE, type);
-        values.put(UsersMaster.Users.COL_USER_PROPIC,propic);
+        values.put(UsersMaster.Users.COL_USER_PROPIC, propic);
         values.put(UsersMaster.Users.COL_USER_CURRENT, "FALSE");
 
         long newRowId = db.insert(UsersMaster.Users.TABLE_USER, null, values);
@@ -829,6 +834,7 @@ public class DbHelper extends SQLiteOpenHelper {
         }
         cu.close();
 
+
         return list;
     }
 
@@ -953,18 +959,25 @@ public class DbHelper extends SQLiteOpenHelper {
         ArrayList<Vouchers> list=new ArrayList<>();
         SQLiteDatabase db=getReadableDatabase();
 
+
         String sql="SELECT * FROM "+ UsersMaster.Vouchers.TABLE_NAME;
 
         Cursor cu=db.rawQuery(sql,null);
+        //byte[] image;
 
         String count;
         String price;
         String id;
+//        String cna;
+//        String cid;
 
         while(cu.moveToNext()){
             id=cu.getString(0);
             count=cu.getString(1);
             price=cu.getString(2);
+            //cna = cu.getString(6);
+            //cid=cu.getString(7);
+            //Bitmap bitmap;
 
             Vouchers voucher=new Vouchers(id,price,count);
             list.add(voucher);
@@ -984,17 +997,22 @@ public class DbHelper extends SQLiteOpenHelper {
         String []selectionArgs={pname +"%"};
 
         Cursor cu=db.rawQuery(sql,selectionArgs);
+        //byte[] image;
 
         String count;
         String price;
         String id;
         String fid;
 
+
         while(cu.moveToNext()){
             id=cu.getString(0);
             count=cu.getString(1);
             price=cu.getString(2);
             fid=cu.getString(3);
+            Bitmap bitmap;
+
+            //bitmap= BitmapFactory.decodeByteArray(image,0,image.length);
 
             Vouchers voucher =new Vouchers(id,price,count);
             list.add(voucher);
@@ -1027,6 +1045,7 @@ public class DbHelper extends SQLiteOpenHelper {
             ContentValues values = new ContentValues();
             values.put(UsersMaster.Vouchers.COLUMN_NAME_COUNT, count);
             values.put(UsersMaster.Vouchers.COLUMN_NAME_PRICE, price);
+            //values.put(UsersMaster.Vouchers.COLUMN_NAME_VOUCHERIMAGE, image);
             String selection = UsersMaster.Vouchers.COLUMN_NAME_ID + " = ?";
             String[] selectionArgs = {id};
 
@@ -1040,7 +1059,7 @@ public class DbHelper extends SQLiteOpenHelper {
     }
 
 
-    public void addProduct(String prodName, String prodCount ,String prodDesc, String price, byte[] image, String category) {
+    public void addProduct(String prodName, String prodCount ,String prodDesc, String price, String category) {
         SQLiteDatabase db = getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -1049,7 +1068,7 @@ public class DbHelper extends SQLiteOpenHelper {
         values.put(UsersMaster.ProductsItems.COLUMN_NAME_COUNT, prodCount);
         values.put(UsersMaster.ProductsItems.COLUMN_NAME_DESCRIPTION, prodDesc);
         values.put(UsersMaster.ProductsItems.COLUMN_NAME_PRICE, price);
-        values.put(UsersMaster.ProductsItems.COLUMN_NAME_PRODUCTIMAGE, image);
+        //values.put(UsersMaster.ProductsItems.COLUMN_NAME_PRODUCTIMAGE, image);
         values.put(UsersMaster.ProductsItems.COLUMN_NAME_CATEGORY_NAME, category);
 
         db.insert(UsersMaster.ProductsItems.TABLE_NAME, null, values);
@@ -1068,38 +1087,6 @@ public class DbHelper extends SQLiteOpenHelper {
         db.insert(UsersMaster.Vouchers.TABLE_NAME, null, values);
     }
 
-//    public void initialize_details(String prodName, String price) {
-//
-//        SQLiteDatabase db = getWritableDatabase();
-//
-//        ContentValues values = new ContentValues();
-//
-//        values.put(UsersMaster.ProductsItems.COLUMN_NAME_PRODUCT_NAME, prodName);
-//        //values.put(UsersMaster.ProductsItems.COLUMN_NAME_COUNT, prodCount);
-//        values.put(UsersMaster.ProductsItems.COLUMN_NAME_PRICE, price);
-//        //values.put(UsersMaster.ProductsItems.COLUMN_NAME_PRODUCTIMAGE, image);
-//
-//        db.insert(UsersMaster.ProductsItems.TABLE_NAME, null, values);
-//    }
-
-//    public boolean User_insert_cart_details(Cart cart){
-//        SQLiteDatabase db=getWritableDatabase();
-//        ByteArrayOutputStream stream = new ByteArrayOutputStream();
-//
-//         //cart.getImage().compress(Bitmap.CompressFormat.PNG, 100, stream);
-//         byte[] photo = stream.toByteArray();
-//
-//
-//        ContentValues values=new ContentValues();
-//        values.put(UsersMaster.PriceConform.COLUMN_NAME_PRODUCT_NAME,cart.getName());
-//        //values.put(UsersMaster.PriceConform.COLUMN_NAME_COUNT,cart.getCount());
-//        values.put(UsersMaster.PriceConform.COLUMN_NAME_PRICE,cart.getPrice());
-//        values.put(UsersMaster.PriceConform.COLUMN_NAME_IMAGE,cart.getImage());
-//
-//
-//        long rowId=db.insert(UsersMaster.PriceConform.PRICE_CONFORM_USER ,null,values);
-//        return rowId != -1;
-//    }
 
 
 //    public void addToCart(String prodName, String prodCount ,String price, String image) {
@@ -1115,6 +1102,44 @@ public class DbHelper extends SQLiteOpenHelper {
 //        db.insert(UsersMaster.ProductsItems.TABLE_NAME, null, values);
 //    }
 
+
+
+//    public ArrayList<CategoryItems> Retrive_Product_Category_Details(){
+//        ArrayList<CategoryItems> list=new ArrayList<>();
+//        SQLiteDatabase db=getReadableDatabase();
+//
+//        String sql="SELECT * FROM "+ UsersMaster.Products.TABLE_NAME;
+//
+//        Cursor cu=db.rawQuery(sql,null);
+//        byte[] image;
+//        while(cu.moveToNext()){
+//            String id=cu.getString(0);
+//            image=cu.getBlob(1);
+//            String name=cu.getString(2);
+//            Bitmap bitmap;
+//
+//            bitmap= BitmapFactory.decodeByteArray(image,0,image.length);
+//            CategoryItems items=new CategoryItems(name,bitmap,id);
+//            items.setId(id);
+//            list.add(items);
+//        }
+//        cu.close();
+//
+//        return list;
+//    }
+
+
+
+//
+//    public Cursor Admin_Item_name_check(){
+//        SQLiteDatabase db=getReadableDatabase();
+//        String[] projection = {UsersMaster.ProductsItems.COLUMN_NAME_ID, UsersMaster.ProductsItems.COLUMN_NAME_PRODUCT_NAME,
+//                UsersMaster.ProductsItems.COLUMN_NAME_COUNT, UsersMaster.ProductsItems.COLUMN_NAME_DESCRIPTION, UsersMaster.ProductsItems.COLUMN_NAME_PRICE,
+//                UsersMaster.ProductsItems.COLUMN_NAME_PRODUCTIMAGE, UsersMaster.ProductsItems.COLUMN_NAME_CATEGORY_NAME,UsersMaster.ProductsItems.COLUMN_NAME_FOREIGNKEY};
+//
+//        return db.query(UsersMaster.ProductsItems.TABLE_NAME,projection,null,null,null,null,null);
+//    }
+//
 
 
     public void insertGallery(String email, String hashtag, byte[] image){
@@ -1162,10 +1187,6 @@ public class DbHelper extends SQLiteOpenHelper {
         SQLiteDatabase database = getReadableDatabase();
         return database.rawQuery(sql, null);
     }
-
-
-
-
 
 
 
@@ -1224,6 +1245,5 @@ public class DbHelper extends SQLiteOpenHelper {
     }
 
 
-
-        }
+}
 
