@@ -182,31 +182,6 @@ public class RegisterDetailsActivity extends AppCompatActivity implements Naviga
                 );
             }
         });
-//        radioButtonGirl = findViewById(R.id.radioButtonGirl);
-//        radioButtonGuy = findViewById(R.id.radioButtonGuy);
-        //extViewdate = (TextView)findViewById(R.id.textViewdate);
-        //TextViewdateSelect = (TextView)findViewById(R.id.textViewDOB);
-
-//        TextViewdate.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                c = Calendar.getInstance();
-//                int day = c.get(Calendar.DAY_OF_MONTH);
-//                int month = c.get(Calendar.MONTH);
-//                int year = c.get(Calendar.YEAR);
-//
-//
-//                dpd = new DatePickerDialog(RegisterDetailsActivity.this, new DatePickerDialog.OnDateSetListener() {
-//                    @Override
-//                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-//                        TextViewdateSelect.setText(dayOfMonth + "/"+(month+1)+"/"+year);
-//
-//                    }
-//                },day,month,year);
-//                dpd.show();
-//            }
-//        });
 
 
         textViewSignIn.setOnClickListener(new View.OnClickListener() {
@@ -357,19 +332,6 @@ public class RegisterDetailsActivity extends AppCompatActivity implements Naviga
 
     }
 
-//    private Boolean validatePic() {
-//        byte[] imageInput = imageViewToByte(imageViewPropic)
-//        String input;
-//        if (imageInput.is) {
-//            input = "Username cannot be empty";
-//            Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
-//            return false;
-//        } else {
-//            return true;
-//        }
-//
-//    }
-
     private Boolean validateEmail() {
         String emailInput = editTextEmail.getText().toString().trim();
         String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
@@ -395,14 +357,7 @@ public class RegisterDetailsActivity extends AppCompatActivity implements Naviga
             return true;
         }
 
-//        if (emailInput.isEmpty()) {
-//            input =  "Email cannot be empty";
-//            Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
-//            return false;
-//        }
-//        else {
-//            return true;
-//        }
+
 
     }
 

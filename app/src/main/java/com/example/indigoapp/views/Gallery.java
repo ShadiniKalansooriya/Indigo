@@ -48,16 +48,15 @@ public class Gallery extends AppCompatActivity implements NavigationView.OnNavig
     NavigationView navigationView;
     androidx.appcompat.widget.Toolbar toolbar;
 
-    EditText editTextHashtag,textViewEmail;
+    EditText editTextHashtag, textViewEmail;
     Button buttonchoose, buttonAdd;
     TextView textViewGallery;
     ImageView imageView;
 
 
-
     final int REQUEST_CODE_GALLERY = 999;
 
-    public static DbHelper  dbHelper;
+    public static DbHelper dbHelper;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -66,7 +65,7 @@ public class Gallery extends AppCompatActivity implements NavigationView.OnNavig
         public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
             switch (menuItem.getItemId()) {
                 case R.id.nav_b_home:
-                    Intent intenthome =new Intent(Gallery.this,HomePage.class);
+                    Intent intenthome = new Intent(Gallery.this, HomePage.class);
                     startActivity(intenthome);
                     break;
 
@@ -120,7 +119,7 @@ public class Gallery extends AppCompatActivity implements NavigationView.OnNavig
         setSupportActionBar(toolbar);
 
         navigationView.bringToFront();
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
@@ -152,7 +151,7 @@ public class Gallery extends AppCompatActivity implements NavigationView.OnNavig
             @Override
             public void onClick(View view) {
 
-                try{
+                try {
                     dbHelper.insertGallery(
                             textViewEmail.getText().toString().trim(),
                             editTextHashtag.getText().toString().trim(),
@@ -162,8 +161,7 @@ public class Gallery extends AppCompatActivity implements NavigationView.OnNavig
                     textViewEmail.setText("");
                     editTextHashtag.setText("");
                     imageView.setImageResource(R.mipmap.ic_launcher);
-                }
-                catch (Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
@@ -177,12 +175,10 @@ public class Gallery extends AppCompatActivity implements NavigationView.OnNavig
             }
         });
 
-
-
-
     }
+
     public static byte[] imageViewToByte(ImageView image) {
-        Bitmap bitmap = ((BitmapDrawable)image.getDrawable()).getBitmap();
+        Bitmap bitmap = ((BitmapDrawable) image.getDrawable()).getBitmap();
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
         byte[] byteArray = stream.toByteArray();
@@ -192,13 +188,12 @@ public class Gallery extends AppCompatActivity implements NavigationView.OnNavig
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
 
-        if(requestCode == REQUEST_CODE_GALLERY){
-            if(grantResults.length >0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+        if (requestCode == REQUEST_CODE_GALLERY) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 Intent intent = new Intent(Intent.ACTION_PICK);
                 intent.setType("image/*");
                 startActivityForResult(intent, REQUEST_CODE_GALLERY);
-            }
-            else {
+            } else {
                 Toast.makeText(getApplicationContext(), "You don't have permission to access file location!", Toast.LENGTH_SHORT).show();
             }
             return;
@@ -212,17 +207,17 @@ public class Gallery extends AppCompatActivity implements NavigationView.OnNavig
 
         Context context;
 
-        if(requestCode == REQUEST_CODE_GALLERY && resultCode == RESULT_OK && data != null){
+        if (requestCode == REQUEST_CODE_GALLERY && resultCode == RESULT_OK && data != null) {
             Uri uri = data.getData();
 
-            String   x = getRealPathFromURI(getApplicationContext(),uri);
+            String x = getRealPathFromURI(getApplicationContext(), uri);
 
             File file = new File(x);
 //            File file = new File(uri.getPath());
             long size = file.length();
 
             Log.i("size=", size + "");
-            if(size > 1048576) { // 1MB
+            if (size > 1048576) { // 1MB
                 Toast.makeText(this, "Image must less than 1MB.", Toast.LENGTH_SHORT).show();
                 return;
             }
@@ -247,8 +242,8 @@ public class Gallery extends AppCompatActivity implements NavigationView.OnNavig
     public String getRealPathFromURI(Context context, Uri contentUri) {
         Cursor cursor = null;
         try {
-            String[] proj = { MediaStore.Images.Media.DATA };
-            cursor = context.getContentResolver().query(contentUri,  proj, null, null, null);
+            String[] proj = {MediaStore.Images.Media.DATA};
+            cursor = context.getContentResolver().query(contentUri, proj, null, null, null);
             int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
             cursor.moveToFirst();
             return cursor.getString(column_index);
@@ -263,10 +258,9 @@ public class Gallery extends AppCompatActivity implements NavigationView.OnNavig
     @Override
     public void onBackPressed() {
 
-        if(drawerLayout.isDrawerOpen(GravityCompat.START)){
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START);
-        }
-        else {
+        } else {
             super.onBackPressed();
         }
 
@@ -276,14 +270,14 @@ public class Gallery extends AppCompatActivity implements NavigationView.OnNavig
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
-        switch (menuItem.getItemId()){
+        switch (menuItem.getItemId()) {
             case R.id.nav_home:
-                Intent intenthome =new Intent(Gallery.this,HomePage.class);
+                Intent intenthome = new Intent(Gallery.this, HomePage.class);
                 startActivity(intenthome);
                 break;
 
             case R.id.nav_shoppingBag:
-                Intent intent =new Intent(Gallery.this,MainActivity.class);
+                Intent intent = new Intent(Gallery.this, MainActivity.class);
                 startActivity(intent);
                 break;
 
@@ -292,7 +286,7 @@ public class Gallery extends AppCompatActivity implements NavigationView.OnNavig
                 startActivity(intent1);
                 break;
             case R.id.nav_MyAccount:
-                Intent intent6 =new Intent(Gallery.this, MyAccount.class);
+                Intent intent6 = new Intent(Gallery.this, MyAccount.class);
                 startActivity(intent6);
                 break;
 
@@ -301,7 +295,7 @@ public class Gallery extends AppCompatActivity implements NavigationView.OnNavig
                 startActivity(intent7);
                 break;
             case R.id.nav_Gallery:
-                Intent intent2 =new Intent(Gallery.this, Gallery.class);
+                Intent intent2 = new Intent(Gallery.this, Gallery.class);
                 startActivity(intent2);
                 break;
 
@@ -310,7 +304,7 @@ public class Gallery extends AppCompatActivity implements NavigationView.OnNavig
                 startActivity(intent3);
                 break;
             case R.id.nav_contactUs:
-                Intent intent4 =new Intent(Gallery.this,MainActivity.class);
+                Intent intent4 = new Intent(Gallery.this, MainActivity.class);
                 startActivity(intent4);
                 break;
 
@@ -321,9 +315,9 @@ public class Gallery extends AppCompatActivity implements NavigationView.OnNavig
 
             case R.id.nav_Logout:
                 dbHelper.changeuser();
-                Intent intent8 = new Intent(Gallery.this,Login.class);
+                Intent intent8 = new Intent(Gallery.this, Login.class);
                 startActivity((intent8));
-                Toast.makeText(getApplicationContext(),"Successfully Logged Out",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Successfully Logged Out", Toast.LENGTH_LONG).show();
 
         }
 
@@ -331,14 +325,14 @@ public class Gallery extends AppCompatActivity implements NavigationView.OnNavig
         return true;
     }
 
-    private void init(){
-   editTextHashtag = findViewById(R.id.editTextHashtag);
-   buttonchoose = findViewById(R.id.buttonChoose);
-   buttonAdd = findViewById(R.id.buttonAdd);
-   textViewGallery = findViewById(R.id.textViewGallerylink);
-   textViewEmail = findViewById(R.id.textViewEmail);
-   //textViewEmail.setText(dbHelper.getEmail2());
-   imageView = findViewById(R.id.imageViewUpload);
+    private void init() {
+        editTextHashtag = findViewById(R.id.editTextHashtag);
+        buttonchoose = findViewById(R.id.buttonChoose);
+        buttonAdd = findViewById(R.id.buttonAdd);
+        textViewGallery = findViewById(R.id.textViewGallerylink);
+        textViewEmail = findViewById(R.id.textViewEmail);
+        //textViewEmail.setText(dbHelper.getEmail2());
+        imageView = findViewById(R.id.imageViewUpload);
 
     }
 

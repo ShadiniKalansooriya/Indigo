@@ -33,7 +33,7 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_marginTop="70dp"
-            android:layout_marginBottom="90dp"
+            android:layout_marginBottom="65dp"
             android:fillViewport="true">
 
             <RelativeLayout

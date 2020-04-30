@@ -65,7 +65,7 @@ public class GalleryView extends AppCompatActivity implements NavigationView.OnN
         public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
             switch (menuItem.getItemId()) {
                 case R.id.nav_b_home:
-                    Intent intenthome =new Intent(GalleryView.this,HomePage.class);
+                    Intent intenthome = new Intent(GalleryView.this, HomePage.class);
                     startActivity(intenthome);
                     break;
 
@@ -95,7 +95,6 @@ public class GalleryView extends AppCompatActivity implements NavigationView.OnN
         }
 
     };
-
 
 
     @Override
@@ -191,11 +190,11 @@ public class GalleryView extends AppCompatActivity implements NavigationView.OnN
         });
 
 
-
     }
+
     ImageView imageViewimg;
 
-    private void showDialogUpdate(Activity activity, final int position){
+    private void showDialogUpdate(Activity activity, final int position) {
 
         final Dialog dialog = new Dialog(activity);
         dialog.setContentView(R.layout.update_gallery_image);
@@ -204,7 +203,6 @@ public class GalleryView extends AppCompatActivity implements NavigationView.OnN
         imageViewimg = (ImageView) dialog.findViewById(R.id.imageViewimg);
         final EditText editTextEmail = (EditText) dialog.findViewById(R.id.editTextEmail);
 
-//            editTextEmail.setText(dbHelper.getEmail());
         final EditText editTextHashtag = (EditText) dialog.findViewById(R.id.editTextHashtag);
         Button btnUpdate = (Button) dialog.findViewById(R.id.buttonUpdate);
 
@@ -238,9 +236,8 @@ public class GalleryView extends AppCompatActivity implements NavigationView.OnN
                             position
                     );
                     dialog.dismiss();
-                    Toast.makeText(getApplicationContext(), "Update successfully!!!",Toast.LENGTH_SHORT).show();
-                }
-                catch (Exception error) {
+                    Toast.makeText(getApplicationContext(), "Update successfully!!!", Toast.LENGTH_SHORT).show();
+                } catch (Exception error) {
                     Log.e("Update error", error.getMessage());
                 }
                 updateGalleryList();
@@ -248,7 +245,7 @@ public class GalleryView extends AppCompatActivity implements NavigationView.OnN
         });
     }
 
-    private void showDialogDelete(final int idGalley){
+    private void showDialogDelete(final int idGalley) {
         final AlertDialog.Builder dialogDelete = new AlertDialog.Builder(GalleryView.this);
 
         dialogDelete.setTitle("Warning!!");
@@ -258,8 +255,8 @@ public class GalleryView extends AppCompatActivity implements NavigationView.OnN
             public void onClick(DialogInterface dialog, int which) {
                 try {
                     com.example.indigoapp.views.Gallery.dbHelper.deleteGallery(idGalley);
-                    Toast.makeText(getApplicationContext(), "Delete successfully!!!",Toast.LENGTH_SHORT).show();
-                } catch (Exception e){
+                    Toast.makeText(getApplicationContext(), "Delete successfully!!!", Toast.LENGTH_SHORT).show();
+                } catch (Exception e) {
                     Log.e("error", e.getMessage());
                 }
                 updateGalleryList();
@@ -276,7 +273,6 @@ public class GalleryView extends AppCompatActivity implements NavigationView.OnN
     }
 
 
-
 //        textViewGallery = findViewById(R.id.textViewUpload);
 
 //        textViewGallery.setOnClickListener(new View.OnClickListener() {
@@ -287,7 +283,7 @@ public class GalleryView extends AppCompatActivity implements NavigationView.OnN
 //            }
 //        });
 
-    private void updateGalleryList(){
+    private void updateGalleryList() {
         // get all data from sqlite
         Cursor cursor = com.example.indigoapp.views.Gallery.dbHelper.getGallery("SELECT * FROM GALLERY");
         list.clear();
@@ -306,13 +302,12 @@ public class GalleryView extends AppCompatActivity implements NavigationView.OnN
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
 
-        if(requestCode == 888){
-            if(grantResults.length >0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+        if (requestCode == 888) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 Intent intent = new Intent(Intent.ACTION_PICK);
                 intent.setType("image/*");
                 startActivityForResult(intent, 888);
-            }
-            else {
+            } else {
                 Toast.makeText(getApplicationContext(), "You don't have permission to access file location!", Toast.LENGTH_SHORT).show();
             }
             return;
@@ -323,7 +318,7 @@ public class GalleryView extends AppCompatActivity implements NavigationView.OnN
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-        if(requestCode == 888 && resultCode == RESULT_OK && data != null){
+        if (requestCode == 888 && resultCode == RESULT_OK && data != null) {
             Uri uri = data.getData();
             try {
                 InputStream inputStream = getContentResolver().openInputStream(uri);
@@ -341,10 +336,9 @@ public class GalleryView extends AppCompatActivity implements NavigationView.OnN
     @Override
     public void onBackPressed() {
 
-        if(drawerLayout.isDrawerOpen(GravityCompat.START)){
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START);
-        }
-        else {
+        } else {
             super.onBackPressed();
         }
 
@@ -354,14 +348,14 @@ public class GalleryView extends AppCompatActivity implements NavigationView.OnN
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
-        switch (menuItem.getItemId()){
+        switch (menuItem.getItemId()) {
             case R.id.nav_home:
-                Intent intenthome =new Intent(GalleryView.this,HomePage.class);
+                Intent intenthome = new Intent(GalleryView.this, HomePage.class);
                 startActivity(intenthome);
                 break;
 
             case R.id.nav_shoppingBag:
-                Intent intent =new Intent(GalleryView.this,MainActivity.class);
+                Intent intent = new Intent(GalleryView.this, MainActivity.class);
                 startActivity(intent);
                 break;
 
@@ -370,7 +364,7 @@ public class GalleryView extends AppCompatActivity implements NavigationView.OnN
                 startActivity(intent1);
                 break;
             case R.id.nav_MyAccount:
-                Intent intent6 =new Intent(GalleryView.this, MyAccount.class);
+                Intent intent6 = new Intent(GalleryView.this, MyAccount.class);
                 startActivity(intent6);
                 break;
 
@@ -379,7 +373,7 @@ public class GalleryView extends AppCompatActivity implements NavigationView.OnN
                 startActivity(intent7);
                 break;
             case R.id.nav_Gallery:
-                Intent intent2 =new Intent(GalleryView.this, Gallery.class);
+                Intent intent2 = new Intent(GalleryView.this, Gallery.class);
                 startActivity(intent2);
                 break;
 
@@ -388,7 +382,7 @@ public class GalleryView extends AppCompatActivity implements NavigationView.OnN
                 startActivity(intent3);
                 break;
             case R.id.nav_contactUs:
-                Intent intent4 =new Intent(GalleryView.this,MainActivity.class);
+                Intent intent4 = new Intent(GalleryView.this, MainActivity.class);
                 startActivity(intent4);
                 break;
 
@@ -398,9 +392,9 @@ public class GalleryView extends AppCompatActivity implements NavigationView.OnN
                 break;
             case R.id.nav_Logout:
                 dbHelper.changeuser();
-                Intent intent8 = new Intent(GalleryView.this,Login.class);
+                Intent intent8 = new Intent(GalleryView.this, Login.class);
                 startActivity((intent8));
-                Toast.makeText(getApplicationContext(),"Successfully Logged Out",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Successfully Logged Out", Toast.LENGTH_LONG).show();
 
         }
 

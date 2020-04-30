@@ -22,7 +22,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorindigo1"
+        android:background="@drawable/updateimagegallery"
         android:orientation="vertical">
 
         <include
@@ -44,12 +44,12 @@
                 <TextView
                     android:id="@+id/textView17"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="60dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="40dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/indigodark1"
-                    android:fontFamily="@font/cabin_sketch"
+                    android:background="@color/colorAccent"
+                    android:fontFamily="@font/concert_one"
                     android:text="@string/Upload"
                     android:textAlignment="center"
                     android:textColor="@color/colorText"
@@ -100,6 +100,7 @@
                     android:hint="@string/hashTag"
                     android:inputType="textPersonName"
                     android:textColor="@color/lightGray"
+                    android:textColorHint="@color/lightGray"
                     android:textSize="18sp" />
 
                 <Button
