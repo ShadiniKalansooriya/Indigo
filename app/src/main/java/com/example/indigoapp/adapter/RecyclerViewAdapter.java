@@ -53,7 +53,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.name.setText(data.getProduct_name());
         holder.price.setText(data.getProduct_price());
 
-        /*holder.layout.setOnClickListener(new View.OnClickListener() {
+         /*holder.layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show();
@@ -69,6 +69,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 }
             }
         });*/
+
     }
 
     @Override

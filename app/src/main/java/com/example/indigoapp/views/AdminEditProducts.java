@@ -7,6 +7,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,13 +29,13 @@ public class AdminEditProducts extends AppCompatActivity {
     private boolean ExceptionFound = false;
     private byte[] photo = null;
     private EditText admin_product_name, admin_product_des, admin_product_price, admin_product_counts, admin_category_name, admin_product_img_url, admin_search_pro;
-    private Button delete_new_product_button, admin_update_button, admin_search_button;
+    private Button delete_new_product_button, admin_update_button, admin_search_button, editImage;
     private DbHelper db;
     //private TextView admin_category_edit_heading;
     private RecyclerView recyclerView;
     private ProductsItemListAdapter itemsAdapter;
     private ArrayList<Products> admin_items;
-
+    private ImageView image;
     private Bitmap bp = null;
 
     private String itemID;
@@ -44,6 +45,8 @@ public class AdminEditProducts extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_edit_products);
+
+
 
         db = new DbHelper(this);
         db.Retrive_admin_product_details();
@@ -55,7 +58,9 @@ public class AdminEditProducts extends AppCompatActivity {
         admin_product_counts = (EditText) findViewById(R.id.edit_product_count);
         delete_new_product_button = (Button) findViewById(R.id.admin_edit_product_delete);
         admin_category_name = (EditText) findViewById(R.id.edit_category_name);
-        //admin_product_img_url = (EditText) findViewById(R.id.edit_product_img_url);
+        editImage = (Button) findViewById(R.id.editProImageBtn);
+        image = (ImageView) findViewById(R.id.editProductImage);
+
         admin_search_pro = (EditText) findViewById(R.id.admin_search_product);
         //dialog = new SpotsDialog(this,"Updating..");
 
@@ -75,6 +80,7 @@ public class AdminEditProducts extends AppCompatActivity {
                         admin_product_price.setText(prodItem.get(0).getProduct_price());
                         admin_product_counts.setText(prodItem.get(0).getCount());
                         admin_category_name.setText(prodItem.get(0).getCatName());
+                        //image.set
                     } else {
                         Toast.makeText(AdminEditProducts.this, "Item not found", Toast.LENGTH_SHORT).show();
                     }
@@ -97,9 +103,10 @@ public class AdminEditProducts extends AppCompatActivity {
                     String productDesc = admin_product_des.getText().toString().trim();
                     String productPrice = admin_product_price.getText().toString().trim();
                     String categoryName = admin_category_name.getText().toString().trim();
-                    //String prodUrl = prodImageURL.getText().toString().trim();
+                    byte[] imageView = AdminAddProducts.imageViewToByte(image);
+                            //position
 
-                    db.Admin_update_product_info(itemID, productName, productDesc, productPrice, null, productQty, categoryName);
+                    db.Admin_update_product_info(itemID, productName, productDesc, imageView, productPrice, productQty, categoryName);
                     //Admin_update_product_info(String id,String name,String des,String price,byte[]image,String count, String cname){
 
                     Toast.makeText(AdminEditProducts.this, "One item updated", Toast.LENGTH_SHORT).show();

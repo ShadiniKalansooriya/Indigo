@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewDebug;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -19,16 +18,26 @@ public class Requestfeed extends AppCompatActivity {
     Button fed1;
     DbHelper dbHelper;
     Button buttonsubmit;
+    Button button2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_requestfeed);
 
+        Button givefeed= findViewById(R.id.button2);
+        givefeed.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent activityIntent = new Intent(getApplicationContext(), editfeed.class);
+                startActivity(activityIntent);
+            }
+
+        });
+
         Name111 = findViewById(R.id.Name111);
         Email111=findViewById(R.id.Email111);
         message111 = findViewById(R.id.message111);
         sub400= findViewById(R.id.sub400);
-        buttonsubmit=(Button)findViewById(R.id.fed1);
+        buttonsubmit=(Button)findViewById(R.id.button_update);
 
         dbHelper = new DbHelper(this);
 
@@ -58,6 +67,9 @@ public class Requestfeed extends AppCompatActivity {
 
         dbHelper.addfeed(name,mail,msg,report);
     }
+
+
+
 
 
 }

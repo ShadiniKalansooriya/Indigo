@@ -1,12 +1,11 @@
 package com.example.indigoapp.model;
 
-import android.graphics.Bitmap;
-
 public class Cart {
 
     private String id;
     private String name;
     private String price;
+    //private byte[] image;
     private String count;
     public  String email;
 
@@ -16,6 +15,7 @@ public class Cart {
 
         this.name = name;
         this.price = price;
+        //this.image = image;
         this.count=count;
 //            this.product_id=product_id;
     }
@@ -42,6 +42,14 @@ public class Cart {
 ////            return product_id;
 //    }
 
+    public String getCount() {
+        return count;
+    }
+
+    public void setCount(String count) {
+        this.count = count;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -59,5 +67,11 @@ public class Cart {
         this.price = price;
     }
 
-
+//    public byte[] getImage() {
+//        return image;
+//    }
+//
+//    public void setImage(byte[] image) {
+//        this.image = image;
+//    }
 }

@@ -144,11 +144,11 @@
                     <ImageView
                         android:id="@+id/admin_view_product_Images"
                         android:layout_width="170dp"
-                        android:layout_height="128dp"
+                        android:layout_height="95dp"
                         android:layout_alignParentEnd="true"
                         android:layout_marginTop="-8dp"
                         android:layout_marginEnd="5dp"
-                        android:src="@drawable/purplebg" />
+                        android:src="@drawable/voucher" />
 
                     <LinearLayout
                         android:layout_width="150dp"

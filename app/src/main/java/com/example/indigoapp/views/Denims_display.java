@@ -17,6 +17,8 @@ public class Denims_display extends AppCompatActivity {
     ImageView productImage;
     ElegantNumberButton numberBtn;
     TextView productPrice, productName;
+    //DbHelper dbHelperp;
+
 
 
     @SuppressLint("WrongViewCast")
@@ -25,18 +27,17 @@ public class Denims_display extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_denims_display);
 
-        addToCartBtn = (Button) findViewById(R.id.update_btn);
-        wishListBtn = (Button) findViewById(R.id.imageButton2);
-        removeCartBtn = (Button) findViewById(R.id.remove_cart_btn);
-        numberBtn = (ElegantNumberButton) findViewById(R.id.number_btn);
-        productImage = (ImageView) findViewById(R.id.product_image);
-        productPrice = (TextView) findViewById(R.id.product_price);
-        productName = (TextView) findViewById(R.id.product_name);
+        //dbHelperp = new DbHelper(this);
 
 
-    }
-
-
+        numberBtn = findViewById(R.id.number_btn);
+        productImage = findViewById(R.id.product_image);
+        productPrice = findViewById(R.id.product_price);
+        productName = findViewById(R.id.product_name);
+        addToCartBtn = findViewById(R.id.update_btn);
+        removeCartBtn = findViewById(R.id.remove_cart_btn);
+        wishListBtn = findViewById(R.id.imageButton2);
+    }}
 
 //        addToCartBtn.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -44,51 +45,48 @@ public class Denims_display extends AppCompatActivity {
 //                insert_cart_details();
 //            }
 //        });
-//        initialize_details();
+//      initialize_details();
 //    }
-//}
-//
-//private void addToCart(){
-//
-//        int total=Integer.parseInt(productPrice.getText().toString())*Integer.parseInt(numberBtn.getNumber());
-//        String productName = prodName.getText().toString().trim();
-//        String productQty = prodquatity.getText().toString().trim();
-//        String productDesc = prodDesc.getText().toString().trim();
-//        String productPrice = prodPrice.getText().toString().trim();
-//        String categoryName = catName.getText().toString().trim();
-//        String prodUrl = prodImageURL.getText().toString().trim();
-//        String type = "ProductList";
-//
-//        dbHelperp.addProduct(productName,productQty,productDesc,productPrice,prodUrl,categoryName);
-//        Toast.makeText(getApplicationContext(), "Successfully Added Product Details!", Toast.LENGTH_LONG).show();
-//        }
-//
-//    private void insert_cart_details(){
-//        int total=Integer.parseInt(productPrice.getText().toString())*Integer.parseInt(numberBtn.getNumber());
 //
 //
-//        boolean isInserted=db.User_insert_cart_details(cart);
 //
+//    private void insert_cart_details() {
+//        int total=Integer.(productPrice.getText().toString())*Integer.(numberBtn.getNumber().toString());
 //
-//        if(isInserted&&isAdd){
-//        Toast.makeText(Denims_display.this,"sucessfully inserted",Toast.LENGTH_SHORT).show();
+//        Cart cart=new Cart(productName.getText().toString(),productPrice.getText().toString(),
+//                String.valueOf(total),numberBtn.getNumber().toString());
+//
+//        boolean isInserted=dbHelperp.User_insert_cart_details(cart);
+//
+//        if(isInserted){
+//            Toast.makeText(Denims_display.this,"Sucessfully inserted",Toast.LENGTH_SHORT).show();
 //
 //        }
 //        else{
-//        Toast.makeText(Denims_display.this,"Error cannot insert!!",Toast.LENGTH_SHORT).show();
+//            Toast.makeText(Denims_display.this,"Error cannot insert!!",Toast.LENGTH_SHORT).show();
 //        }
 //
-//        }
+//    }
+//
+//    public static byte[] imageViewToByte(ImageView image) {
+//        Bitmap bitmap = ((BitmapDrawable)image.getDrawable()).getBitmap();
+//        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+//        bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+//        byte[] byteArray = stream.toByteArray();
+//        return byteArray;
+//    }
+//
 //    private void initialize_details() {
 //
-//        try {
-//            productImage.setImageBitmap(Prevelent.current_user_products.getBitmap());
-//            productPrice.setText(Prevelent.current_user_products.getProduct_price());
-//            productName.setText(Prevelent.current_user_products.getProduct_name());
-//        } catch (Exception e) {
-//            e.printStackTrace();
+//
+//            String proPrice = productPrice.getText().toString().trim();
+//            String proName = productName.getText().toString().trim();
+//            //byte[] imageView = imageViewToByte(productImage);
+//
+//            dbHelperp.initialize_details(proName,proPrice);
+//            Toast.makeText(getApplicationContext(), "Successfully Added Product Details!", Toast.LENGTH_LONG).show();
+//
 //        }
-    }
-
-
+//
+//    }
 

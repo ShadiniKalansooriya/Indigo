@@ -18,8 +18,8 @@ public class Feedback extends AppCompatActivity {
 
 
 
-        Button givefeed= findViewById(R.id.but);
-        givefeed.setOnClickListener(new View.OnClickListener() {
+        Button update= findViewById(R.id.but);
+        update.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent activityIntent = new Intent(getApplicationContext(), Requestfeed.class);
                 startActivity(activityIntent);

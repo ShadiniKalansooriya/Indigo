@@ -2,9 +2,12 @@ package com.example.indigoapp.adapter;
 
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -28,6 +31,7 @@ public class ProductsItemListAdapter extends RecyclerView.Adapter<ProductsItemLi
     public class MyViewHolder extends RecyclerView.ViewHolder {
         LinearLayout layout;
         TextView name, available, category, price;
+        ImageView image;
 
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -36,6 +40,7 @@ public class ProductsItemListAdapter extends RecyclerView.Adapter<ProductsItemLi
             available = itemView.findViewById(R.id.admin_current_product_count);
             category = itemView.findViewById(R.id.admin_current_product_category);
             price = itemView.findViewById(R.id.admin_current_product_price);
+            image = itemView.findViewById(R.id.admin_view_product_Images);
 
             layout = itemView.findViewById(R.id.layoutProductItems);
         }
@@ -59,6 +64,10 @@ public class ProductsItemListAdapter extends RecyclerView.Adapter<ProductsItemLi
         holder.available.setText(data.getCount());
         holder.category.setText(data.getCatName());
         holder.price.setText(data.getProduct_price());
+
+        byte[] productImage = data.getImage();
+        Bitmap bitmap = BitmapFactory.decodeByteArray(productImage, 0, productImage.length);
+        holder.image.setImageBitmap(bitmap);
 
     }
     @Override

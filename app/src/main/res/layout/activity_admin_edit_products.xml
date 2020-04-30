@@ -256,7 +256,7 @@
             </TextView>
 
             <ImageView
-                android:id="@+id/productImage"
+                android:id="@+id/editProductImage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -265,7 +265,7 @@
                 app:srcCompat="@drawable/upload" />
 
             <Button
-                android:id="@+id/editProImage"
+                android:id="@+id/editProImageBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="80dp"

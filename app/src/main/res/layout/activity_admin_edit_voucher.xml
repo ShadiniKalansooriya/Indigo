@@ -158,55 +158,14 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/choose_vou"
-        android:textAlignment="center"
-        android:textStyle="bold"
-        android:textSize="20dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textColor="@color/BlackHeader"/>
 
-    <ImageView
-        android:id="@+id/productImage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/upload"
-        tools:layout_editor_absoluteX="0dp"
-        android:layout_marginTop="10dp"
-        tools:layout_editor_absoluteY="270dp" />
-
-    <Button
-        android:id="@+id/editVouImage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="80dp"
-        android:background="@color/lightGray"
-        android:padding="4dp"
-        android:text="@string/choose_image"
-        android:textColor="@color/lightBlack"
-        android:textSize="18dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.375"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.774" />
 
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="50dp"
             android:orientation="horizontal">
 
         <LinearLayout

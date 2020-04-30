@@ -157,6 +157,8 @@
     </string-array>
     <string name="prod_list_admin">Products List</string>
     <string name="vou_list_admin">Vouchers List</string>
+    <string name="update_info">Update</string>
+    <string name="updatfeed">update</string>
 
 
 </resources>
