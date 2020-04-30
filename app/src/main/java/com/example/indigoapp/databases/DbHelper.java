@@ -115,9 +115,9 @@ public class DbHelper extends SQLiteOpenHelper {
                 UsersMaster.Vouchers.COLUMN_NAME_ID + ") ON DELETE CASCADE ON UPDATE CASCADE)";
 
         sqLiteDatabase.execSQL(SQL_CREATE_ENTRIES);
-        sqLiteDatabase.execSQL(PAYMENT_DETAILS_ENTRIES);
-        sqLiteDatabase.execSQL(CUSTOMER_CART_CREATES_ENTRIES);
-        sqLiteDatabase.execSQL(CUSTOMER_PRICE_CONFORM);
+//        sqLiteDatabase.execSQL(PAYMENT_DETAILS_ENTRIES);
+//        sqLiteDatabase.execSQL(CUSTOMER_CART_CREATES_ENTRIES);
+//        sqLiteDatabase.execSQL(CUSTOMER_PRICE_CONFORM);
         sqLiteDatabase.execSQL(ADMIN_PRODUCT_DETAILS_ENTRIES);
         sqLiteDatabase.execSQL(ADMIN_VOUCHER_DETAILS_ENTRIES);
         sqLiteDatabase.execSQL(sql);
@@ -963,6 +963,7 @@ public class DbHelper extends SQLiteOpenHelper {
         String sql="SELECT * FROM "+ UsersMaster.Vouchers.TABLE_NAME;
 
         Cursor cu=db.rawQuery(sql,null);
+        //byte[] image;
 
         String count;
         String price;
@@ -974,6 +975,9 @@ public class DbHelper extends SQLiteOpenHelper {
             id=cu.getString(0);
             count=cu.getString(1);
             price=cu.getString(2);
+            //cna = cu.getString(6);
+            //cid=cu.getString(7);
+            //Bitmap bitmap;
 
             Vouchers voucher=new Vouchers(id,price,count);
             list.add(voucher);
@@ -1007,6 +1011,8 @@ public class DbHelper extends SQLiteOpenHelper {
             price=cu.getString(2);
             fid=cu.getString(3);
             Bitmap bitmap;
+
+            //bitmap= BitmapFactory.decodeByteArray(image,0,image.length);
 
             Vouchers voucher =new Vouchers(id,price,count);
             list.add(voucher);
@@ -1053,7 +1059,7 @@ public class DbHelper extends SQLiteOpenHelper {
     }
 
 
-    public void addProduct(String prodName, String prodCount ,String prodDesc, byte[] image, String price, String category) {
+    public void addProduct(String prodName, String prodCount ,String prodDesc, String price, String category) {
         SQLiteDatabase db = getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -1062,7 +1068,7 @@ public class DbHelper extends SQLiteOpenHelper {
         values.put(UsersMaster.ProductsItems.COLUMN_NAME_COUNT, prodCount);
         values.put(UsersMaster.ProductsItems.COLUMN_NAME_DESCRIPTION, prodDesc);
         values.put(UsersMaster.ProductsItems.COLUMN_NAME_PRICE, price);
-        values.put(UsersMaster.ProductsItems.COLUMN_NAME_PRODUCTIMAGE, image);
+        //values.put(UsersMaster.ProductsItems.COLUMN_NAME_PRODUCTIMAGE, image);
         values.put(UsersMaster.ProductsItems.COLUMN_NAME_CATEGORY_NAME, category);
 
         db.insert(UsersMaster.ProductsItems.TABLE_NAME, null, values);
