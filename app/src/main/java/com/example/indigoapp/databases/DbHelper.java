@@ -672,6 +672,130 @@ public class DbHelper extends SQLiteOpenHelper {
 
     }
 
+
+
+
+    public String getname() {
+        String[] projection = {
+                UsersMaster.Feedback.COLUMN_NAME_NAME
+        };
+        SQLiteDatabase db = getWritableDatabase();
+
+
+        String selection = UsersMaster.Feedback.COLUMN_NAME_NAME + " LIKE ?";
+        String[] selectionArgs = {"TRUE"};
+
+
+        Cursor cursor = db.query( UsersMaster.Feedback.TABLE_NAME ,
+                projection,
+                selection,
+                selectionArgs,
+                null, null, null);
+        String currentUsername;
+
+        if (cursor.moveToFirst()) {
+            do {
+                currentUsername = cursor.getString(cursor.getColumnIndex(UsersMaster.Feedback.COLUMN_NAME_NAME));
+            } while (cursor.moveToNext());
+        } else {
+            currentUsername = "Thanuri";
+        }
+        cursor.close();
+        return currentUsername;
+    }
+
+    public String getemail11() {
+        String[] projection = {
+                UsersMaster.Feedback.COLUMN_NAME_EMAIL
+        };
+        SQLiteDatabase db = getWritableDatabase();
+
+
+        String selection = UsersMaster.Feedback.COLUMN_NAME_EMAIL + " LIKE ?";
+        String[] selectionArgs = {"TRUE"};
+
+
+        Cursor cursor = db.query( UsersMaster.Feedback.TABLE_NAME ,
+                projection,
+                selection,
+                selectionArgs,
+                null, null, null);
+        String currentUsername;
+
+        if (cursor.moveToFirst()) {
+            do {
+                currentUsername = cursor.getString(cursor.getColumnIndex(UsersMaster.Feedback.COLUMN_NAME_EMAIL));
+            } while (cursor.moveToNext());
+        } else {
+            currentUsername = "Thanuri@gmail.com";
+        }
+        cursor.close();
+        return currentUsername;
+    }
+
+    public String getreport() {
+        String[] projection = {
+                UsersMaster.Feedback.COLUMN_NAME_Report
+        };
+        SQLiteDatabase db = getWritableDatabase();
+
+
+        String selection = UsersMaster.Feedback.COLUMN_NAME_Report + " LIKE ?";
+        String[] selectionArgs = {"TRUE"};
+
+
+        Cursor cursor = db.query( UsersMaster.Feedback.TABLE_NAME ,
+                projection,
+                selection,
+                selectionArgs,
+                null, null, null);
+        String currentUsername;
+
+        if (cursor.moveToFirst()) {
+            do {
+                currentUsername = cursor.getString(cursor.getColumnIndex(UsersMaster.Feedback.COLUMN_NAME_Report));
+            } while (cursor.moveToNext());
+        } else {
+            currentUsername = "123";
+        }
+        cursor.close();
+        return currentUsername;
+    }
+
+
+
+    public String getmessage() {
+        String[] projection = {
+                UsersMaster.Feedback.COLUMN_NAME_MESSAGE
+        };
+        SQLiteDatabase db = getWritableDatabase();
+
+
+        String selection = UsersMaster.Feedback.COLUMN_NAME_MESSAGE + " LIKE ?";
+        String[] selectionArgs = {"TRUE"};
+
+
+        Cursor cursor = db.query( UsersMaster.Feedback.TABLE_NAME ,
+                projection,
+                selection,
+                selectionArgs,
+                null, null, null);
+        String currentUsername;
+
+        if (cursor.moveToFirst()) {
+            do {
+                currentUsername = cursor.getString(cursor.getColumnIndex(UsersMaster.Feedback.COLUMN_NAME_MESSAGE));
+            } while (cursor.moveToNext());
+        } else {
+            currentUsername = "123";
+        }
+        cursor.close();
+        return currentUsername;
+    }
+
+
+
+
     //Retrieve selected item data from database
     public ArrayList<Products> Retrive_selected_product_details(String category){
         ArrayList<Products> list=new ArrayList<>();
@@ -1100,5 +1224,6 @@ public class DbHelper extends SQLiteOpenHelper {
     }
 
 
-}
+
+        }
 
