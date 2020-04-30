@@ -28,7 +28,6 @@ public class AdminProductsList extends AppCompatActivity {
 
         dbHelperp = new DbHelper(this);
         ArrayList data = dbHelperp.Retrive_admin_product_details();
-        //ArrayList data = dbHelperp.Retrive_selected_product_details("Denims");
 
         ProductsItemListAdapter mAdapter = new ProductsItemListAdapter(this,data);
         recyler.setAdapter(mAdapter);
