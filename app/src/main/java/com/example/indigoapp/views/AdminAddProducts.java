@@ -20,6 +20,10 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+
 import com.example.indigoapp.R;
 import com.example.indigoapp.databases.DbHelper;
 
@@ -27,10 +31,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 
 public class AdminAddProducts extends AppCompatActivity {
 
@@ -179,13 +179,13 @@ public class AdminAddProducts extends AppCompatActivity {
         String productQty = prodquatity.getText().toString().trim();
         String productDesc = prodDesc.getText().toString().trim();
         String productPrice = prodPrice.getText().toString().trim();
-        //String categoryName = catName.getText().toString().trim();
         String categoryName = mySpinner.getSelectedItem().toString().trim();
         byte[] imView = imageViewToByte(imageView);
 
+
         String type = "ProductList";
 
-        dbHelperp.addProduct(productName,productQty,productDesc,productPrice,categoryName);
+        dbHelperp.addProduct(productName,productQty,productDesc,productPrice, imView, categoryName);
         Toast.makeText(getApplicationContext(), "Successfully Added Product Details!", Toast.LENGTH_LONG).show();
     }
 
