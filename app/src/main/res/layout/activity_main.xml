@@ -70,7 +70,7 @@
                 android:layout_height="122dp"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:background="@color/indigooDarrrkk"
+                android:background="@color/SplashIndigo"
                 android:fontFamily="@font/baloo"
                 android:text="Guest"
                 android:textColor="@color/white"
