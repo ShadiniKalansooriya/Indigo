@@ -13,7 +13,7 @@ import com.example.indigoapp.R;
 @SuppressLint("Registered")
 public class AdminActivity extends AppCompatActivity {
 
-    Button addProd, editProd,  mngGallery, addVoucher, editVoucher, viewProd, dis, viewVou;
+    Button addProd, editProd,  mngGallery, addVoucher, editVoucher, viewProd, viewVou;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +28,6 @@ public class AdminActivity extends AppCompatActivity {
         viewProd = findViewById(R.id.view_prod);
         viewVou = findViewById(R.id.view_vou);
 
-        dis = findViewById(R.id.product_dis_button);
         buttonClickActivity();
     }
 
@@ -82,13 +81,7 @@ public class AdminActivity extends AppCompatActivity {
             }
         });
 
-        dis.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intentDis = new Intent(getApplicationContext(), ProductsDisplay.class);
-                startActivity(intentDis);
-            }
-        });
+
 
     }
 }
