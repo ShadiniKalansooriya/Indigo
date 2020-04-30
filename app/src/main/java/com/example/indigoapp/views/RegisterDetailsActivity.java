@@ -219,7 +219,7 @@ public class RegisterDetailsActivity extends AppCompatActivity implements Naviga
                         Toast.makeText(getApplicationContext(), "Successfully Registered!", Toast.LENGTH_LONG).show();
                         imageViewPropic.setImageResource(R.mipmap.ic_launcher);
                     } catch (Exception e) {
-                        Toast.makeText(getApplicationContext(), "PROFILE PICTURE REQUIRED", Toast.LENGTH_LONG).show();
+//                        Toast.makeText(getApplicationContext(), "PROFILE PICTURE REQUIRED", Toast.LENGTH_LONG).show();
 
                         e.printStackTrace();
                     }
