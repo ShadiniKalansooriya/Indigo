@@ -2,6 +2,7 @@ package com.example.indigoapp.views;
 
 import android.app.AlertDialog;
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -10,15 +11,16 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.indigoapp.R;
 import com.example.indigoapp.adapter.ProductsItemListAdapter;
 import com.example.indigoapp.databases.DbHelper;
 import com.example.indigoapp.model.Products;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 //import dmax.dialog.SpotsDialog;
 
@@ -117,6 +119,8 @@ public class AdminEditProducts extends AppCompatActivity {
         });
 
 
+
+
         //Delete a Product item
         delete_new_product_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -138,6 +142,15 @@ public class AdminEditProducts extends AppCompatActivity {
         admin_product_counts.setText("");
         admin_category_name.setText("");
         admin_product_img_url.setText("");
+    }
+
+
+    public static byte[] imageViewToByte(ImageView image) {
+        Bitmap bitmap = ((BitmapDrawable) image.getDrawable()).getBitmap();
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+        byte[] byteArray = stream.toByteArray();
+        return byteArray;
     }
 
 }

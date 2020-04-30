@@ -1,14 +1,10 @@
 package com.example.indigoapp.views;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,6 +12,8 @@ import android.widget.Toast;
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 import com.example.indigoapp.R;
 import com.example.indigoapp.databases.DbHelper;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class PriceConform extends AppCompatActivity {
     private DbHelper db;
@@ -58,16 +56,16 @@ public class PriceConform extends AppCompatActivity {
     }
     private void User_insert_price_details() {
 
-
+//        String id = nameCard.getText().toString().trim();
         String name = productName.getText().toString().trim();
         String price = productPrice.getText().toString().trim();
-
+//        String count = numberBtn.getText().toString().trim();
         String type = "PaymentConformList";
 
 
 
 
-        dbHelperp.User_insert_price_details(name, price);
+//        dbHelperp.User_insert_price_details(name, price);
         Toast.makeText(new Payment(), "Successfully Added Cart List!", Toast.LENGTH_LONG).show();
     }
 
