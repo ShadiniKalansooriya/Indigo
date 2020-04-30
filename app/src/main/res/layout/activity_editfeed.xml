@@ -13,17 +13,16 @@
         android:layout_height="71dp"
 
         android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
         android:ems="10"
         android:hint="Enter Your Name"
         android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.513"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintHorizontal_bias="0.545" android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.09"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.272" />
 
     <EditText
         android:id="@+id/Email111"
@@ -74,41 +73,20 @@
         android:id="@+id/button_update"
         android:layout_width="298dp"
         android:layout_height="47dp"
-        android:layout_marginBottom="136dp"
+        android:layout_marginBottom="140dp"
         android:background="@drawable/ic_launcher_background"
         android:onClick="send_click"
-        android:text="@string/feedreq"
+        android:text="@string/update_info"
         android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.566"
+        app:layout_constraintHorizontal_bias="0.548"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="OnClick" />
+        tools:ignore="OnClick" /><![CDATA[
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="161dp"
-        android:layout_height="120dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/btn_star_big_off" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="251dp"
-        android:layout_height="61dp"
-        android:layout_marginTop="28dp"
-        android:background="@android:color/holo_green_light"
-        android:text="@string/updatfeed"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.568"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_update" /><![CDATA[
     // app:srcCompat="@drawable/req" />
+
 
 
 
